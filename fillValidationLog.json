@@ -1,1 +1,6 @@
-[]
+[
+{"fill": 5730, "general_comments": "Mini-VdM scan during this fill.\n", "invalidated_lumisections": [{"beginAt": "295613:118", "endAt": "295613:177", "luminometer": "hfet", "reason": "spikes due to HF LV issues"}, {"beginAt": "295613:118", "endAt": "295613:177", "luminometer": "hfoc", "reason": "HF LV issues"}], "missing_lumisections": [{"beginAt": "295613:210", "endAt": "295613:212", "luminometer": "pltzero"}], "validated_by": "Paul Lujan"},
+{"fill": 5733, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Paul Lujan"},
+{"fill": 5735, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Paul Lujan"},
+{"fill": 5736, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Paul Lujan"}
+]
