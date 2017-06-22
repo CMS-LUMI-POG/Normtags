@@ -17,7 +17,6 @@
 # TODO:
 #  - add automatic emails to subsystem maintainers
 #  - add automatic git commit on completion
-#  - gracefully handle the main window being closed by the user
 #  - save current status so if application is unexpectedly terminated
 #    (dropped connection, etc.) the current work isn't lost
 
@@ -387,6 +386,9 @@ def produceOutput():
             writeFormattedJSON(parsedLumiJSONData, lumiJSONFile, False)
 
     print "Finished writing output for fill "+str(fillNumber)
+    # Mark this fill as finished properly so we will proceed to the next one.
+    global currentFillSaved
+    currentFillSaved = True
     root.destroy()
     return
 
@@ -419,6 +421,7 @@ nfills = len(fillList)
 
 if len(fillList) == 0:
     tkMessageBox.showinfo("Nothing to do!", "It looks like there are no new fills to validate. Thanks for checking!")
+    os.unlink(lockFileName)
     sys.exit(0)
 
 tkMessageBox.showinfo("Fills to validate", "It looks like there "+("is " if nfills == 1 else "are ")+str(nfills)+" new fill"+
@@ -431,6 +434,7 @@ root.wait_window(d.dwin)
 userName = d.result
 
 completedFills = []
+currentFillSaved = False
 # Now, loop over each fill and do the validation for each.
 for fillNumber in fillList:
     # This is a two-dimensional dictionary with keys: run number and lumisection number.
@@ -568,8 +572,17 @@ for fillNumber in fillList:
 
     root.mainloop()
 
-    # We finished a fill! Now set up for the next one...
+    # If we made it here, then either (a) we saved the data from the fill, in which case we can
+    # just happily proceed to the next one, or (b) the user closed the main window, in which case
+    # we should just treat this like having clicked the "exit without save" button.
+    if not currentFillSaved:
+        print "Application closed."
+        os.unlink(lockFileName)
+        sys.exit(1)
+
+    # OK, set up for the next fill.
     completedFills.append(fillNumber)
+    currentFillSaved = False
     root = Tk()
 
 print "Validation complete. Thanks!"
