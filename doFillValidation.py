@@ -17,7 +17,6 @@
 # TODO:
 #  - add automatic emails to subsystem maintainers
 #  - add automatic git commit on completion
-#  - add lock file to prevent multiple users from running simultaneously
 #  - gracefully handle the main window being closed by the user
 #  - save current status so if application is unexpectedly terminated
 #    (dropped connection, etc.) the current work isn't lost
@@ -49,6 +48,7 @@ logFileName = "./fillValidationLog.json"       # log JSON
 bestLumiFileName = "./normtag_BRIL.json"       # best lumi JSON
 lumiJSONFileNamePattern = "./normtag_%s.json"  # filename pattern for individual luminometer JSONs
 dbAuthFileName = "./db.ini"                    # authentication file for DB
+lockFileName = "lock.doFillValidation"         # lock file name
 
 #### Subroutines begin here
 
@@ -226,9 +226,10 @@ def changePriority(delta):
 
 def exitWithoutSave():
     msg = "Do you really want to exit without saving?"
-    if nCompletedFills > 0:
+    if len(completedFills) > 0:
         msg += " (Note: fills that you have already completed have already been saved.)"
     if tkMessageBox.askyesno("Are you sure?", msg):
+        os.unlink(lockFileName)
         sys.exit(0)
     return
 
@@ -393,6 +394,15 @@ def produceOutput():
 
 root = Tk()
 
+# Very first step: check to see if a lock file is in existence, indicating that someone else
+# is running. If so throw an error. Otherwise, create the lock file.
+
+if os.path.exists(lockFileName):
+    tkMessageBox.showerror("In use", "It looks like someone is already running this application and it has been locked to avoid conflicts. If you want to override this, remove the lock file "+lockFileName+" and try again.")
+    sys.exit(1)
+else:
+    open(lockFileName, 'a').close()
+
 # First read in the validation log so we can see what the last fill validated was.
 logFile = open(logFileName, 'r')
 parsedLogData = json.load(logFile)
@@ -420,7 +430,7 @@ d = NameDialog(root)
 root.wait_window(d.dwin)
 userName = d.result
 
-nCompletedFills = 0
+completedFills = []
 # Now, loop over each fill and do the validation for each.
 for fillNumber in fillList:
     # This is a two-dimensional dictionary with keys: run number and lumisection number.
@@ -559,7 +569,8 @@ for fillNumber in fillList:
     root.mainloop()
 
     # We finished a fill! Now set up for the next one...
-    nCompletedFills += 1
+    completedFills.append(fillNumber)
     root = Tk()
 
 print "Validation complete. Thanks!"
+os.unlink(lockFileName)
