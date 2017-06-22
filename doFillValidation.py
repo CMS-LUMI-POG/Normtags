@@ -15,7 +15,6 @@
 # the next.
 
 # TODO:
-#  - add automatic emails to subsystem maintainers
 #  - add automatic git commit on completion
 #  - save current status so if application is unexpectedly terminated
 #    (dropped connection, etc.) the current work isn't lost
@@ -25,6 +24,10 @@ import tkMessageBox
 import os
 import csv
 import json
+import smtplib
+from email.mime.text import MIMEText
+import getpass # for username
+import socket  # for hostname
 
 # List of luminometers. The first in this list is the one that will be
 # used as the baseline reference and so should generally be BCM1F, since
@@ -39,6 +42,14 @@ datatags = {'pltzero': 'pltzero17v1',
             'hfet': 'hfet17v1',
             'bcm1f': 'bcm1f17v1',
             'hfoc': 'hfoc17v1'}
+
+# Information for automatically sending emails. First, we want to group hfet and hfoc into a single target
+# email, so this first dictionary defines that.
+emailTargets = {'pltzero': 'pltzero', 'bcm1f': 'bcm1f', 'hfet': 'hf', 'hfoc': 'hf'}
+# Second, the list of recipients for each target.
+emailRecipients = {'pltzero': ['paul.lujan@cern.ch'],
+                   'bcm1f': ['paul.lujan@cern.ch'],
+                   'hf': ['paul.lujan@cern.ch']}
 
 # Paths to various things.
 lumiValidatePath = "./lumiValidate.py"         # script for making fill validation plot
@@ -148,6 +159,8 @@ class InvalidateDialog:
         invalList.config(state=DISABLED)
         logObject = {'luminometer': l, 'beginAt': self.startAt.get(), 'endAt': self.endAt.get(), 'reason': reason}
         invalidatedLumiSections.append(logObject)
+        emailText = "fill "+str(fillNumber)+": "+l+" invalidated from "+self.startAt.get()+" to "+self.endAt.get()+"; reason: "+reason
+        emailInformation[emailTargets[l]].append(emailText)
         
         self.dwin.destroy()
         return
@@ -228,9 +241,34 @@ def exitWithoutSave():
     if len(completedFills) > 0:
         msg += " (Note: fills that you have already completed have already been saved.)"
     if tkMessageBox.askyesno("Are you sure?", msg):
+        if (len(completedFills) > 0):
+            sendEmails()
         os.unlink(lockFileName)
         sys.exit(0)
     return
+
+def sendEmails():
+    emailSender = getpass.getuser()+"@"+socket.gethostname()
+    readableFillList = ", ".join(str(f) for f in completedFills)
+    suffix = "" if len(completedFills) == 1 else "s"
+    for l in emailRecipients:
+        emailSubject = "Fill validation results for fill"+suffix+" "+readableFillList
+        emailBody = "Hello,\n\nThis is an automated email to let you know that the fill validation was performed for the following fill"+suffix+" by "+userName+":\n"
+        emailBody += readableFillList
+        if len(emailInformation[l])==0:
+            emailBody += "\n\nNo issues were reported with "+l+" for "+("this fill" if len(completedFills) == 1 else "these fills")+"."
+        else:
+            emailBody += "\n\nThe following issues were reported for "+l+":\n\n"
+            emailBody += "\n".join(emailInformation[l])
+        emailBody += "\n\nThanks,\nthe fill validation tool"
+
+        # Prep and send the email.
+        msg = MIMEText(emailBody)
+        msg['Subject'] = emailSubject
+        msg['From'] = emailSender
+        msg['To'] = ",".join(emailRecipients[l])
+        s = smtplib.SMTP('localhost')
+        s.sendmail(emailSender, emailRecipients[l], msg.as_string())
 
 # Helper routine to get the valid lumisections for a given luminometer by calling brilcalc.
 # This is an adaption of bestLumi.py which stores the output in the giant dictionary defined below.
@@ -394,6 +432,17 @@ def produceOutput():
 
 #### Main program begins here
 
+# A quick overview of the various ways we can leave the program and what happens in each case:
+# 1) User completes all the fills. In this case the automatic emails and git commit are performed
+#    after the end of the main loop.
+# 2) User completes some fills and then uses the "exit without saving" button to leave. In this case
+#    the automatic emails and git commit are performed in exitWithoutSave for the completed fills and
+#    everything is discarded for the current fill. If no fills were completed, then the email/git commit
+#    step is skipped, for obvious reasons.
+# 3) User exits the program by closing the main window, or is otherwise unexpectedly terminated (e.g.
+#    if the connection is dropped). In this case the current status is saved in the JSON save file. The
+#    emails and git commit are NOT performed until the file is picked up and finished.
+
 root = Tk()
 
 # Very first step: check to see if a lock file is in existence, indicating that someone else
@@ -435,6 +484,13 @@ userName = d.result
 
 completedFills = []
 currentFillSaved = False
+
+# Information to email the user. This goes outside the fill loop because we just want to send one
+# email (per subdetector) for all of the fills that get validated in this pass.
+emailInformation = {}
+for l in emailRecipients:
+    emailInformation[l] = []
+
 # Now, loop over each fill and do the validation for each.
 for fillNumber in fillList:
     # This is a two-dimensional dictionary with keys: run number and lumisection number.
@@ -463,9 +519,11 @@ for fillNumber in fillList:
         with open(logFileName, 'w') as jsonOutput:
             writeFormattedJSON(parsedLogData, jsonOutput, True)
 
-        # Move onto next fill.
+        # Mark as finished and move onto next fill.
+        completedFills.append(fillNumber)
         continue
 
+    # Get beam currents so we can clean stray lumisections at the end.
     print "Please wait, getting beam currents"
     os.system('brilcalc beam -f '+str(fillNumber)+' -b "STABLE BEAMS" -o temp_beam.csv')
     startBeamCurrent=-1
@@ -557,14 +615,20 @@ for fillNumber in fillList:
                     missingList.insert(END, log)
                     logObject = {'luminometer': l, 'beginAt': startSection, 'endAt': lastSection}
                     missingLumiSections.append(logObject)
+                    emailText = "fill "+str(fillNumber)+": "+l+" missing from "+startSection+" to "+lastSection
+                    emailInformation[emailTargets[l]].append(emailText)
                     luminometerPresent = 1
                 lastSection=str(r)+":"+str(ls)
-        # Check to see if we reached the end of fill without this luminometer coming back.
+        # Check to see if we reached the end of fill without this luminometer coming back. If so, go through the same
+        # drill...
         if (luminometerPresent == 0):
             log = l+" "+startSection+" to "+lastSection+"\n"
             missingList.insert(END, log)
             logObject = {'luminometer': l, 'beginAt': startSection, 'endAt': lastSection}
             missingLumiSections.append(logObject)
+            emailText = "fill "+str(fillNumber)+": "+l+" missing from "+startSection+" to "+lastSection
+            emailInformation[emailTargets[l]].append(emailText)
+
 
     # Disable missing and invalidated fields
     missingList.config(state=DISABLED)
@@ -574,7 +638,7 @@ for fillNumber in fillList:
 
     # If we made it here, then either (a) we saved the data from the fill, in which case we can
     # just happily proceed to the next one, or (b) the user closed the main window, in which case
-    # we should just treat this like having clicked the "exit without save" button.
+    # we should just exit semi-gracefully.
     if not currentFillSaved:
         print "Application closed."
         os.unlink(lockFileName)
@@ -586,4 +650,5 @@ for fillNumber in fillList:
     root = Tk()
 
 print "Validation complete. Thanks!"
+sendEmails()
 os.unlink(lockFileName)
