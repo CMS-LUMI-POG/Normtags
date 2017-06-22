@@ -43,11 +43,12 @@ datatags = {'pltzero': 'pltzero17v1',
             'hfoc': 'hfoc17v1'}
 
 # Paths to various things.
-lumiValidatePath = "/afs/cern.ch/user/c/cmsbril/public/2016normtags/lumiValidate.py"
+lumiValidatePath = "./lumiValidate.py"         # script for making fill validation plot
+getRecentFillPath = "./get_recentfill.py"      # helper script to find most recent fill
 logFileName = "./fillValidationLog.json"       # log JSON
 bestLumiFileName = "./normtag_BRIL.json"       # best lumi JSON
 lumiJSONFileNamePattern = "./normtag_%s.json"  # filename pattern for individual luminometer JSONs
-dbAuthFileName = "./db.ini"                    # authentication file for  DB
+dbAuthFileName = "./db.ini"                    # authentication file for DB
 
 #### Subroutines begin here
 
@@ -287,9 +288,8 @@ def trimEndFill():
                 return
 
             # This meets the condition for a post-beam dump LS, so go ahead and get rid of it.
-            print "Dumping "+str(r)+":"+str(ls)
             del recordedLumiSections[r][ls]
-
+    return
 
 # Unfortunately json.dump only supports two types of formatting:
 # none at all, or every single list element/dictionary on its own
@@ -404,7 +404,7 @@ for f in parsedLogData:
         lastFill = int(f['fill'])
 
 # First get the list of new fills.
-fillList = eval(os.popen("python get_recentfill.py -p "+dbAuthFileName+" -f "+str(lastFill)).read())
+fillList = eval(os.popen("python "+getRecentFillPath+" -p "+dbAuthFileName+" -f "+str(lastFill)).read())
 nfills = len(fillList)
 
 if len(fillList) == 0:
