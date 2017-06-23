@@ -69,7 +69,7 @@ class InvalidateDialog:
         self.dwin = Toplevel(parent)
         self.dwin.title('Invalidating lumisections...')
         self.titleLabel = Label(self.dwin, text='Invalidating new range')
-        self.titleLabel.grid(row=0, column=0, columnspan=2)
+        self.titleLabel.grid(row=0, column=0, columnspan=3)
         self.luminLabel = Label(self.dwin, text='Luminometer:')
         self.luminLabel.grid(row=1, column=0)
         self.selectedLumin = StringVar(self.dwin)
@@ -80,10 +80,14 @@ class InvalidateDialog:
         self.startLabel.grid(row=2, column=0)
         self.startAt = Entry(self.dwin)
         self.startAt.grid(row=2, column=1)
+        self.startBonusLabel = Label(self.dwin, text='(or -1 for start of fill)')
+        self.startBonusLabel.grid(row=2, column=2)
         self.endLabel = Label(self.dwin, text='Ending run:LS:')
         self.endLabel.grid(row=3, column=0)
         self.endAt = Entry(self.dwin)
         self.endAt.grid(row=3, column=1)
+        self.startBonusLabel = Label(self.dwin, text='(or -1 for end of fill)')
+        self.startBonusLabel.grid(row=3, column=2)
         self.reasonLabel = Label(self.dwin, text='Reason:')
         self.reasonLabel.grid(row=4, column=0)
         self.reason = Entry(self.dwin)
@@ -100,32 +104,48 @@ class InvalidateDialog:
 
     def processNewInvalidation(self):
         l = self.selectedLumin.get()
-        startRunLS = self.startAt.get().split(':')
-        endRunLS = self.endAt.get().split(':')
 
-        # Validate input
-        if (len(startRunLS) != 2):
-            tkMessageBox.showerror("Bad input", "Starting run:LS should be in the form XXXXXX:YYY")
-            return
-        if (len(endRunLS) != 2):
-            tkMessageBox.showerror("Bad input", "Ending run:LS should be in the form XXXXXX:YYY")
-            return
-        startRun = int(startRunLS[0])
-        startLS = int(startRunLS[1])
-        endRun = int(endRunLS[0])
-        endLS = int(endRunLS[1])
+        eofRunNumber = 9999999 # just use a number greater than any real run
+        startText = self.startAt.get()
+        endText = self.endAt.get()
+
+        # Get and validate input
+        if (startText == '-1'):
+            startRun = -1
+            startLS = -1
+            startText = "start of fill"
+        else:
+            startRunLS = startText.split(':')
+            if (len(startRunLS) != 2):
+                tkMessageBox.showerror("Bad input", "Starting run:LS should be in the form XXXXXX:YYY")
+                return
+            startRun = int(startRunLS[0])
+            startLS = int(startRunLS[1])
+
+        if (endText == '-1'):
+            endRun = eofRunNumber
+            endLS = 99999
+            endText = "end of fill"
+        else:
+            endRunLS = endText.split(':')
+            if (len(endRunLS) != 2):
+                tkMessageBox.showerror("Bad input", "Ending run:LS should be in the form XXXXXX:YYY")
+                return
+            endRun = int(endRunLS[0])
+            endLS = int(endRunLS[1])
+
         reason = self.reason.get()
 
-        if startRun not in recordedLumiSections:
+        if startRun != -1 and startRun not in recordedLumiSections:
             tkMessageBox.showerror("Bad input", "Start run "+str(startRun)+" not in this fill!")
             return
-        if endRun not in recordedLumiSections:
+        if endRun != eofRunNumber and endRun not in recordedLumiSections:
             tkMessageBox.showerror("Bad input", "End run "+str(endRun)+" not in this fill!")
             return
-        if startLS not in recordedLumiSections[startRun]:
+        if startRun != -1 and startLS not in recordedLumiSections[startRun]:
             tkMessageBox.showerror("Bad input", "Start LS "+str(startLS)+" not in run "+str(startRun)+"!")
             return
-        if endLS not in recordedLumiSections[endRun]:
+        if endRun != eofRunNumber and endLS not in recordedLumiSections[endRun]:
             tkMessageBox.showerror("Bad input", "End LS "+str(endLS)+" not in run "+str(endRun)+"!")
             return
         if (startRun > endRun):
@@ -153,13 +173,13 @@ class InvalidateDialog:
                     continue
                 recordedLumiSections[r][ls].remove(l)
 
-        log = l+" "+self.startAt.get()+" to "+self.endAt.get()+"; reason: "+reason+"\n"
+        log = l+" "+startText+" to "+endText+"; reason: "+reason+"\n"
         invalList.config(state=NORMAL)
         invalList.insert(END, log)
         invalList.config(state=DISABLED)
         logObject = {'luminometer': l, 'beginAt': self.startAt.get(), 'endAt': self.endAt.get(), 'reason': reason}
         invalidatedLumiSections.append(logObject)
-        emailText = "fill "+str(fillNumber)+": "+l+" invalidated from "+self.startAt.get()+" to "+self.endAt.get()+"; reason: "+reason
+        emailText = "fill "+str(fillNumber)+": "+l+" invalidated from "+startText+" to "+endText+"; reason: "+reason
         emailInformation[emailTargets[l]].append(emailText)
         
         self.dwin.destroy()
@@ -416,9 +436,11 @@ def produceOutput():
                 lastLS = ls
                 if startLS == -1:
                     startLS = ls
-        # Don't forget the end!
-        jsonRecord = [datatags[l], {str(lastRun): [[startLS, lastLS]]}]
-        parsedLumiJSONData.append(jsonRecord)
+        # Don't forget the end! HOWEVER if the detector was out for the whole fill then
+        # do forget the end.
+        if (lastRun != -1):
+            jsonRecord = [datatags[l], {str(lastRun): [[startLS, lastLS]]}]
+            parsedLumiJSONData.append(jsonRecord)
 
         with open(lumiJSONFileName, 'w') as lumiJSONFile:
             writeFormattedJSON(parsedLumiJSONData, lumiJSONFile, False)
