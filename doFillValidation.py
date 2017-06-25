@@ -16,8 +16,6 @@
 
 # TODO:
 #  - add automatic git commit on completion
-#  - save current status so if application is unexpectedly terminated
-#    (dropped connection, etc.) the current work isn't lost
 
 from Tkinter import *
 import tkMessageBox
@@ -25,6 +23,7 @@ import os
 import csv
 import json
 import smtplib
+import copy
 from email.mime.text import MIMEText
 import getpass # for username
 import socket  # for hostname
@@ -35,7 +34,7 @@ import socket  # for hostname
 luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet']
 
 # Default priority order for luminometers.
-lumiPriority = ['pltzero', 'hfet', 'bcm1f', 'hfoc']
+defaultLumiPriority = ['pltzero', 'hfet', 'bcm1f', 'hfoc']
 
 # Datatag to be used for each luminometer.
 datatags = {'pltzero': 'pltzero17v1',
@@ -59,6 +58,7 @@ bestLumiFileName = "./normtag_BRIL.json"       # best lumi JSON
 lumiJSONFileNamePattern = "./normtag_%s.json"  # filename pattern for individual luminometer JSONs
 dbAuthFileName = "./db.ini"                    # authentication file for DB
 lockFileName = "lock.doFillValidation"         # lock file name
+sessionStateFileName = "sessionRestore.doFillValidation"  # saved session state file name
 
 #### Subroutines begin here
 
@@ -159,31 +159,41 @@ class InvalidateDialog:
             return
 
         # Phew, the input is valid. Now actually invalidate these lumisections!
-        # There's probably a more clever way to do this than by checking every single LS but
-        # this is at least simple and clear.
-        for r in sorted(recordedLumiSections.keys()):
-            if (r < startRun or r > endRun):
-                continue
-            for ls in sorted(recordedLumiSections[r].keys()):
-                if (r == startRun and ls < startLS):
-                    continue
-                if (r == endRun and ls > endLS):
-                    continue
-                if not l in recordedLumiSections[r][ls]:
-                    continue
-                recordedLumiSections[r][ls].remove(l)
-
-        log = l+" "+startText+" to "+endText+"; reason: "+reason+"\n"
-        invalList.config(state=NORMAL)
-        invalList.insert(END, log)
-        invalList.config(state=DISABLED)
+        invalidateLumiSections(l, startRun, startLS, endRun, endLS, startText, endText, reason)
         logObject = {'luminometer': l, 'beginAt': self.startAt.get(), 'endAt': self.endAt.get(), 'reason': reason}
         invalidatedLumiSections.append(logObject)
-        emailText = "fill "+str(fillNumber)+": "+l+" invalidated from "+startText+" to "+endText+"; reason: "+reason
-        emailInformation[emailTargets[l]].append(emailText)
-        
+
+        savedSessionState['changes_this_fill'] = True
+        writeSessionState()
+
         self.dwin.destroy()
         return
+
+# Routine to do the actual invalidation, split off so it can be called either when the invalidation
+# is done from the dialog box or reading from a saved session. This logs it to the window and to the
+# email list but not to invalidatedLumiSections (since that's handled differently depending on what
+# case we're using).
+
+def invalidateLumiSections(l, startRun, startLS, endRun, endLS, startText, endText, reason):
+    # There's probably a more clever way to do this than by checking every single LS but
+    # this is at least simple and clear.
+    for r in sorted(recordedLumiSections.keys()):
+        if (r < startRun or r > endRun):
+            continue
+        for ls in sorted(recordedLumiSections[r].keys()):
+            if (r == startRun and ls < startLS):
+                continue
+            if (r == endRun and ls > endLS):
+                continue
+            if not l in recordedLumiSections[r][ls]:
+                continue
+            recordedLumiSections[r][ls].remove(l)
+    log = l+" "+startText+" to "+endText+"; reason: "+reason+"\n"
+    invalList.config(state=NORMAL)
+    invalList.insert(END, log)
+    invalList.config(state=DISABLED)
+    emailText = "fill "+str(fillNumber)+": "+l+" invalidated from "+startText+" to "+endText+"; reason: "+reason
+    emailInformationThisFill[emailTargets[l]].append(emailText)
 
 # Class for name entry dialog. I'm a little surprised that there isn't a standard
 # dialog type for a simple text entry, but apparently there isn't, so here we are.
@@ -254,6 +264,10 @@ def changePriority(delta):
         datatagList.insert(END, datatags[l])
     # leave the selected one selected so we can move it some more
     priorityList.selection_set(sel+delta)
+    # save this in the session state
+    savedSessionState['changes_this_fill'] = True
+    savedSessionState['lumi_priority'] = lumiPriority
+    writeSessionState()
     return
 
 def exitWithoutSave():
@@ -264,8 +278,26 @@ def exitWithoutSave():
         if (len(completedFills) > 0):
             sendEmails()
         os.unlink(lockFileName)
+        if os.path.exists(sessionStateFileName):
+            os.unlink(sessionStateFileName)
         sys.exit(0)
     return
+
+# If the general comments have been modified, save them in the session state
+def commentsModified(self):
+    savedSessionState['changes_this_fill'] = True
+    savedSessionState['general_comments'] = commentsEntry.get(1.0, END)
+    writeSessionState()
+
+# Write out the saved session state to a file. Note: only do this if there's actually
+# something in it.
+
+def writeSessionState():
+    if len(completedFills) > 0 or savedSessionState['changes_this_fill']:
+        with open(sessionStateFileName, 'w') as sessionStateFile:
+            json.dump(savedSessionState, sessionStateFile)
+
+# Send out the email information when we leave the program.
 
 def sendEmails():
     emailSender = getpass.getuser()+"@"+socket.gethostname()
@@ -446,6 +478,11 @@ def produceOutput():
             writeFormattedJSON(parsedLumiJSONData, lumiJSONFile, False)
 
     print "Finished writing output for fill "+str(fillNumber)
+
+    # 3) Copy the email information for this fill into the overall emailInformation dictionary.
+    for l in emailRecipients:
+        emailInformation[l] += emailInformationThisFill[l]
+
     # Mark this fill as finished properly so we will proceed to the next one.
     global currentFillSaved
     currentFillSaved = True
@@ -476,6 +513,33 @@ if os.path.exists(lockFileName):
 else:
     open(lockFileName, 'a').close()
 
+# Set up variables which are stored over all fills.
+# List of fills which have been completed
+completedFills = []
+# Information to email the user. This goes outside the fill loop because we just want to send one
+# email (per subdetector) for all of the fills that get validated in this pass. However, we also
+# don't want to add things to this array until the fill is completed, so that if someone makes
+# some changes to a fill which are then abandoned, that doesn't then get sent out. This makes things
+# a little more complex.
+emailInformation = {}
+for l in emailRecipients:
+    emailInformation[l] = []
+# Saved session state -- used to restore the current session if it gets interrupted for whatever reason.
+savedSessionState = {}
+readSavedSession = False
+
+# Next, check to see if a saved session file exists. If so, then read in the data from it and get started.
+if os.path.exists(sessionStateFileName):
+    tkMessageBox.showinfo("Saved session detected", "It looks like your last session was interrupted while you were working. The saved session will be resumed.")
+    with open(sessionStateFileName, 'r') as savedSessionFile:
+        savedSessionState = json.load(savedSessionFile)
+
+    # Copy the data into the variables. Some more of these we'll have to do when we start the fill loop.
+    completedFills = list(savedSessionState['completed_fills'])
+    for l in emailRecipients:
+        emailInformation[l] = list(savedSessionState['email_information'][l])
+    readSavedSession = True
+
 # First read in the validation log so we can see what the last fill validated was.
 logFile = open(logFileName, 'r')
 parsedLogData = json.load(logFile)
@@ -486,7 +550,7 @@ for f in parsedLogData:
     if int(f['fill']) > lastFill:
         lastFill = int(f['fill'])
 
-# First get the list of new fills.
+# Next, get the list of new fills.
 fillList = eval(os.popen("python "+getRecentFillPath+" -p "+dbAuthFileName+" -f "+str(lastFill)).read())
 nfills = len(fillList)
 
@@ -499,19 +563,15 @@ tkMessageBox.showinfo("Fills to validate", "It looks like there "+("is " if nfil
                       ("" if nfills == 1 else "s")+" to validate:\n"+"\n".join(str(f) for f in fillList))
 
 # Get the user's name.
-userName=""
-d = NameDialog(root)
-root.wait_window(d.dwin)
-userName = d.result
+if (readSavedSession):
+    userName = savedSessionState['user_name']
+else:
+    userName=""
+    d = NameDialog(root)
+    root.wait_window(d.dwin)
+    userName = d.result
 
-completedFills = []
 currentFillSaved = False
-
-# Information to email the user. This goes outside the fill loop because we just want to send one
-# email (per subdetector) for all of the fills that get validated in this pass.
-emailInformation = {}
-for l in emailRecipients:
-    emailInformation[l] = []
 
 # Now, loop over each fill and do the validation for each.
 for fillNumber in fillList:
@@ -524,6 +584,30 @@ for fillNumber in fillList:
     missingLumiSections = []
     # This is a dictionary like recordedLumiSections containing the beam currents.
     beamCurrents = {}
+    emailInformationThisFill = {}
+    for l in emailRecipients:
+        emailInformationThisFill[l] = []
+
+    # If we read in the saved session state, go ahead and populate various variables from that. Otherwise, just populate it afresh
+    # for the new fill.
+
+    if (readSavedSession == False):
+        # Copy the default lumi priority into the lumi priority for this fill.
+        lumiPriority = list(defaultLumiPriority)
+
+        savedSessionState = {'current_fill': fillNumber, 'user_name': userName, 'completed_fills': completedFills, 'general_comments': '', 'lumi_priority': lumiPriority,
+                             'invalidated_lumi_sections': invalidatedLumiSections, 'changes_this_fill': False, 'email_information': emailInformation}
+        writeSessionState()
+    else:
+        if (fillNumber != savedSessionState['current_fill']):
+            tkMessageBox.showerror("Bad data", "Fatal error: The fill stored in the saved session data does not match the current fill. Please consult an expert.")
+            sys.exit(1)
+        lumiPriority = list(savedSessionState['lumi_priority'])
+
+        # Copy the invalidated lumi sections appropriately. Note: we can't actually invalidate them
+        # until we create the GUI so that happens below (sorry for the confusion).
+        invalidatedLumiSections = copy.deepcopy(savedSessionState['invalidated_lumi_sections'])
+        savedSessionState['invalidated_lumi_sections'] = invalidatedLumiSections
 
     # 1) Get the list of lumi sections recorded for each luminometer and the beam currents.
 
@@ -580,7 +664,7 @@ for fillNumber in fillList:
     redispButton = Button(root, text='Redisplay validation plot', command=displayPlot)
     invalButton = Button(root, text='Invalidate lumisection(s)', command=doInvalidateDialog)
     finishNextButton = Button(root, text='Finish this fill and continue', command=produceOutput)
-    finishQuitButton = Button(root, text='Exit without saving', command=exitWithoutSave)
+    finishQuitButton = Button(root, text='Exit without finishing this fill', command=exitWithoutSave)
     redispButton.grid(row=2, column=0)
     invalButton.grid(row=3, column=0)
     finishNextButton.grid(row=4, column=0)
@@ -589,7 +673,8 @@ for fillNumber in fillList:
     commentsLabel.grid(row=6, column=0)
     commentsEntry = Text(root, width=60, height=4)
     commentsEntry.grid(row=7, column=0)
-    
+    commentsEntry.bind('<FocusOut>', commentsModified)  # write out the comments to the saved status when they're changed
+
     priorityLabel = Label(root, text='Priority')
     priorityLabel.grid(row=0, column=1)
     priorityList = Listbox(root, selectmode=SINGLE)
@@ -638,7 +723,7 @@ for fillNumber in fillList:
                     logObject = {'luminometer': l, 'beginAt': startSection, 'endAt': lastSection}
                     missingLumiSections.append(logObject)
                     emailText = "fill "+str(fillNumber)+": "+l+" missing from "+startSection+" to "+lastSection
-                    emailInformation[emailTargets[l]].append(emailText)
+                    emailInformationThisFill[emailTargets[l]].append(emailText)
                     luminometerPresent = 1
                 lastSection=str(r)+":"+str(ls)
         # Check to see if we reached the end of fill without this luminometer coming back. If so, go through the same
@@ -649,9 +734,40 @@ for fillNumber in fillList:
             logObject = {'luminometer': l, 'beginAt': startSection, 'endAt': lastSection}
             missingLumiSections.append(logObject)
             emailText = "fill "+str(fillNumber)+": "+l+" missing from "+startSection+" to "+lastSection
-            emailInformation[emailTargets[l]].append(emailText)
+            emailInformationThisFill[emailTargets[l]].append(emailText)
 
+    # 5) If we're reading in a saved session, invalidate the lumi sections (if any) that were saved.
+    # This has to come after the check for missing lumi sections because otherwise those will show
+    # up as missing, which we obviously don't want.
 
+    # Now that we've created the GUI, if we're reading in a saved session, populate the things
+    # that need to get populated.
+    if readSavedSession:
+        commentsEntry.insert(END, savedSessionState['general_comments'])
+
+        for inval in savedSessionState['invalidated_lumi_sections']:
+            startText = inval['beginAt']
+            if (startText == '-1'):
+                startRun = -1
+                startLS = -1
+                startText = "start of fill"
+            else:
+                startRunLS = startText.split(':')
+                startRun = int(startRunLS[0])
+                startLS = int(startRunLS[1])
+
+            endText = inval['endAt']
+            if (endText == '-1'):
+                endRun = eofRunNumber
+                endLS = 99999
+                endText = "end of fill"
+            else:
+                endRunLS = endText.split(':')
+                endRun = int(endRunLS[0])
+                endLS = int(endRunLS[1])
+            invalidateLumiSections(inval['luminometer'], startRun, startLS, endRun, endLS, startText, endText, inval['reason'])
+        readSavedSession = False
+            
     # Disable missing and invalidated fields
     missingList.config(state=DISABLED)
     invalList.config(state=DISABLED)
@@ -674,3 +790,5 @@ for fillNumber in fillList:
 print "Validation complete. Thanks!"
 sendEmails()
 os.unlink(lockFileName)
+if os.path.exists(sessionStateFileName):
+    os.unlink(sessionStateFileName)
