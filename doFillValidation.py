@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 # doFillValidation.py
 # Paul Lujan, June 2017
@@ -14,6 +14,12 @@
 # for the individual luminometers) with the information from the new fill and then proceed to
 # the next.
 
+import sys
+try:
+    from Tkinter import *
+except ImportError:
+    print "The Tkinter environment was not found. If you're running on cmsusr (or other\ncms online machine), please make sure that the brilconda environment is in\nyour path and try again:\nexport PATH=$HOME/.local/bin:/nfshome0/lumipro/brilconda/bin:$PATH"
+    sys.exit(1)
 from Tkinter import *
 import tkMessageBox
 import os
@@ -228,7 +234,7 @@ def doInvalidateDialog():
 
 def displayPlot():
     print "One second, creating fill summary plot..."
-    cmd = "python "+lumiValidatePath+" -f "+str(fillNumber)+" --type "+" ".join(luminometers)+" &"
+    cmd = "python "+lumiValidatePath+" -f "+str(fillNumber)+" -b \"STABLE BEAMS\" --type "+" ".join(luminometers)+" &"
     os.system(cmd)
     return
 
