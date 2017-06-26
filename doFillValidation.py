@@ -14,9 +14,6 @@
 # for the individual luminometers) with the information from the new fill and then proceed to
 # the next.
 
-# TODO:
-#  - add automatic git commit on completion
-
 from Tkinter import *
 import tkMessageBox
 import os
@@ -41,6 +38,10 @@ datatags = {'pltzero': 'pltzero17v1',
             'hfet': 'hfet17v1',
             'bcm1f': 'bcm1f17v1',
             'hfoc': 'hfoc17v1'}
+
+# Test mode: if set to True, automatic emails will be sent to the screen instead and
+# automatic git commits will not be performed.
+testMode = False
 
 # Information for automatically sending emails. First, we want to group hfet and hfoc into a single target
 # email, so this first dictionary defines that.
@@ -277,6 +278,7 @@ def exitWithoutSave():
     if tkMessageBox.askyesno("Are you sure?", msg):
         if (len(completedFills) > 0):
             sendEmails()
+            gitCommit()
         os.unlink(lockFileName)
         if os.path.exists(sessionStateFileName):
             os.unlink(sessionStateFileName)
@@ -297,6 +299,25 @@ def writeSessionState():
         with open(sessionStateFileName, 'w') as sessionStateFile:
             json.dump(savedSessionState, sessionStateFile)
 
+# Commit changes to git when we finish validation.
+
+def gitCommit():
+    msg = "Validation for fill"+("" if len(completedFills) == 1 else "s")+" "+", ".join(str(f) for f in completedFills)+" completed by "+userName
+    commitFiles = [logFileName, bestLumiFileName]
+    for l in luminometers:
+        commitFiles.append(lumiJSONFileNamePattern % l)
+    if (testMode):
+        print 'git add '+" ".join(commitFiles)
+        print 'git commit -m "'+msg+'"'
+        print 'git push'
+    else:
+        # Let's just make sure that things don't get committed by accident!
+        if tkMessageBox.askyesno("Commit files to git?", msg):
+            os.system('git add '+" ".join(commitFiles))
+            os.system('git commit -m "'+msg+'"')
+            os.system('git push')
+    return
+
 # Send out the email information when we leave the program.
 
 def sendEmails():
@@ -314,14 +335,19 @@ def sendEmails():
             emailBody += "\n".join(emailInformation[l])
         emailBody += "\n\nThanks,\nthe fill validation tool"
 
-        # Prep and send the email.
-        msg = MIMEText(emailBody)
-        msg['Subject'] = emailSubject
-        msg['From'] = emailSender
-        msg['To'] = ",".join(emailRecipients[l])
-        s = smtplib.SMTP('localhost')
-        s.sendmail(emailSender, emailRecipients[l], msg.as_string())
-
+        if (testMode):
+            print emailSubject
+            print emailBody
+        else:
+            # Prep and send the email.
+            msg = MIMEText(emailBody)
+            msg['Subject'] = emailSubject
+            msg['From'] = emailSender
+            msg['To'] = ",".join(emailRecipients[l])
+            s = smtplib.SMTP('localhost')
+            s.sendmail(emailSender, emailRecipients[l], msg.as_string())
+    return
+            
 # Helper routine to get the valid lumisections for a given luminometer by calling brilcalc.
 # This is an adaption of bestLumi.py which stores the output in the giant dictionary defined below.
 
@@ -789,6 +815,7 @@ for fillNumber in fillList:
 
 print "Validation complete. Thanks!"
 sendEmails()
+gitCommit()
 os.unlink(lockFileName)
 if os.path.exists(sessionStateFileName):
     os.unlink(sessionStateFileName)
