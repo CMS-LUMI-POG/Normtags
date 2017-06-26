@@ -318,7 +318,7 @@ def gitCommit():
         print 'git push'
     else:
         # Let's just make sure that things don't get committed by accident!
-        if tkMessageBox.askyesno("Commit files to git?", msg):
+        if tkMessageBox.askyesno("Commit?", "Do you want to commit the updated files to git?"):
             os.system('git add '+" ".join(commitFiles))
             os.system('git commit -m "'+msg+'"')
             os.system('git push')
