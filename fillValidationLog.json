@@ -2,5 +2,12 @@
 {"fill": 5730, "general_comments": "Mini-VdM scan during this fill.\n", "invalidated_lumisections": [{"beginAt": "295613:118", "endAt": "295613:177", "luminometer": "hfet", "reason": "spikes due to HF LV issues"}, {"beginAt": "295613:118", "endAt": "295613:177", "luminometer": "hfoc", "reason": "HF LV issues"}], "missing_lumisections": [{"beginAt": "295613:210", "endAt": "295613:212", "luminometer": "pltzero"}], "validated_by": "Paul Lujan"},
 {"fill": 5733, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Paul Lujan"},
 {"fill": 5735, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Paul Lujan"},
-{"fill": 5736, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Paul Lujan"}
+{"fill": 5736, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Paul Lujan"},
+{"fill": 5737, "general_comments": "test of anti-leveling at CMS\n", "invalidated_lumisections": [{"beginAt": "295977:497", "endAt": "-1", "luminometer": "bcm1f", "reason": "Strange step in BCM1F relative to other luminometers. May be a trip, but no record in elog."}], "missing_lumisections": [], "validated_by": "Paul Lujan"},
+{"fill": 5738, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Paul Lujan"},
+{"fill": 5739, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Paul Lujan"},
+{"fill": 5740, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Paul Lujan"},
+{"fill": 5742, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Paul Lujan"},
+{"fill": 5744, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Paul Lujan"},
+{"fill": 5745, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Paul Lujan"}
 ]
