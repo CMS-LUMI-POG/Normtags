@@ -18,7 +18,7 @@ import sys
 try:
     from Tkinter import *
 except ImportError:
-    print "The Tkinter environment was not found. If you're running on cmsusr (or other\ncms online machine), please make sure that the brilconda environment is in\nyour path and try again:\nexport PATH=$HOME/.local/bin:/nfshome0/lumipro/brilconda/bin:$PATH"
+    print "The Tkinter environment was not found. If you're running on cmsusr (or other\n.cms online machines), please make sure that the brilconda environment is in\nyour path and try again:\nexport PATH=$HOME/.local/bin:/nfshome0/lumipro/brilconda/bin:$PATH"
     sys.exit(1)
 from Tkinter import *
 import tkMessageBox
@@ -30,6 +30,13 @@ import copy
 from email.mime.text import MIMEText
 import getpass # for username
 import socket  # for hostname
+import subprocess
+# Check to make sure the brilcalc environment is properly set up.
+try:
+    subprocess.check_output('which brilcalc',shell=True)
+except:
+    print "brilcalc was not found. Please make sure the brilcalc environment is properly set\nup; for cmsusr or other .cms online machines:\nexport PATH=$HOME/.local/bin:/nfshome0/lumipro/brilconda/bin:$PATH"
+    sys.exit(1)
 
 # List of luminometers. The first in this list is the one that will be
 # used as the baseline reference and so should generally be BCM1F, since
