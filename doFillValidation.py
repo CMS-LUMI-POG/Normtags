@@ -44,7 +44,7 @@ except:
 luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet']
 
 # Default priority order for luminometers.
-defaultLumiPriority = ['pltzero', 'hfet', 'bcm1f', 'hfoc']
+defaultLumiPriority = ['pltzero', 'hfet', 'hfoc', 'bcm1f']
 
 # Datatag to be used for each luminometer.
 datatags = {'pltzero': 'pltzero17v1',
