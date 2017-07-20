@@ -47,10 +47,10 @@ luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet']
 defaultLumiPriority = ['pltzero', 'hfet', 'hfoc', 'bcm1f']
 
 # Datatag to be used for each luminometer.
-datatags = {'pltzero': 'pltzero17v1',
+datatags = {'pltzero': 'pltzero17v2',
             'hfet': 'hfet17v1',
             'bcm1f': 'bcm1f17v1',
-            'hfoc': 'hfoc17v1'}
+            'hfoc': 'hfoc17v2'}
 
 # Test mode: if set to True, automatic emails will be sent to the screen instead and
 # automatic git commits will not be performed.
