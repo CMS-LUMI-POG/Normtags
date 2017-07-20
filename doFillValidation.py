@@ -285,7 +285,7 @@ def changePriority(delta):
     return
 
 def exitWithoutSave():
-    msg = "Do you really want to exit without saving?"
+    msg = "Do you really want to exit without saving the current fill?"
     if len(completedFills) > 0:
         msg += " (Note: fills that you have already completed have already been saved.)"
     if tkMessageBox.askyesno("Are you sure?", msg):
@@ -547,7 +547,13 @@ root = Tk()
 # is running. If so throw an error. Otherwise, create the lock file.
 
 if os.path.exists(lockFileName):
-    tkMessageBox.showerror("In use", "It looks like someone is already running this application and it has been locked to avoid conflicts. If you want to override this, remove the lock file "+lockFileName+" and try again.")
+    with open(lockFileName, 'r') as lockFile:
+        user = lockFile.read()
+    # catch the case where this conflict happens before the username has been entered
+    if len(user) == 0:
+        user = "someone"
+
+    tkMessageBox.showerror("In use", "It looks like "+user+" is already running this application and it has been locked to avoid conflicts. If you want to override this, remove the lock file "+lockFileName+" and try again.")
     sys.exit(1)
 else:
     open(lockFileName, 'a').close()
@@ -609,6 +615,11 @@ else:
     d = NameDialog(root)
     root.wait_window(d.dwin)
     userName = d.result
+
+# Write the user's name into the lock file so we have some more useful information
+# if we have a conflict.
+with open(lockFileName, 'w') as lockFile:
+    lockFile.write(userName)
 
 currentFillSaved = False
 
