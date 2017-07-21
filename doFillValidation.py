@@ -62,7 +62,7 @@ emailTargets = {'pltzero': 'pltzero', 'bcm1f': 'bcm1f', 'hfet': 'hf', 'hfoc': 'h
 # Second, the list of recipients for each target.
 emailRecipients = {'pltzero': ['paul.lujan@cern.ch','andres.delannoy@gmail.com','andreas.kornmayer@cern.ch','joseph.noel.heideman@cern.ch'],
                    'bcm1f': ['Moritz.Guthoff@cern.ch'],
-                   'hf': ['capalmer@cern.ch','marlow@princeton.edu','alexis.kalogeropoulos@cern.ch','samuel.lloyd.higginbotham@cern.ch']}
+                   'hf': ['capalmer@cern.ch','marlow@cern.ch','alexis.kalogeropoulos@cern.ch','samuel.lloyd.higginbotham@cern.ch']}
 
 # Paths to various things.
 lumiValidatePath = "./lumiValidate.py"         # script for making fill validation plot
