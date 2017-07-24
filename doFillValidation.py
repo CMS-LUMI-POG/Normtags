@@ -457,18 +457,24 @@ def produceOutput():
     for r in sorted(recordedLumiSections.keys()):
         for ls in sorted(recordedLumiSections[r].keys()):
             # Find the highest-priority luminometer actually present for this LS.
+            selLumin = "none"
             for l in lumiPriority:
                 if l in recordedLumiSections[r][ls]:
                     selLumin = l
                     break
+            # Check if there were no valid luminometers for this LS. Maybe this should
+            # also be addded to the log file but for now just warn about it.
+            if selLumin == "none":
+                print "WARNING: No valid luminometers found for run:LS "+str(r)+":"+str(ls)
             # If we've changed the luminometer or run, start a new record and save the preceding one.
             # The last case shouldn't happen unless we have a discontinuity in ALL luminometers,
             # but we should still do the right thing in this case.
             if ((selLumin != lastLumin and lastLumin != "") or
                 (r != lastRun and lastRun != -1) or
                 (ls != lastLS + 1 and lastLS != -1)):
-                jsonRecord = [datatags[lastLumin], {str(lastRun): [[startLS, lastLS]]}]
-                parsedBestLumiData.append(jsonRecord)
+                if (lastLumin != "none"):
+                    jsonRecord = [datatags[lastLumin], {str(lastRun): [[startLS, lastLS]]}]
+                    parsedBestLumiData.append(jsonRecord)
                 startLS = ls
             lastLumin = selLumin
             lastRun = r
@@ -476,8 +482,9 @@ def produceOutput():
             if startLS == -1:
                 startLS = ls
     # Don't forget the end!
-    jsonRecord = [datatags[lastLumin], {str(lastRun): [[startLS, lastLS]]}]
-    parsedBestLumiData.append(jsonRecord)
+    if (lastLumin != "none"):
+        jsonRecord = [datatags[lastLumin], {str(lastRun): [[startLS, lastLS]]}]
+        parsedBestLumiData.append(jsonRecord)
 
     with open(bestLumiFileName, 'w') as bestLumiFile:
         writeFormattedJSON(parsedBestLumiData, bestLumiFile, False)
