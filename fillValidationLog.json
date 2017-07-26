@@ -88,5 +88,6 @@
 {"fill": 5979, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "299593:681", "endAt": "299593:681", "luminometer": "pltzero", "reason": "plt glitch"}], "missing_lumisections": [{"beginAt": "299593:56", "endAt": "299593:61", "luminometer": "hfet"}, {"beginAt": "299593:105", "endAt": "299593:110", "luminometer": "hfet"}, {"beginAt": "299593:123", "endAt": "299593:134", "luminometer": "hfet"}, {"beginAt": "299593:168", "endAt": "299593:176", "luminometer": "hfet"}], "validated_by": "David stickland"},
 {"fill": 5980, "general_comments": "perfect fill\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David Stickland"},
 {"fill": 5984, "general_comments": "perfect fill\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David Stickland"},
-{"fill": 5985, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David Stickland"}
+{"fill": 5985, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David Stickland"},
+{"fill": 5996, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Paul Lujan"}
 ]
