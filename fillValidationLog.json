@@ -94,5 +94,8 @@
 {"fill": 6005, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Andreas Kornmayer"},
 {"fill": 6006, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Andreas Kornmayer"},
 {"fill": 6008, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Andreas Kornmayer"},
-{"fill": 6009, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Andreas Kornmayer"}
+{"fill": 6009, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Andreas Kornmayer"},
+{"fill": 6012, "general_comments": "scaling adjustement in bcm1f\nbeam dump during emittance scan at end of fill\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "299996:227", "endAt": "299996:227", "luminometer": "pltzero"}, {"beginAt": "299996:288", "endAt": "299996:289", "luminometer": "pltzero"}, {"beginAt": "299996:19", "endAt": "299996:1272", "luminometer": "hfet"}], "validated_by": "Andreas Kornmayer"},
+{"fill": 6014, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Andreas Kornmayer"},
+{"fill": 6015, "general_comments": "beam dumped during emittance scan at beginning of fill\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "300007:6", "endAt": "300007:27", "luminometer": "hfet"}], "validated_by": "Andreas Kornmayer"}
 ]
