@@ -59,10 +59,14 @@ testMode = False
 # Information for automatically sending emails. First, we want to group hfet and hfoc into a single target
 # email, so this first dictionary defines that.
 emailTargets = {'pltzero': 'pltzero', 'bcm1f': 'bcm1f', 'hfet': 'hf', 'hfoc': 'hf'}
-# Second, the list of recipients for each target.
+# Second, the list of recipients for each target. 'scans' is a target for the emittance scan results
+# (this will be targeted if any emittance scans are invalidated while invalidating).
 emailRecipients = {'pltzero': ['paul.lujan@cern.ch','andres.delannoy@gmail.com','andreas.kornmayer@cern.ch','joseph.noel.heideman@cern.ch'],
                    'bcm1f': ['Moritz.Guthoff@cern.ch'],
-                   'hf': ['capalmer@cern.ch','marlow@cern.ch','alexis.kalogeropoulos@cern.ch','samuel.lloyd.higginbotham@cern.ch']}
+                   'hf': ['capalmer@cern.ch','marlow@cern.ch','alexis.kalogeropoulos@cern.ch','samuel.lloyd.higginbotham@cern.ch'],
+                   'scans': ['peter.tsrunchev@cern.ch']}
+# email recipients for overall summary email
+summaryEmailRecipients = ['david.peter.stickland@cern.ch', 'anne.evelyn.dabrowski@cern.ch'] 
 
 # Paths to various things.
 lumiValidatePath = "./lumiValidate.py"         # script for making fill validation plot
@@ -106,10 +110,13 @@ class InvalidateDialog:
         self.reasonLabel.grid(row=4, column=0)
         self.reason = Entry(self.dwin)
         self.reason.grid(row=4, column=1)
+        self.invalEmitScan = IntVar(self.dwin)
+        self.invalEmitScanButton = Checkbutton(self.dwin, text="Also invalidate the emittance scan in this fill", variable=self.invalEmitScan)
+        self.invalEmitScanButton.grid(row=5, column=0, columnspan=3)
         self.okButton = Button(self.dwin, text='OK', command=self.processNewInvalidation)
-        self.okButton.grid(row=5, column=0)
+        self.okButton.grid(row=6, column=0)
         self.cancelButton = Button(self.dwin, text='Cancel', command=self.closeInvalidateDialog)
-        self.cancelButton.grid(row=5, column=1)
+        self.cancelButton.grid(row=6, column=1)
         return
 
     def closeInvalidateDialog(self):
@@ -173,8 +180,12 @@ class InvalidateDialog:
             return
 
         # Phew, the input is valid. Now actually invalidate these lumisections!
-        invalidateLumiSections(l, startRun, startLS, endRun, endLS, startText, endText, reason)
+        invalScan = self.invalEmitScan.get()
+        invalidateLumiSections(l, startRun, startLS, endRun, endLS, startText, endText, reason, invalScan)
         logObject = {'luminometer': l, 'beginAt': self.startAt.get(), 'endAt': self.endAt.get(), 'reason': reason}
+        if (invalScan == 1):
+            logObject['invalScan'] = True
+        
         invalidatedLumiSections.append(logObject)
 
         savedSessionState['changes_this_fill'] = True
@@ -188,7 +199,7 @@ class InvalidateDialog:
 # email list but not to invalidatedLumiSections (since that's handled differently depending on what
 # case we're using).
 
-def invalidateLumiSections(l, startRun, startLS, endRun, endLS, startText, endText, reason):
+def invalidateLumiSections(l, startRun, startLS, endRun, endLS, startText, endText, reason, invalScan):
     # There's probably a more clever way to do this than by checking every single LS but
     # this is at least simple and clear.
     for r in sorted(recordedLumiSections.keys()):
@@ -208,6 +219,10 @@ def invalidateLumiSections(l, startRun, startLS, endRun, endLS, startText, endTe
     invalList.config(state=DISABLED)
     emailText = "fill "+str(fillNumber)+": "+l+" invalidated from "+startText+" to "+endText+"; reason: "+reason
     emailInformationThisFill[emailTargets[l]].append(emailText)
+    if (invalScan):
+        scanEmailText = "fill "+str(fillNumber)+": emittance scan invalidated for "+l+"; reason: "+reason
+        emailInformationThisFill['scans'].append(scanEmailText)
+    return
 
 # Class for name entry dialog. I'm a little surprised that there isn't a standard
 # dialog type for a simple text entry, but apparently there isn't, so here we are.
@@ -290,7 +305,7 @@ def exitWithoutSave():
         msg += " (Note: fills that you have already completed have already been saved.)"
     if tkMessageBox.askyesno("Are you sure?", msg):
         if (len(completedFills) > 0):
-            sendEmails()
+            makeEmails()
             gitCommit()
         os.unlink(lockFileName)
         if os.path.exists(sessionStateFileName):
@@ -331,36 +346,51 @@ def gitCommit():
             os.system('git push')
     return
 
-# Send out the email information when we leave the program.
+# Helper routine to actually do the email sending.
 
-def sendEmails():
+def sendEmail(emailSubject, emailBody, emailRecipients):
     emailSender = getpass.getuser()+"@"+socket.gethostname()
+    if (testMode):
+        print emailSubject
+        print emailBody
+    else:
+        # Prep and send the email.
+        msg = MIMEText(emailBody)
+        msg['Subject'] = emailSubject
+        msg['From'] = emailSender
+        msg['To'] = ",".join(emailRecipients)
+        s = smtplib.SMTP('localhost')
+        s.sendmail(emailSender, emailRecipients, msg.as_string())
+    return
+
+# Create the summary emails and send them out. This makes both the individual luminometer mails for the
+# individual experts and the summary mail for the managers.
+
+def makeEmails():
     readableFillList = ", ".join(str(f) for f in completedFills)
     suffix = "" if len(completedFills) == 1 else "s"
-    for l in emailRecipients:
-        emailSubject = "Fill validation results for fill"+suffix+" "+readableFillList
-        emailBody = "Hello,\n\nThis is an automated email to let you know that the fill validation was performed for the following fill"+suffix+" by "+userName+":\n"
-        emailBody += readableFillList
-        if len(emailInformation[l])==0:
-            emailBody += "\n\nNo issues were reported with "+l+" for "+("this fill" if len(completedFills) == 1 else "these fills")+"."
-        else:
-            emailBody += "\n\nThe following issues were reported for "+l+":\n\n"
-            emailBody += "\n".join(emailInformation[l])
-        emailBody += "\n\nThanks,\nthe fill validation tool"
 
-        if (testMode):
-            print emailSubject
-            print emailBody
+    emailSubject = "Fill validation results for fill"+suffix+" "+readableFillList
+    defaultEmailBody = "Hello,\n\nThis is an automated email to let you know that the fill validation was performed for the following fill"+suffix+" by "+userName+":\n"
+    defaultEmailBody += readableFillList
+    summaryEmailBody = defaultEmailBody
+
+    for l in emailRecipients:
+        emailBody = defaultEmailBody
+        if len(emailInformation[l])==0:
+            thisText = "\n\nNo issues were reported with "+l+" for "+("this fill" if len(completedFills) == 1 else "these fills")+"."
         else:
-            # Prep and send the email.
-            msg = MIMEText(emailBody)
-            msg['Subject'] = emailSubject
-            msg['From'] = emailSender
-            msg['To'] = ",".join(emailRecipients[l])
-            s = smtplib.SMTP('localhost')
-            s.sendmail(emailSender, emailRecipients[l], msg.as_string())
-    return
-            
+            thisText = "\n\nThe following issues were reported for "+l+":\n\n"
+            thisText += "\n".join(emailInformation[l])
+        emailBody +=  thisText
+        summaryEmailBody += thisText
+        emailBody += "\n\nThanks,\nthe fill validation tool"
+        sendEmail(emailSubject, emailBody, emailRecipients[l])
+
+    summaryEmailBody += "\n\nThanks,\nthe fill validation tool"
+    sendEmail(emailSubject, summaryEmailBody, summaryEmailRecipients)
+
+
 # Helper routine to get the valid lumisections for a given luminometer by calling brilcalc.
 # This is an adaption of bestLumi.py which stores the output in the giant dictionary defined below.
 
@@ -822,7 +852,10 @@ for fillNumber in fillList:
                 endRunLS = endText.split(':')
                 endRun = int(endRunLS[0])
                 endLS = int(endRunLS[1])
-            invalidateLumiSections(inval['luminometer'], startRun, startLS, endRun, endLS, startText, endText, inval['reason'])
+            invalScan = False
+            if ('invalScan' in inval and inval['invalScan']):
+                invalScan = True
+            invalidateLumiSections(inval['luminometer'], startRun, startLS, endRun, endLS, startText, endText, inval['reason'], invalScan)
         readSavedSession = False
             
     # Disable missing and invalidated fields
@@ -845,7 +878,7 @@ for fillNumber in fillList:
     root = Tk()
 
 print "Validation complete. Thanks!"
-sendEmails()
+makeEmails()
 gitCommit()
 os.unlink(lockFileName)
 if os.path.exists(sessionStateFileName):
