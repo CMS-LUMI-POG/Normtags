@@ -382,6 +382,10 @@ def makeEmails():
         else:
             thisText = "\n\nThe following issues were reported for "+l+":\n\n"
             thisText += "\n".join(emailInformation[l])
+        # Add notification for BCM1F about automatic removal of first lumisections.
+        if l == 'bcm1f':
+            thisText += "\nNote: the first lumisection of each run has been automatically invalidated for BCM1F."
+
         emailBody +=  thisText
         summaryEmailBody += thisText
         emailBody += "\n\nThanks,\nthe fill validation tool"
@@ -475,6 +479,15 @@ def produceOutput():
     parsedLogData.append(logObject)
     with open(logFileName, 'w') as jsonOutput:
         writeFormattedJSON(parsedLogData, jsonOutput, True)
+
+    # 1.5) Until the BCM1F issue causing a lower lumi at the beginning of a new run is fixed, invalidate the first
+    # lumisection in each run for bcm1f.
+
+    l = 'bcm1f'
+    for r in sorted(recordedLumiSections.keys()):
+        for ls in sorted(recordedLumiSections[r].keys()):
+            if ls == 1 and l in recordedLumiSections[r][ls]:
+                recordedLumiSections[r][ls].remove(l)
 
     # 2) Next, do bestlumi. This is the most complicated...
     with open(bestLumiFileName, 'r') as bestLumiFile:
