@@ -130,5 +130,6 @@
 {"fill": 6064, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Paul Lujan"},
 {"fill": 6065, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Paul Lujan"},
 {"fill": 6066, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Paul Lujan"},
-{"fill": 6072, "general_comments": "No issues in this fill.\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Paul Lujan"}
+{"fill": 6072, "general_comments": "No issues in this fill.\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Paul Lujan"},
+{"fill": 6073, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Nicolas Filipovic"}
 ]
