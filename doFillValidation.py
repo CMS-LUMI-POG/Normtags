@@ -220,7 +220,7 @@ def invalidateLumiSections(l, startRun, startLS, endRun, endLS, startText, endTe
     emailText = "fill "+str(fillNumber)+": "+l+" invalidated from "+startText+" to "+endText+"; reason: "+reason
     emailInformationThisFill[emailTargets[l]].append(emailText)
     if (invalScan):
-        scanEmailText = "fill "+str(fillNumber)+": emittance scan invalidated for "+l+"; reason: "+reason
+        scanEmailText = "fill "+str(fillNumber)+": emittance scan invalidated for "+l+" (invalidated region: "+startText+" to "+endText+"); reason: "+reason
         emailInformationThisFill['scans'].append(scanEmailText)
     return
 
