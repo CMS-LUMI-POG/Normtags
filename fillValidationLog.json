@@ -134,5 +134,6 @@
 {"fill": 6073, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Nicolas Filipovic"},
 {"fill": 6079, "general_comments": "No issues for this fill.\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Paul Lujan"},
 {"fill": 6082, "general_comments": "All OK with this fill\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Nicolas Filipovic"},
-{"fill": 6084, "general_comments": "a good fill with a single non-fatal bcm1f glitch\n", "invalidated_lumisections": [{"beginAt": "301161:809", "endAt": "301165:2", "luminometer": "bcm1f", "reason": "bcm1f end-of-run glitch"}], "missing_lumisections": [], "validated_by": "Nicolas Filipovic"}
+{"fill": 6084, "general_comments": "a good fill with a single non-fatal bcm1f glitch\n", "invalidated_lumisections": [{"beginAt": "301161:809", "endAt": "301165:2", "luminometer": "bcm1f", "reason": "bcm1f end-of-run glitch"}], "missing_lumisections": [], "validated_by": "Nicolas Filipovic"},
+{"fill": 6086, "general_comments": "Everything OK in this fill.\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Nicolas Filipovic"}
 ]
