@@ -158,5 +158,7 @@
 {"fill": 6116, "general_comments": "Everything looks fine, just few small (0.1% - 0.4%) pltzero spikes at 301627: 209, 463, 563 and 769.\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Oleksii Turkot"},
 {"fill": 6119, "general_comments": "About 0.8% PLT/HF ratio degradation over the fill, up to 1% noise in BCM1F after 301665: 97.\n", "invalidated_lumisections": [{"beginAt": "301665:97", "endAt": "-1", "luminometer": "bcm1f", "reason": "Significant (up to 1%) noise"}], "missing_lumisections": [{"beginAt": "301665:489", "endAt": "301665:489", "luminometer": "hfoc"}, {"beginAt": "301665:489", "endAt": "301665:489", "luminometer": "hfet"}], "validated_by": "Oleksii Turkot"},
 {"fill": 6122, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Oleksii Turkot"},
-{"fill": 6123, "general_comments": "Everything looks good.\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Oleksii Turkot"}
+{"fill": 6123, "general_comments": "Everything looks good.\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Oleksii Turkot"},
+{"fill": 6130, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Joscha Knolle"},
+{"fill": 6132, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Joscha Knolle"}
 ]
