@@ -160,5 +160,7 @@
 {"fill": 6122, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Oleksii Turkot"},
 {"fill": 6123, "general_comments": "Everything looks good.\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Oleksii Turkot"},
 {"fill": 6130, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Joscha Knolle"},
-{"fill": 6132, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Joscha Knolle"}
+{"fill": 6132, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Joscha Knolle"},
+{"fill": 6136, "general_comments": "Almost perfect.\n", "invalidated_lumisections": [{"beginAt": "301912:369", "endAt": "301912:369", "luminometer": "pltzero", "reason": "Single drop, recovered"}], "missing_lumisections": [], "validated_by": "nicko"},
+{"fill": 6138, "general_comments": "PLT was coldstarted during the fill, about 30 minutes after the invalidated LS. I cannot see this in the data, however.\n", "invalidated_lumisections": [{"beginAt": "301941:224", "endAt": "301941:224", "luminometer": "pltzero", "reason": "Small drop, recovered"}], "missing_lumisections": [], "validated_by": "nicko"}
 ]
