@@ -165,5 +165,9 @@
 {"fill": 6138, "general_comments": "PLT was coldstarted during the fill, about 30 minutes after the invalidated LS. I cannot see this in the data, however.\n", "invalidated_lumisections": [{"beginAt": "301941:224", "endAt": "301941:224", "luminometer": "pltzero", "reason": "Small drop, recovered"}], "missing_lumisections": [], "validated_by": "nicko"},
 {"fill": 6140, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "301959:295", "endAt": "301959:296", "luminometer": "pltzero", "reason": "Short step up from 8400 to 9000 hz/ub"}], "missing_lumisections": [], "validated_by": "alokhovi"},
 {"fill": 6141, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "301969:80", "endAt": "301969:81", "luminometer": "bcm1f", "reason": "End of the run 301969"}], "missing_lumisections": [], "validated_by": "alokhovi"},
-{"fill": 6142, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "301987:1092", "endAt": "301987:1094", "luminometer": "hfet", "reason": "Doesn't follow to the emittance scan"}], "missing_lumisections": [], "validated_by": "alokhovi"}
+{"fill": 6142, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "301987:1092", "endAt": "301987:1094", "luminometer": "hfet", "reason": "Doesn't follow to the emittance scan"}], "missing_lumisections": [], "validated_by": "alokhovi"},
+{"fill": 6143, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "301997:407", "endAt": "301997:408", "luminometer": "bcm1f", "reason": "End of the run step down"}], "missing_lumisections": [], "validated_by": "alokhovi"},
+{"fill": 6144, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "alokhovi"},
+{"fill": 6145, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "alokhovi"},
+{"fill": 6146, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "alokhovi"}
 ]
