@@ -176,5 +176,7 @@
 {"fill": 6152, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "ilknur"},
 {"fill": 6153, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "ilknur"},
 {"fill": 6154, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "ilknur"},
-{"fill": 6155, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "ilknur"}
+{"fill": 6155, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "ilknur"},
+{"fill": 6156, "general_comments": "Two drop in 302163 in pltzero\n", "invalidated_lumisections": [{"beginAt": "302163:637", "endAt": "302163:638", "luminometer": "pltzero", "reason": "a drop in pltzero"}, {"beginAt": "302163:842", "endAt": "302163:843", "luminometer": "pltzero", "reason": "a drop in pltzero"}], "missing_lumisections": [], "validated_by": "ilknur"},
+{"fill": 6158, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "302225:45", "endAt": "302225:350", "luminometer": "pltzero"}], "validated_by": "ilknur"}
 ]
