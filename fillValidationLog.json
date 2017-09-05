@@ -184,5 +184,6 @@
 {"fill": 6161, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David S"},
 {"fill": 6162, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David S"},
 {"fill": 6164, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David S"},
-{"fill": 6165, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "302279:32", "endAt": "302279:32", "luminometer": "pltzero", "reason": "also dead"}, {"beginAt": "302277:390", "endAt": "302279:20", "luminometer": "bcm1f", "reason": "Temperature problems"}], "missing_lumisections": [{"beginAt": "302277:394", "endAt": "302279:31", "luminometer": "pltzero"}, {"beginAt": "302279:33", "endAt": "302279:35", "luminometer": "pltzero"}], "validated_by": "David S"}
+{"fill": 6165, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "302279:32", "endAt": "302279:32", "luminometer": "pltzero", "reason": "also dead"}, {"beginAt": "302277:390", "endAt": "302279:20", "luminometer": "bcm1f", "reason": "Temperature problems"}], "missing_lumisections": [{"beginAt": "302277:394", "endAt": "302279:31", "luminometer": "pltzero"}, {"beginAt": "302279:33", "endAt": "302279:35", "luminometer": "pltzero"}], "validated_by": "David S"},
+{"fill": 6166, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Vitalii Okhotnikov"}
 ]
