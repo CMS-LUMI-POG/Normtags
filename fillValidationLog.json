@@ -198,5 +198,9 @@
 {"fill": 6177, "general_comments": "Pltzero invalidated in 302485:563-611, small (0.3%) bcm1f spikes at 302494: 301 and 352.\n", "invalidated_lumisections": [{"beginAt": "302485:563", "endAt": "302485:611", "luminometer": "pltzero", "reason": "wrong output from pltzero"}], "missing_lumisections": [], "validated_by": "Oleksii Turkot"},
 {"fill": 6179, "general_comments": "Short fill, all luminometers data seem to be fine.\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Oleksii Turkot"},
 {"fill": 6180, "general_comments": "Short fill, all luminometers data seem to be fine.\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Oleksii Turkot"},
-{"fill": 6181, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Oleksii Turkot"}
+{"fill": 6181, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Oleksii Turkot"},
+{"fill": 6182, "general_comments": "Everything looks fine.\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Oleksii Turkot"},
+{"fill": 6183, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Oleksii Turkot"},
+{"fill": 6184, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Oleksii Turkot"},
+{"fill": 6185, "general_comments": "Everything looks fine, small (0.5%) pltzero spike at 302555: 3.\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Oleksii Turkot"}
 ]
