@@ -202,5 +202,6 @@
 {"fill": 6182, "general_comments": "Everything looks fine.\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Oleksii Turkot"},
 {"fill": 6183, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Oleksii Turkot"},
 {"fill": 6184, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Oleksii Turkot"},
-{"fill": 6185, "general_comments": "Everything looks fine, small (0.5%) pltzero spike at 302555: 3.\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Oleksii Turkot"}
+{"fill": 6185, "general_comments": "Everything looks fine, small (0.5%) pltzero spike at 302555: 3.\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Oleksii Turkot"},
+{"fill": 6186, "general_comments": "Everything fine, just few small (0.1-0.4%) pltzero spikes at: 302567: 13; 302570: 48; 302571: 1; 302573: 204, 341, 586.\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Oleksii Turkot"}
 ]
