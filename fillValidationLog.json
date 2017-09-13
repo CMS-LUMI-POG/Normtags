@@ -203,5 +203,10 @@
 {"fill": 6183, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Oleksii Turkot"},
 {"fill": 6184, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Oleksii Turkot"},
 {"fill": 6185, "general_comments": "Everything looks fine, small (0.5%) pltzero spike at 302555: 3.\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Oleksii Turkot"},
-{"fill": 6186, "general_comments": "Everything fine, just few small (0.1-0.4%) pltzero spikes at: 302567: 13; 302570: 48; 302571: 1; 302573: 204, 341, 586.\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Oleksii Turkot"}
+{"fill": 6186, "general_comments": "Everything fine, just few small (0.1-0.4%) pltzero spikes at: 302567: 13; 302570: 48; 302571: 1; 302573: 204, 341, 586.\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Oleksii Turkot"},
+{"fill": 6189, "general_comments": "small spike for plt 302596:468 (~1.9%).\nUpwards trend of bcm1f vs all rest luminometers between 302596:720 to roughly 302596:900\n", "invalidated_lumisections": [{"beginAt": "302596:883", "endAt": "302596:895", "luminometer": "bcm1f", "reason": "small strep up"}, {"beginAt": "302597:261", "endAt": "302597:264", "luminometer": "pltzero", "reason": "Large spike (~7%) on plt"}], "missing_lumisections": [], "validated_by": "Alexis Kalogeropoulos"},
+{"fill": 6190, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Alexis Kalogeropoulos"},
+{"fill": 6191, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Alexis Kalogeropoulos"},
+{"fill": 6192, "general_comments": "small dip in bcm1f in 302649:11, 302651:1, 302651:156\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Alexis Kalogeropoulos"},
+{"fill": 6193, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Alexis Kalogeropoulos"}
 ]
