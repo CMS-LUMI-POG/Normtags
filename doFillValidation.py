@@ -404,7 +404,7 @@ def getValidSections(fillNumber, l):
     print "Please wait, getting valid lumisections for "+l
     tempFileName="temp_"+l+".csv"
     os.system('brilcalc lumi -f '+str(fillNumber)+' --type '+l+' -b "STABLE BEAMS" --byls -o '+tempFileName)
-    with open(tempFileName) as csv_input        reader = csv.reader(csv_input, delimiter=',')
+    with open(tempFileName) as csv_input:
         reader = csv.reader(csv_input, delimiter=',')
         lastrun=-1
         for row in reader:
