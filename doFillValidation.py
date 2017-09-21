@@ -41,16 +41,17 @@ except:
 # List of luminometers. The first in this list is the one that will be
 # used as the baseline reference and so should generally be BCM1F, since
 # that is less prone to being out.
-luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet']
+luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet', 'dt']
 
 # Default priority order for luminometers.
-defaultLumiPriority = ['pltzero', 'hfet', 'hfoc', 'bcm1f']
+defaultLumiPriority = ['pltzero', 'hfet', 'hfoc', 'bcm1f', 'dt']
 
 # Datatag to be used for each luminometer.
 datatags = {'pltzero': 'pltzero17v4',
             'hfet': 'hfet17v1',
             'bcm1f': 'bcm1f17v1',
-            'hfoc': 'hfoc17v2'}
+            'hfoc': 'hfoc17v2',
+            'dt': 'dt17v1'}
 
 # Test mode: if set to True, automatic emails will be sent to the screen instead and
 # automatic git commits will not be performed.
@@ -58,12 +59,13 @@ testMode = False
 
 # Information for automatically sending emails. First, we want to group hfet and hfoc into a single target
 # email, so this first dictionary defines that.
-emailTargets = {'pltzero': 'pltzero', 'bcm1f': 'bcm1f', 'hfet': 'hf', 'hfoc': 'hf'}
+emailTargets = {'pltzero': 'pltzero', 'bcm1f': 'bcm1f', 'hfet': 'hf', 'hfoc': 'hf', 'dt': 'dt'}
 # Second, the list of recipients for each target. 'scans' is a target for the emittance scan results
 # (this will be targeted if any emittance scans are invalidated while invalidating).
 emailRecipients = {'pltzero': ['paul.lujan@cern.ch','andres.delannoy@gmail.com','andreas.kornmayer@cern.ch','joseph.noel.heideman@cern.ch'],
                    'bcm1f': ['Moritz.Guthoff@cern.ch'],
                    'hf': ['capalmer@cern.ch','marlow@cern.ch','alexis.kalogeropoulos@cern.ch','samuel.lloyd.higginbotham@cern.ch'],
+                   'dt': ['cms-phys-conveners-lum@cern.ch'],
                    'scans': ['peter.tsrunchev@cern.ch']}
 # email recipients for overall summary email
 summaryEmailRecipients = ['david.peter.stickland@cern.ch', 'anne.evelyn.dabrowski@cern.ch'] 
@@ -382,6 +384,9 @@ def makeEmails():
         else:
             thisText = "\n\nThe following issues were reported for "+l+":\n\n"
             thisText += "\n".join(emailInformation[l])
+        # Add notification for DT about automatic removal of first lumisection.
+        if l == 'dt':
+            thisText += "\nNote: the first lumisection of each run has been automatically invalidated for DT."
 
         emailBody +=  thisText
         summaryEmailBody += thisText
@@ -399,13 +404,19 @@ def getValidSections(fillNumber, l):
     print "Please wait, getting valid lumisections for "+l
     tempFileName="temp_"+l+".csv"
     os.system('brilcalc lumi -f '+str(fillNumber)+' --type '+l+' -b "STABLE BEAMS" --byls -o '+tempFileName)
-    with open(tempFileName) as csv_input:
+    with open(tempFileName) as csv_input        reader = csv.reader(csv_input, delimiter=',')
         reader = csv.reader(csv_input, delimiter=',')
+        lastrun=-1
         for row in reader:
             if row[0][0] == '#':
                 continue
             runfill=row[0].split(':')
             run=int(runfill[0])
+            # remove first LS of run (not necessarily LS=1)
+            if (run != lastrun) and l in ['dt']:
+                print lastrun,run
+                lastrun=run
+                continue
             fill=int(runfill[1])
             lsnums=row[1].split(':')
             ls=int(lsnums[0])
