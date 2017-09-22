@@ -406,17 +406,11 @@ def getValidSections(fillNumber, l):
     os.system('brilcalc lumi -f '+str(fillNumber)+' --type '+l+' -b "STABLE BEAMS" --byls -o '+tempFileName)
     with open(tempFileName) as csv_input:
         reader = csv.reader(csv_input, delimiter=',')
-        lastrun=-1
         for row in reader:
             if row[0][0] == '#':
                 continue
             runfill=row[0].split(':')
             run=int(runfill[0])
-            # remove first LS of run (not necessarily LS=1)
-            if (run != lastrun) and l in ['dt']:
-                print lastrun,run
-                lastrun=run
-                continue
             fill=int(runfill[1])
             lsnums=row[1].split(':')
             ls=int(lsnums[0])
@@ -490,6 +484,14 @@ def produceOutput():
 
     # The issue at beginning/end of run for BCM1F has been fixed, so no need to do any automatic invalidation
     # any more. Yay!
+    
+    for r in sorted(recordedLumiSections.keys()):
+        # look for the first LS for which DT is present
+        for ls in sorted(recordedLumiSections[r].keys()):
+            if 'dt' in recordedLumiSections[r][ls]:
+                # once found, remove it
+                recordedLumiSections[r][ls].remove('dt')
+                break
 
     # 2) Next, do bestlumi. This is the most complicated...
     with open(bestLumiFileName, 'r') as bestLumiFile:
