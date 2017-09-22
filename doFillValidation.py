@@ -46,6 +46,10 @@ luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet', 'dt']
 # Default priority order for luminometers.
 defaultLumiPriority = ['pltzero', 'hfet', 'hfoc', 'bcm1f', 'dt']
 
+# "Primary" luminometers. The validation plot will only show ratios involving
+# these luminometers, so that we don't end up with too many ratios.
+primaryLuminometers = ['pltzero', 'hfet']
+
 # Datatag to be used for each luminometer.
 datatags = {'pltzero': 'pltzero17v4',
             'hfet': 'hfet17v1',
@@ -258,7 +262,8 @@ def doInvalidateDialog():
 
 def displayPlot():
     print "One second, creating fill summary plot..."
-    cmd = "python "+lumiValidatePath+" -f "+str(fillNumber)+" -b \"STABLE BEAMS\" --type "+" ".join(luminometers)+" &"
+    cmd = "python "+lumiValidatePath+" -f "+str(fillNumber)+" -b \"STABLE BEAMS\" --type "+" ".join(luminometers)
+    cmd += " --primary "+" ".join(primaryLuminometers)+" &"
     os.system(cmd)
     return
 
