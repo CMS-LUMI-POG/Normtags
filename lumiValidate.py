@@ -1,4 +1,10 @@
 #!/usr/bin/env python
+
+# A slightly modified version of the official lumiValidate.py which
+# supports the --primary option to specify primary luminometers. Only
+# ratio plots involving a primary luminometer will be shown if this
+# option is used.
+
 import logging
 import os
 import subprocess
@@ -80,7 +86,7 @@ def main():
         avglumi_plot = fig.add_subplot(rows, 1, 1)
         make_avglumi_plot(avglumi_plot, data, cols, args.run, fill)
         ratios_plot = fig.add_subplot(rows, 1, 2)
-        make_ratio_plot(ratios_plot, data, cols, args.run, fill)
+        make_ratio_plot(ratios_plot, data, cols, args.run, fill, args.primary)
 
     if args.outfile is not None:
         log.info("printing data to file %s", args.outfile)
@@ -117,6 +123,10 @@ def predefined_arg_parser():
         "-t", dest="threshold", type=float, default=0.4,
         help="values < max*threshold are not included in plots (this option"
         " applies for bunch plots (--xing) only). Default: 0.4")
+    parser.add_argument(
+        "--primary", dest="primary", metavar="type/normtag", type=str, nargs="+",
+        default=[], help="list of space-delimited primary luminometers. If specified,"
+        " only ratios to at least one primary luminometer will be shown")
     return parser
 
 
@@ -300,7 +310,7 @@ def separate_runs_on_plot(subplot, data):
         put_bg_switch = not put_bg_switch
 
 
-def calculate_ratios(data, cols):
+def calculate_ratios(data, cols, primary_luminometers):
     """Update DataFrame 'data' with ratios"""
     log.info("calculating ratios")
     # back up numpy settings and set to ignore all errors (to handle
@@ -310,6 +320,11 @@ def calculate_ratios(data, cols):
     calculated_ratios = []
     for above_idx, above in enumerate(comparables):
         for below in comparables[above_idx + 1:]:
+            # if primary luminometers set, skip all ratios not involving one of them
+            if (len(primary_luminometers) != 0 and
+                not above in primary_luminometers and
+                not below in primary_luminometers):
+                continue
             name = above + "/" + below
             data[name] = data[above]/data[below]
             calculated_ratios.append(name)
@@ -355,8 +370,8 @@ def make_avglumi_plot(plot, data, cols, run, fill):
         plot.set_title("Run {0}, Fill {1}".format(run, fill))
 
 
-def make_ratio_plot(plot, data, cols, run, fill):
-    ratios = calculate_ratios(data, cols)
+def make_ratio_plot(plot, data, cols, run, fill, primary_luminometers):
+    ratios = calculate_ratios(data, cols, primary_luminometers)
     log.info("creating ratios plot")
     plot_by_columns(plot, data, ratios)
     plot.set_title("Lumi ratios")
