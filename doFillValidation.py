@@ -736,6 +736,9 @@ for fillNumber in fillList:
 
         # Mark as finished and move onto next fill.
         completedFills.append(fillNumber)
+
+        # Also if we're reading from a saved state, there's nothing more to do for this fill, so prepare to move on.
+        readSavedSession = False
         continue
 
     # Get beam currents so we can clean stray lumisections at the end.
