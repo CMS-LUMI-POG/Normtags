@@ -295,6 +295,6 @@
 {"fill": 6337, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "305766:904", "endAt": "305766:904", "luminometer": "dt"}], "validated_by": "Chris Palmer"},
 {"fill": 6340, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Chris Palmer"},
 {"fill": 6341, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "305809:55", "endAt": "305809:55", "luminometer": "dt"}], "validated_by": "Chris Palmer"},
-{"fill": 6343, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "305814:84", "endAt": "305814:84", "luminometer": "dt"}], "validated_by": "Chris Palmer"},
+{"fill": 6343, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "305814:1839", "endAt": "305814:1914", "luminometer": "pltzero", "reason": "step down in plt"}], "missing_lumisections": [{"beginAt": "305814:84", "endAt": "305814:84", "luminometer": "dt"}], "validated_by": "Chris Palmer"},
 {"fill": 6344, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "305821:57", "endAt": "305821:57", "luminometer": "dt"}], "validated_by": "Chris Palmer"}
 ]
