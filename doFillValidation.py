@@ -656,6 +656,7 @@ for f in parsedLogData:
 
 # Next, get the list of new fills.
 fillList = eval(os.popen("python "+getRecentFillPath+" -p "+dbAuthFileName+" -f "+str(lastFill)).read())
+fillList = [6417]
 nfills = len(fillList)
 
 if len(fillList) == 0:
