@@ -1,5 +1,5 @@
-# Normtags2017
-This repository contains the scripts and files for the 2017 normtags.
+# Normtags
+This repository contains the scripts and files for generating normtags, originally introduced for the 2017 run.
 
 The fill validation tool doFillValidation.py is used for creating and updating the normtag files. For documentation on how to run this tool, please see [the Twiki page](https://twiki.cern.ch/twiki/bin/view/CMS/FillValidationTool).
 
