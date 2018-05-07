@@ -37,6 +37,12 @@ try:
 except:
     print "brilcalc was not found. Please make sure the brilcalc environment is properly set\nup; for cmsusr or other .cms online machines:\nexport PATH=$HOME/.local/bin:/nfshome0/lumipro/brilconda/bin:$PATH"
     sys.exit(1)
+# Make sure git is present.
+try:
+    subprocess.check_output('which git',shell=True)
+except:
+    print "git was not found. Please run on an online machine with git (e.g. x2go01, brildev1, etc.)"
+    sys.exit(1)
 
 # List of luminometers. The first in this list is the one that will be
 # used as the baseline reference and so should generally be BCM1F, since
