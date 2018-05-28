@@ -443,5 +443,6 @@
 {"fill": 6721, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Oleksii Turkot"},
 {"fill": 6724, "general_comments": "Everything OK in this fill.\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "316928:38", "endAt": "316928:39", "luminometer": "dt"}, {"beginAt": "316928:190", "endAt": "316928:190", "luminometer": "dt"}], "validated_by": "Oleksii Turkot"},
 {"fill": 6729, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "ameyer"},
-{"fill": 6731, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "ameyer"}
+{"fill": 6731, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "ameyer"},
+{"fill": 6733, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "316994:1", "endAt": "316994:2", "luminometer": "dt", "reason": "Small spike (20%) w.r.t others"}, {"beginAt": "316995:1", "endAt": "316995:2", "luminometer": "dt", "reason": "Spike (50%) w.r.t. others"}], "missing_lumisections": [{"beginAt": "316993:254", "endAt": "316993:265", "luminometer": "dt"}, {"beginAt": "316994:15", "endAt": "316995:1", "luminometer": "dt"}, {"beginAt": "316995:637", "endAt": "316995:637", "luminometer": "dt"}], "validated_by": "ameyer"}
 ]
