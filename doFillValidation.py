@@ -225,11 +225,17 @@ def invalidateLumiSections(l, startRun, startLS, endRun, endLS, startText, endTe
             if not l in recordedLumiSections[r][ls]:
                 continue
             recordedLumiSections[r][ls].remove(l)
-    log = l+" "+startText+" to "+endText+"; reason: "+reason+"\n"
+    log = l+" "+startText+" to "+endText
+    if invalScan:
+        log += " (including emittance scan)"
+    log += "; reason: "+reason+"\n"
     invalList.config(state=NORMAL)
     invalList.insert(END, log)
     invalList.config(state=DISABLED)
-    emailText = "fill "+str(fillNumber)+": "+l+" invalidated from "+startText+" to "+endText+"; reason: "+reason
+    emailText = "fill "+str(fillNumber)+": "+l+" invalidated from "+startText+" to "+endText
+    if invalScan:
+        emailText += " (including emittance scan)"
+    emailText += "; reason: "+reason
     emailInformationThisFill[emailTargets[l]].append(emailText)
     if (invalScan):
         scanEmailText = "fill "+str(fillNumber)+": emittance scan invalidated for "+l+" (invalidated region: "+startText+" to "+endText+"); reason: "+reason
