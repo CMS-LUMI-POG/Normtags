@@ -572,5 +572,7 @@
 {"fill": 6923, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "ameyer"},
 {"fill": 6924, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "319656:311", "endAt": "319657:1", "luminometer": "dt"}, {"beginAt": "319657:167", "endAt": "319658:1", "luminometer": "dt"}, {"beginAt": "319658:225", "endAt": "319659:1", "luminometer": "dt"}, {"beginAt": "319659:104", "endAt": "319659:104", "luminometer": "dt"}], "validated_by": "ameyer"},
 {"fill": 6925, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "ameyer"},
-{"fill": 6927, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "319687:45", "endAt": "319687:45", "luminometer": "dt"}, {"beginAt": "319687:92", "endAt": "319687:92", "luminometer": "dt"}], "validated_by": "ameyer"}
+{"fill": 6927, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "319687:45", "endAt": "319687:45", "luminometer": "dt"}, {"beginAt": "319687:92", "endAt": "319687:92", "luminometer": "dt"}], "validated_by": "ameyer"},
+{"fill": 6929, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "319697:498", "endAt": "319697:498", "luminometer": "hfet", "reason": "spike at the end of the run"}], "missing_lumisections": [{"beginAt": "319697:46", "endAt": "319697:46", "luminometer": "dt"}, {"beginAt": "319697:491", "endAt": "319697:498", "luminometer": "dt"}], "validated_by": "edy ayala"},
+{"fill": 6931, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "edy ayala"}
 ]
