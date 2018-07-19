@@ -575,5 +575,6 @@
 {"fill": 6927, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "319687:45", "endAt": "319687:45", "luminometer": "dt"}, {"beginAt": "319687:92", "endAt": "319687:92", "luminometer": "dt"}], "validated_by": "ameyer"},
 {"fill": 6929, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "319697:498", "endAt": "319697:498", "luminometer": "hfet", "reason": "spike at the end of the run"}], "missing_lumisections": [{"beginAt": "319697:46", "endAt": "319697:46", "luminometer": "dt"}, {"beginAt": "319697:491", "endAt": "319697:498", "luminometer": "dt"}], "validated_by": "edy ayala"},
 {"fill": 6931, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "edy ayala"},
-{"fill": 6938, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Edy Ayala"}
+{"fill": 6938, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Edy Ayala"},
+{"fill": 6939, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "319840:281", "endAt": "319840:285", "luminometer": "dt", "reason": "spike in dt"}], "missing_lumisections": [{"beginAt": "319840:389", "endAt": "319840:392", "luminometer": "dt"}], "validated_by": "Edy Ayala"}
 ]
