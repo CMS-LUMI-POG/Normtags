@@ -606,5 +606,6 @@
 {"fill": 6990, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Gabor Veres"},
 {"fill": 6991, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Gabor Veres"},
 {"fill": 6993, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Gabor Veres"},
-{"fill": 6995, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Gabor Veres"}
+{"fill": 6995, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Gabor Veres"},
+{"fill": 6998, "general_comments": "Only one bunch colliding, 3+3 circulating. Note that BCM1F is higher than the other luminometers by 20%. I did not invalidate it because of this. Only on run was taken. I do not see other problems.\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "320500:200", "endAt": "320500:200", "luminometer": "dt"}, {"beginAt": "320500:241", "endAt": "320500:241", "luminometer": "dt"}, {"beginAt": "320500:458", "endAt": "320500:458", "luminometer": "dt"}, {"beginAt": "320500:482", "endAt": "320500:482", "luminometer": "dt"}], "validated_by": "Gabor Veres"}
 ]
