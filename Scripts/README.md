@@ -4,6 +4,8 @@ This directory contains various scripts for working with normtags.
 
 * makeCompositeNT.py: A script that takes a set of input normtags and will build an overall normtag using the priority order specified (basically similar to how doFillValidation.py works but allowing you to change the order after the fact). Run with -h to see the options.
 
+* intersectJSONNormtag.py: A script that takes an input JSON file (first argument) and input normtag (second argument) and produces an output JSON file containing the intersection of  the two. It can be run repeatedly to get the intersection with respect to multiple normtags.
+
 * validateInputFile.py: A script to validate input data intended for loading into the lumi DB. It checks to make sure that all lines are well-formed, that there are no NaN or Inf values, and that the sum of the BX luminosity agrees (reasonably well) with the total luminosity.
 
 * compareTwoCSVsFromBRILCALC.py: Get output per BX from brilcalc using normtag filters. Probably best in bash script as follows:
