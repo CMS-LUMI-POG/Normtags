@@ -50,7 +50,7 @@ except:
 luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet', 'dt']
 
 # Default priority order for luminometers.
-defaultLumiPriority = ['pltzero', 'hfet', 'hfoc', 'bcm1f', 'dt']
+defaultLumiPriority = ['hfet', 'pltzero', 'bcm1f', 'hfoc', 'dt']
 
 # "Primary" luminometers. The validation plot will only show ratios involving
 # these luminometers, so that we don't end up with too many ratios.
@@ -58,7 +58,7 @@ primaryLuminometers = ['pltzero', 'hfet']
 
 # Datatag to be used for each luminometer.
 datatags = {'pltzero': 'pltzero18v1',
-            'hfet': 'hfet18v1',
+            'hfet': 'hfet18v1b',
             'bcm1f': 'bcm1f18v1',
             'hfoc': 'hfoc18v1',
             'dt': 'dt18v1'}
