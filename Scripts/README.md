@@ -1,6 +1,6 @@
 This directory contains various scripts for working with normtags.
 
-* validateNormtag.sh: A very simple script which validates normtag_BRIL.json by checking to make sure it produces proper output using the 2018 DCSOnly json.
+* validateNormtag.sh: A very simple script which validates normtag_BRIL.json (or whatever other normtag you specify in the argument) by checking to make sure it produces proper output using the 2018 DCSOnly json.
 
 * makeCompositeNT.py: A script that takes a set of input normtags and will build an overall normtag using the priority order specified (basically similar to how doFillValidation.py works but allowing you to change the order after the fact). Run with -h to see the options.
 

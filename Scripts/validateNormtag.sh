@@ -13,4 +13,4 @@ fi
 
 echo "Normtag file to validate: $normtag"
 
-brilcalc lumi --normtag $normtag -i /afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions18/13TeV/DCSOnly/json_DCSONLY.txt
+brilcalc lumi --normtag $normtag -i /afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions18/13TeV/DCSOnly/json_DCSONLY.txt -u /pb
