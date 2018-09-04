@@ -2,6 +2,8 @@ This directory contains various scripts for working with normtags.
 
 * validateNormtag.sh: A very simple script which validates normtag_BRIL.json (or whatever other normtag you specify in the argument) by checking to make sure it produces proper output using the 2018 DCSOnly json.
 
+* checkJSONSyntax.py: A very simple script which checks to make sure that the input file (or files) contain valid JSON. Use this if you need to manually edit a JSON file to make sure you didn't miss a comma or close-brace or otherwise introduce a problem.
+
 * makeCompositeNT.py: A script that takes a set of input normtags and will build an overall normtag using the priority order specified (basically similar to how doFillValidation.py works but allowing you to change the order after the fact). Run with -h to see the options.
 
 * intersectJSONNormtag.py: A script that takes an input JSON file (first argument) and input normtag (second argument) and produces an output JSON file containing the intersection of  the two. It can be run repeatedly to get the intersection with respect to multiple normtags.
