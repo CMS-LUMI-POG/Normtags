@@ -191,6 +191,50 @@ class InvalidateDialog:
             tkMessageBox.showerror("Bad input", "Please enter a reason for invalidating this section!")
             return
 
+        # Add the correction to DT. This is because DT is displayed with a shift of -1 LS with respect to
+        # where it actually is, so we need to remove this correction when applying the actual
+        # invalidation. Thanks to Peter for the first version of this code.
+        if l == 'dt':
+            if startRun != -1:
+                # Check to see if the next LS is still in the run.
+                if (startLS+1 in recordedLumiSections[startRun].keys()):
+                    startLS += 1
+                # If not, check to see if there is a next run and use LS 1 of that run.
+                else:
+                    lskeys = sorted(recordedLumiSections.keys())
+                    # If there is a next run, use it.
+                    if (lskeys.index(startRun) + 1 < len(lskeys)):
+                        startRun = lskeys[lskeys.index(startRun) + 1]
+                        startLS = 1
+                    else:
+                        # This was the very last lumisection. This should never be selected because
+                        # the DT data was shifted out of here. Just leave it alone in that case.
+                        pass
+                startText = str(startRun)+":"+str(startLS)
+
+            # Repeat the same for the end
+            if endRun != eofRunNumber:
+                # Check to see if the next LS is still in the run.
+                if (endLS+1 in recordedLumiSections[endRun].keys()):
+                    endLS += 1
+                # If not, check to see if there is a next run and use LS 1 of that run.
+                else:
+                    lskeys = sorted(recordedLumiSections.keys())
+                    # If there is a next run, use it.
+                    if (lskeys.index(endRun) + 1 < len(lskeys)):
+                        endRun = lskeys[lskeys.index(endRun) + 1]
+                        endLS = 1
+                    else:
+                        # This was the very last lumisection. This should never be selected because
+                        # the DT data was shifted out of here. Just leave it alone in that case.
+                        pass
+                endText = str(endRun)+":"+str(endLS)
+            # End of shift for DT data. Display the message indicating that this has happened, but only once.
+            global dtShiftMessage
+            if not dtShiftMessage:
+                tkMessageBox.showinfo("DT data shifted", "For display purposes, the DT data has been shifted by -1 LS. As a result, the true DT range to invalidate needs to be shifted by +1 LS relative to what you entered. This shift has been automatically applied so you don't need to do anything more.")
+                dtShiftMessage = True
+
         # Phew, the input is valid. Now actually invalidate these lumisections!
         invalScan = self.invalEmitScan.get()
         invalidateLumiSections(l, startRun, startLS, endRun, endLS, startText, endText, reason, invalScan)
@@ -643,6 +687,8 @@ for l in emailRecipients:
 # Saved session state -- used to restore the current session if it gets interrupted for whatever reason.
 savedSessionState = {}
 readSavedSession = False
+# Flag to keep track if we've already popped up the DT message so we don't spam the user with them.
+dtShiftMessage = False
 
 # Next, check to see if a saved session file exists. If so, then read in the data from it and get started.
 if os.path.exists(sessionStateFileName):

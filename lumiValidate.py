@@ -70,6 +70,14 @@ def main():
     else:
         data, cols, fill = get_data(args.types, args.normtags,
                                     args.run, args.fill, args.beams)
+
+        # Apply shift to dt data (if it's present). Thanks Peter for adding this code!
+        # The try is in case the dt data doesn't exist for whatever reason.
+        try:
+            data.dt = data.dt.shift(-1)
+        except:
+            pass
+
         fig.subplots_adjust(**FIGURE_ADJUSTS_TWO_FAT_ROWS)
         rows = 2
         if args.correlate is not None:
