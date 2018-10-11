@@ -729,5 +729,6 @@
 {"fill": 7266, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "324245:1527", "endAt": "324245:1687", "luminometer": "dt"}], "validated_by": "Rui Xiao"},
 {"fill": 7267, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Rui Xiao"},
 {"fill": 7270, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "324293:37", "endAt": "324293:2348", "luminometer": "dt"}], "validated_by": "Rui Xiao"},
-{"fill": 7271, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "324318:222", "endAt": "324318:222", "luminometer": "hfet", "reason": "A spike in HFET are caused by LV power supply issues in HF."}], "missing_lumisections": [{"beginAt": "324313:22", "endAt": "324318:338", "luminometer": "dt"}], "validated_by": "Rui Xiao"}
+{"fill": 7271, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "324318:222", "endAt": "324318:222", "luminometer": "hfet", "reason": "A spike in HFET are caused by LV power supply issues in HF."}], "missing_lumisections": [{"beginAt": "324313:22", "endAt": "324318:338", "luminometer": "dt"}], "validated_by": "Rui Xiao"},
+{"fill": 7274, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "324418:121", "endAt": "324420:1", "luminometer": "dt"}, {"beginAt": "324420:634", "endAt": "324420:634", "luminometer": "dt"}], "validated_by": "Rui Xiao"}
 ]
