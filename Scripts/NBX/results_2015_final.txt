@@ -1,0 +1,388 @@
+Error: for fill 4720 WBM reports 491 beam reports 492 and luminometers report 492 colliding bunches
+4720,492,491,492,492
+Mismatch in numBX hfoc run:fill 263742:4719 ls 18:18: expected 492 got 491
+Mismatch in numBX hfoc run:fill 263742:4719 ls 21:21: expected 492 got 491
+Mismatch in numBX hfoc run:fill 263742:4719 ls 22:22: expected 492 got 491
+Mismatch in numBX pltzero run:fill 263742:4719 ls 8:8: expected 492 got 491
+Mismatch in numBX pltzero run:fill 263742:4719 ls 18:18: expected 492 got 491
+Error: for fill 4719 WBM reports 490 beam reports 492 and luminometers report 492 colliding bunches
+4719,492,490,492,492
+Fill 4715 has 492 colliding bunches
+4715,492,492,492,492
+Mismatch in numBX pltzero run:fill 263685:4714 ls 101:101: expected 492 got 491
+Fill 4714 has 492 colliding bunches
+4714,492,492,492,492
+Error: for fill 4711 WBM reports 491 beam reports 492 and luminometers report 492 colliding bunches
+4711,492,491,492,492
+Mismatch in numBX pltzero run:fill 263604:4710 ls 79:79: expected 492 got 491
+Mismatch in numBX pltzero run:fill 263604:4710 ls 99:99: expected 492 got 491
+Error: for fill 4710 WBM reports 491 beam reports 492 and luminometers report 492 colliding bunches
+4710,492,491,492,492
+Mismatch in numBX pltzero run:fill 263584:4709 ls 78:78: expected 424 got 423
+Mismatch in numBX pltzero run:fill 263584:4709 ls 82:82: expected 424 got 423
+Fill 4709 has 424 colliding bunches
+4709,0,424,424,424
+Error: for fill 4706 WBM reports 422 beam reports 424 and luminometers report 424 colliding bunches
+4706,0,422,424,424
+Mismatch in numBX pltzero run:fill 263491:4705 ls 49:49: expected 32 got 30
+Fill 4705 has 32 colliding bunches
+4705,32,32,32,32
+Mismatch in numBX pltzero run:fill 263410:4699 ls 81:81: expected 424 got 423
+Fill 4699 has 424 colliding bunches
+4699,0,424,424,424
+Mismatch in numBX hfoc run:fill 263406:4698 ls 101:101: expected 424 got 3564
+Mismatch in numBX hfoc run:fill 263406:4698 ls 102:102: expected 424 got 3564
+Fill 4698 has 424 colliding bunches
+4698,0,424,424,424
+Fill 4697 has 424 colliding bunches
+4697,0,424,424,424
+Mismatch in numBX pltzero run:fill 263379:4696 ls 84:84: expected 424 got 423
+Mismatch in numBX pltzero run:fill 263379:4696 ls 88:88: expected 424 got 423
+Fill 4696 has 424 colliding bunches
+4696,0,424,424,424
+Fill 4695 has 424 colliding bunches
+4695,0,424,424,424
+Fill 4693 has 424 colliding bunches
+4693,0,424,424,424
+Mismatch in numBX pltzero run:fill 263322:4692 ls 62:62: expected 424 got 423
+Fill 4692 has 424 colliding bunches
+4692,0,424,424,424
+Fill 4691 has 424 colliding bunches
+4691,0,424,424,424
+Mismatch in numBX pltzero run:fill 263261:4690 ls 86:86: expected 400 got 389
+Mismatch in numBX pltzero run:fill 263261:4690 ls 95:95: expected 400 got 399
+Fill 4690 has 400 colliding bunches
+4690,400,400,400,400
+Mismatch in numBX pltzero run:fill 263233:4689 ls 45:45: expected 400 got 399
+Mismatch in numBX pltzero run:fill 263233:4689 ls 50:50: expected 400 got 399
+Mismatch in numBX pltzero run:fill 263233:4689 ls 60:60: expected 400 got 401
+Mismatch in numBX pltzero run:fill 263233:4689 ls 62:62: expected 400 got 399
+Fill 4689 has 400 colliding bunches
+4689,400,400,400,400
+Mismatch in numBX hfoc run:fill 263212:4688 ls 3:3: expected 400 got 399
+Mismatch in numBX hfoc run:fill 263212:4688 ls 5:5: expected 400 got 401
+Mismatch in numBX hfoc run:fill 263212:4688 ls 6:6: expected 400 got 401
+Mismatch in numBX hfoc run:fill 263212:4688 ls 11:11: expected 400 got 401
+Mismatch in numBX hfoc run:fill 263212:4688 ls 13:13: expected 400 got 401
+Mismatch in numBX hfoc run:fill 263212:4688 ls 16:16: expected 400 got 399
+Mismatch in numBX hfoc run:fill 263212:4688 ls 18:18: expected 400 got 399
+Mismatch in numBX hfoc run:fill 263212:4688 ls 19:19: expected 400 got 401
+Mismatch in numBX hfoc run:fill 263212:4688 ls 20:20: expected 400 got 399
+Mismatch in numBX hfoc run:fill 263212:4688 ls 23:23: expected 400 got 399
+Mismatch in numBX hfoc run:fill 263212:4688 ls 24:24: expected 400 got 402
+Fill 4688 has 400 colliding bunches
+4688,400,400,400,400
+Mismatch in numBX pltzero run:fill 263099:4685 ls 5:5: expected 400 got 399
+Mismatch in numBX pltzero run:fill 263099:4685 ls 7:7: expected 400 got 399
+Mismatch in numBX pltzero run:fill 263099:4685 ls 16:16: expected 400 got 398
+Mismatch in numBX pltzero run:fill 263099:4685 ls 17:17: expected 400 got 399
+Mismatch in numBX pltzero run:fill 263099:4685 ls 19:19: expected 400 got 399
+Mismatch in numBX pltzero run:fill 263099:4685 ls 25:25: expected 400 got 399
+Mismatch in numBX pltzero run:fill 263099:4685 ls 28:28: expected 400 got 399
+Fill 4685 has 400 colliding bunches
+4685,400,400,400,400
+Fill 4681 has 400 colliding bunches
+4681,400,400,400,400
+Fill 4680 has 400 colliding bunches
+4680,400,400,400,400
+Mismatch in numBX pltzero run:fill 262921:4679 ls 12:12: expected 400 got 397
+Mismatch in numBX pltzero run:fill 262921:4679 ls 14:14: expected 400 got 399
+Mismatch in numBX pltzero run:fill 262921:4679 ls 18:18: expected 400 got 399
+Mismatch in numBX pltzero run:fill 262921:4679 ls 20:20: expected 400 got 399
+Fill 4679 has 400 colliding bunches
+4679,400,400,400,400
+Mismatch in numBX pltzero run:fill 262893:4677 ls 31:31: expected 400 got 401
+Mismatch in numBX pltzero run:fill 262893:4677 ls 37:37: expected 400 got 399
+Fill 4677 has 400 colliding bunches
+4677,400,400,400,400
+Fill 4672 has 400 colliding bunches
+4672,400,400,400,400
+Fill 4671 has 400 colliding bunches
+4671,400,400,400,400
+Fill 4669 has 400 colliding bunches
+4669,400,400,400,400
+Fill 4666 has 216 colliding bunches
+4666,216,216,216,216
+Mismatch in numBX pltzero run:fill 262694:4664 ls 78:78: expected 216 got 215
+Mismatch in numBX pltzero run:fill 262694:4664 ls 81:81: expected 216 got 217
+Mismatch in numBX pltzero run:fill 262694:4664 ls 83:83: expected 216 got 214
+Mismatch in numBX pltzero run:fill 262694:4664 ls 87:87: expected 216 got 215
+Mismatch in numBX pltzero run:fill 262694:4664 ls 90:90: expected 216 got 215
+Fill 4664 has 216 colliding bunches
+4664,216,216,216,216
+Mismatch in numBX pltzero run:fill 262640:4661 ls 88:88: expected 33 got 34
+Mismatch in numBX pltzero run:fill 262640:4661 ls 107:107: expected 33 got 34
+Error: for fill 4661 WBM reports 33 beam reports 32 and luminometers report 33 colliding bunches
+4661,32,33,32,33
+Mismatch in numBX pltzero run:fill 262620:4659 ls 117:117: expected 33 got 34
+Error: for fill 4659 WBM reports 33 beam reports 32 and luminometers report 33 colliding bunches
+4659,32,33,32,33
+Mismatch in numBX pltzero run:fill 262548:4658 ls 99:99: expected 5 got 6
+Fill 4658 has 5 colliding bunches
+4658,5,5,5,5
+Fill 4647 has 1813 colliding bunches
+4647,1813,1813,1813,1813
+Fill 4643 has 1813 colliding bunches
+4643,1813,1813,1813,1813
+Mismatch in numBX hfoc run:fill 262249:4640 ls 11:11: expected 1453 got 3564
+Fill 4640 has 1453 colliding bunches
+4640,1453,1453,1453,1453
+Fill 4639 has 877 colliding bunches
+4639,877,877,877,877
+Fill 4638 has 207 colliding bunches
+4638,207,207,207,207
+Fill 4634 has 22 colliding bunches
+4634,22,22,22,22
+Fill 4569 has 2232 colliding bunches
+4569,2232,2232,2232,2232
+Fill 4565 has 2232 colliding bunches
+4565,2232,2232,2232,2232
+Fill 4562 has 2232 colliding bunches
+4562,2232,2232,2232,2232
+Fill 4560 has 2232 colliding bunches
+4560,2232,2232,2232,2232
+Fill 4557 has 2232 colliding bunches
+4557,2232,2232,2232,2232
+Fill 4555 has 589 colliding bunches
+4555,589,589,589,589
+Fill 4545 has 2232 colliding bunches
+4545,2232,2232,2232,2232
+Fill 4540 has 2232 colliding bunches
+4540,2232,2232,2232,2232
+Fill 4538 has 2029 colliding bunches
+4538,2029,2029,2029,2029
+Fill 4536 has 2029 colliding bunches
+4536,2029,2029,2029,2029
+Fill 4532 has 1813 colliding bunches
+4532,1813,1813,1813,1813
+Fill 4530 has 1813 colliding bunches
+4530,1813,1813,1813,1813
+Fill 4528 has 1813 colliding bunches
+4528,1813,1813,1813,1813
+Fill 4525 has 517 colliding bunches
+4525,517,517,517,517
+Fill 4522 has 1813 colliding bunches
+4522,1813,1813,1813,1813
+Fill 4519 has 1596 colliding bunches
+4519,1596,1596,1596,1596
+Fill 4518 has 589 colliding bunches
+4518,589,589,589,589
+Fill 4513 has 1 colliding bunches
+4513,13,1,1,1
+Fill 4511 has 671 colliding bunches
+4511,671,671,671,671
+Fill 4510 has 671 colliding bunches
+4510,671,671,671,671
+Fill 4509 has 671 colliding bunches
+4509,671,671,671,671
+Fill 4505 has 671 colliding bunches
+4505,671,671,671,671
+Mismatch in numBX hfoc run:fill 259236:4499 ls 147:147: expected 671 got 672
+Mismatch in numBX hfoc run:fill 259236:4499 ls 149:149: expected 671 got 670
+Mismatch in numBX hfoc run:fill 259236:4499 ls 155:155: expected 671 got 670
+Mismatch in numBX hfoc run:fill 259236:4499 ls 167:167: expected 671 got 672
+Fill 4499 has 671 colliding bunches
+4499,671,671,671,671
+Fill 4496 has 240 colliding bunches
+4496,240,240,240,240
+Fill 4495 has 42 colliding bunches
+4495,42,42,42,42
+Fill 4485 has 1813 colliding bunches
+4485,1813,1813,1813,1813
+Fill 4479 has 1813 colliding bunches
+4479,1813,1813,1813,1813
+Fill 4477 has 1813 colliding bunches
+4477,1813,1813,1813,1813
+Fill 4476 has 1813 colliding bunches
+4476,1813,1813,1813,1813
+Fill 4467 has 1596 colliding bunches
+4467,1596,1596,1596,1596
+Fill 4466 has 1596 colliding bunches
+4466,1596,1596,1596,1596
+Fill 4464 has 1596 colliding bunches
+4464,1596,1596,1596,1596
+Fill 4463 has 1596 colliding bunches
+4463,1596,1596,1596,1596
+Fill 4462 has 1596 colliding bunches
+4462,1596,1596,1596,1596
+Fill 4455 has 1452 colliding bunches
+4455,1452,1452,1452,1452
+Fill 4452 has 1453 colliding bunches
+4452,1453,1453,1453,1453
+Fill 4449 has 1453 colliding bunches
+4449,1453,1453,1453,1453
+Error: for fill 4448 WBM reports 1431 beam reports 1453 and luminometers report 1453 colliding bunches
+4448,1453,1431,1453,1453
+Error: for fill 4444 WBM reports 1431 beam reports 1453 and luminometers report 1453 colliding bunches
+4444,1453,1431,1453,1453
+Error: for fill 4440 WBM reports 0 beam reports 1453 and luminometers report 1453 colliding bunches
+4440,1453,0,1453,1453
+Error: for fill 4437 WBM reports 1291 beam reports 1309 and luminometers report 1309 colliding bunches
+4437,1309,1291,1309,1309
+Error: for fill 4435 WBM reports 863 beam reports 881 and luminometers report 881 colliding bunches
+4435,881,863,881,881
+Error: for fill 4434 WBM reports 863 beam reports 881 and luminometers report 881 colliding bunches
+4434,881,863,881,881
+Error: for fill 4432 WBM reports 1290 beam reports 1309 and luminometers report 1309 colliding bunches
+4432,1309,1290,1309,1309
+Error: for fill 4428 WBM reports 1290 beam reports 1309 and luminometers report 1309 colliding bunches
+4428,1309,1290,1309,1309
+Error: for fill 4426 WBM reports 1291 beam reports 1309 and luminometers report 1309 colliding bunches
+4426,1309,1291,1309,1309
+Error: for fill 4423 WBM reports 1289 beam reports 1309 and luminometers report 1309 colliding bunches
+4423,1309,1289,1309,1309
+Error: for fill 4420 WBM reports 1289 beam reports 1309 and luminometers report 1309 colliding bunches
+4420,1309,1289,1309,1309
+Error: for fill 4418 WBM reports 1289 beam reports 1309 and luminometers report 1309 colliding bunches
+4418,1309,1289,1309,1309
+Fill 4410 has 1165 colliding bunches
+4410,1165,1165,1165,1165
+Fill 4402 has 1165 colliding bunches
+4402,1165,1165,1165,1165
+Fill 4398 has 1165 colliding bunches
+4398,1165,1165,1165,1165
+Fill 4397 has 1165 colliding bunches
+4397,1165,1165,1165,1165
+Fill 4393 has 1165 colliding bunches
+4393,1165,1165,1165,1165
+Fill 4391 has 1021 colliding bunches
+4391,1021,1021,1021,1021
+Fill 4386 has 1165 colliding bunches
+4386,1165,1165,1165,1165
+Fill 4384 has 1021 colliding bunches
+4384,1021,1021,1021,1021
+Fill 4381 has 1021 colliding bunches
+4381,1021,1021,1021,1021
+Fill 4376 has 1021 colliding bunches
+4376,1021,1021,1021,1021
+Fill 4364 has 877 colliding bunches
+4364,877,877,877,877
+Fill 4363 has 733 colliding bunches
+4363,733,733,733,733
+Fill 4360 has 733 colliding bunches
+4360,733,733,733,733
+Fill 4356 has 733 colliding bunches
+4356,733,733,733,733
+Fill 4349 has 733 colliding bunches
+4349,733,733,733,733
+Fill 4342 has 733 colliding bunches
+4342,733,733,733,733
+Fill 4341 has 733 colliding bunches
+4341,733,733,733,733
+Error: for fill 4337 WBM reports 437 beam reports 447 and luminometers report 447 colliding bunches
+4337,447,437,447,447
+Fill 4332 has 447 colliding bunches
+4332,447,447,447,447
+Fill 4323 has 207 colliding bunches
+4323,207,207,207,207
+Fill 4322 has 49 colliding bunches
+4322,49,49,49,49
+Fill 4269 has 8 colliding bunches
+4269,8,8,8,8
+Fill 4268 has 8 colliding bunches
+4268,8,8,8,8
+Error: for fill 4266 WBM reports 0 beam reports 30 and luminometers report 30 colliding bunches
+4266,30,0,30,30
+Fill 4257 has 446 colliding bunches
+4257,446,446,446,446
+Fill 4256 has 446 colliding bunches
+4256,446,446,446,446
+Fill 4254 has 446 colliding bunches
+4254,446,446,446,446
+Fill 4249 has 447 colliding bunches
+4249,447,447,447,447
+Error: for fill 4246 WBM reports 328 beam reports 254 and luminometers report 254 colliding bunches
+4246,254,328,254,254
+Fill 4243 has 303 colliding bunches
+4243,303,303,303,303
+Error: for fill 4231 WBM reports 302 beam reports 303 and luminometers report 302 colliding bunches
+4231,303,302,303,302
+Error: for fill 4225 WBM reports 302 beam reports 303 and luminometers report 302 colliding bunches
+4225,303,302,303,302
+Error: for fill 4224 WBM reports 302 beam reports 303 and luminometers report 302 colliding bunches
+4224,303,302,303,302
+Error: for fill 4220 WBM reports 206 beam reports 207 and luminometers report 206 colliding bunches
+4220,207,206,207,206
+Error: for fill 4219 WBM reports 206 beam reports 207 and luminometers report 206 colliding bunches
+4219,207,206,207,206
+Error: for fill 4214 WBM reports 145 beam reports 146 and luminometers report 145 colliding bunches
+4214,146,145,146,145
+Mismatch in numBX hfoc run:fill 254358:4212 ls 205:0: expected 145 got 242
+Error: for fill 4212 WBM reports 145 beam reports 146 and luminometers report 145 colliding bunches
+4212,146,145,146,145
+Error: for fill 4211 WBM reports 149 beam reports 146 and luminometers report 146 colliding bunches
+4211,146,149,146,146
+Fill 4210 has 146 colliding bunches
+4210,146,146,146,146
+Fill 4208 has 74 colliding bunches
+4208,74,74,74,74
+Error: for fill 4207 WBM reports 75 beam reports 74 and luminometers report 74 colliding bunches
+4207,74,75,74,74
+Fill 4205 has 74 colliding bunches
+4205,74,74,74,74
+Fill 4201 has 26 colliding bunches
+4201,26,26,26,26
+Fill 4020 has 420 colliding bunches
+4020,420,420,420,420
+Fill 4019 has 420 colliding bunches
+4019,420,420,420,420
+Fill 4008 has 256 colliding bunches
+4008,254,256,256,256
+Fill 4006 has 414 colliding bunches
+4006,414,414,414,414
+Fill 4001 has 414 colliding bunches
+4001,414,414,414,414
+Fill 3996 has 414 colliding bunches
+3996,414,414,414,414
+Fill 3992 has 414 colliding bunches
+3992,414,414,414,414
+Fill 3988 has 254 colliding bunches
+3988,254,254,254,254
+Fill 3986 has 254 colliding bunches
+3986,254,254,254,254
+Fill 3983 has 254 colliding bunches
+3983,254,254,254,254
+Fill 3981 has 254 colliding bunches
+3981,254,254,254,254
+Fill 3976 has 110 colliding bunches
+3976,110,110,110,110
+Fill 3974 has 110 colliding bunches
+3974,110,110,110,110
+Fill 3971 has 110 colliding bunches
+3971,110,110,110,110
+Error: for fill 3965 WBM reports 111 beam reports 110 and luminometers report 110 colliding bunches
+3965,110,111,110,110
+Fill 3962 has 38 colliding bunches
+3962,38,38,38,38
+Fill 3960 has 2 colliding bunches
+3960,2,2,2,2
+Error: for fill 3858 WBM reports 0 beam reports 38 and luminometers report 38 colliding bunches
+3858,38,0,38,38
+Error: for fill 3857 WBM reports 0 beam reports 38 and luminometers report 38 colliding bunches
+3857,38,0,38,38
+Error: for fill 3855 WBM reports 0 beam reports 37 and luminometers report 29 colliding bunches
+3855,37,0,37,29
+Error: for fill 3851 WBM reports 0 beam reports 37 and luminometers report 37 colliding bunches
+3851,37,0,37,37
+Error: for fill 3850 WBM reports 0 beam reports 37 and luminometers report 37 colliding bunches
+3850,37,0,37,37
+Error: for fill 3848 WBM reports 0 beam reports 11 and luminometers report 11 colliding bunches
+3848,11,0,11,11
+Error: for fill 3847 WBM reports 0 beam reports 37 and luminometers report 37 colliding bunches
+3847,37,0,37,37
+Error: for fill 3846 WBM reports 0 beam reports 37 and luminometers report 37 colliding bunches
+3846,37,0,37,37
+Error: for fill 3835 WBM reports 0 beam reports 6 and luminometers report 6 colliding bunches
+3835,6,0,6,6
+Fill 3833 has 8 colliding bunches
+3833,8,8,8,8
+Mismatch in numBX hfoc run:fill 247227:3829 ls 29:0: expected 8 got 16
+Error: for fill 3829 WBM reports 0 beam reports 8 and luminometers report 8 colliding bunches
+3829,8,0,8,8
+Error: for fill 3824 WBM reports 0 beam reports 2 and luminometers report 2 colliding bunches
+3824,2,0,2,2
+Error: for fill 3820 WBM reports 0 beam reports 2 and luminometers report 2 colliding bunches
+3820,2,0,2,2
+Mismatch in numBX pltzero run:fill 246923:3819 ls 1:0: expected 2 got 3564
+Error: for fill 3819 WBM reports 0 beam reports 2 and luminometers report 2 colliding bunches
+3819,2,0,2,2
