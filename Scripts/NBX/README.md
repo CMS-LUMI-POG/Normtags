@@ -1,0 +1,46 @@
+This directory contains some more details on the number of bunches calculation. `getNBX.py` uses four sources of information used here on the total number of bunches in the fill:
+* the "target" number of bunches from WBM, which is derived from the published filling scheme
+* the "colliding" number of bunches from WBM, which is derived from the luminometer data
+* the "ncollidingbx" number from the brilcalc beam data (`brilcalc beam -f FILL`)
+* the actual number of bunches observed in the luminometers (hfoc and pltzero for 2015 and 2016)
+
+Ideally these should all agree, of course, but in practice there are some differences. The .csv files in the parent directory contain the final authoritative number (usually derived from the luminometer data). This directory contains some tools for figuring out how to get to the correct number from the starting output of `getNBX.py`.
+
+## Files
+
+* `2015FillsWBM.csv` contains all of the 2015 fill data from WBM, with the exception of two fills that have been manually removed:
+  * Fill 3599 was a very early test of the Stable Beams flag but this was well before actual beams were present or BRILDAQ was taking data, so there is no luminometer data for this fill.
+  * Fill 4717 is in WBM as a fill with Stable Beams, but there is no actual data for this fill present either in WBM or in the lumi DB. Possibly this was also a test of some sort.
+
+* `results_2015_final.txt` contains the final output from `getNBX.py`. This is after the thresholds for some fills have been manually adjusted and some discrepancies have been manually resolved. There are still some mismatches in this output caused by, for instance, HI fills where some bunches fluctuate above or below the threshold, but these mismatches are relatively uncommon. The remaining discrepancies are discussed in more detail below.
+
+* `investigateBeamDiffs.py` is a script to further investigate cases where the beam data differs from the luminometer data. It will go through the per-BX per-LS beam data and look for differences. Run it with one or more fill numbers as arguments to investigate those fills.
+
+* `investigateBXLumiDiffs.py` is a script to further investigate cases where the luminometer per-BX data disagrees between the luminometers. As above, run it with one or more fill numbers as arguments.
+
+* `postprocess2015.py` takes the final output file (`results_2015_final.txt`, unless a different file is specified), and breaks the fills down into different categories depending on whether all four inputs agree, or whether one (or more) inputs disagree with the rest.
+
+## 2015 details
+
+Here's a more detailed breakdown of the fills where we don't see perfect agreement with the four individual sources:
+
+* Fills 4212, 4214, 4219, 4220, 4224, 4225, and 4231: In these fills, due to problems with emittance blowup, BX 1 has a very low luminosity (<1% of the regular colliding bunches). Consequently it appears in the WBM target count and the beam count, but not in the WBM colliding count or the luminometer count. (Whether or not you actually want to include this bunch in your count will probably depend on your individual use case.) In all of these fills except 4219, the bunch has a low enough intensity that it doesn't appear in the per-BX beam data, either, so the count using `investigateBeamDiffs.py` is consistent with the luminometer count; in 4219 it appears at the beginning of the fill but drops below the threshold soon after.
+* Fills 4659 and 4661: These fills have the opposite issue. In the filling scheme used for these fills BX 1 has a low intensity in beam 1, so it is not counted in the WBM target count or the beam count. However, these bunches still produced significant luminosity (about half of the regular colliding bunches), so they are counted in the WBM colliding count and luminometer count. They should probably be counted as colliding bunches in these fills.
+* Fill 4706: In this fill there were apparently problems with the beam 1 intensity measurement at the beginning of the fill, so only 422 out of the 424 bunches present are correctly counted in the WBM count. These appear to be fixed mid-fill, so if you look at the per-LS per-BX beam data (with `brilcalc beam --xing -f FILL`) you can see it becomes correct. (The "ncollidingbx" count has already been fixed to include all 424 bunches.) The luminometers correctly report 424 bunches (in agreement with the filling scheme) throughout the fill.
+* Fill 3855: In this very early 2015 fill, the filling scheme and the "ncollidingbx" count both report 37 colliding bunches. However, looking at the actual beam intensity as above, there are only 29 colliding bunches, which is consistent with the luminometer count as well.
+* Fills 4008, 4513, 4691, 4692, 4693, 4695, 4696, 4697, 4698, 4699, and 4709: In these fills the "WBM target" number is incorect but the other three are consistent. In all cases this simply seems to be a case where the filling scheme was incorrectly parsed by WBM; the actual number of colliding bunches as specified in the filling scheme does agree with the actual number of colliding bunches observed.
+* Fills 3819, 3820, 3824, 3829, 3835, 3846, 3847, 3848, 3850, 3851, 3855, 3857, 3858, 4266, and 4440: In these fills the "WBM colliding" number is zero while the other three sources have the correct number (except for 3855 discussed above). This is most likely because the threshold in WBM was set too high for these fills with low luminosity, so the colliding bunches were missed. The correct count from the other three sources is used.
+* Fills 4337, 4418, 4420, 4423, 4426, 4428, 4432, 4434, 4435, 4437, 4444, 4448, 4710, 4711, 4719, and 4720: These are similar to the above but in these fills the "WBM colliding" number is only off by a few bunches relative to the other three. These are also likely due to the thresholds being slightly off and thus a few lower luminosity bunches are missed in the WBM count. Again, the count from the other three sources is used.
+* Fills 3965, 4207, 4211, and 4246: In these cases the "WBM colliding" number is high by a few bunches to the other three; in this case this is presumably due to the threshold being a little too low and thus picking up a few bunches which do not actually contain collisions (possibly due to high background rates in these bunches for whatever reason).
+
+Here's some notes on the various tweaks to `getNBX.py` required to get best results for the luminometer bunch computation:
+
+* For the 2015 PbPb fills (4658-4720), I got best results by increasing the threshold for HFOC to 0.15 and decreasing it for PLT to 0.05. There are still some fills where the number of bunches above threshold does not remain stable so you see a few mismatches in the output.
+* Fill 4689: This is the VdM scan fill during PbPb running, so for HFOC it is basically impossible to set a single threshold without either some extra bunches ending up above the threshold or some real bunches falling below the threshold. This fill has been manually excluded for HFOC in `getNBX.py`.
+* Fills 4499, 4505, 4509, 4510, and 4511: In these fills there are three noncolliding bunches (1767, 1771, and 1775) which consistently show up as producing nonnegligible luminosity (maybe the background in these bunches was high for some reason). Thus the PLT will consistently come out higher than the true count. (In HFOC you can also see BX 1767 appear sometimes in fill 4510.) These fills have been manually excluded for PLT in `getNBX.py`. Fill 4499 also has the additional difficulty that it is very low luminosity so the normal --xingTr flag doesn't work well to find bunches above threshold. Instead, try using --xingMin 0.0025.
+* Fill 4243 is affected by the same blowup issues as in 4212-4231 but not as severely. At the beginning of the fill, it's about half the luminosity of the regular bunches, but by the end, it's down to about 5%, so you need to lower the threshold a bit or otherwise it will seem to disappear.
+* Fills 4210 and 4211 are also similar to 4243: BX 1 is visible at the beginning of the fill but decays much more rapidly and disappears by the end of the fill.
+* Fills 3846, 3847, 3848, 3850, 3851, 3960, 3962, and 3965: For these fills there is no HFOC data available, so I used BCM1F as the other luminometer for comparison.
+* Fills 3848, 3960, 3962, 3965, 3971, 3974, 3976, 4322, and 4323: In these fills the PLT timing is incorrect so the two halves of the PLT are out of sync by one BX, so the luminosity from a single bunch is split into two bunches, so the bunch count from PLT will be incorrect. These fills have been manually excluded for PLT in `getNBX.py`.
+* Fills 4207, 4208, 4210, 4211, 4212, and 4214: In these fills the PLT timing is incorrect as above and the overall BX alignment is shifted (which doesn't actually affect the count of number of bunches, but makes it more difficult to identify the source of the problem). As above, these fills have been manually excluded for PLT in `getNBX.py`.
+* Fill 3992: In this fill HFOC is affected by a similar problem, in that the luminosity of a single bunch is split into two adjacent BXes in the output. This fill has been manually excluded for HFOC in `getNBX.py`.

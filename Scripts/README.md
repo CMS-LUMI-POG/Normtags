@@ -10,7 +10,7 @@ This directory contains various scripts for working with normtags.
 
 * validateInputFile.py: A script to validate input data intended for loading into the lumi DB. It checks to make sure that all lines are well-formed, that there are no NaN or Inf values, and that the sum of the BX luminosity agrees (reasonably well) with the total luminosity.
 
-* getNBX.py: A script which takes a list of fills and gets the number of colliding bunches for those fills, comparing WBM data, beam data, and luminometer data. See the script itself for further documentation. NBX_perFill_2016.csv and NBX_perFill_2017.csv contain this data for 2016 and 2017 fills.
+* getNBX.py: A script which takes a list of fills and gets the number of colliding bunches for those fills, comparing WBM data, beam data, and luminometer data. See the script itself for further documentation and the NBX/ directory for more information about the results of this script. NBX_perFill_2015.csv, NBX_perFill_2016.csv, and NBX_perFill_2017.csv contain this data for 2015, 2016, and 2017 fills.
 
 * compareTwoCSVsFromBRILCALC.py: Get output per BX from brilcalc using normtag filters. Probably best in bash script as follows:
 
