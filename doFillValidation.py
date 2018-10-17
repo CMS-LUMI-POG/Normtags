@@ -20,7 +20,6 @@ try:
 except ImportError:
     print "The Tkinter environment was not found. If you're running on cmsusr (or other\n.cms online machines), please make sure that the brilconda environment is in\nyour path and try again:\nexport PATH=$HOME/.local/bin:/nfshome0/lumipro/brilconda/bin:$PATH"
     sys.exit(1)
-from Tkinter import *
 import tkMessageBox
 import os
 import csv
@@ -231,7 +230,7 @@ class InvalidateDialog:
                 endText = str(endRun)+":"+str(endLS)
             # End of shift for DT data. Display the message indicating that this has happened, but only once.
             global dtShiftMessage
-            if not dtShiftMessage:
+            if (not dtShiftMessage) and (startRun != -1 or endRun != eofRunNumber):
                 tkMessageBox.showinfo("DT data shifted", "For display purposes, the DT data has been shifted by -1 LS. As a result, the true DT range to invalidate needs to be shifted by +1 LS relative to what you entered. This shift has been automatically applied so you don't need to do anything more.")
                 dtShiftMessage = True
 
