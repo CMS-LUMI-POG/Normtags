@@ -754,5 +754,8 @@
 {"fill": 7325, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Oliver Suranyi"},
 {"fill": 7326, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Oliver Suranyi"},
 {"fill": 7327, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Oliver Suranyi"},
-{"fill": 7328, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "325022:661", "endAt": "325022:663", "luminometer": "pltzero", "reason": "dip in PLT w.r.t other luminometers"}], "missing_lumisections": [{"beginAt": "325022:1598", "endAt": "325022:1598", "luminometer": "dt"}], "validated_by": "Oliver Suranyi"}
+{"fill": 7328, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "325022:661", "endAt": "325022:663", "luminometer": "pltzero", "reason": "dip in PLT w.r.t other luminometers"}], "missing_lumisections": [{"beginAt": "325022:1598", "endAt": "325022:1598", "luminometer": "dt"}], "validated_by": "Oliver Suranyi"},
+{"fill": 7329, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Oliver Suranyi"},
+{"fill": 7331, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Oliver Suranyi"},
+{"fill": 7332, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Oliver Suranyi"}
 ]
