@@ -1,0 +1,418 @@
+Warning: for fill 5418 number of colliding bunches = 2112 but expected 2208 from filling scheme
+Warning: for fill 5370 number of colliding bunches = 1896 but expected 1908 from filling scheme
+Warning: for fill 5205 number of colliding bunches = 1728 but expected 2208 from filling scheme
+Warning: for fill 5151 number of colliding bunches = 578 but expected 2064 from filling scheme
+Warning: for fill 5149 number of colliding bunches = 2 but expected 2064 from filling scheme
+Warning: for fill 5038 number of colliding bunches = 1884 but expected 2028 from filling scheme
+Warning: for fill 4964 number of colliding bunches = 1740 but expected 1668 from filling scheme
+Warning: for fill 4961 number of colliding bunches = 1740 but expected 1668 from filling scheme
+Warning: for fill 4960 number of colliding bunches = 1740 but expected 1668 from filling scheme
+Warning: for fill 4890 number of colliding bunches = 50 but expected 49 from filling scheme
+Fill 5456 has 5 colliding bunches
+5456,5,5,5,5
+Error: for fill 5451 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5451,2208,2208,2207,2208
+Error: for fill 5450 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5450,2208,2208,2207,2208
+Error: for fill 5448 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5448,2208,2208,2207,2208
+Error: for fill 5446 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5446,2208,2208,2207,2208
+Error: for fill 5443 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5443,2208,2208,2207,2208
+Error: for fill 5442 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5442,2208,2208,2207,2208
+Error: for fill 5441 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5441,2208,2208,2207,2208
+Error: for fill 5439 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5439,2208,2208,2207,2208
+Error: for fill 5437 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5437,2208,2208,2207,2208
+Error: for fill 5433 WBM reports 2028 beam reports 2027 and luminometers report 2028 colliding bunches
+5433,2028,2028,2027,2028
+Error: for fill 5427 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5427,2208,2208,2207,2208
+Error: for fill 5426 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5426,2208,2208,2207,2208
+Error: for fill 5424 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5424,2208,2208,2207,2208
+Error: for fill 5423 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5423,2208,2208,2207,2208
+Fill 5422 has 4 colliding bunches
+5422,4,4,4,4
+Error: for fill 5421 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5421,2208,2208,2207,2208
+Error: for fill 5418 WBM reports 2112 beam reports 2111 and luminometers report 2112 colliding bunches
+5418,2208,2112,2111,2112
+Error: for fill 5416 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5416,2208,2208,2207,2208
+Fill 5412 has 99 colliding bunches
+5412,99,99,99,99
+Error: for fill 5406 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5406,2208,2208,2207,2208
+Error: for fill 5405 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5405,2208,2208,2207,2208
+Error: for fill 5401 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5401,2208,2208,2207,2208
+Error: for fill 5395 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5395,2208,2208,2207,2208
+Error: for fill 5394 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5394,2208,2208,2207,2208
+Error: for fill 5393 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5393,2208,2208,2207,2208
+Error: for fill 5391 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5391,2208,2208,2207,2208
+Fill 5386 has 589 colliding bunches
+5386,589,589,589,589
+Fill 5385 has 9 colliding bunches
+5385,9,9,9,9
+Fill 5370 has 1896 colliding bunches
+5370,1908,1896,1896,1896
+Error: for fill 5355 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5355,2208,2208,2207,2208
+Error: for fill 5352 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5352,2208,2208,2207,2208
+Error: for fill 5351 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5351,2208,2208,2207,2208
+Error: for fill 5345 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5345,2208,2208,2207,2208
+Error: for fill 5340 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5340,2208,2208,2207,2208
+Error: for fill 5339 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5339,2208,2208,2207,2208
+Error: for fill 5338 WBM reports 1165 beam reports 1164 and luminometers report 1165 colliding bunches
+5338,1165,1165,1164,1165
+Fill 5332 has 589 colliding bunches
+5332,589,589,589,589
+Fill 5331 has 157 colliding bunches
+5331,157,157,157,157
+Fill 5330 has 3 colliding bunches
+5330,3,3,3,3
+Error: for fill 5288 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5288,2208,2208,2207,2208
+Error: for fill 5287 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5287,2208,2208,2207,2208
+Error: for fill 5282 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5282,2208,2208,2207,2208
+Error: for fill 5279 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5279,2208,2208,2207,2208
+Error: for fill 5277 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5277,2208,2208,2207,2208
+Error: for fill 5276 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5276,2208,2208,2207,2208
+Error: for fill 5275 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5275,2208,2208,2207,2208
+Error: for fill 5274 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5274,2208,2208,2207,2208
+Error: for fill 5270 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5270,2208,2208,2207,2208
+Error: for fill 5267 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5267,2208,2208,2207,2208
+Error: for fill 5266 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5266,2208,2208,2207,2208
+Error: for fill 5265 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5265,2208,2208,2207,2208
+Error: for fill 5264 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5264,2208,2208,2207,2208
+Error: for fill 5261 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5261,2208,2208,2207,2208
+Error: for fill 5258 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5258,2208,2208,2207,2208
+Error: for fill 5257 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5257,2208,2208,2207,2208
+Error: for fill 5256 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5256,2208,2208,2207,2208
+Error: for fill 5254 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5254,2208,2208,2207,2208
+Error: for fill 5253 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5253,2208,2208,2207,2208
+Error: for fill 5251 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5251,2208,2208,2207,2208
+Fill 5247 has 578 colliding bunches
+5247,578,578,578,578
+Fill 5246 has 2 colliding bunches
+5246,2,2,2,2
+Error: for fill 5229 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5229,2208,2208,2207,2208
+Error: for fill 5223 WBM reports 2028 beam reports 2027 and luminometers report 2028 colliding bunches
+5223,2028,2028,2027,2028
+Error: for fill 5222 WBM reports 2028 beam reports 2027 and luminometers report 2028 colliding bunches
+5222,2028,2028,2027,2028
+Error: for fill 5219 WBM reports 2028 beam reports 2027 and luminometers report 2028 colliding bunches
+5219,2028,2028,2027,2028
+Error: for fill 5213 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5213,2208,2208,2207,2208
+Error: for fill 5211 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5211,2208,2208,2207,2208
+Error: for fill 5210 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5210,2208,2208,2207,2208
+Error: for fill 5209 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5209,2208,2208,2207,2208
+Error: for fill 5206 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5206,2208,2208,2207,2208
+Error: for fill 5205 WBM reports 1728 beam reports 1727 and luminometers report 1728 colliding bunches
+5205,2208,1728,1727,1728
+Error: for fill 5199 WBM reports 2208 beam reports 2207 and luminometers report 2208 colliding bunches
+5199,2208,2208,2207,2208
+Error: for fill 5198 WBM reports 2160 beam reports 2159 and luminometers report 2160 colliding bunches
+5198,2160,2160,2159,2160
+Error: for fill 5197 WBM reports 2160 beam reports 2159 and luminometers report 2160 colliding bunches
+5197,2160,2160,2159,2160
+Error: for fill 5196 WBM reports 2160 beam reports 2159 and luminometers report 2160 colliding bunches
+5196,2160,2160,2159,2160
+Fill 5194 has 2 colliding bunches
+5194,2,2,2,2
+Error: for fill 5187 WBM reports 2160 beam reports 2159 and luminometers report 2160 colliding bunches
+5187,2160,2160,2159,2160
+Error: for fill 5183 WBM reports 2161 beam reports 2160 and luminometers report 2161 colliding bunches
+5183,2161,2161,2160,2161
+Fill 5181 has 2064 colliding bunches
+5181,2064,2064,2064,2064
+Fill 5179 has 2064 colliding bunches
+5179,2064,2064,2064,2064
+Fill 5173 has 2064 colliding bunches
+5173,2064,2064,2064,2064
+Fill 5170 has 2064 colliding bunches
+5170,2064,2064,2064,2064
+Fill 5169 has 2064 colliding bunches
+5169,2064,2064,2064,2064
+Fill 5163 has 2064 colliding bunches
+5163,2064,2064,2064,2064
+Fill 5162 has 2064 colliding bunches
+5162,2064,2064,2064,2064
+Fill 5161 has 2064 colliding bunches
+5161,2064,2064,2064,2064
+Fill 5154 has 2064 colliding bunches
+5154,2064,2064,2064,2064
+Fill 5151 has 578 colliding bunches
+5151,2064,578,578,578
+Fill 5149 has 2 colliding bunches
+5149,2064,2,2,2
+Fill 5117 has 2064 colliding bunches
+5117,2064,2064,2064,2064
+Fill 5116 has 2064 colliding bunches
+5116,2064,2064,2064,2064
+Fill 5112 has 2064 colliding bunches
+5112,2064,2064,2064,2064
+Fill 5111 has 2064 colliding bunches
+5111,2064,2064,2064,2064
+Fill 5110 has 2064 colliding bunches
+5110,2064,2064,2064,2064
+Fill 5109 has 2064 colliding bunches
+5109,2064,2064,2064,2064
+Fill 5108 has 2064 colliding bunches
+5108,2064,2064,2064,2064
+Fill 5107 has 2064 colliding bunches
+5107,2064,2064,2064,2064
+Fill 5106 has 2064 colliding bunches
+5106,2064,2064,2064,2064
+Fill 5105 has 2064 colliding bunches
+5105,2064,2064,2064,2064
+Fill 5102 has 2064 colliding bunches
+5102,2064,2064,2064,2064
+Fill 5101 has 2064 colliding bunches
+5101,2064,2064,2064,2064
+Fill 5097 has 2064 colliding bunches
+5097,2064,2064,2064,2064
+Fill 5096 has 2064 colliding bunches
+5096,2064,2064,2064,2064
+Fill 5095 has 2064 colliding bunches
+5095,2064,2064,2064,2064
+Fill 5093 has 2064 colliding bunches
+5093,2064,2064,2064,2064
+Fill 5091 has 2064 colliding bunches
+5091,2064,2064,2064,2064
+Fill 5085 has 2064 colliding bunches
+5085,2064,2064,2064,2064
+Fill 5083 has 2064 colliding bunches
+5083,2064,2064,2064,2064
+Fill 5080 has 2064 colliding bunches
+5080,2064,2064,2064,2064
+Fill 5078 has 2064 colliding bunches
+5078,2064,2064,2064,2064
+Fill 5076 has 2064 colliding bunches
+5076,2064,2064,2064,2064
+Fill 5073 has 2064 colliding bunches
+5073,2064,2064,2064,2064
+Fill 5072 has 2064 colliding bunches
+5072,2064,2064,2064,2064
+Fill 5071 has 2064 colliding bunches
+5071,2064,2064,2064,2064
+Fill 5069 has 2064 colliding bunches
+5069,2064,2064,2064,2064
+Fill 5068 has 2064 colliding bunches
+5068,2064,2064,2064,2064
+Fill 5060 has 2064 colliding bunches
+5060,2064,2064,2064,2064
+Fill 5059 has 2064 colliding bunches
+5059,2064,2064,2064,2064
+Fill 5056 has 2064 colliding bunches
+5056,2064,2064,2064,2064
+Fill 5052 has 2064 colliding bunches
+5052,2064,2064,2064,2064
+Fill 5048 has 2064 colliding bunches
+5048,2064,2064,2064,2064
+Fill 5045 has 2064 colliding bunches
+5045,2064,2064,2064,2064
+Fill 5043 has 2064 colliding bunches
+5043,2064,2064,2064,2064
+Error: for fill 5038 WBM reports 1884 beam reports 1883 and luminometers report 1884 colliding bunches
+5038,2028,1884,1883,1884
+Error: for fill 5030 WBM reports 2028 beam reports 2027 and luminometers report 2028 colliding bunches
+5030,2028,2028,2027,2028
+Error: for fill 5029 WBM reports 2028 beam reports 2027 and luminometers report 2028 colliding bunches
+5029,2028,2028,2027,2028
+Error: for fill 5028 WBM reports 2028 beam reports 2027 and luminometers report 2028 colliding bunches
+5028,2028,2028,2027,2028
+Mismatch in numBX pltzero run:fill 275338:5027 ls 5:5: expected 2028 got 3250
+Mismatch in numBX pltzero run:fill 275338:5027 ls 9:9: expected 2028 got 2558
+Error: for fill 5027 WBM reports 2028 beam reports 2027 and luminometers report 2028 colliding bunches
+5027,2028,2028,2027,2028
+Error: for fill 5026 WBM reports 2028 beam reports 2027 and luminometers report 2028 colliding bunches
+5026,2028,2028,2027,2028
+Error: for fill 5024 WBM reports 2028 beam reports 2027 and luminometers report 2028 colliding bunches
+5024,2028,2028,2027,2028
+Error: for fill 5021 WBM reports 2028 beam reports 2027 and luminometers report 2028 colliding bunches
+5021,2028,2028,2027,2028
+Error: for fill 5020 WBM reports 2028 beam reports 2027 and luminometers report 2028 colliding bunches
+5020,2028,2028,2027,2028
+Error: for fill 5017 WBM reports 2028 beam reports 2027 and luminometers report 2028 colliding bunches
+5017,2028,2028,2027,2028
+Error: for fill 5013 WBM reports 2028 beam reports 2027 and luminometers report 2028 colliding bunches
+5013,2028,2028,2027,2028
+Error: for fill 5005 WBM reports 590 beam reports 589 and luminometers report 590 colliding bunches
+5005,590,590,589,590
+Error: for fill 4990 WBM reports 2028 beam reports 2027 and luminometers report 2028 colliding bunches
+4990,2028,2028,2027,2028
+Error: for fill 4988 WBM reports 2028 beam reports 2027 and luminometers report 2028 colliding bunches
+4988,2028,2028,2027,2028
+Error: for fill 4985 WBM reports 2028 beam reports 2027 and luminometers report 2028 colliding bunches
+4985,2028,2028,2027,2028
+Error: for fill 4984 WBM reports 2028 beam reports 2027 and luminometers report 2028 colliding bunches
+4984,2028,2028,2027,2028
+Error: for fill 4980 WBM reports 2028 beam reports 2027 and luminometers report 2028 colliding bunches
+4980,2028,2028,2027,2028
+Error: for fill 4979 WBM reports 2028 beam reports 2027 and luminometers report 2028 colliding bunches
+4979,2028,2028,2027,2028
+Error: for fill 4976 WBM reports 1812 beam reports 1811 and luminometers report 1812 colliding bunches
+4976,1812,1812,1811,1812
+Mismatch in numBX pltzero run:fill 274251:4965 ls 56:56: expected 1812 got 3562
+Error: for fill 4965 WBM reports 1812 beam reports 1811 and luminometers report 1812 colliding bunches
+4965,1812,1812,1811,1812
+Error: for fill 4964 WBM reports 1740 beam reports 1739 and luminometers report 1740 colliding bunches
+4964,1668,1740,1739,1740
+Error: for fill 4961 WBM reports 1740 beam reports 1739 and luminometers report 1740 colliding bunches
+4961,1668,1740,1739,1740
+Error: for fill 4960 WBM reports 1740 beam reports 1739 and luminometers report 1740 colliding bunches
+4960,1668,1740,1739,1740
+Error: for fill 4958 WBM reports 1453 beam reports 1452 and luminometers report 1453 colliding bunches
+4958,1453,1453,1452,1453
+Mismatch in numBX pltzero run:fill 274146:4956 ls 76:0: expected 1165 got 3564
+Mismatch in numBX pltzero run:fill 274146:4956 ls 77:0: expected 1165 got 3564
+Mismatch in numBX pltzero run:fill 274146:4956 ls 78:0: expected 1165 got 3564
+Mismatch in numBX pltzero run:fill 274147:4956 ls 1:1: expected 1165 got 3564
+Mismatch in numBX pltzero run:fill 274147:4956 ls 2:2: expected 1165 got 3564
+Error: for fill 4956 WBM reports 1165 beam reports 1164 and luminometers report 1165 colliding bunches
+4956,1165,1165,1164,1165
+Fill 4954 has 32 colliding bunches
+4954,32,32,32,32
+Error: for fill 4953 WBM reports 589 beam reports 588 and luminometers report 589 colliding bunches
+4953,589,589,588,589
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2081:2081: expected 1165 got 1178
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2083:2083: expected 1165 got 1157
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2085:2085: expected 1165 got 1169
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2086:2086: expected 1165 got 1153
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2088:2088: expected 1165 got 1172
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2089:2089: expected 1165 got 1166
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2090:2090: expected 1165 got 1173
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2091:2091: expected 1165 got 1177
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2093:2093: expected 1165 got 1164
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2094:2094: expected 1165 got 1164
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2095:2095: expected 1165 got 1175
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2096:2096: expected 1165 got 1171
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2097:2097: expected 1165 got 1178
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2098:2098: expected 1165 got 1178
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2099:2099: expected 1165 got 1169
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2100:2100: expected 1165 got 1179
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2106:2106: expected 1165 got 1167
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2111:2111: expected 1165 got 1178
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2112:2112: expected 1165 got 1168
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2116:2116: expected 1165 got 1166
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2130:2130: expected 1165 got 1168
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2131:2131: expected 1165 got 1179
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2132:2132: expected 1165 got 1167
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2133:2133: expected 1165 got 1167
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2145:2145: expected 1165 got 1172
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2146:2146: expected 1165 got 1172
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2147:2147: expected 1165 got 1170
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2156:2156: expected 1165 got 1167
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2160:2160: expected 1165 got 1179
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2163:2163: expected 1165 got 1167
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2167:2167: expected 1165 got 1173
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2168:2168: expected 1165 got 1172
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2169:2169: expected 1165 got 1179
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2171:2171: expected 1165 got 1171
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2172:2172: expected 1165 got 1168
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2173:2173: expected 1165 got 1171
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2174:2174: expected 1165 got 1166
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2175:2175: expected 1165 got 1174
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2178:2178: expected 1165 got 1164
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2179:2179: expected 1165 got 1167
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2187:2187: expected 1165 got 1176
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2190:2190: expected 1165 got 1178
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2192:2192: expected 1165 got 1171
+Mismatch in numBX hfoc run:fill 273725:4947 ls 2522:2522: expected 1165 got 1167
+Error: for fill 4947 WBM reports 1165 beam reports 1164 and luminometers report 1165 colliding bunches
+4947,1165,1165,1164,1165
+Mismatch in numBX hfoc run:fill 273592:4945 ls 185:0: expected 32 got 24
+Fill 4945 has 32 colliding bunches
+4945,32,32,32,32
+Error: for fill 4942 WBM reports 1165 beam reports 1164 and luminometers report 1165 colliding bunches
+4942,1165,1165,1164,1165
+Fill 4937 has 11 colliding bunches
+4937,11,11,11,11
+Error: for fill 4935 WBM reports 877 beam reports 876 and luminometers report 877 colliding bunches
+4935,877,877,876,877
+Mismatch in numBX hfoc run:fill 273493:4930 ls 237:0: expected 877 got 890
+Error: for fill 4930 WBM reports 877 beam reports 876 and luminometers report 877 colliding bunches
+4930,877,877,876,877
+Error: for fill 4926 WBM reports 877 beam reports 876 and luminometers report 877 colliding bunches
+4926,877,877,876,877
+Error: for fill 4925 WBM reports 589 beam reports 588 and luminometers report 589 colliding bunches
+4925,589,589,588,589
+Error: for fill 4924 WBM reports 589 beam reports 588 and luminometers report 589 colliding bunches
+4924,589,589,588,589
+Error: for fill 4919 WBM reports 589 beam reports 588 and luminometers report 589 colliding bunches
+4919,589,589,588,589
+Error: for fill 4915 WBM reports 589 beam reports 588 and luminometers report 589 colliding bunches
+4915,589,589,588,589
+Fill 4910 has 301 colliding bunches
+4910,301,301,301,301
+Fill 4906 has 301 colliding bunches
+4906,301,301,301,301
+Fill 4905 has 301 colliding bunches
+4905,301,301,301,301
+Fill 4896 has 301 colliding bunches
+4896,301,301,301,301
+Fill 4895 has 301 colliding bunches
+4895,301,301,301,301
+Fill 4892 has 74 colliding bunches
+4892,74,74,74,74
+Error: for fill 4890 WBM reports 50 beam reports 50 and luminometers report 49 colliding bunches
+4890,49,50,50,49
+Fill 4889 has 49 colliding bunches
+4889,49,49,49,49
+Fill 4888 has 2 colliding bunches
+4888,2,2,2,2
+Fill 4879 has 49 colliding bunches
+4879,49,49,49,49
+Fill 4874 has 8 colliding bunches
+4874,8,8,8,8
+Fill 4861 has 8 colliding bunches
+4861,8,8,8,8
+Fill 4856 has 8 colliding bunches
+4856,8,8,8,8
+Fill 4852 has 2 colliding bunches
+4852,2,2,2,2
+Fill 4851 has 2 colliding bunches
+4851,2,2,2,2

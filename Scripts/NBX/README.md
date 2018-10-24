@@ -12,13 +12,17 @@ Ideally these should all agree, of course, but in practice there are some differ
   * Fill 3599 was a very early test of the Stable Beams flag but this was well before actual beams were present or BRILDAQ was taking data, so there is no luminometer data for this fill.
   * Fill 4717 is in WBM as a fill with Stable Beams, but there is no actual data for this fill present either in WBM or in the lumi DB. Possibly this was also a test of some sort.
 
-* `results_2015_final.txt` contains the final output from `getNBX.py`. This is after the thresholds for some fills have been manually adjusted and some discrepancies have been manually resolved. There are still some mismatches in this output caused by, for instance, HI fills where some bunches fluctuate above or below the threshold, but these mismatches are relatively uncommon. The remaining discrepancies are discussed in more detail below.
+* `results_2015_final.txt` contains the final output from `getNBX.py`. This is after the thresholds for some fills have been manually adjusted and some discrepancies have been manually resolved. There are still some mismatches in this output caused by, for instance, HI fills where some bunches fluctuate above or below the threshold, but these mismatches are relatively uncommon. The remaining discrepancies are discussed in more detail below. The file contains one line for each fill, of the format:
+fill number,WBM target bunches,WBM colliding bunches,beam bunches,luminometer bunches
+as well as various informational and error messages; if you just want the output data, you can grep for lines containing ",".
 
 * `investigateBeamDiffs.py` is a script to further investigate cases where the beam data differs from the luminometer data. It will go through the per-BX per-LS beam data and look for differences. Run it with one or more fill numbers as arguments to investigate those fills.
 
 * `investigateBXLumiDiffs.py` is a script to further investigate cases where the luminometer per-BX data disagrees between the luminometers. As above, run it with one or more fill numbers as arguments.
 
 * `postprocess2015.py` takes the final output file (`results_2015_final.txt`, unless a different file is specified), and breaks the fills down into different categories depending on whether all four inputs agree, or whether one (or more) inputs disagree with the rest.
+
+* `2016FillsWBM.csv`, `results_2016_final.txt`, and `postprocess2016.py` are the 2016 versions of the above files. Note that `postprocess2016.py` also has the functionality to look for fills which have been affected by the bug in TCDS which causes the number from the beam data to be off by one.
 
 ## 2015 details
 
@@ -45,3 +49,15 @@ Here's some notes on the various tweaks to `getNBX.py` required to get best resu
 * Fills 4207, 4208, 4210, 4211, 4212, and 4214: In these fills the PLT timing is incorrect as above and the overall BX alignment is shifted (which doesn't actually affect the count of number of bunches, but makes it more difficult to identify the source of the problem). As above, these fills have been manually excluded for PLT in `getNBX.py`.
 * Fill 3992: In this fill HFOC is affected by a similar problem, in that the luminosity of a single bunch is split into two adjacent BXes in the output. This fill has been manually excluded for HFOC in `getNBX.py`.
 * Fills 3846 and 3847: These are possibly the most difficult fills of all. These are very early 2015 fills with very low luminosity. HFOC data is not available at all for these fills, and PLT has the problem that the background spillover into the next BX is of the same magnitude as the actual luminosity. The BCM1F data is usable, but because of the very low luminosity, even colliding bunches can have zero luminosity for an entire LS. As a result, instead of using the normal method of determining filled BXes, I added an alternate method to `getNBX.py` which combines a number of lumisections and looks for any bunches which report luminosity in this time. This gives a filled bunch pattern which agrees with the nominal filling scheme. This mode can be activated using the `veryLowFills` option in `getNBX.py`.
+
+## 2016 details
+
+The 2016 data is (thankfully) much cleaner than the 2015 data, but there are still a few fills which show disagreement:
+
+* Fill 4890: This fill includes 49 regular colliding bunch but also one pilot bunch (BX 969). This bunch has a little less than 10% the intensity of a regular bunch and so less than 1% of the luminosity of a regular bunch. As a result, it is not counted in the WBM target count or the luminometer count, but it does appear in the WBM colliding count and the beam count. Whether or not you want to count this bunch probably depends on your application.
+* Fills 5149 and 5151: In these fills the filling scheme listed in WBM is incorrect, so the target number of bunches in WBM is naturally also incorrect. The correct filling scheme agrees with the number of bunches actually observed in these fills.
+* Fills 4960, 4961, 4964, and 5370: In these fills the WBM target number appears to have parsed the filling scheme incorrectly, as the number of bunches specified in the filling scheme does not agree with the WBM target number. The number of bunches in the filling scheme does agree with the observed number of bunches, so it's just the WBM target number which is in error.
+* Fills 5038, 5205, and 5418: In these fills the number of colliding bunches is less than the number of bunches specified in the filling scheme. This is because the fill for beam 2 could not be completed because the heat limits of the LHC were reached.
+* A large number of fills are affected by a bug in TCDS which causes the beam data to show one fewer colliding bunch than actually present. Here's the full list: 4915, 4919, 4924, 4925, 4926, 4930, 4935, 4942, 4947, 4953, 4956, 4958, 4960, 4961, 4964, 4965, 4976, 4979, 4980, 4984, 4985, 4988, 4990, 5005, 5013, 5017, 5020, 5021, 5024, 5026, 5027, 5028, 5029, 5030, 5038, 5183, 5187, 5196, 5197, 5198, 5199, 5205, 5206, 5209, 5210, 5211, 5213, 5219, 5222, 5223, 5229, 5251, 5253, 5254, 5256, 5257, 5258, 5261, 5264, 5265, 5266, 5267, 5270, 5274, 5275, 5276, 5277, 5279, 5282, 5287, 5288, 5338, 5339, 5340, 5345, 5351, 5352, 5355, 5391, 5393, 5394, 5395, 5401, 5405, 5406, 5416, 5418, 5421, 5423, 5424, 5426, 5427, 5433, 5437, 5439, 5441, 5442, 5443, 5446, 5448, 5450, 5451.
+
+The 2016 data also requires less tweaking of thresholds in `getNBX.py` than the 2015 data, but for early fills (less than 5000 or so) it is recommended that you raise the threshold for hfoc to 0.3 or so for best results.
