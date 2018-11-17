@@ -864,5 +864,7 @@
 {"fill": 7444, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "326722:37", "endAt": "326722:1173", "luminometer": "dt"}], "validated_by": "YusufCan"},
 {"fill": 7445, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "YusufCan"},
 {"fill": 7446, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "-1", "endAt": "-1", "luminometer": "hfet", "reason": "Bad Data"}, {"beginAt": "-1", "endAt": "-1", "luminometer": "dt", "reason": "Bad Data"}], "missing_lumisections": [{"beginAt": "326776:38", "endAt": "326776:1174", "luminometer": "dt"}], "validated_by": "YusufCan"},
-{"fill": 7447, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "326784:32", "endAt": "326784:41", "luminometer": "dt"}], "validated_by": "YusufCan"}
+{"fill": 7447, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "326784:32", "endAt": "326784:41", "luminometer": "dt"}], "validated_by": "YusufCan"},
+{"fill": 7448, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "326790:41", "endAt": "326791:620", "luminometer": "dt"}], "validated_by": "Rui Xiao"},
+{"fill": 7449, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "326815:23", "endAt": "326815:1163", "luminometer": "dt"}], "validated_by": "Rui Xiao"}
 ]
