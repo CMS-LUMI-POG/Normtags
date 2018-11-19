@@ -869,5 +869,6 @@
 {"fill": 7449, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "326815:23", "endAt": "326815:1163", "luminometer": "dt"}], "validated_by": "Rui Xiao"},
 {"fill": 7450, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "326822:44", "endAt": "326822:1176", "luminometer": "dt"}], "validated_by": "Rui Xiao"},
 {"fill": 7451, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Rui Xiao"},
-{"fill": 7452, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Rui Xiao"}
+{"fill": 7452, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Rui Xiao"},
+{"fill": 7453, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "326855:561", "endAt": "326856:1", "luminometer": "hfoc", "reason": "spike"}], "missing_lumisections": [{"beginAt": "326854:54", "endAt": "326859:276", "luminometer": "dt"}], "validated_by": "Vitalii Okhotnikov"}
 ]
