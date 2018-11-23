@@ -882,5 +882,6 @@
 {"fill": 7462, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Cheng-Chieh Peng"},
 {"fill": 7463, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Cheng-Chieh Peng"},
 {"fill": 7464, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "327077:129", "endAt": "327078:1", "luminometer": "dt"}], "validated_by": "Cheng-Chieh Peng"},
-{"fill": 7465, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Cheng-Chieh Peng"}
+{"fill": 7465, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Cheng-Chieh Peng"},
+{"fill": 7466, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "327123:279", "endAt": "327124:1", "luminometer": "dt"}, {"beginAt": "327124:3", "endAt": "327124:10", "luminometer": "dt"}, {"beginAt": "327125:296", "endAt": "327126:1", "luminometer": "dt"}, {"beginAt": "327126:737", "endAt": "327126:737", "luminometer": "dt"}], "validated_by": "Vitalii Okhotnikov"}
 ]
