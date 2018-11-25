@@ -887,5 +887,6 @@
 {"fill": 7467, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "327146:30", "endAt": "327147:1", "luminometer": "dt"}, {"beginAt": "327147:319", "endAt": "327147:322", "luminometer": "dt"}], "validated_by": "Vitalii Okhotnikov"},
 {"fill": 7468, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "-1", "endAt": "-1", "luminometer": "hfet", "reason": "huge spikes at pltzero/hfet and hfoc/hfet"}], "missing_lumisections": [{"beginAt": "327173:257", "endAt": "327174:1", "luminometer": "dt"}, {"beginAt": "327174:1297", "endAt": "327174:1297", "luminometer": "dt"}], "validated_by": "Vitalii Okhotnikov"},
 {"fill": 7469, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Vitalii Okhotnikov"},
-{"fill": 7470, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Vitalii Okhotnikov"}
+{"fill": 7470, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Vitalii Okhotnikov"},
+{"fill": 7471, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "-1", "endAt": "-1", "luminometer": "hfet", "reason": "HI spikes"}], "missing_lumisections": [{"beginAt": "327211:42", "endAt": "327211:42", "luminometer": "dt"}], "validated_by": "Vitalii Okhotnikov"}
 ]
