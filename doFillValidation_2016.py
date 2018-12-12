@@ -474,6 +474,10 @@ def getValidSections(fillNumber, l):
             lsnums=row[1].split(':')
             ls=int(lsnums[0])
             thisdet=row[8]
+            # Treat any data with 0 delivered & recorded as missing, since it might as well be
+            if (float(row[6]) == 0.0 and float(row[7]) == 0.0):
+                # print row[0],row[1],"dropped for",l
+                continue
             # Sanity checks! If these ever actually appear I will be -very- surprised
             if (fill != fillNumber):
                 print "WARNING: Output from brilcalc didn't match expected fill"
