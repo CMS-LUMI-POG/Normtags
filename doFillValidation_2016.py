@@ -401,16 +401,10 @@ def gitCommit():
     commitFiles = [logFileName, bestLumiFileName]
     for l in luminometers:
         commitFiles.append(lumiJSONFileNamePattern % l)
-    if (testMode):
-        print 'git add '+" ".join(commitFiles)
-        print 'git commit -m "'+msg+'"'
-        print 'git push'
-    else:
-        # Let's just make sure that things don't get committed by accident!
-        if tkMessageBox.askyesno("Commit?", "Do you want to commit the updated files to git?"):
-            os.system('git add '+" ".join(commitFiles))
-            os.system('git commit -m "'+msg+'"')
-            os.system('git push')
+    # Always commit everything!
+    os.system('git add '+" ".join(commitFiles))
+    os.system('git commit -m "'+msg+'"')
+    os.system('git push origin Revalidation2016')
     return
 
 # Helper routine to actually do the email sending.
