@@ -462,7 +462,8 @@ def makeEmails():
 def getValidSections(fillNumber, l):
     print "Please wait, getting valid lumisections for "+l
     tempFileName="temp_"+l+".csv"
-    os.system('brilcalc lumi -f '+str(fillNumber)+' --normtag '+datatags[l]+' -b "STABLE BEAMS" --byls -o '+tempFileName)
+    os.system('brilcalc lumi -f '+str(fillNumber)+' --normtag '+datatags[l]+' -b "STABLE BEAMS" -u hz/ub --byls -o '+tempFileName)
+    seenRuns = set()
     with open(tempFileName) as csv_input:
         reader = csv.reader(csv_input, delimiter=',')
         for row in reader:
@@ -475,9 +476,21 @@ def getValidSections(fillNumber, l):
             ls=int(lsnums[0])
             thisdet=row[8]
             # Treat any data with 0 delivered & recorded as missing, since it might as well be
-            if (float(row[6]) == 0.0 and float(row[7]) == 0.0):
-                # print row[0],row[1],"dropped for",l
+            if (float(row[5]) == 0.0 and float(row[6]) == 0.0):
+                #print row[0],row[1],"dropped for",l
                 continue
+            # Check for bad luminosity values and if so, add them to the list to be automatically invalidated
+            if (float(row[5]) > 50000.0):
+                #print l,"bad value at",run,ls
+                thisbad = {'luminometer': l, 'run': run, 'ls': ls, 'reason': "automatically removed unphysical value"}
+                autoRemovedSections.append(thisbad)
+            # If this is DT, kill the first lumisection in every run.
+            if (l == "dt" and run not in seenRuns):
+                #print "removing first dt lumisection at",run,ls
+                thisbad = {'luminometer': l, 'run': run, 'ls': ls, 'reason': "automatically removed first LS of run for DT"}
+                autoRemovedSections.append(thisbad)
+            seenRuns.add(run)
+
             # Sanity checks! If these ever actually appear I will be -very- surprised
             if (fill != fillNumber):
                 print "WARNING: Output from brilcalc didn't match expected fill"
@@ -547,14 +560,15 @@ def produceOutput():
 
     # The issue at beginning/end of run for BCM1F has been fixed, so no need to do any automatic invalidation
     # any more. Yay!
-    
-    for r in sorted(recordedLumiSections.keys()):
-        # look for the first LS for which DT is present
-        for ls in sorted(recordedLumiSections[r].keys()):
-            if 'dt' in recordedLumiSections[r][ls]:
-                # once found, remove it
-                recordedLumiSections[r][ls].remove('dt')
-                break
+
+    # DT invalidation of first LS is now done when the file is read in -- need a more robust fix here
+    # for r in sorted(recordedLumiSections.keys()):
+    #     # look for the first LS for which DT is present
+    #     for ls in sorted(recordedLumiSections[r].keys()):
+    #         if 'dt' in recordedLumiSections[r][ls]:
+    #             # once found, remove it
+    #             recordedLumiSections[r][ls].remove('dt')
+    #             break
 
     # 2) Next, do bestlumi. This is the most complicated...
     with open(bestLumiFileName, 'r') as bestLumiFile:
@@ -811,6 +825,7 @@ for fillNumber in fillList:
     # 1) Get the list of lumi sections recorded for each luminometer and the beam currents.
 
     print "Getting data for fill "+str(fillNumber)+"..."
+    autoRemovedSections = []
     for l in luminometers:
         getValidSections(fillNumber, l)
     
@@ -960,6 +975,8 @@ for fillNumber in fillList:
                 if (inInvalidatedRegion and not (luminometerPresent and not luminometerValid)):
                     # End of region where this luminometer is present, but not valid. Invalidate it!
                     invalidateLumiSections(l, startRun, startLS, endRun, endLS, startSection, lastSection, "previously invalidated", False)
+                    logObject = {'luminometer': l, 'beginAt': startSection, 'endAt': lastSection, 'reason': "previously invalidated"}
+                    invalidatedLumiSections.append(logObject)
                     inInvalidatedRegion = False
                 lastSection=str(r)+":"+str(ls)
                 endRun = r
@@ -968,6 +985,18 @@ for fillNumber in fillList:
         # drill...
         if (inInvalidatedRegion):
             invalidateLumiSections(l, startRun, startLS, endRun, endLS, startSection, lastSection, "previously invalidated", False)
+            logObject = {'luminometer': l, 'beginAt': startSection, 'endAt': lastSection, 'reason': "previously invalidated"}
+            invalidatedLumiSections.append(logObject)
+
+    # Also invalidate bad spikes we found.
+    for s in autoRemovedSections:
+        l = s['luminometer']
+        run = s['run']
+        ls = s['ls']
+        logStr = str(run)+":"+str(ls)
+        invalidateLumiSections(l, run, ls, run, ls, logStr, logStr, s['reason'], False)
+        logObject = {'luminometer': l, 'beginAt': logStr, 'endAt': logStr, 'reason': s['reason']}
+        invalidatedLumiSections.append(logObject)
 
     # 5) If we're reading in a saved session, invalidate the lumi sections (if any) that were saved.
     # This has to come after the check for missing lumi sections because otherwise those will show

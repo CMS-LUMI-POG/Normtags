@@ -210,21 +210,35 @@ def get_data(types, normtags, run=None, fill=None, beams=None):
 
         # I'm really bad at doing the selection within pandas, so instead let's filter
         # it by hand. Woo.
-        if request in valid_lumisections.keys():
-            with open(f.name) as inputFile:
-                reader = csv.reader(inputFile, delimiter=',')
-                outfile = open("tmp_output.csv", "w")
-                for row in reader:
-                    if row[0][0] != '#':
-                        run = int((row[0].split(":"))[0])
-                        ls = int((row[1].split(":"))[0])
-                        if run not in valid_lumisections[request] or ls not in valid_lumisections[request][run]:
-                            #print "dropped",run,ls,"for",request
-                            continue
-                    # otherwise, the row passes, write it out
-                    outfile.write(",".join(row)+"\n")
-                outfile.close()
-                os.system("mv tmp_output.csv "+f.name)
+        with open(f.name) as inputFile:
+            seenRuns = set()
+            reader = csv.reader(inputFile, delimiter=',')
+            outfile = open("tmp_output.csv", "w")
+            for row in reader:
+                if row[0][0] != '#':
+                    run = int((row[0].split(":"))[0])
+                    ls = int((row[1].split(":"))[0])
+                    lumi_del = float(row[5])
+                    # Check for ridiculous values.
+                    if (lumi_del > 50000):
+                        #print "Bad lumi value",lumi_del,"in",request,"for",run,ls,"has been dropped"
+                        continue
+                    # Check to see if we have a normtag for this luminometer and if so,
+                    # if this lumisection is in it.
+                    if request in valid_lumisections.keys() and (run not in valid_lumisections[request] or ls not in valid_lumisections[request][run]):
+                        #print "dropped",run,ls,"for",request
+                        continue
+                    # Drop the first lumisection of a run for DT.
+                    if (request == "dt16v1pre6" and run not in seenRuns):
+                        #print "removing first dt lumisection at",run,ls
+                        seenRuns.add(run)
+                        continue
+                    seenRuns.add(run)
+
+                # otherwise, the row passes, write it out
+                outfile.write(",".join(row)+"\n")
+            outfile.close()
+        os.system("mv tmp_output.csv "+f.name)
 
         data = pandas.read_csv(f.name, skiprows=1)
         data = data[:-3]
