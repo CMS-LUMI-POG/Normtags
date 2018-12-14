@@ -15,6 +15,32 @@ import pandas
 import numpy
 from matplotlib import transforms, pyplot, ticker
 
+import json
+import csv
+
+validation_files = {'hfoc16v6': 'normtag_hfoc.json',
+                    'pltzero16RAMv1': 'normtag_pltzero.json',
+                    'pccLUM17001pre6': 'normtag_pcc.json'}
+valid_lumisections = {}
+
+# Read in current normtag for the luminometers and populate them in
+# the hash valid_lumisections[l].
+for l in validation_files.keys():
+    valid_lumisections[l] = {}
+    with open(validation_files[l], 'r') as jsonFile:
+        validPeriods = json.load(jsonFile)
+    for entry in validPeriods:
+        runHash = entry[1]
+        for run in runHash.keys():
+            r = int(run)
+            if r not in valid_lumisections[l]:
+                valid_lumisections[l][r] = set()
+            ranges = runHash[run]
+            for thisRange in ranges:
+                startLS = thisRange[0]
+                endLS = thisRange[1]
+                for i in range(startLS, endLS+1):
+                    valid_lumisections[l][r].add(i)
 
 logging.basicConfig(level=logging.DEBUG)
 log = logging.getLogger(__name__)
@@ -181,6 +207,25 @@ def get_data(types, normtags, run=None, fill=None, beams=None):
         if ret_code != 0:
             log.warning("subprocess returned with errors. skipping")
             continue
+
+        # I'm really bad at doing the selection within pandas, so instead let's filter
+        # it by hand. Woo.
+        if request in valid_lumisections.keys():
+            with open(f.name) as inputFile:
+                reader = csv.reader(inputFile, delimiter=',')
+                outfile = open("tmp_output.csv", "w")
+                for row in reader:
+                    if row[0][0] != '#':
+                        run = int((row[0].split(":"))[0])
+                        ls = int((row[1].split(":"))[0])
+                        if run not in valid_lumisections[request] or ls not in valid_lumisections[request][run]:
+                            #print "dropped",run,ls,"for",request
+                            continue
+                    # otherwise, the row passes, write it out
+                    outfile.write(",".join(row)+"\n")
+                outfile.close()
+                os.system("mv tmp_output.csv "+f.name)
+
         data = pandas.read_csv(f.name, skiprows=1)
         data = data[:-3]
         if data.empty:

@@ -85,7 +85,7 @@ emailRecipients = {'pltzero': ['paul.lujan@cern.ch','andres.delannoy@gmail.com',
 summaryEmailRecipients = ['david.peter.stickland@cern.ch', 'anne.evelyn.dabrowski@cern.ch'] 
 
 # Paths to various things.
-lumiValidatePath = "./lumiValidate.py"         # script for making fill validation plot
+lumiValidatePath = "./lumiValidate_2016.py"     # script for making fill validation plot
 fillListFile = "./fills_2016.txt"              # list of 2016 fills
 logFileName = "./fillValidationLog_2016.json"       # log JSON
 bestLumiFileName = "./normtag_BRIL_2016.json"       # best lumi JSON
@@ -704,6 +704,30 @@ if os.path.exists(sessionStateFileName):
         emailInformation[l] = list(savedSessionState['email_information'][l])
     readSavedSession = True
 
+# Read in previous normtags for the luminometers and populate them in
+# the hash valid_lumisections[l].
+previousNormtags = {'hfoc': 'normtag_hfoc.json',
+                    'pltzero': 'normtag_pltzero.json',
+                    'pcc': 'normtag_pcc.json'}
+prevValidLumis = {}
+
+for l in previousNormtags.keys():
+    prevValidLumis[l] = {}
+    with open(previousNormtags[l], 'r') as jsonFile:
+        validPeriods = json.load(jsonFile)
+    for entry in validPeriods:
+        runHash = entry[1]
+        for run in runHash.keys():
+            r = int(run)
+            if r not in prevValidLumis[l]:
+                prevValidLumis[l][r] = set()
+            ranges = runHash[run]
+            for thisRange in ranges:
+                startLS = thisRange[0]
+                endLS = thisRange[1]
+                for i in range(startLS, endLS+1):
+                    prevValidLumis[l][r].add(i)
+
 # First read in the validation log so we can see what the last fill validated was.
 logFile = open(logFileName, 'r')
 parsedLogData = json.load(logFile)
@@ -913,6 +937,37 @@ for fillNumber in fillList:
             missingLumiSections.append(logObject)
             emailText = "fill "+str(fillNumber)+": "+l+" missing from "+startSection+" to "+lastSection
             emailInformationThisFill[emailTargets[l]].append(emailText)
+
+    # Look for cases where luminometers are present, but invalid, and invalidate them. This works similarly
+    # to the above.
+    
+    for l in luminometers:
+        if l not in prevValidLumis.keys():
+            continue
+        inInvalidatedRegion = False
+        startSection=""
+        lastSection=""
+        for r in sorted(recordedLumiSections.keys()):
+            for ls in sorted(recordedLumiSections[r].keys()):
+                luminometerPresent = l in recordedLumiSections[r][ls]
+                luminometerValid = (r in prevValidLumis[l] and ls in prevValidLumis[l][r])
+                if (luminometerPresent and not luminometerValid and not inInvalidatedRegion):
+                    # Start of new region where this luminometer is present, but not valid
+                    startRun = r
+                    startLS = ls
+                    startSection=str(r)+":"+str(ls)
+                    inInvalidatedRegion = True
+                if (inInvalidatedRegion and not (luminometerPresent and not luminometerValid)):
+                    # End of region where this luminometer is present, but not valid. Invalidate it!
+                    invalidateLumiSections(l, startRun, startLS, endRun, endLS, startSection, lastSection, "previously invalidated", False)
+                    inInvalidatedRegion = False
+                lastSection=str(r)+":"+str(ls)
+                endRun = r
+                endLS = ls
+        # Check to see if we reached the end of fill without this luminometer coming back to validity.
+        # drill...
+        if (inInvalidatedRegion):
+            invalidateLumiSections(l, startRun, startLS, endRun, endLS, startSection, lastSection, "previously invalidated", False)
 
     # 5) If we're reading in a saved session, invalidate the lumi sections (if any) that were saved.
     # This has to come after the check for missing lumi sections because otherwise those will show
