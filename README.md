@@ -11,6 +11,6 @@ The normtag files are:
 
 The log file fillValidationLog.json contains the log information from the fill validation tool.
 
-The other scripts (get_recentfill.py and lumiValidate.py) are used by doFillValidation.py.
+The other scripts (get_recentfill.py, get_fill_amodetag.py, and lumiValidate.py) are used by doFillValidation.py.
 
 There are also other scripts for other normtag tasks in the Scripts/ directory. Please see there for documentation.
