@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 
-# A slightly modified version of the official lumiValidate.py which
-# supports the --primary option to specify primary luminometers. Only
-# ratio plots involving a primary luminometer will be shown if this
-# option is used.
+# A slightly modified version of the official lumiValidate.py with two changes:
+# 1) --primary option to specify primary luminometers. Only ratio plots involving a primary luminometer will
+# be shown if this option is used.
+# 2) Automatic determination of type of fill and setting the units appropriately (Hz/ub for PROTPHYS, Hz/mb
+# for IONPHYS or PAPHYS)
 
 import logging
 import os
@@ -15,7 +16,6 @@ import pandas
 import numpy
 from matplotlib import transforms, pyplot, ticker
 
-
 logging.basicConfig(level=logging.DEBUG)
 log = logging.getLogger(__name__)
 
@@ -23,6 +23,7 @@ RATIOS_TOP_YLIMIT = 1.25
 RATIOS_BOTTOM_YLIMIT = 0.75
 LUMI_TOP_YLIMIT = 21000 #going farther up!
 LUMI_BOTTOM_YLIMIT = 0
+AMODETAG_SCRIPT = "./get_fill_amodetag.py -p db.ini"
 
 # default figure size in inches (NOTE: tuple)
 FIGURE_SIZE = (14, 11)
@@ -51,7 +52,8 @@ COLORS = itertools.cycle([
     "#008F9C", "#98FF52", "#7544B1", "#B500FF", "#00FF78", "#FF6E41",
     "#005F39", "#6B6882", "#5FAD4E", "#A75740", "#A5FFD2", "#FFB167",
     "#009BFF", "#E85EBE"])
-
+# Default units
+units = "hz/ub"
 
 def main():
     parser = predefined_arg_parser()
@@ -59,6 +61,15 @@ def main():
     args = parser.parse_args()
     if not args.normtags and not args.types:
         args.types = ["hfoc", "bcm1f", "pltzero", "online"]
+
+    # Automatically determine the units to use. Use this only if we have a fill specified, since the script
+    # can only handle a fill as input. In principle we could get this to work if a run is given as well, but
+    # since this script is unlikely to be called for that usage it should be sufficient to do per fill.
+    global units
+    if (args.fill):
+        amodetag = os.popen(AMODETAG_SCRIPT+" -f "+str(args.fill)).read().rstrip()
+        if amodetag == "IONPHYS" or amodetag == "PAPHYS":
+            units = "hz/mb"
 
     fig = pyplot.figure(figsize=FIGURE_SIZE)
     data = None
@@ -148,7 +159,7 @@ def prepare_brilcalc_call_tpl(run, fill, beams):
         raise ValueError("Either run or fill must by specified")
     f = tempfile.NamedTemporaryFile()
     log.debug("temp file name: %s", f.name)
-    cmd = ["brilcalc", "lumi", "--byls", "-u", "hz/ub", "-o", f.name]
+    cmd = ["brilcalc", "lumi", "--byls", "-u", units, "-o", f.name]
     cmd += time_selection
     if beams is not None:
         cmd += ["-b", beams]
@@ -192,8 +203,8 @@ def get_data(types, normtags, run=None, fill=None, beams=None):
             fill = data["#run:fill"].iloc[0].split(":")[1]
             log.info("fill number determined: %s", fill)
 
-        data["delivered(hz/ub)"] = data["delivered(hz/ub)"].map(float)
-        data.rename(columns={"delivered(hz/ub)": request}, inplace=True)
+        data["delivered("+units+")"] = data["delivered("+units+")"].map(float)
+        data.rename(columns={"delivered("+units+")": request}, inplace=True)
         data = data.loc[:, ("#run:fill", "ls", request)]
 
         if merged is None:
@@ -231,7 +242,7 @@ def get_bunch_data(run=None, fill=None, beams=None):
     # renaming ahead of time to make code lines shoreter :)
     data.rename(inplace=True, columns={
         "#run:fill": "run",
-        "[bxidx bxdelivered(hz/ub) bxrecorded(hz/ub)]": "bunches"})
+        "[bxidx bxdelivered("+units+") bxrecorded("+units+")]": "bunches"})
     data = data.loc[:, ("run", "ls", "bunches")]
     # remove rows where "#run:fill" is corrupted
     data = data[data["run"].str.contains(':')].copy()
@@ -364,7 +375,7 @@ def make_correlation_plot(plot, data, x, y):
 def make_avglumi_plot(plot, data, cols, run, fill):
     log.info("making abglumi plot")
     plot_by_columns(plot, data, cols, "online")
-    plot.set_ylabel("lumi (hz/ub)")
+    plot.set_ylabel("lumi ("+units+")")
     ylims = plot.get_ylim()
     if ylims[0] < LUMI_BOTTOM_YLIMIT:
         plot.set_ylim(bottom=LUMI_BOTTOM_YLIMIT)
@@ -407,7 +418,7 @@ def make_bunch_plot(plot, data, cols, run, fill, threshold):
     log.info("creating plot")
     log.info("plotting by bunch")
     plot_by_columns(plot, data, cols, legend=False)
-    plot.set_ylabel("bxdelivered (hz/ub)")
+    plot.set_ylabel("bxdelivered ("+units+")")
 
     if run is None:
         plot.set_title(
