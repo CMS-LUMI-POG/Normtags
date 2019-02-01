@@ -10,6 +10,8 @@ This directory contains various scripts for working with normtags.
 
 * intersectJSONNormtag.py: A script that takes an input JSON file (first argument) and input normtag (second argument) and produces an output JSON file containing the intersection of  the two. It can be run repeatedly to get the intersection with respect to multiple normtags.
 
+* makeValidationSummary.py: A script that makes a plot summarizing the results of the validation by showing the total fraction of lumisections that are good for all luminometers, bad for one specific luminometer, or bad for more than one luminometer.
+
 * validateInputFile.py: A script to validate input data intended for loading into the lumi DB. It checks to make sure that all lines are well-formed, that there are no NaN or Inf values, and that the sum of the BX luminosity agrees (reasonably well) with the total luminosity.
 
 * getNBX.py: A script which takes a list of fills and gets the number of colliding bunches for those fills, comparing WBM data, beam data, and luminometer data. See the script itself for further documentation and the NBX/ directory for more information about the results of this script. NBX_perFill_2015.csv, NBX_perFill_2016.csv, and NBX_perFill_2017.csv contain this data for 2015, 2016, and 2017 fills.
