@@ -66,6 +66,10 @@ print "Total of",tot_lumisections,"lumisections read."
 
 lumisections_count = [0]*(len(luminometers)+3)
 
+lumisections_missing = {}
+for l in luminometers:
+    lumisections_missing[l] = 0
+
 for s in valid_lumisections_all:
     n_luminometers_missing = 0
     which_luminometer_missing = -1
@@ -73,6 +77,7 @@ for s in valid_lumisections_all:
         if s not in valid_lumisections[l]:
             n_luminometers_missing += 1
             which_luminometer_missing = i
+            lumisections_missing[l] += 1
     if n_luminometers_missing == 0:
         lumisections_count[0] += 1
     elif n_luminometers_missing == 1:
@@ -81,6 +86,10 @@ for s in valid_lumisections_all:
         lumisections_count[-2] += 1
     else:
         lumisections_count[-1] += 1
+
+for l in luminometers:
+    print "%s missing for %d/%d = %.2f%%" % \
+        (l, lumisections_missing[l], tot_lumisections, float(100*lumisections_missing[l])/tot_lumisections)
 
 labels = ["All luminometers good (%.1f%%)" % (float(100*lumisections_count[0])/tot_lumisections)]
 for i, l in enumerate(luminometers):
