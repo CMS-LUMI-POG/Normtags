@@ -6,6 +6,7 @@ parser = argparse.ArgumentParser(description='Makes a valid normtag given a CSV 
 parser.add_argument('-i', '--input', type=str, default="", help='CSV file from brilcalc.')
 parser.add_argument('-o', '--output', type=str, default="mynormtag.json", help='output file name')
 parser.add_argument('-n', '--normtag', type=str, default="pccLUM15001", help='String of normtag')
+parser.add_argument('-s', '--skiplist', type=str, default="", help='List of runs to filter out')
 parser.add_argument('--jsontype', type=str, default="normtag", help='normtag or cert')
 args = parser.parse_args()
 
@@ -37,6 +38,8 @@ else:
         print "Can't open",args.input,"... exiting"
         sys.exit(-1)
 
+skipList=args.skiplist.split(",") #just runs 
+
 lines=csvfile.readlines()
 csvfile.close()
 
@@ -50,6 +53,9 @@ for line in lines:
 
     except:
         print "Can't parse",line
+        continue
+
+    if str(run) in skipList:
         continue
 
     if run not in validData.keys():
