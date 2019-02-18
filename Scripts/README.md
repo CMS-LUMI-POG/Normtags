@@ -16,6 +16,8 @@ This directory contains various scripts for working with normtags.
 
 * getNBX.py: A script which takes a list of fills and gets the number of colliding bunches for those fills, comparing WBM data, beam data, and luminometer data. See the script itself for further documentation and the NBX/ directory for more information about the results of this script. NBX_perFill_2015.csv, NBX_perFill_2016.csv, and NBX_perFill_2017.csv contain this data for 2015, 2016, and 2017 fills.
 
+* compareBXPatterns.py: A script which compares the per-BX data for two luminometers (hfoc/hfet and pltzero) to look for any shifts in the BX data between the two.
+
 * compareTwoCSVsFromBRILCALC.py: Get output per BX from brilcalc using normtag filters. Probably best in bash script as follows:
 
 ```bash
