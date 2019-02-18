@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import os, sys, csv
+import os, sys, csv, re
 
 # This script gets the number of colliding bunches per fill. It gets this information from three separate
 # sources:
@@ -24,10 +24,9 @@ import os, sys, csv
 # the fills in your csv. Once you've fixed all the issues in individual fills, you can run it again for all
 # the data to get a (hopefully relatively clean) final output (just grep for the lines with commas and use those).
 #
-# Note: this script uses hfoc because it was originally developed for 2016. For later years you probably would
-# want to use hfet instead.
+# Note: use hfoc for 2015-16 and hfet for 2017-2018 below.
 
-luminometerList = ["hfoc", "pltzero"]
+luminometerList = ["hfet", "pltzero"]
 bunchThreshold = 0.1
 deleteAfterProcessing = False
 
@@ -38,6 +37,7 @@ badFills = {"hfoc":
                 # In this fill the luminosity varies so much you can't get good results from hfoc
                  4689,
                  ],
+            "hfet": [],
             "pltzero": 
             # These two the -z and +z sides of the PLT were out of time, so each bunch is split into two.
             # Note: for 3848, 3960, 3962, and 3965, HFOC is also unavailable so I used BCM1F instead to verify.
@@ -76,11 +76,34 @@ with open(sys.argv[1]) as csvFile:
         thisNBunch = int(row[20])
         targetNBunch = int(row[21])
         fillList.append(thisFill)
-        if (thisNBunch != targetNBunch):
-            #print "Warning: for fill",thisFill,"number of colliding bunches =",thisNBunch,"but expected",targetNBunch,"from filling scheme"
-            pass
+#        if (thisNBunch != targetNBunch):
+#            print "Warning: for fill",thisFill,"number of colliding bunches =",thisNBunch,"but expected",targetNBunch,"from filling scheme"
         nBunchWBM[thisFill] = thisNBunch
         nBunchWBMTarget[thisFill] = targetNBunch
+
+        # Also check to see if the target bunches match the number in the filling scheme. This should always
+        # match but sometimes WBM goes a little weird. A quick explanation of how this works:
+        # * Normal filling schemes are 25ns_XXXXb_YYY_ZZZ_..., where the first set of numbers is the number of
+        # bunches in each beam and then there are three numbers, the first indicating the number of colliding
+        # bunches at IP1/5 (the number we want) and the other two at IP2 and IP8, then a few more details on
+        # the injection scheme.
+        # * If there's a different number of bunches in each beam (rare, but happens in a few VdM filling
+        # schemes for example) then you get 25ns_XXXb_YYYb_ZZZ..., so we want ZZZ in this case.
+        # * The Xenon filling schemes have "Xe" instead of "b".
+        # * Finally there are a few which just don't fit at all so we handle them manually.
+
+        fillingScheme = row[23]
+        nBunchFromScheme = 0
+        result = re.search("[0-9]+(?:b|Xe)_(?:[0-9]+b_)?([0-9]+)", fillingScheme)
+        if result:
+            nBunchFromScheme = result.group(1)
+        else:
+            if (fillingScheme.find("2nominals_10pilots_lossmaps_coll_allIPs") >= 0):
+                nBunchFromScheme = 1
+            else:
+                print "Failed to parse filling scheme",fillingScheme
+        if int(nBunchFromScheme) != targetNBunch:
+            print "Warning: for fill",thisFill,"WBM target bunches =",targetNBunch,"but filling scheme specifies",nBunchFromScheme
 
 # If an individual fill (or fills) is/are specified on the command line, use those instead
 if (len(sys.argv) > 2):
@@ -130,9 +153,10 @@ for fill in fillList:
         if not os.path.exists(dataFileName):
             os.system('brilcalc lumi --xing -b "STABLE BEAMS" -u hz/ub -f '+str(fill)+' --type '+luminometer+' --xingTr '+str(bunchThreshold)+' -o '+dataFileName)
 
+        nlines = 0
         with open(dataFileName) as dataFile:
             reader = csv.reader(dataFile, delimiter=',')
-            for linenum, row in enumerate(reader):
+            for row in reader:
                 if row[0][0] == '#':
                     continue
 
@@ -141,7 +165,7 @@ for fill in fillList:
                 # (which we don't really care about for this purpose) or (b) a bunch decaying faster than its
                 # companions (which can happen but we can't really account for that in our simple total so
                 # let's not worry about it).
-                if linenum > 25:
+                if nlines > 25:
                     break
 
                 # Next, split up the individual BX data. Use the slice
@@ -149,11 +173,15 @@ for fill in fillList:
                 thisNBunch = 0
                 if len(row) < 9:
                     print row
+                # If there's no data at all, just skip this row. We'll get an accurate count once we get data.
                 if (row[9][0:2] == '[]'):
                     bxFields = []
+                    continue
                 else:
                     bxFields = row[9][1:-1].split(' ')
                 avgLumi = 0
+
+                nlines += 1
 
                 if not (fill in veryLowFills):
                     # "Regular" method: look at the filled BXes LS-by-LS
