@@ -13,7 +13,7 @@ Ideally these should all agree, of course, but in practice there are some differ
   * (2015) Fill 4717 is in WBM as a fill with Stable Beams, but there is no actual data for this fill present either in WBM or in the lumi DB. Possibly this was also a test of some sort.
   * (2017) Fill 5659 is also a test of the Stable Beams flag but with no actual data.
 
-* `results_2015_final.txt` contains the final output from `getNBX.py`. This is after the thresholds for some fills have been manually adjusted and some discrepancies have been manually resolved. There are still some mismatches in this output caused by, for instance, HI fills where some bunches fluctuate above or below the threshold, but these mismatches are relatively uncommon. The remaining discrepancies are discussed in more detail below. The file contains one line for each fill, of the format:
+* `results_2015_final.txt`, `results_2016_final.txt`, and `results_2017_final.txt` contain the final output from `getNBX.py`. This is after the thresholds for some fills have been manually adjusted and some discrepancies have been manually resolved. There are still some mismatches in this output caused by, for instance, HI fills where some bunches fluctuate above or below the threshold, but these mismatches are relatively uncommon. The remaining discrepancies are discussed in more detail below. The file contains one line for each fill, of the format:
 fill number,WBM target bunches,WBM colliding bunches,beam bunches,luminometer bunches
 as well as various informational and error messages; if you just want the output data, you can grep for lines containing ",".
 
@@ -22,8 +22,6 @@ as well as various informational and error messages; if you just want the output
 * `investigateBXLumiDiffs.py` is a script to further investigate cases where the luminometer per-BX data disagrees between the luminometers. As above, run it with one or more fill numbers as arguments.
 
 * `postprocess.py` takes the final output file, and breaks the fills down into different categories depending on whether all four inputs agree, or whether one (or more) inputs disagree with the rest. It will also look for fills which have been affected by the TCDS bug which causes the number from the beam data to be off by one (this categorization is orthogonal to the above, so a fill may appear in both this category and one other category). It will also write out a final CSV file.
-
-* `2016FillsWBM.csv` and `results_2016_final.txt` are the 2016 versions of the above files.
 
 ## 2015 details
 
@@ -70,7 +68,8 @@ The 2017 data is also pretty clean. Here's the remaining fills which show disagr
 * The filling scheme in fill 6385 specifies 1824 colliding bunches, while the luminometers and beam data both report 1828 colliding bunches. Looking at the LHC OP elog for this fill, it looks like the first train in beam 1 was indeed shifted during injection, which brought 4 bunches in that train into collision with beam 2, so the luminometer numbers are correct.
 * For fills <= 5837, there is a lot of instability in the HFET measurement of the number of bunches. For simply measuring the number of bunches with `getNBX.py` this is probably not a problem but for more detailed studies you are probably better off using HFOC instead.
 * The following fills have an incorrect number of colliding bunches shown in WBM: 6386, 6239, 6238, 6236, 6230, 6194, 6192, 6191, 6185, 6180, 6177, 6176, 6175, 6165, 6161, 6160, 6159, 6155, 6152, 6147, 6146, 6143, 6142, 6140, 6138, 6119, 6116, 6106, 6105, 6104, 6098, 6097, 6093, 6090, 6089, 6082, 6061, 6060, 6057, 6054, 6053, 6052, 6050, 6048, 6046, 6044, 6041, 6031, 6021, 6018, 6015, 6012, 5980, 5976, 5966, 5965, 5962, 5960, 5946, 5942
-For all fills except the specific cases below, the number of colliding bunches is off by 1 relative to the correct number of bunches, as verified from the beam data, luminometer data, and target number of bunches. It's not clear to me where this error comes from, since the WBM BunchFill shows the correct number of bunches in all cases (except for 6012 and 6015, which are very low luminosity VdM fills, so the BunchFill shows zero colliding bunches). The exceptions: fill 6061 is off by two instead of 1, and fills 6230, 6236, 6238, and 6239 appear to have no beam or luminosity data at all in WBM, so the number of colliding bunches in WBM is 0. I have contacted the WBM team so that they could fix this, but have heard no response as of yet.
+
+  For all fills except the specific cases below, the number of colliding bunches is off by 1 relative to the correct number of bunches, as verified from the beam data, luminometer data, and target number of bunches. It's not clear to me where this error comes from, since the WBM BunchFill shows the correct number of bunches in all cases (except for 6012 and 6015, which are very low luminosity VdM fills, so the BunchFill shows zero colliding bunches). The exceptions: fill 6061 is off by two instead of 1, and fills 6230, 6236, 6238, and 6239 appear to have no beam or luminosity data at all in WBM, so the number of colliding bunches in WBM is 0. I have contacted the WBM team so that they could fix this, but have heard no response as of yet.
 * All of the fills affected by the TCDS off-by-one bug in the beam data have been fixed (see below for details).
 
 ### Shifts in BX data
