@@ -20,9 +20,9 @@ as well as various informational and error messages; if you just want the output
 
 * `investigateBXLumiDiffs.py` is a script to further investigate cases where the luminometer per-BX data disagrees between the luminometers. As above, run it with one or more fill numbers as arguments.
 
-* `postprocess2015.py` takes the final output file (`results_2015_final.txt`, unless a different file is specified), and breaks the fills down into different categories depending on whether all four inputs agree, or whether one (or more) inputs disagree with the rest.
+* `postprocess.py` takes the final output file, and breaks the fills down into different categories depending on whether all four inputs agree, or whether one (or more) inputs disagree with the rest. It will also look for fills which have been affected by the TCDS bug which causes the number from the beam data to be off by one (this categorization is orthogonal to the above, so a fill may appear in both this category and one other category). It will also write out a final CSV file.
 
-* `2016FillsWBM.csv`, `results_2016_final.txt`, and `postprocess2016.py` are the 2016 versions of the above files. Note that `postprocess2016.py` also has the functionality to look for fills which have been affected by the bug in TCDS which causes the number from the beam data to be off by one.
+* `2016FillsWBM.csv` and `results_2016_final.txt` are the 2016 versions of the above files.
 
 ## 2015 details
 
