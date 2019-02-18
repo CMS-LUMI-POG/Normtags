@@ -29,9 +29,9 @@ wbmCollidingBad = []
 otherBad = []
 beamOffByOne = []
 
-with open(infile) as inputFile:
-    outputFile = open(outfile, "w")
+outputData = {}
 
+with open(infile) as inputFile:
     reader = csv.reader(inputFile, delimiter=",")
     for row in reader:
         
@@ -58,9 +58,12 @@ with open(infile) as inputFile:
         if not putInCategory:
             otherBad.append(",".join(row))
 
-        outputFile.write(row[0]+","+row[4]+"\n")
+        outputData[row[0]] = row[4]
 
-    outputFile.close()
+# Now write out the sorted data.
+with open(outfile, "w") as outputFile:
+    for f in sorted(outputData.keys()):
+        outputFile.write(f+","+outputData[f]+"\n")
 
 print "All good:"
 print ", ".join(allGood)
