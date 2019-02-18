@@ -71,6 +71,11 @@ def main():
         if amodetag == "IONPHYS" or amodetag == "PAPHYS":
             units = "hz/mb"
 
+    # Make a bigger right margin if we're using normtags, since those tend to be longer.
+    if (args.normtags):
+        FIGURE_ADJUSTS_TWO_FAT_ROWS["right"] = 0.80
+        FIGURE_ADJUSTS_TWO_FAT_ONE_SLIM_ROWS["right"] = 0.80
+
     fig = pyplot.figure(figsize=FIGURE_SIZE)
     data = None
     if args.xing:
