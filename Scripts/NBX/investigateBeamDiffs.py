@@ -8,9 +8,9 @@ import os, sys, csv
 # Threshold in the beam data to count a bunch as filled
 beamIntensityThreshold = 2e9
 
-luminometerList = ["hfoc", "pltzero"]
+luminometerList = ["hfet", "pltzero"] # for 2017-18; use hfoc instead of hfet for 2016
 
-if len(sys.argv) < 1:
+if len(sys.argv) < 2:
     print "Usage: "+sys.argv[0]+" [fills]"
     sys.exit(0)
 
@@ -92,7 +92,8 @@ for fill in fillList:
             if (nBunchBeam == -1):
                 nBunchBeam = len(thisFilledBunches)
                 filledBunchesBeam = thisFilledBunches
-            elif (nBunchBeam != len(thisFilledBunches)):
+            # Note: sometimes you'll have beam data after beam dump so we can cheerfully ignore those.
+            elif (nBunchBeam != len(thisFilledBunches)) and len(thisFilledBunches) != 0:
                 print "Warning: mismatch in number of colliding bunches in "+row[1]+":"+row[2]+" -- expected",nBunchBeam,"got",len(thisFilledBunches)
                 if len(thisFilledBunches - filledBunchesBeam) > 0:
                     print "Extra bunches:",sorted(thisFilledBunches - filledBunchesBeam)
