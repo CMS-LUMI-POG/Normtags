@@ -10,6 +10,8 @@ This directory contains various scripts for working with normtags.
 
 * intersectJSONNormtag.py: A script that takes an input JSON file (first argument) and input normtag (second argument) and produces an output JSON file containing the intersection of  the two. It can be run repeatedly to get the intersection with respect to multiple normtags.
 
+* normtagComposition.py: A script that takes a composite normtag and tells you the fraction of that normtag provided by each luminometer in the normtag.
+
 * makeValidationSummary.py: A script that makes a plot summarizing the results of the validation by showing the total fraction of lumisections that are good for all luminometers, bad for one specific luminometer, or bad for more than one luminometer.
 
 * validateInputFile.py: A script to validate input data intended for loading into the lumi DB. It checks to make sure that all lines are well-formed, that there are no NaN or Inf values, and that the sum of the BX luminosity agrees (reasonably well) with the total luminosity.
