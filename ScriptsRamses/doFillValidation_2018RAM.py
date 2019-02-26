@@ -450,7 +450,9 @@ def makeEmails():
             thisText += "\nNote: the first lumisection of each run has been automatically invalidated for DT."
 
         emailBody +=  thisText
-        summaryEmailBody += thisText
+        # Only add information about RAMSES to the summary email.
+        if (l == 'ramses'):
+            summaryEmailBody += thisText
         emailBody += "\n\nThanks,\nthe fill validation tool"
         # Don't actually send individual emails for this purpose.
         # sendEmail(emailSubject, emailBody, emailRecipients[l])
