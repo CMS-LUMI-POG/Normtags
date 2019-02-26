@@ -406,7 +406,7 @@ def gitCommit():
     # Always commit everything!
     os.system('git add '+" ".join(commitFiles))
     os.system('git commit -m "'+msg+'"')
-    os.system('git push origin Revalidation2016')
+    os.system('git push origin Ramses18')
     return
 
 # Helper routine to actually do the email sending.
