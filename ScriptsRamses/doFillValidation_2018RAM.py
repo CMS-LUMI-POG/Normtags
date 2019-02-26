@@ -68,7 +68,7 @@ datatags = {'bcm1f': 'bcm1f18v4',
 
 # Test mode: if set to True, automatic emails will be sent to the screen instead and
 # automatic git commits will not be performed.
-testMode = True
+testMode = False
 
 # Information for automatically sending emails. First, we want to group hfet and hfoc into a single target
 # email, so this first dictionary defines that.
@@ -452,7 +452,8 @@ def makeEmails():
         emailBody +=  thisText
         summaryEmailBody += thisText
         emailBody += "\n\nThanks,\nthe fill validation tool"
-        sendEmail(emailSubject, emailBody, emailRecipients[l])
+        # Don't actually send individual emails for this purpose.
+        # sendEmail(emailSubject, emailBody, emailRecipients[l])
 
     summaryEmailBody += "\n\nThanks,\nthe fill validation tool"
     sendEmail(emailSubject, summaryEmailBody, summaryEmailRecipients)
