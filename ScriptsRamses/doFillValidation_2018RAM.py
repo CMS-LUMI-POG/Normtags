@@ -464,7 +464,7 @@ def makeEmails():
 # Helper routine to get the valid lumisections for a given luminometer by calling brilcalc.
 # This is an adaption of bestLumi.py which stores the output in the giant dictionary defined below.
 
-def getValidSections(fillNumber, l):
+def getValidSections(fillNumber, l, referenceLumi):
     print "Please wait, getting valid lumisections for "+l
     tempFileName="temp_"+l+".csv"
     os.system('brilcalc lumi -f '+str(fillNumber)+' --normtag '+datatags[l]+' -b "STABLE BEAMS" -u hz/ub --byls -o '+tempFileName)
@@ -480,6 +480,7 @@ def getValidSections(fillNumber, l):
             lsnums=row[1].split(':')
             ls=int(lsnums[0])
             thisdet=row[8]
+            refkey = str(run)+":"+str(ls)
             # Treat any data with 0 delivered & recorded as missing, since it might as well be
             if (float(row[5]) == 0.0 and float(row[6]) == 0.0):
                 #print row[0],row[1],"dropped for",l
@@ -489,6 +490,15 @@ def getValidSections(fillNumber, l):
                 #print l,"bad value at",run,ls
                 thisbad = {'luminometer': l, 'run': run, 'ls': ls, 'reason': "automatically removed unphysical value"}
                 autoRemovedSections.append(thisbad)
+            # Save reference lumi from bcm1f to use for ramses comparisons.
+            if (l == "bcm1f"):
+                referenceLumi[refkey] = float(row[5])
+            # Veto spikes in RAMSES too high about the reference lumi.
+            if (l == "ramses" and refkey in referenceLumi):
+                if float(row[5]) - referenceLumi[refkey] > 1000:
+                    thisbad = {'luminometer': l, 'run': run, 'ls': ls, 'reason': "automatically removed apparent spike in RAMSES"}
+                    autoRemovedSections.append(thisbad)
+
             # If this is DT, kill the first lumisection in every run.
             if (l == "dt" and run not in seenRuns):
                 #print "removing first dt lumisection at",run,ls
@@ -788,8 +798,9 @@ for fillNumber in fillList:
 
     print "Getting data for fill "+str(fillNumber)+"..."
     autoRemovedSections = []
+    referenceLumi = {}
     for l in luminometers:
-        getValidSections(fillNumber, l)
+        getValidSections(fillNumber, l, referenceLumi)
     
     # See if we actually got any data for this fill.
     if len(recordedLumiSections) == 0:
