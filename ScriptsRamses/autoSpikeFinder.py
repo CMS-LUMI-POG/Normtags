@@ -18,6 +18,11 @@
 # the results of the (even more crude) automatic spike finder I implemented for the validation of the 2018
 # RAMSES data. However, I've left it here in case anyone is interested in doing further investigations.
 #
+# In general, I think trying to find spikes from the single luminometer data alone is unlikely to be entirely
+# successful -- I think you'll always end up needing to do a fair amount of manual work. Probably you'll need
+# a reference luminometer that you can compare against (although of course then you have the possibilities of
+# data issues in the other luminometer).
+
 # Paul Lujan, 2/28/19
 
 import argparse, csv
