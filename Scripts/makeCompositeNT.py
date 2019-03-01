@@ -96,12 +96,19 @@ if rankAlgo=="Default":
                 if run not in filledRuns:
                     compositeNT.insert(iLine,line)
                 elif lsRanges:
-                    newDict={}
-                    newDict[run]=lsRanges
-                    compositeNT.insert(iLine,[line[0],newDict])
+                    # If there's multiple ranges, break them down into individual entries so we can sort them properly later.
+                    for thisRange in reversed(lsRanges):
+                        newDict={}
+                        newDict[run]=[thisRange]
+                        compositeNT.insert(iLine,[line[0],newDict])
                 
             filledRuns.append(run)
 
+
+# Sort the final NT so that everything appears in the proper order. Two steps: first sort by first lumisection
+# number and then by run.
+compositeNT.sort(key=lambda x: x[1].values()[0][0][0])
+compositeNT.sort(key=lambda x: int(x[1].keys()[0]))
 
 outputFile=open(args.outputfile,"w")
 outputFile.write("[\n")
@@ -109,7 +116,7 @@ for line in compositeNT:
     #schade... ths simple way can't be decoded
     #outputFile.write(str(line))
     # example line:    ["hfoc16v1",{"271037":[[1,15]]}],
-    outputFile.write("[\""+str(line[0])+"\",{\""+str(line[1].keys()[0])+"\":"+str(line[1][line[1].keys()[0]])+"}]")
+    outputFile.write("[\""+str(line[0])+"\", {\""+str(line[1].keys()[0])+"\": "+str(line[1][line[1].keys()[0]])+"}]")
     if line != compositeNT[-1]:
         outputFile.write(",\n")
         
