@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import sys
 import argparse
 import json
@@ -72,7 +74,7 @@ if rankAlgo=="Default":
             run=line[1].keys()[0]
             lsRanges=line[1][line[1].keys()[0]]
             if int(run) > args.maxrun or int(run) < args.minrun:
-                print "run",run,args.maxrun,args.minrun,int(run) > args.maxrun, int(run) < args.minrun,int(run) > args.maxrun or int(run) < args.minrun
+                #print "run",run,args.maxrun,args.minrun,int(run) > args.maxrun, int(run) < args.minrun,int(run) > args.maxrun or int(run) < args.minrun
                 continue
             if not compositeNT:
                 compositeNT.append(line)
@@ -113,3 +115,4 @@ for line in compositeNT:
         
 outputFile.write("\n]\n")
 outputFile.close()
+print "Wrote new normtag to",args.outputfile
