@@ -48,22 +48,21 @@ except:
 # List of luminometers. The first in this list is the one that will be
 # used as the baseline reference and so should generally be BCM1F, since
 # that is less prone to being out.
-luminometers = ['bcm1f', 'ramses', 'pcc', 'dt', 'pltzero', 'hfoc']
+luminometers = ['bcm1f', 'ramses', 'pcc', 'pltzero', 'hfoc']
 
 # Default priority order for luminometers.
-defaultLumiPriority = ['hfoc', 'pltzero', 'bcm1f']
+defaultLumiPriority = ['hfoc', 'pcc', 'pltzero', 'ramses', 'bcm1f']
 
 # "Primary" luminometers. The validation plot will only show ratios involving
 # these luminometers, so that we don't end up with too many ratios.
-primaryLuminometers = ['hfoc16v6', 'pltzero16RAMv1']
+primaryLuminometers = ['hfoc5TeV15Paperv1_3', 'plt5TeV15Paperv1_2']
 
 # Datatag to be used for each luminometer.
-datatags = {'pltzero': 'pltzero16RAMv1',
-            'bcm1f': 'bcm1f16v1',
-            'hfoc': 'hfoc16v6',
-            'dt': 'dt16v1pre6',
-            'ramses': 'ramses16v2',
-            'pcc': 'pccLUM17001pre6'}
+datatags = {'pltzero': 'plt5TeV15Paperv1_2',
+            'bcm1f': 'bcm1f5TeV15Paperv1_2',
+            'hfoc': 'hfoc5TeV15Paperv1_3',
+            'ramses': 'ramses5TeV15Paperv1_2',
+            'pcc': 'pcc5TeV15Paperv1'}
 
 # Test mode: if set to True, automatic emails will be sent to the screen instead and
 # automatic git commits will not be performed.
