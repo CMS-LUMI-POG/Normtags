@@ -66,7 +66,7 @@ datatags = {'pltzero': 'plt5TeV15Paperv1_2',
 
 # Test mode: if set to True, automatic emails will be sent to the screen instead and
 # automatic git commits will not be performed.
-testMode = True
+testMode = False
 
 # Information for automatically sending emails. First, we want to group hfet and hfoc into a single target
 # email, so this first dictionary defines that.
@@ -399,10 +399,10 @@ def gitCommit():
     commitFiles = [logFileName, bestLumiFileName]
     for l in luminometers:
         commitFiles.append(lumiJSONFileNamePattern % l)
-    # Always commit everything!
-    os.system('git add '+" ".join(commitFiles))
-    os.system('git commit -m "'+msg+'"')
-    os.system('git push origin Validation5TeV2015')
+    if not testMode:
+        os.system('git add '+" ".join(commitFiles))
+        os.system('git commit -m "'+msg+'"')
+        os.system('git push origin Validation5TeV2015')
     return
 
 # Helper routine to actually do the email sending.
@@ -719,9 +719,7 @@ if os.path.exists(sessionStateFileName):
 
 # Read in previous normtags for the luminometers and populate them in
 # the hash valid_lumisections[l].
-previousNormtags = {'hfoc': 'normtag_hfoc.json',
-                    'pltzero': 'normtag_pltzero.json',
-                    'pcc': 'normtag_pcc.json'}
+previousNormtags = {}
 prevValidLumis = {}
 
 for l in previousNormtags.keys():
