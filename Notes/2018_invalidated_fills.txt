@@ -1,0 +1,110 @@
+In addition to the invalidation done as part of the normal fill invalidation procedure, the final 2018
+stability analysis revealed that there are certain other fills that look bad for a particular luminometer,
+usually due to the fact that the scale is shifted for the whole fill. These are invalidated and recorded
+here. However I've recorded the lumisections invalidated in case anyone would like to investigate these fills
+further and possibly return them to the normtag after they're fixed. --Paul Lujan, 3-14-2019
+
+HFOC
+fill 6919, consistently high by about 3%
+["hfoc18PAS", {"319579": [[39, 3173]]}],
+
+PCC
+fill 7218, several steps in PCC data and overall ratio inconsistent by about 5% by end of fill
+["pcc18PAS",{"323487":[[41, 496]]}],
+["pcc18PAS",{"323488":[[1, 788]]}],
+["pcc18PAS",{"323492":[[1, 28]]}],
+["pcc18PAS",{"323493":[[1, 140]]}],
+["pcc18PAS",{"323495":[[1, 189]]}],
+
+PLT
+fills 7005, 7006, 7008, 7013, 7031, 7087, 7097, 7117, 7122, 7137, 7212, 7217, 7234, 7252, 7266, 7315, 7321
+In these fills something seems to have gone wrong with the reprocessing as PLT is anomalously high for these
+fills. They could probably be recovered with a re-reprocessing.
+
+7005
+["pltzero18ReprocMar8", {"320673": [[33, 637]]}],
+["pltzero18ReprocMar8", {"320673": [[693, 906]]}],
+["pltzero18ReprocMar8", {"320674": [[1, 625]]}],
+
+7006
+["pltzero18ReprocMar8", {"320688": [[47, 651]]}],
+
+7008
+["pltzero18ReprocMar8", {"320712": [[37, 249]]}],
+
+7013
+["pltzero18ReprocMar8", {"320757": [[48, 48]]}],
+["pltzero18ReprocMar8", {"320757": [[50, 184]]}],
+["pltzero18ReprocMar8", {"320757": [[188, 387]]}],
+
+7031
+["pltzero18ReprocMar8", {"320916": [[1, 34]]}],
+["pltzero18ReprocMar8", {"320917": [[1, 930]]}],
+["pltzero18ReprocMar8", {"320917": [[932, 1299]]}],
+["pltzero18ReprocMar8", {"320917": [[1302, 1886]]}],
+["pltzero18ReprocMar8", {"320917": [[1888, 1933]]}],
+["pltzero18ReprocMar8", {"320920": [[1, 185]]}],
+
+7087
+["pltzero18ReprocMar8", {"321773": [[9, 92]]}],
+["pltzero18ReprocMar8", {"321774": [[1, 135]]}],
+["pltzero18ReprocMar8", {"321775": [[1, 56]]}],
+["pltzero18ReprocMar8", {"321776": [[1, 45]]}],
+["pltzero18ReprocMar8", {"321777": [[1, 283]]}],
+["pltzero18ReprocMar8", {"321778": [[1, 155]]}],
+["pltzero18ReprocMar8", {"321780": [[1, 544]]}],
+["pltzero18ReprocMar8", {"321781": [[1, 688]]}],
+
+7097
+["pltzero18ReprocMar8", {"321908": [[41, 484]]}],
+["pltzero18ReprocMar8", {"321909": [[1, 1660]]}],
+
+7117
+["pltzero18ReprocMar8", {"322068": [[48, 725]]}],
+
+7122
+["pltzero18ReprocMar8", {"322113": [[46, 159]]}],
+["pltzero18ReprocMar8", {"322118": [[1, 832]]}],
+
+7137
+["pltzero18ReprocMar8", {"322430": [[44, 290]]}],
+["pltzero18ReprocMar8", {"322430": [[293, 800]]}],
+["pltzero18ReprocMar8", {"322431": [[3, 260]]}],
+["pltzero18ReprocMar8", {"322431": [[263, 315]]}],
+["pltzero18ReprocMar8", {"322431": [[317, 923]]}],
+["pltzero18ReprocMar8", {"322431": [[925, 1184]]}],
+
+7212 (most of this fill was invalidated already)
+["pltzero18ReprocMar8", {"323388": [[34, 57]]}],
+["pltzero18ReprocMar8", {"323399": [[1, 179]]}],
+
+7217 (partially invalidated from 323474:195 to end of fill)
+["pltzero18ReprocMar8", {"323470": [[36, 270]]}],
+["pltzero18ReprocMar8", {"323471": [[1, 238]]}],
+["pltzero18ReprocMar8", {"323472": [[1, 129]]}],
+["pltzero18ReprocMar8", {"323473": [[1, 314]]}],
+["pltzero18ReprocMar8", {"323474": [[1, 194]]}],
+
+7234 (already mostly invalidated from beginning of fill to 323700:67)
+["pltzero18ReprocMar8", {"323700": [[68, 82]]}],
+["pltzero18ReprocMar8", {"323700": [[84, 459]]}],
+["pltzero18ReprocMar8", {"323701": [[1, 17]]}],
+["pltzero18ReprocMar8", {"323702": [[1, 815]]}],
+
+7252
+["pltzero18ReprocMar8", {"323940": [[47, 1577]]}],
+["pltzero18ReprocMar8", {"323954": [[1, 93]]}],
+
+7266
+["pltzero18ReprocMar8", {"324245": [[21, 1687]]}],
+
+7315
+["pltzero18ReprocMar8", {"324878": [[60, 605]]}],
+["pltzero18ReprocMar8", {"324878": [[607, 739]]}],
+["pltzero18ReprocMar8", {"324878": [[741, 1809]]}],
+
+7321
+["pltzero18ReprocMar8", {"324980": [[37, 1362]]}],
+["pltzero18ReprocMar8", {"324980": [[1448, 2020]]}],
+["pltzero18ReprocMar8", {"324980": [[2024, 2104]]}],
+["pltzero18ReprocMar8", {"324980": [[2128, 2346]]}],
