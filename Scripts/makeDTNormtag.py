@@ -5,6 +5,7 @@
 # the number of bunches in order to come out correctly.
 #
 # For dt18v2: rescale by 1/1.0417 in all areas except for fills 7005-7065 which are rescaled by 1/1.021 instead
+# For dt18PAS: additional rescale by 1/0.9976
 
 import csv
 
@@ -30,6 +31,7 @@ with open(fill_info_file) as fill_info:
         scale_factor = 1.0417
         if (fill >= 7005 and fill <= 7065):
             scale_factor = 1.021
+        scale_factor *= 0.9976
 
         sigmavis = sigmavis_base*scale_factor
         a1 = orbit_freq/sigmavis
