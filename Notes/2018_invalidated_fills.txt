@@ -19,7 +19,14 @@ fill 7218, several steps in PCC data and overall ratio inconsistent by about 5% 
 PLT
 fills 7005, 7006, 7008, 7013, 7031, 7087, 7097, 7117, 7122, 7137, 7212, 7217, 7234, 7252, 7266, 7315, 7321
 In these fills something seems to have gone wrong with the reprocessing as PLT is anomalously high for these
-fills. They could probably be recovered with a re-reprocessing.
+fills. They could probably be recovered with a re-reprocessing. In addition, there seems to be a similar
+problem with the reprocessing in fill 6700, but for only part of the fill (316569:697-approx. 1035) -- there
+is a clear step down which is not present in the original data -- so I've also invalidated that region. (Note
+however that the region 316569:1024-1156 is already correctly invalidated due to a PLT HV scan during that
+time.)
+
+6700 (is now: [[18, 696]])
+["pltzero18ReprocMar8", {"316569": [[18, 1023]]}],
 
 7005
 ["pltzero18ReprocMar8", {"320673": [[33, 637]]}],
