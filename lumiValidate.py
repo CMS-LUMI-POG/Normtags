@@ -1,10 +1,13 @@
 #!/usr/bin/env python
 
-# A slightly modified version of the official lumiValidate.py with two changes:
+# A slightly modified version of the official lumiValidate.py with a few changes:
 # 1) --primary option to specify primary luminometers. Only ratio plots involving a primary luminometer will
 # be shown if this option is used.
 # 2) Automatic determination of type of fill and setting the units appropriately (Hz/ub for PROTPHYS, Hz/mb
 # for IONPHYS or PAPHYS)
+# 3) If you give a type or normtag of the format "name1@name2", then it will interpret "name1" as the type or
+# normtag to use and "name2" as the datatag to use, so older versions of the data can be compared either
+# against the newest data other or against other luminometers.
 
 import logging
 import os
@@ -16,7 +19,7 @@ import pandas
 import numpy
 from matplotlib import transforms, pyplot, ticker
 
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.INFO)
 log = logging.getLogger(__name__)
 
 RATIOS_TOP_YLIMIT = 1.25
@@ -57,7 +60,7 @@ units = "hz/ub"
 
 def main():
     parser = predefined_arg_parser()
-    log.info("parsing main arguments")
+    log.debug("parsing main arguments")
     args = parser.parse_args()
     if not args.normtags and not args.types:
         args.types = ["hfoc", "bcm1f", "pltzero", "online"]
@@ -176,7 +179,7 @@ int_before_colon = lambda value: int(value.split(":")[0])
 
 # (Jonas) FIXME: get_data and get_bunch_data has too much of same code
 def get_data(types, normtags, run=None, fill=None, beams=None):
-    log.info("getting data")
+    log.debug("getting data")
     cmd_tpl, f = prepare_brilcalc_call_tpl(run, fill, beams)
     got_cols = []
     merged = None
@@ -184,14 +187,25 @@ def get_data(types, normtags, run=None, fill=None, beams=None):
         cmd = list(cmd_tpl)
         if request in types:
             if (request != "online"):
-                cmd += ["--type", request]
+                fields = request.split("@")
+                cmd += ["--type", fields[0]]
+                if len(fields) > 1:
+                    cmd += ["--datatag", fields[1]]
+                if len(fields) > 2:
+                    log.warn("too many @s in type specified (rest ignored): "+request)
         elif request in normtags:
-            cmd += ["--normtag", request]
-            if os.path.isfile(request):
-                log.info("normtag is file: %s", request)
-                request = "normtag"
+            fields = request.split("@")
+            cmd += ["--normtag", fields[0]]
+            if len(fields) > 1:
+                cmd += ["--datatag", fields[1]]
+            if len(fields) > 2:
+                log.warn("too many @s in type specified (rest ignored): "+request)
 
-        log.debug("calling subprocess: %s", " ".join(cmd))
+            if os.path.isfile(fields[0]):
+                log.info("normtag is file: %s", fields[0])
+                request = os.path.basename(request)
+
+        log.info("invoking brilcalc: %s", " ".join(cmd))
         # (Jonas) TODO: check return code
         ret_code = subprocess.call(cmd)
         if ret_code != 0:
@@ -223,7 +237,7 @@ def get_data(types, normtags, run=None, fill=None, beams=None):
     merged["ls"] = merged["ls"].map(int_before_colon)
     merged["#run:fill"] = merged["#run:fill"].map(int_before_colon)
     merged.rename(columns={"#run:fill": "run"}, inplace=True)
-    log.info("sucessfully got data")
+    log.debug("sucessfully got data")
     return merged, got_cols, fill
 
 
@@ -231,7 +245,7 @@ def get_bunch_data(run=None, fill=None, beams=None):
     log.info("getting bunch (--xing) data")
     cmd, f = prepare_brilcalc_call_tpl(run, fill, beams)
     cmd += ["--xing"]
-    log.debug("calling subprocess: %s", " ".join(cmd))
+    log.info("invoking brilcalc: %s", " ".join(cmd))
     # (Jonas) TODO: check return code
     subprocess.call(cmd)
     data = pandas.read_csv(f.name, skiprows=1)
@@ -269,7 +283,7 @@ def get_bunch_data(run=None, fill=None, beams=None):
 
 
 def create_runls_ticks_formatter(dataframe):
-    log.info("creating x axis ticks formatter")
+    log.debug("creating x axis ticks formatter")
     labels = ["{0:d}:{1:>4}".format(run, ls)
               for run, ls
               in zip(dataframe["run"], dataframe["ls"])]
@@ -281,12 +295,12 @@ def create_runls_ticks_formatter(dataframe):
         else:
             return labels[x]
 
-    log.info("ticks formatter created")
+    log.debug("ticks formatter created")
     return ticker.FuncFormatter(runnr_lsnr_ticks)
 
 
 def plot_by_columns(subplot, data, cols, special=None, legend=True):
-    log.info("plotting by column")
+    log.debug("plotting by column")
     for col in cols:
         linestyle = "-"
         color = COLORS.next()
@@ -314,12 +328,12 @@ def separate_runs_on_plot(subplot, data):
     """
     put run number every run change, color background for every second run
     """
-    log.info("visualizing run changes")
+    log.debug("visualizing run changes")
     # prepare transformation to treat x as data values and y as
     # relative plot position
     trans = transforms.blended_transform_factory(
         subplot.transData, subplot.transAxes)
-    data.sort(["run", "ls"], inplace=True, ascending=[True, True])
+    data.sort_values(by=["run", "ls"], inplace=True, ascending=[True, True])
     put_bg_switch = False
     for run_group in data.groupby("run"):
         runnr, data = run_group
@@ -336,7 +350,7 @@ def separate_runs_on_plot(subplot, data):
 
 def calculate_ratios(data, cols, primary_luminometers):
     """Update DataFrame 'data' with ratios"""
-    log.info("calculating ratios")
+    log.debug("calculating ratios")
     # back up numpy settings and set to ignore all errors (to handle
     # "None"s and division by zero)
     old_numpy_settings = numpy.seterr(all="ignore")
@@ -358,15 +372,15 @@ def calculate_ratios(data, cols, primary_luminometers):
 
 
 def make_correlation_plot(plot, data, x, y):
-    log.info("making correlation plot")
+    log.debug("making correlation plot")
     plot.scatter(data[x], data[y]/data[x], alpha=0.5)
-    log.info("calculating fit")
+    log.debug("calculating fit")
     # filter NaN's None's ...
     mask = numpy.isfinite(data[x]) & numpy.isfinite(data[y])
     k, c = numpy.polyfit(data[x][mask], (data[y]/data[x])[mask], 1)
     linex = [data[x].min(), data[x].max()]
     liney = [data[x].min()*k+c, data[x].max()*k+c]
-    log.info("adding fit line")
+    log.debug("adding fit line")
     plot.plot(linex, liney, c=SPECIAL_COLOR1)
     text = r"$y(x)= x*{0} + ({1})$".format(k, c)
     plot.text(0.0, 1.0, s=text, ha="left", va="top",
@@ -378,7 +392,7 @@ def make_correlation_plot(plot, data, x, y):
 
 
 def make_avglumi_plot(plot, data, cols, run, fill):
-    log.info("making abglumi plot")
+    log.debug("making avglumi plot")
     plot_by_columns(plot, data, cols, "online")
     plot.set_ylabel("lumi ("+units+")")
     ylims = plot.get_ylim()
@@ -396,7 +410,7 @@ def make_avglumi_plot(plot, data, cols, run, fill):
 
 def make_ratio_plot(plot, data, cols, run, fill, primary_luminometers):
     ratios = calculate_ratios(data, cols, primary_luminometers)
-    log.info("creating ratios plot")
+    log.debug("creating ratios plot")
     plot_by_columns(plot, data, ratios)
     plot.set_title("Lumi ratios")
     plot.set_ylabel("lumi ratios")
@@ -420,8 +434,8 @@ def make_bunch_plot(plot, data, cols, run, fill, threshold):
     data.iloc[:, 2:] = data.iloc[:, 2:].apply(
         filter_by_percentage_of_max, axis=1)
 
-    log.info("creating plot")
-    log.info("plotting by bunch")
+    log.debug("creating plot")
+    log.debug("plotting by bunch")
     plot_by_columns(plot, data, cols, legend=False)
     plot.set_ylabel("bxdelivered ("+units+")")
 
