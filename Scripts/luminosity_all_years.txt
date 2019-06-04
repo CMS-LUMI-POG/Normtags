@@ -1,0 +1,18 @@
+Description,               Corr,2015,2016,2017,2018
+Luminosity,                -,   4.21,40.99,49.79,67.86
+Length scale,              C,   0.5, 0.8, 0.3, 0.2
+Orbit drift,               C,   0.2, 0.1, 0.2, 0.1
+X-Y nonfactorization,      C,   0.5, 0.5, 0.8, 2.0
+Beam-beam and dynamic-beta,C,   0.3, 0.2, 0.1, 0.2
+Beam current calibration,  C,   0.3, 0.3, 0.3, 0.2
+Ghosts and satellites,     C,   0.1, 0.1, 0.1, 0.1
+Scan to scan variation,    U,   0.2, 0.3, 0.9, 0.3
+Bunch to bunch variation,  U,   0,   0,   0.1, 0.1
+Cross-detector consistency,U,   0,   0,   0.6, 0.5
+Background subtraction,    C,   0,   0,   0  , 0.1
+Afterglow type 1,          P50, 0.3, 0.3, 0.2, 0.1
+Afterglow type 2,          P50, 0.1, 0.3, 0.3, 0.4
+Dynamic inefficiency,      U,   0.4, 0.2, 0,   0
+Cross-detector stability,  U,   0.6, 0.5, 0.5, 0.6
+Linearity,                 U,   0.5, 0.3, 1.5, 1.1
+CMS deadtime,              U,   0.5, 0.1, 0.5, 0.1
