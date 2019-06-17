@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 import os, sys, csv, re
 
@@ -26,8 +26,10 @@ import os, sys, csv, re
 #
 # Note: use hfoc for 2015-16 and hfet for 2017-2018 below.
 
-luminometerList = ["hfet", "pltzero"]
-bunchThreshold = 0.1
+# For heavy ion runs, use hfoc instead of hfet -- this is done below
+defaultLuminometerList = ["hfet", "pltzero"]
+# This threshold may also get changed -- also below
+defaultBunchThreshold = 0.1
 deleteAfterProcessing = False
 
 # Some fills we can't reliably use the luminometer data to get the number of bunches, so don't try.
@@ -89,17 +91,21 @@ with open(sys.argv[1]) as csvFile:
         # the injection scheme.
         # * If there's a different number of bunches in each beam (rare, but happens in a few VdM filling
         # schemes for example) then you get 25ns_XXXb_YYYb_ZZZ..., so we want ZZZ in this case.
-        # * The Xenon filling schemes have "Xe" instead of "b".
+        # * The lead and xenon filling schemes have "Pb" and "Xe", respectively, instead of "b".
         # * Finally there are a few which just don't fit at all so we handle them manually.
 
         fillingScheme = row[23]
         nBunchFromScheme = 0
-        result = re.search("[0-9]+(?:b|Xe)_(?:[0-9]+b_)?([0-9]+)", fillingScheme)
+        result = re.search("[0-9]+(?:b|Pb|Xe)_(?:[0-9]+b_)?([0-9]+)", fillingScheme)
         if result:
             nBunchFromScheme = result.group(1)
         else:
-            if (fillingScheme.find("2nominals_10pilots_lossmaps_coll_allIPs") >= 0):
+            if fillingScheme.find("2nominals_10pilots_lossmaps_coll_allIPs") >= 0:
                 nBunchFromScheme = 1
+            elif fillingScheme.find("MD3295_B1full_144bpi") >= 0:
+                nBunchFromScheme = 12
+            elif fillingScheme.find("Multi_525ns_152_150_0_0_8bpi_19inj") >= 0:
+                nBunchFromScheme = 150
             else:
                 print "Failed to parse filling scheme",fillingScheme
         if int(nBunchFromScheme) != targetNBunch:
@@ -110,6 +116,11 @@ if (len(sys.argv) > 2):
     fillList = [int(a) for a in sys.argv[2:]]
 
 for fill in fillList:
+    # Set the luminometers to use (this may be changed by fill).
+    luminometerList = defaultLuminometerList
+    if (fill >= 7427 and fill <= 7492):
+        luminometerList = ["pltzero", "hfoc"]
+
     # Get the number of colliding bunches from the beam information.
     beamFileName = "temp_beam_"+str(fill)+".csv"
     if not os.path.exists(beamFileName):
@@ -146,6 +157,12 @@ for fill in fillList:
         # Check to see if this luminometer is actually usable for this fill.
         if fill in badFills[luminometer]:
             continue
+            
+        # Set the threshold.
+        bunchThreshold = defaultBunchThreshold
+        # higher threshold for HI runs
+        if luminometer == "hfoc" and fill >= 7427 and fill <= 7492:
+            bunchThreshold = 0.3
 
         filledBunches = set()
         dataFileName = "bxdata_"+str(fill)+"_"+luminometer+".csv"

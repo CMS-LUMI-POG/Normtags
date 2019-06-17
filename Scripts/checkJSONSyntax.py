@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 # A very simple script to make sure that one or more JSON files are valid. This uses the Python JSON module
 # which gives somewhat more helpful error messages than brilcalc does, so it's hopefully easier to track down
