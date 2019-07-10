@@ -25,7 +25,10 @@ correlations = {}
 uncertainties = {}
 with open(args.inputFile) as csv_file:
     reader = csv.reader(csv_file, skipinitialspace=True)
-    for i, row in enumerate(reader):
+    i = 0
+    for row in reader:
+        if len(row) == 0 or row[0][0] == '#':
+            continue
         if i == 0:
             if len(row) <= 2:
                 print "Error: expected some years in the top line"
@@ -35,7 +38,7 @@ with open(args.inputFile) as csv_file:
             if row[0] != 'Luminosity':
                 print "Error: expected first row to have luminosity"
                 sys.exit(1)
-            lumis = [float(i) for i in row[2:]]
+            lumis = [float(x) for x in row[2:]]
             if len(years) != len(lumis):
                 print "Error: number of lumis specified doesn't match number of years"
                 sys.exit(1)
@@ -47,7 +50,8 @@ with open(args.inputFile) as csv_file:
                 print "Error: correlation should be C, U, or P##"
                 sys.exit(1)
             correlations[row[0]] = row[1]
-            uncertainties[row[0]] = [float(i)/100 for i in row[2:]]
+            uncertainties[row[0]] = [float(x)/100 for x in row[2:]]
+        i += 1
 
 # Now add them all up!
 total_luminosity = sum(lumis)
