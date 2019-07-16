@@ -10,7 +10,7 @@ Luminosity,                    -,   2.26,35.92,41.53,59.74
 
 # Normalization
 X-Y factorization,             C,   1.5, 0.9, 0.8, 2.0
-Length scale 15-16,            C,   1.5, 0.8, 0,   0
+Length scale 15-16,            C,   0.5, 0.8, 0,   0
 Length scale 17-18,            C,   0,   0,   0.3, 0.2
 Orbit drift,                   U,   0.4, 0.4, 0.2, 0.1
 Beam-beam deflection 15-17,    C,   0.4, 0.4, 0.4, 0
