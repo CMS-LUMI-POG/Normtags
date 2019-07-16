@@ -16,10 +16,23 @@ import math, sys, argparse, csv
 # (in %) of that uncertainty for each year.
 # The correlation should be 'C' for fully correlated uncertainties, 'U' for uncorrelated uncertainties, or for
 # partially correlated, P## where ## is the percent correlation (e.g. 'P70' for a 70% correlated uncertainty).
+#
+# Command-line arguments:
+# -y YEARS (e.g. -y 2016,2017,2018): add up only these selected years
+# -c: force all uncertainties to be treated as correlated
+# -u: force all uncertainties to be treated as uncorrelated
 
 parser = argparse.ArgumentParser()
 parser.add_argument('inputFile', help='Input file')
+parser.add_argument('-y', '--years', help='Comma-separated list of years to use in result')
+group = parser.add_mutually_exclusive_group()
+group.add_argument('-c', '--force-correlated', action='store_true', help='Treat all systematics as correlated')
+group.add_argument('-u', '--force-uncorrelated', action='store_true', help='Treat all systematics as uncorrelated')
 args = parser.parse_args()
+
+years_to_use = None
+if args.years:
+    years_to_use = args.years.split(",")
 
 correlations = {}
 uncertainties = {}
@@ -54,19 +67,32 @@ with open(args.inputFile) as csv_file:
         i += 1
 
 # Now add them all up!
-total_luminosity = sum(lumis)
+if not years_to_use:
+    total_luminosity = sum(lumis)
+else:
+    total_luminosity = 0
+    use_this_year = []
+    for i, y in enumerate(years):
+        if y in years_to_use:
+            total_luminosity += lumis[i]
+        use_this_year.append(y in years_to_use)
+
 total_uncertainty_sq = 0
 for u in uncertainties:
-    if correlations[u] == 'C':
+    if (correlations[u] == 'C' or args.force_correlated) and not args.force_uncorrelated:
         # Correlated -- just add up individual uncertainties
         this_uncertainty = 0
         for i in range(len(years)):
+            if args.years and not use_this_year[i]:
+                continue
             this_uncertainty += uncertainties[u][i]*lumis[i]
         total_uncertainty_sq += this_uncertainty**2
-    elif correlations[u] == 'U':
+    elif correlations[u] == 'U' or args.force_uncorrelated:
         # Uncorrelated -- add in quadrature
         this_uncertainty_sq = 0
         for i in range(len(years)):
+            if args.years and not use_this_year[i]:
+                continue
             this_uncertainty_sq += (uncertainties[u][i]*lumis[i])**2
         total_uncertainty_sq += this_uncertainty_sq
     elif correlations[u][0] == 'P':
@@ -75,6 +101,8 @@ for u in uncertainties:
         this_uncertainty_corr = 0
         this_uncertainty_uncorr_sq = 0
         for i in range(len(years)):
+            if args.years and not use_this_year[i]:
+                continue
             # Split up the SQUARED uncertainty into correlated and uncorrelated components.
             this_term_corr_sq = ((uncertainties[u][i]*lumis[i])**2)*frac_correlated
             this_term_uncorr_sq = ((uncertainties[u][i]*lumis[i])**2)*(1-frac_correlated)
@@ -83,6 +111,10 @@ for u in uncertainties:
         total_uncertainty_sq += this_uncertainty_corr**2 + this_uncertainty_uncorr_sq
 
 total_uncertainty = math.sqrt(total_uncertainty_sq)
+if args.force_correlated:
+    print "*** All uncertainties have been treated as correlated ***"
+if args.force_uncorrelated:
+    print "*** All uncertainties have been treated as uncorrelated ***"
 print "Total luminosity is %.2f +/- %.2f (uncertainty of %.2f%%)" % \
     (total_luminosity, total_uncertainty, 100*total_uncertainty/total_luminosity)
                 
