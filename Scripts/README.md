@@ -2,7 +2,7 @@ This directory contains various scripts for working with normtags.
 
 * checkJSONSyntax.py: A very simple script which checks to make sure that the input file (or files) contain valid JSON. Use this if you need to manually edit a JSON file to make sure you didn't miss a comma or close-brace or otherwise introduce a problem.
 
-* combineYears.py: A script to combine the luminosity uncertainties from multiple years. The table of uncertainties and correlations should be specified in a text file; see the script for details of the format of this file.
+* combineYears.py: A script to combine the luminosity uncertainties from multiple years. The table of uncertainties and correlations should be specified in a text file; see the script for details of the format of this file. Use -y to select just some years, -c to force all uncertainties to be treated as correlated, or -u to force all uncertainties to be treated as uncorrelated.
 
 * compareBXPatterns.py: A script which compares the per-BX data for two luminometers (hfoc/hfet and pltzero) to look for any shifts in the BX data between the two.
 

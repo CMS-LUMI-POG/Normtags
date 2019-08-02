@@ -66,16 +66,30 @@ with open(args.inputFile) as csv_file:
             uncertainties[row[0]] = [float(x)/100 for x in row[2:]]
         i += 1
 
-# Now add them all up!
-if not years_to_use:
-    total_luminosity = sum(lumis)
-else:
-    total_luminosity = 0
+if args.years:
+    # If we're only using a subset of years, then go ahead and rebuild the years and lumis arrays
+    # with only the ones that we're using.
     use_this_year = []
+    new_years = []
+    new_lumis = []
     for i, y in enumerate(years):
         if y in years_to_use:
-            total_luminosity += lumis[i]
+            new_years.append(y)
+            new_lumis.append(lumis[i])
         use_this_year.append(y in years_to_use)
+    years = new_years
+    lumis = new_lumis
+
+    # Now, go through the uncertainties and drop the data for years that we're not using. This is a little
+    # clunky but it should work.
+    for u in uncertainties:
+        new_uncertainties = []
+        for i in range(len(uncertainties[u])):
+            if use_this_year[i]:
+                new_uncertainties.append(uncertainties[u][i])
+        uncertainties[u] = new_uncertainties
+
+total_luminosity = sum(lumis)
 
 total_uncertainty_sq = 0
 for u in uncertainties:
@@ -83,16 +97,12 @@ for u in uncertainties:
         # Correlated -- just add up individual uncertainties
         this_uncertainty = 0
         for i in range(len(years)):
-            if args.years and not use_this_year[i]:
-                continue
             this_uncertainty += uncertainties[u][i]*lumis[i]
         total_uncertainty_sq += this_uncertainty**2
     elif correlations[u] == 'U' or args.force_uncorrelated:
         # Uncorrelated -- add in quadrature
         this_uncertainty_sq = 0
         for i in range(len(years)):
-            if args.years and not use_this_year[i]:
-                continue
             this_uncertainty_sq += (uncertainties[u][i]*lumis[i])**2
         total_uncertainty_sq += this_uncertainty_sq
     elif correlations[u][0] == 'P':
@@ -101,8 +111,6 @@ for u in uncertainties:
         this_uncertainty_corr = 0
         this_uncertainty_uncorr_sq = 0
         for i in range(len(years)):
-            if args.years and not use_this_year[i]:
-                continue
             # Split up the SQUARED uncertainty into correlated and uncorrelated components.
             this_term_corr_sq = ((uncertainties[u][i]*lumis[i])**2)*frac_correlated
             this_term_uncorr_sq = ((uncertainties[u][i]*lumis[i])**2)*(1-frac_correlated)
@@ -118,3 +126,38 @@ if args.force_uncorrelated:
 print "Total luminosity is %.2f +/- %.2f (uncertainty of %.2f%%)" % \
     (total_luminosity, total_uncertainty, 100*total_uncertainty/total_luminosity)
                 
+# Next make the final table for use by other people. The first step is to go through and see if any
+# uncertainties are treated as correlated but only are nonzero for one year. If so, we can treat them as
+# uncorrelated rather than have to put them as a separate bucket.
+for u in uncertainties:
+    n_nonzero = 0
+    for x in uncertainties[u]:
+        if x > 0:
+            n_nonzero += 1
+    if n_nonzero == 1 and correlations[u] == 'C':
+        correlations[u] = 'U'
+# Now, for each uncertainty, print it out as is if correlated, but add it to the total uncorrelated bin if
+# not.
+total_uncorrelated = [0]*len(years)
+for u in sorted(uncertainties):
+    if correlations[u] == 'C':
+        print u+","+",".join([str(x*100) for x in uncertainties[u]])
+    elif correlations[u] == 'U':
+        for i in range(len(uncertainties[u])):
+            total_uncorrelated[i] += (100*uncertainties[u][i])**2
+    elif correlations[u][0] == 'P':
+        correlated_uncertainty = []
+        frac_correlated = int(correlations[u][1:])/100.0
+        for i in range(len(years)):
+            # Split the uncertainty into correlated and uncorrelated parts.
+            this_term_corr_sq = ((100*uncertainties[u][i])**2)*frac_correlated
+            this_term_uncorr_sq = ((100*uncertainties[u][i])**2)*(1-frac_correlated)
+            # Dump the uncorrelated part into the uncorrelated bucket and keep track of the correlated part.
+            total_uncorrelated[i] += this_term_uncorr_sq
+            correlated_uncertainty.append("%.1f" % (math.sqrt(this_term_corr_sq)))
+        print u+" (correlated part),"+",".join(correlated_uncertainty)
+# Finally, print out the uncorrelateds.
+for i in range(len(years)):
+    output_array = ['0.0']*len(years)
+    output_array[i] = "%.1f" % (math.sqrt(total_uncorrelated[i]))
+    print "Uncorrelated "+str(years[i])+","+",".join(output_array)
