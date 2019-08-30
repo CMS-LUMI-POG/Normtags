@@ -26,6 +26,8 @@ with open(sys.argv[1]) as infile:
         line = infile.readline()
         if not line:
             break
+        if line.isspace():
+            continue
 
         if not in_headers:
             # Parse the next four lines as a single IOV.
