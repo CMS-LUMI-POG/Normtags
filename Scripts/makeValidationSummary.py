@@ -5,7 +5,7 @@
 # This script makes a plot summarizing the overall results of the fill validation script. Just put in the
 # luminometers, runs, etc.  to use below and run.
 
-import os, sys, json
+import os, sys, json, argparse
 import matplotlib.pyplot as plt
 
 # Luminometers to make the plot for. Recommended to include only one of HFOC/HFET since normally they're
@@ -13,9 +13,27 @@ import matplotlib.pyplot as plt
 
 luminometers = ["hfet", "pltzero", "bcm1f", "dt"]
 
-# Run range to consider. Use -1 to specify all runs.
-first_run = 314472 # beginning of 2018
-last_run = -1
+# Get year and translate that into a run range.
+parser = argparse.ArgumentParser()
+parser.add_argument('year', nargs='?', type=int, default='2018', help='Year to run over')
+args = parser.parse_args()
+
+# Set first and last run for each year. Note: includes all running types (pp, PbPb, etc.)
+if args.year == 2018:
+    first_run = 314472
+    last_run = 327561
+elif args.year == 2017:
+    first_run = 293953
+    last_run = 307082
+elif args.year == 2016:
+    first_run = 271031
+    last_run = 286506
+elif args.year == 2015:
+    first_run = 246908
+    last_run = 260627
+else:
+    print "Unknown year",args.year
+    sys.exit(1)
 
 normtag_file_form = "../normtag_%s.json"
 output_file_name = "validationPerformance.png"
@@ -101,7 +119,7 @@ colors = ['forestgreen', 'red', 'blue', 'sienna', 'gold', 'darkviolet', 'lightsa
 
 patches, texts = plt.pie(lumisections_count, colors=colors)
 plt.legend(patches, labels, loc="best")
-plt.title("Fill validation results in 2018")
+plt.title("Fill validation results in "+str(args.year))
 plt.axis('equal')
 plt.tight_layout()
 plt.show()
