@@ -14,3 +14,5 @@ The log file fillValidationLog.json contains the log information from the fill v
 The other scripts (get_recentfill.py, get_fill_amodetag.py, and lumiValidate.py) are used by doFillValidation.py.
 
 There are also other scripts for other normtag tasks in the Scripts/ directory. Please see there for documentation.
+
+The JSON/ directory contains a few JSON files for running in particular periods. These are also documented in the directory.
