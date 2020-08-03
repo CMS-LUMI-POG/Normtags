@@ -16,6 +16,8 @@ This directory contains various scripts for working with normtags.
 
 * makeValidationSummary.py: A script that makes a plot summarizing the results of the validation by showing the total fraction of lumisections that are good for all luminometers, bad for one specific luminometer, or bad for more than one luminometer.
 
+* makeJSONFromNormtag.py: A script that takes an normtag and makes a JSON file containing the list of lumisections that the normtag covers.
+
 * normtagComposition.py: A script that takes a composite normtag and tells you the fraction of that normtag provided by each luminometer in the normtag.
 
 * summarizeCalibration.py: Given a detector calibration contained in a yaml file, will summarize the sigmavis, efficiency, and linearity corrections that go into this tag.
