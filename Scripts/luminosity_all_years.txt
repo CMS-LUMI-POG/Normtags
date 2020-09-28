@@ -28,7 +28,6 @@ PCC afterglow type 1 (15-16),  C,   0.3, 0.3, 0.0, 0.0
 PCC afterglow type 2 (15-16),  C,   0.1, 0.3, 0.0, 0.0
 HF afterglow type 1 (17-18),   U,   0.0, 0.0, 0.2, 0.1
 HF afterglow type 2 (17-18),   U,   0.0, 0.0, 0.3, 0.4
-Dynamic inefficiency,          C,   0.4, 0.3, 0.0, 0.0
 Cross-detector stability,      U,   0.6, 0.5, 0.5, 0.6
 PCC linearity (15-16),         C,   0.5, 0.3, 0.0, 0.0
 HF linearity (17-18),          U,   0.0, 0.0, 1.5, 1.1
