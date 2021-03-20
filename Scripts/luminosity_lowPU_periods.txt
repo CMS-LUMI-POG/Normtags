@@ -1,6 +1,6 @@
 # This input file contains the luminosity from PASes
 # LUM-17-004 (2017H) and LUM-19-001 (2017G)
-# and the correlation scheme as presented by LUM-19-001a authors and documented in AN-18-186
+# and the correlation scheme as presented by LUM-19-001 aauthors and documented in AN-18-186
 
 
 Description,                   Corr,2017G,2017H
@@ -10,18 +10,18 @@ Luminosity,                    -,   304.34,223.50
 
 # Normalization
 X-Y factorization,             C,   0.8, 0.8
-Length scale,                  U,   0.2, 0.3
+Length scale,                  U,   0.8, 0.3
 Orbit drift,                   U,   0.3, 0.2
-Beam-beam effects,             C,   0.5, 0.6
-Beam current calibration       C,   0.2, 0.3
+Beam-beam effects,             U,   0.8, 0.6
+Beam current calibration,      C,   0.2, 0.3
 Ghosts and satellites,         U,   0.03, 0.1
 Scan to scan variation,        U,   0.4, 0.9
 Bunch to bunch variation,      U,   0.5, 0.1
-Cross-detector consistency,    U,   0.3, 0.6
+Cross-detector consistency,    U,   0.4, 0.6
 
 # Integration
 HF afterglow,                  C,   0.2, 0.4
-Cross-detector stability,      U,   0.2, 0.5
+Cross-detector stability,      U,   0.1, 0.5
 Cross-detector linearity,      U,   0.0, 0.2
-CMS deadtime,                  U,   0.5, 0.1
+CMS deadtime,                  U,   0.1, 0.1
 Statistical,                   U,   0.03,0.0
