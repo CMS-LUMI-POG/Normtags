@@ -1,27 +1,39 @@
 # This input file contains the luminosity from PASes
 # LUM-17-004 (2017H) and LUM-19-001 (2017G)
-# and the correlation scheme as presented by LUM-19-001 aauthors and documented in AN-18-186
+# and the correlation scheme as presented by LUM-19-001 authors and documented in AN-18-186
 
 
 Description,                   Corr,2017G,2017H
 # Pick one of these lines -- top is delivered, bottom is recorded with golden JSON in /pb
-#Luminosity,                    -,   317.09,234.26
-Luminosity,                    -,   304.34,223.50
+#Luminosity,                    -,   314.95,234.26
+Luminosity,                    -,   302.28,223.50
 
-# Normalization
-X-Y factorization,             C,   0.8, 0.8
-Length scale,                  U,   0.8, 0.3
-Orbit drift,                   U,   0.3, 0.2
-Beam-beam effects,             U,   0.8, 0.6
-Beam current calibration,      C,   0.2, 0.3
+# Normalization (common)
+Beam current calibration,      C,   0.2,  0.3
 Ghosts and satellites,         U,   0.03, 0.1
-Scan to scan variation,        U,   0.4, 0.9
-Bunch to bunch variation,      U,   0.5, 0.1
-Cross-detector consistency,    U,   0.4, 0.6
+Orbit drift,                   U,   0.25, 0.15
+Length scale,                  U,   0.8,  0.3
+Beam-beam effects,             U,   0.8,  0.64
+Residual beam position diff,   U,   1.0,  0.0
+Factorization bias,            C,   0.8,  0.82
+Cross-detector consistency,    U,   0.40, 0.6
 
-# Integration
-HF afterglow,                  C,   0.2, 0.4
-Cross-detector stability,      U,   0.1, 0.5
-Cross-detector linearity,      U,   0.0, 0.2
-CMS deadtime,                  U,   0.1, 0.1
-Statistical,                   U,   0.03,0.0
+# Normalization (detector-specific)
+# Pick one set of these lines -- top is for HFOC, bottom is for PLT (5 TeV only)
+Statistical,                   U,   0.02, 0.0
+#Statistical,                   U,   0.06, 0.0
+Scan-to-scan consistency,      U,   0.36, 0.9
+#Scan-to-scan consistency,      U,   0.41, 0.9
+Bunch-to-bunch consistency,    U,   0.49, 0.1
+#Bunch-to-bunch consistency,    U,   0.39, 0.1
+
+# Integration (common)
+Cross-detector stability,      U,   0.14, 0.5
+CMS deadtime,                  U,   0.1,  0.5
+
+# Integration (detector-specific)
+# Pick one set of these lines -- top is for HFOC, bottom is for PLT (5 TeV only)
+OOT pileup corrections,        C,   0.2,  0.36
+#OOT pileup corrections,        C,   0.03,  0.36
+Cross-detector linearity,      U,   0.03, 0.2
+#Cross-detector linearity,      U,   0.02, 0.2
