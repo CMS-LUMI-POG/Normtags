@@ -25,6 +25,7 @@ import math, sys, argparse, csv
 parser = argparse.ArgumentParser()
 parser.add_argument('inputFile', help='Input file')
 parser.add_argument('-y', '--years', help='Comma-separated list of years to use in result')
+parser.add_argument('-r', '--ratio', action='store_true', help='Combining two different years at two energies')
 group = parser.add_mutually_exclusive_group()
 group.add_argument('-c', '--force-correlated', action='store_true', help='Treat all systematics as correlated')
 group.add_argument('-u', '--force-uncorrelated', action='store_true', help='Treat all systematics as uncorrelated')
@@ -90,6 +91,8 @@ if args.years:
         uncertainties[u] = new_uncertainties
 
 total_luminosity = sum(lumis)
+if args.ratio:
+    total_luminosity = lumis[1]/lumis[0]
 
 total_uncertainty_sq = 0
 for u in uncertainties:
@@ -98,12 +101,23 @@ for u in uncertainties:
         this_uncertainty = 0
         for i in range(len(years)):
             this_uncertainty += uncertainties[u][i]*lumis[i]
+        if args.ratio:
+            abs_uncertainty_0=uncertainties[u][0]*lumis[0]
+            abs_uncertainty_1=uncertainties[u][1]*lumis[1]
+            if abs_uncertainty_0>abs_uncertainty_1:
+                this_uncertainty = (lumis[1]/lumis[0])*(math.sqrt( (abs_uncertainty_1/lumis[1])**2 + (abs_uncertainty_0/lumis[0])**2 - 2*abs_uncertainty_1**2/(lumis[0]*lumis[1]) ))
+            else:
+                this_uncertainty = (lumis[1]/lumis[0])*(math.sqrt( (abs_uncertainty_1/lumis[1])**2 + (abs_uncertainty_0/lumis[0])**2 - 2*abs_uncertainty_0**2/(lumis[0]*lumis[1]) ))
         total_uncertainty_sq += this_uncertainty**2
     elif correlations[u] == 'U' or args.force_uncorrelated:
         # Uncorrelated -- add in quadrature
         this_uncertainty_sq = 0
         for i in range(len(years)):
             this_uncertainty_sq += (uncertainties[u][i]*lumis[i])**2
+        if args.ratio:
+            abs_uncertainty_0=uncertainties[u][0]*lumis[0]
+            abs_uncertainty_1=uncertainties[u][1]*lumis[1]
+            this_uncertainty_sq = (lumis[1]/lumis[0])**2*( (abs_uncertainty_1/lumis[1])**2 + (abs_uncertainty_0/lumis[0])**2 )
         total_uncertainty_sq += this_uncertainty_sq
     elif correlations[u][0] == 'P':
         # Partially correlated
@@ -123,8 +137,12 @@ if args.force_correlated:
     print "*** All uncertainties have been treated as correlated ***"
 if args.force_uncorrelated:
     print "*** All uncertainties have been treated as uncorrelated ***"
-print "Total luminosity is %.2f +/- %.2f (uncertainty of %.2f%%)" % \
-    (total_luminosity, total_uncertainty, 100*total_uncertainty/total_luminosity)
+if not args.ratio:
+    print "Total luminosity is %.2f +/- %.2f (uncertainty of %.2f%%)" % \
+        (total_luminosity, total_uncertainty, 100*total_uncertainty/total_luminosity)
+else:
+    print "Ratio luminosity is %.2f +/- %.3f (uncertainty of %.2f%%)" % \
+        (total_luminosity, total_uncertainty, 100*total_uncertainty/total_luminosity)
                 
 # Next make the final table for use by other people. The first step is to go through and see if any
 # uncertainties are treated as correlated but only are nonzero for one year. If so, we can treat them as
