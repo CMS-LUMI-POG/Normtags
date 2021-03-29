@@ -4,13 +4,13 @@
 
 Description,                   Corr,2015,2016,2017,2018
 # Pick one of these lines -- top is delivered, bottom is recorded with golden JSON
-#Luminosity,                    -,   2.33,37.60,49.79,67.86
-Luminosity,                    -,    2.25,36.07,41.53,59.74
+#Luminosity,                    -,   2.35,37.82,49.79,67.86
+Luminosity,                    -,    2.27,36.26,41.53,59.74
 
 # Normalization
 X-Y factorization,             C,   0.5, 0.5, 0.8, 2.0
 Length scale,                  C,   0.2, 0.3, 0.3, 0.2
-Orbit drift Syst,              C,   0.8, 0.6, 0.0, 0.0
+Orbit drift Syst,              C,   0.8, 0.5, 0.0, 0.0
 Orbit drift Rand,              U,   0.2, 0.1, 0.2, 0.1
 Beam-beam deflection 17,       C,   0.0, 0.0, 0.4, 0.0
 Dynamic beta 17,               C,   0.0, 0.0, 0.5, 0.0
