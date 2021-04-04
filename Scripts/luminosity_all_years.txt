@@ -3,9 +3,10 @@
 # https://indico.cern.ch/event/833744/contributions/3493738/attachments/1877010/3091250/Proposal_for_Lumi_POG_recommendation_on_combination_of_different_data_taking_periods1.pdf
 
 Description,                   Corr,2015,2016,2017,2018
-# Pick one of these lines -- top is delivered, bottom is recorded with golden JSON
+# Pick one of these lines -- top is delivered, middle i recorded with nonlegacy golden JSON, bottom is recorded with legacy golden JSON
 #Luminosity,                    -,   4.13,41.58,49.79,67.86
-Luminosity,                    -,    2.27,36.29,41.53,59.74
+#Luminosity,                    -,   2.27,36.29,41.53,59.74
+Luminosity,                    -,    2.27,36.33,41.48,59.83
 
 # Normalization
 X-Y factorization,             C,   0.5, 0.5, 0.8, 2.0
