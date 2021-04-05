@@ -184,8 +184,6 @@ for i in range(len(years)):
 
 
 print "\n\nSimplified scheme\n"
-print years,len(years)
-print uncertainties.keys()
 
 mergedUncertSquared={}
 for uncert in uncertainties:
