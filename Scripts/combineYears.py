@@ -43,13 +43,14 @@ with open(args.inputFile) as csv_file:
     for row in reader:
         if len(row) == 0 or row[0][0] == '#':
             continue
+        systName=row[0]
         if i == 0:
             if len(row) <= 2:
                 print "Error: expected some years in the top line"
                 sys.exit(1)
             years = row[2:]
         elif i == 1:
-            if row[0] != 'Luminosity':
+            if systName != 'Luminosity':
                 print "Error: expected first row to have luminosity"
                 sys.exit(1)
             lumis = [float(x) for x in row[2:]]
@@ -58,13 +59,13 @@ with open(args.inputFile) as csv_file:
                 sys.exit(1)
         else:
             if len(row) != len(lumis)+2:
-                print "Error: number of uncertainties for",row[0],"doesn't match number of years"
+                print "Error: number of uncertainties for",systName,"doesn't match number of years"
                 sys.exit(1)
             if row[1] != 'C' and row[1] != 'U' and row[1][0] != 'P':
                 print "Error: correlation should be C, U, or P##"
                 sys.exit(1)
-            correlations[row[0]] = row[1]
-            uncertainties[row[0]] = [float(x)/100 for x in row[2:]]
+            correlations[systName] = row[1]
+            uncertainties[systName] = [float(x)/100 for x in row[2:]]
         i += 1
 
 if args.years:
@@ -179,3 +180,48 @@ for i in range(len(years)):
     output_array = ['0.0']*len(years)
     output_array[i] = "%.1f" % (math.sqrt(total_uncorrelated[i]))
     print "Uncorrelated "+str(years[i])+","+",".join(output_array)
+
+
+
+print "\n\nSimplified scheme\n"
+print years,len(years)
+print uncertainties.keys()
+
+mergedUncertSquared={}
+for uncert in uncertainties:
+    #check which years are correlated
+    if correlations[uncert] == 'U':
+        for iYear in range(len(years)):
+            if not mergedUncertSquared.has_key(years[iYear]):
+                mergedUncertSquared[years[iYear]]=[0]
+            mergedUncertSquared[years[iYear]][0]+=uncertainties[uncert][iYear]**2
+    elif correlations[uncert] == 'C':
+        thisSet=""
+        nYear=0
+        for iYear in range(len(years)):
+            if uncertainties[uncert][iYear] > 0:
+                thisSet+=years[iYear]
+                nYear+=1
+        if not mergedUncertSquared.has_key(thisSet):
+            mergedUncertSquared[thisSet]=[0]*nYear
+        yearInd=0
+        for iYear in range(len(years)):
+            if uncertainties[uncert][iYear] > 0:
+                mergedUncertSquared[thisSet][yearInd]+=uncertainties[uncert][iYear]**2
+                yearInd+=1
+              
+
+   
+yearSets=mergedUncertSquared.keys()
+yearSets.sort()
+for year in years:
+    yearSets.remove(year)
+    yearSets.append(year)
+
+for yearSet in yearSets:
+    print yearSet,
+    for setInd in range(len(mergedUncertSquared[yearSet])):
+        print "%.1f" % (math.sqrt(mergedUncertSquared[yearSet][setInd])*100),
+    print
+     
+
