@@ -13,7 +13,8 @@ X-Y factorization,             C,   0.5, 0.5, 0.8, 2.0
 Length scale,                  C,   0.2, 0.3, 0.3, 0.2
 Orbit drift Syst,              C,   0.8, 0.5, 0.0, 0.0
 Orbit drift Rand,              U,   0.2, 0.1, 0.2, 0.1
-Beam-beam effects,             C,   0.5, 0.5, 0.6, 0.2
+Beam-beam effects (15-16),     C,   0.5, 0.5, 0.0, 0.0
+Beam-beam effects (17-18),     C,   0.0, 0.0, 0.6, 0.2
 Beam current calibration,      C,   0.2, 0.2, 0.3, 0.2
 Ghosts and satellites,         C,   0.1, 0.1, 0.1, 0.1
 Scan to scan variation,        U,   0.5, 0.2, 0.9, 0.3
