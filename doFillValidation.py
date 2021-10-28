@@ -55,12 +55,17 @@ defaultLumiPriority = ['hfet', 'pltzero', 'bcm1f', 'hfoc', 'dt']
 # these luminometers, so that we don't end up with too many ratios.
 primaryLuminometers = ['pltzero', 'hfet']
 
+##### TEMPORARY FIXES FOR EARLY 2021 RUNNING -- please delete these lines when we have more luminometers available
+luminometers = ['bcm1f', 'pltzero']
+defaultLumiPriority = ['pltzero', 'bcm1f']
+primaryLuminometers = ['pltzero', 'bcm1f']
+
 # Datatag to be used for each luminometer.
-datatags = {'pltzero': 'pltzero18v3b',
-            'hfet': 'hfet18v3',
-            'bcm1f': 'bcm1f18v3',
-            'hfoc': 'hfoc18v3',
-            'dt': 'dt18v1'}
+datatags = {'pltzero': 'pltzero21v1',
+            'hfet': 'hfet21v1',
+            'bcm1f': 'bcm1f21v1',
+            'hfoc': 'hfoc21v1',
+            'dt': 'dt21v1'}
 
 # Test mode: if set to True, automatic emails will be sent to the screen instead and
 # automatic git commits will not be performed.
@@ -71,11 +76,11 @@ testMode = False
 emailTargets = {'pltzero': 'pltzero', 'bcm1f': 'bcm1f', 'hfet': 'hf', 'hfoc': 'hf', 'dt': 'dt'}
 # Second, the list of recipients for each target. 'scans' is a target for the emittance scan results
 # (this will be targeted if any emittance scans are invalidated while invalidating).
-emailRecipients = {'pltzero': ['paul.lujan@cern.ch','andres.delannoy@gmail.com','andreas.kornmayer@cern.ch','joseph.noel.heideman@cern.ch'],
-                   'bcm1f': ['Moritz.Guthoff@cern.ch'],
-                   'hf': ['capalmer@cern.ch','marlow@cern.ch','alexis.kalogeropoulos@cern.ch','samuel.lloyd.higginbotham@cern.ch'],
-                   'dt': ['cms-phys-conveners-lum@cern.ch'],
-                   'scans': ['peter.tsrunchev@cern.ch']}
+emailRecipients = {'pltzero': ['paul.lujan@cern.ch','andres.delannoy@gmail.com','david.peter.stickland@cern.ch', 'anne.evelyn.dabrowski@cern.ch'],
+                   'bcm1f': ['david.peter.stickland@cern.ch', 'anne.evelyn.dabrowski@cern.ch'],
+                   'hf': ['david.peter.stickland@cern.ch', 'anne.evelyn.dabrowski@cern.ch'],
+                   'dt': ['david.peter.stickland@cern.ch', 'anne.evelyn.dabrowski@cern.ch'],
+                   'scans': ['david.peter.stickland@cern.ch', 'anne.evelyn.dabrowski@cern.ch']}
 # email recipients for overall summary email
 summaryEmailRecipients = ['david.peter.stickland@cern.ch', 'anne.evelyn.dabrowski@cern.ch'] 
 
