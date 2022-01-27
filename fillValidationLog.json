@@ -1,3 +1,18 @@
 [
-{"fill": 7514, "general_comments": "dummy fill to set beginning of 2021 data taking"}
+{"fill": 7514, "general_comments": "dummy fill to set beginning of 2021 data taking"},
+{"fill": 7515, "general_comments": "both detectors live throughout fill, no steps or gaps. bcm1f falling more steeply than plt\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David Stickland"},
+{"fill": 7516, "general_comments": "Run 346301 looks wrong for PLT, all rest ok for both\n", "invalidated_lumisections": [{"beginAt": "346301:1", "endAt": "346301:14", "luminometer": "pltzero", "reason": "wild fluctuations"}], "missing_lumisections": [{"beginAt": "346301:12", "endAt": "346301:12", "luminometer": "pltzero"}, {"beginAt": "346301:14", "endAt": "346301:14", "luminometer": "pltzero"}], "validated_by": "David Stickland"},
+{"fill": 7517, "general_comments": "entire fill looks good, including 3 emittance scans\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David Stickland"},
+{"fill": 7518, "general_comments": "entire fill looks good including the emittance scan\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David Stickland"},
+{"fill": 7519, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David Stickland"},
+{"fill": 7520, "general_comments": "7 missing lumisections for PLT are flagged, otehrwise both good\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "346446:105", "endAt": "346446:105", "luminometer": "pltzero"}, {"beginAt": "346447:35", "endAt": "346447:35", "luminometer": "pltzero"}, {"beginAt": "346447:51", "endAt": "346447:51", "luminometer": "pltzero"}, {"beginAt": "346447:55", "endAt": "346447:55", "luminometer": "pltzero"}, {"beginAt": "346447:61", "endAt": "346447:61", "luminometer": "pltzero"}, {"beginAt": "346447:69", "endAt": "346447:69", "luminometer": "pltzero"}, {"beginAt": "346447:72", "endAt": "346447:72", "luminometer": "pltzero"}], "validated_by": "David Stickland"},
+{"fill": 7521, "general_comments": "both detecors good for complete fill\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David Stickland"},
+{"fill": 7522, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David Stickland"},
+{"fill": 7523, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David Stickland"},
+{"fill": 7524, "general_comments": "bcm1f not present for this fill\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David Stickland"},
+{"fill": 7525, "general_comments": "Both detectors good for entire fill\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David Stickland"},
+{"fill": 7526, "general_comments": "both detecors good for entire fill\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David Stickland"},
+{"fill": 7527, "general_comments": "both detectors good for entire fill\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David Stickland"},
+{"fill": 7530, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David Stickland"},
+{"fill": 7531, "general_comments": "Start of fill without BCM1F, aftre recovery  both detectors ok\n", "invalidated_lumisections": [{"beginAt": "346506:69", "endAt": "346509:21", "luminometer": "bcm1f", "reason": "BCM1F Missing"}], "missing_lumisections": [], "validated_by": "David Stickland"}
 ]
