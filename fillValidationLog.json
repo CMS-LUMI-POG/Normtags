@@ -14,6 +14,5 @@
 {"fill": 7526, "general_comments": "both detecors good for entire fill\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David Stickland"},
 {"fill": 7527, "general_comments": "both detectors good for entire fill\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David Stickland"},
 {"fill": 7530, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David Stickland"},
-{"fill": 7531, "general_comments": "Start of fill without BCM1F, aftre recovery  both detectors ok\n", "invalidated_lumisections": [{"beginAt": "346506:69", "endAt": "346509:21", "luminometer": "bcm1f", "reason": "BCM1F Missing"}], "missing_lumisections": [], "validated_by": "David Stickland"},
-{"fill": 7516, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "346301:1", "endAt": "346301:14", "luminometer": "pltzero", "reason": "spiky, weird"}], "missing_lumisections": [{"beginAt": "346301:12", "endAt": "346301:12", "luminometer": "pltzero"}, {"beginAt": "346301:14", "endAt": "346301:14", "luminometer": "pltzero"}], "validated_by": "David Stickland"}
+{"fill": 7531, "general_comments": "Start of fill without BCM1F, aftre recovery  both detectors ok\n", "invalidated_lumisections": [{"beginAt": "346506:69", "endAt": "346509:21", "luminometer": "bcm1f", "reason": "BCM1F Missing"}], "missing_lumisections": [], "validated_by": "David Stickland"}
 ]
