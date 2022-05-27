@@ -40,7 +40,7 @@ except:
 try:
     subprocess.check_output('which git',shell=True)
 except:
-    print "git was not found. Please run on an online machine with git (e.g. x2go01, brildev1, etc.)"
+    print "git was not found. Please run on an online machine with git (e.g. brildev1)."
     sys.exit(1)
 
 # List of luminometers. The first in this list is the one that will be
@@ -55,12 +55,12 @@ defaultLumiPriority = ['hfet', 'pltzero', 'bcm1f', 'hfoc', 'dt']
 # these luminometers, so that we don't end up with too many ratios.
 primaryLuminometers = ['pltzero', 'hfet']
 
-# Datatag to be used for each luminometer.
-datatags = {'pltzero': 'pltzero22v0',
-            'hfet': 'hfet22v0',
-            'bcm1f': 'bcm1f22v0',
-            'hfoc': 'hfoc22v0',
-            'dt': 'dt22v0'}
+# Detectortag to be used for each luminometer.
+detectorTags = {'pltzero': 'pltzero22v0',
+                'hfet': 'hfet22v0',
+                'bcm1f': 'bcm1f22v0',
+                'hfoc': 'hfoc22v0',
+                'dt': 'dt22v0'}
 
 # Test mode: if set to True, automatic emails will be sent to the screen instead and
 # automatic git commits will not be performed.
@@ -349,10 +349,10 @@ def changePriority(delta):
     lumiPriority[sel] = temp
     # and refill the list boxes
     priorityList.delete(0, END)
-    datatagList.delete(0, END)
+    detectorTagList.delete(0, END)
     for l in lumiPriority:
         priorityList.insert(END, l)
-        datatagList.insert(END, datatags[l])
+        detectorTagList.insert(END, detectorTags[l])
     # leave the selected one selected so we can move it some more
     priorityList.selection_set(sel+delta)
     # save this in the session state
@@ -580,7 +580,7 @@ def produceOutput():
                 (r != lastRun and lastRun != -1) or
                 (ls != lastLS + 1 and lastLS != -1)):
                 if (lastLumin != "none"):
-                    jsonRecord = [datatags[lastLumin], {str(lastRun): [[startLS, lastLS]]}]
+                    jsonRecord = [detectorTags[lastLumin], {str(lastRun): [[startLS, lastLS]]}]
                     parsedBestLumiData.append(jsonRecord)
                 startLS = ls
             lastLumin = selLumin
@@ -590,7 +590,7 @@ def produceOutput():
                 startLS = ls
     # Don't forget the end!
     if (lastLumin != "none"):
-        jsonRecord = [datatags[lastLumin], {str(lastRun): [[startLS, lastLS]]}]
+        jsonRecord = [detectorTags[lastLumin], {str(lastRun): [[startLS, lastLS]]}]
         parsedBestLumiData.append(jsonRecord)
 
     with open(bestLumiFileName, 'w') as bestLumiFile:
@@ -614,7 +614,7 @@ def produceOutput():
                 # If new run, or discontinuous LS range, print out the previous line
                 if ((r != lastRun and lastRun != -1) or
                     (ls != lastLS + 1 and lastLS != -1)):
-                    jsonRecord = [datatags[l], {str(lastRun): [[startLS, lastLS]]}]
+                    jsonRecord = [detectorTags[l], {str(lastRun): [[startLS, lastLS]]}]
                     parsedLumiJSONData.append(jsonRecord)
                     startLS = ls
                 lastRun = r
@@ -624,7 +624,7 @@ def produceOutput():
         # Don't forget the end! HOWEVER if the detector was out for the whole fill then
         # do forget the end.
         if (lastRun != -1):
-            jsonRecord = [datatags[l], {str(lastRun): [[startLS, lastLS]]}]
+            jsonRecord = [detectorTags[l], {str(lastRun): [[startLS, lastLS]]}]
             parsedLumiJSONData.append(jsonRecord)
 
         with open(lumiJSONFileName, 'w') as lumiJSONFile:
@@ -854,14 +854,14 @@ for fillNumber in fillList:
     priDownButton = Button(root, text=unichr(8595), command=priorityDown)
     priDownButton.grid(row=3, column=2, sticky='W')
     
-    datatagLabel = Label(root, text='Datatags')
-    datatagLabel.grid(row=0, column=3)
-    datatagList = Listbox(root)
-    datatagList.grid(row=1, column=3, rowspan=7)
+    detectorTagLabel = Label(root, text='Detector tags')
+    detectorTagLabel.grid(row=0, column=3)
+    detectorTagList = Listbox(root)
+    detectorTagList.grid(row=1, column=3, rowspan=7)
     
     for l in lumiPriority:
         priorityList.insert(END, l)
-        datatagList.insert(END, datatags[l])
+        detectorTagList.insert(END, detectorTags[l])
         
     missingLabel = Label(root, text='Missing lumisections')
     missingLabel.grid(row=10, column=0)
