@@ -71,7 +71,7 @@ testMode = False
 emailTargets = {'pltzero': 'pltzero', 'bcm1f': 'bcm1f', 'hfet': 'hf', 'hfoc': 'hf', 'dt': 'dt'}
 # Second, the list of recipients for each target. 'scans' is a target for the emittance scan results
 # (this will be targeted if any emittance scans are invalidated while invalidating).
-emailRecipients = {'pltzero': ['paul.lujan@cern.ch','andres.delannoy@gmail.com',],
+emailRecipients = {'pltzero': ['paul.lujan@cern.ch', 'andres.delannoy@gmail.com', 'francesco.romeo@cern.ch'],
                    'bcm1f': ['jonas.rubenach@cern.ch', 'joanna.wanczyk@cern.ch'],
                    'hf': ['Alexis.Kalogeropoulos@cern.ch'],
                    'dt': ['cristina.oropeza.barrera@gmail.com'],
