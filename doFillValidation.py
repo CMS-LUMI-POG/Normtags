@@ -55,17 +55,12 @@ defaultLumiPriority = ['hfet', 'pltzero', 'bcm1f', 'hfoc', 'dt']
 # these luminometers, so that we don't end up with too many ratios.
 primaryLuminometers = ['pltzero', 'hfet']
 
-##### TEMPORARY FIXES FOR EARLY 2021 RUNNING -- please delete these lines when we have more luminometers available
-luminometers = ['bcm1f', 'pltzero']
-defaultLumiPriority = ['pltzero', 'bcm1f']
-primaryLuminometers = ['pltzero', 'bcm1f']
-
 # Datatag to be used for each luminometer.
-datatags = {'pltzero': 'pltzero21BeamTestV1',
-            'hfet': 'hfet21v0',
-            'bcm1f': 'bcm1f21BeamTestV2',
-            'hfoc': 'hfoc21v0',
-            'dt': 'dt21v0'}
+datatags = {'pltzero': 'pltzero22v0',
+            'hfet': 'hfet22v0',
+            'bcm1f': 'bcm1f22v0',
+            'hfoc': 'hfoc22v0',
+            'dt': 'dt22v0'}
 
 # Test mode: if set to True, automatic emails will be sent to the screen instead and
 # automatic git commits will not be performed.
@@ -76,13 +71,13 @@ testMode = False
 emailTargets = {'pltzero': 'pltzero', 'bcm1f': 'bcm1f', 'hfet': 'hf', 'hfoc': 'hf', 'dt': 'dt'}
 # Second, the list of recipients for each target. 'scans' is a target for the emittance scan results
 # (this will be targeted if any emittance scans are invalidated while invalidating).
-emailRecipients = {'pltzero': ['paul.lujan@cern.ch','andres.delannoy@gmail.com','david.peter.stickland@cern.ch', 'anne.evelyn.dabrowski@cern.ch'],
-                   'bcm1f': ['david.peter.stickland@cern.ch', 'anne.evelyn.dabrowski@cern.ch'],
-                   'hf': ['david.peter.stickland@cern.ch', 'anne.evelyn.dabrowski@cern.ch'],
-                   'dt': ['david.peter.stickland@cern.ch', 'anne.evelyn.dabrowski@cern.ch'],
-                   'scans': ['david.peter.stickland@cern.ch', 'anne.evelyn.dabrowski@cern.ch']}
+emailRecipients = {'pltzero': ['paul.lujan@cern.ch','andres.delannoy@gmail.com',],
+                   'bcm1f': ['jonas.rubenach@cern.ch', 'joanna.wanczyk@cern.ch'],
+                   'hf': ['Alexis.Kalogeropoulos@cern.ch'],
+                   'dt': ['cristina.oropeza.barrera@gmail.com'],
+                   'scans': ['santeri.saariokari@tuni.fi', 'cms-dpg-conveners-bril@cern.ch']}
 # email recipients for overall summary email
-summaryEmailRecipients = ['david.peter.stickland@cern.ch', 'anne.evelyn.dabrowski@cern.ch'] 
+summaryEmailRecipients = ['david.peter.stickland@cern.ch', 'Arkady.Lokhovitskiy@cern.ch','cms-BRIL-PM@cern.ch'] 
 
 # Paths to various things.
 lumiValidatePath = "./lumiValidate.py"         # script for making fill validation plot
