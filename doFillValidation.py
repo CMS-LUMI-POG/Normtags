@@ -89,6 +89,9 @@ dbAuthFileName = "./db.ini"                    # authentication file for DB
 lockFileName = "lock.doFillValidation"         # lock file name
 sessionStateFileName = "sessionRestore.doFillValidation"  # saved session state file name
 
+# Constants
+eofRunNumber = 9999999 # dummy run number greater than any real run
+
 #### Subroutines begin here
 
 # This is the implementation for the dialog window to select new ranges to invalidate.
@@ -137,7 +140,6 @@ class InvalidateDialog:
     def processNewInvalidation(self):
         l = self.selectedLumin.get()
 
-        eofRunNumber = 9999999 # just use a number greater than any real run
         startText = self.startAt.get()
         endText = self.endAt.get()
 
