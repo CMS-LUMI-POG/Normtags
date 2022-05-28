@@ -32,5 +32,15 @@
 {"fill": 7648, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Paul Lujan"},
 {"fill": 7649, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Paul Lujan"},
 {"fill": 7650, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Paul Lujan"},
-{"fill": 7651, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Paul Lujan"}
+{"fill": 7651, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Paul Lujan"},
+{"fill": 7652, "general_comments": "HF had noisy channels , reporting much to high a luminosity\n\n", "invalidated_lumisections": [{"beginAt": "-1", "endAt": "-1", "luminometer": "hfet", "reason": "Noise"}, {"beginAt": "-1", "endAt": "-1", "luminometer": "hfoc", "reason": "Noise"}, {"beginAt": "-1", "endAt": "-1", "luminometer": "dt", "reason": "Noise"}], "missing_lumisections": [{"beginAt": "352416:8", "endAt": "352417:171", "luminometer": "pltzero"}, {"beginAt": "352425:40", "endAt": "352425:40", "luminometer": "pltzero"}, {"beginAt": "352416:17", "endAt": "352417:1", "luminometer": "dt"}, {"beginAt": "352417:168", "endAt": "352421:1", "luminometer": "dt"}, {"beginAt": "352421:8", "endAt": "352422:1", "luminometer": "dt"}, {"beginAt": "352422:20", "endAt": "352425:1", "luminometer": "dt"}], "validated_by": "David Stickland"},
+{"fill": 7653, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David Stickland"},
+{"fill": 7654, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David Stickland"},
+{"fill": 7655, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David Stickland"},
+{"fill": 7656, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David Stickland"},
+{"fill": 7657, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David Stickland"},
+{"fill": 7658, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David Stickland"},
+{"fill": 7659, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David Stickland"},
+{"fill": 7660, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David Stickland"},
+{"fill": 7661, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David Stickland"}
 ]
