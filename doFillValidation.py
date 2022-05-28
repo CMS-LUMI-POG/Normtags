@@ -23,6 +23,7 @@ except ImportError:
 import tkMessageBox
 import os
 import csv
+import argparse
 import json
 import smtplib
 import copy
@@ -62,8 +63,10 @@ detectorTags = {'pltzero': 'pltzero22v0',
                 'hfoc': 'hfoc22v0',
                 'dt': 'dt22v0'}
 
-# Test mode: if set to True, automatic emails will be sent to the screen instead and
-# automatic git commits will not be performed.
+# Test mode: if set to True, automatic emails will be sent to the screen instead and automatic git commits
+# will not be performed. Note that you can also activate test mode by using the -t switch on the command line,
+# but you can also just set it here if you're doing a lot of development and don't want to have to remember to
+# do it each time.
 testMode = False
 
 # Information for automatically sending emails. First, we want to group hfet and hfoc into a single target
@@ -91,6 +94,36 @@ sessionStateFileName = "sessionRestore.doFillValidation"  # saved session state 
 
 # Constants
 eofRunNumber = 9999999 # dummy run number greater than any real run
+
+# Parse command-line arguments
+parser = argparse.ArgumentParser()
+parser.add_argument("-t", "--test-mode", help="Test mode (no automatic emails or git commit)", action="store_true")
+args = parser.parse_args()
+
+testMode = testMode or args.test_mode
+
+# Before we even get started, check the JSON files to make sure that they are valid. Otherwise, we're going to
+# crash when we try to update them.
+allJSONFiles = [logFileName, bestLumiFileName]
+for l in luminometers:
+    allJSONFiles.append(lumiJSONFileNamePattern % l)
+for j in allJSONFiles:
+    try:
+        with open(j, 'r') as jsonFile:
+            parsedData = json.load(jsonFile)
+    except IOError as ex:
+        print "Couldn't open JSON file",j+":",ex.strerror
+        print "Please make sure all input JSON files are present before running this script."
+        sys.exit(1)
+    except ValueError as ex:
+        print "Error parsing JSON file",j+":",ex.args[0]
+        print "Please correct all problems in the input JSON files before running this script."
+        print "Use Scripts/checkJSONSyntax.py to get more precise information on the problem in this file."
+        sys.exit(1)
+    except:
+        print "Unexpected error in JSON file",j
+        print "Please correct all problems in the input JSON files before running this script."
+        raise
 
 #### Subroutines begin here
 
