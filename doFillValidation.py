@@ -80,7 +80,7 @@ emailRecipients = {'pltzero': ['paul.lujan@cern.ch', 'andres.delannoy@gmail.com'
                    'dt': ['cristina.oropeza.barrera@gmail.com'],
                    'scans': ['santeri.saariokari@tuni.fi', 'cms-dpg-conveners-bril@cern.ch']}
 # email recipients for overall summary email
-summaryEmailRecipients = ['david.peter.stickland@cern.ch', 'Arkady.Lokhovitskiy@cern.ch','cms-BRIL-PM@cern.ch'] 
+summaryEmailRecipients = ['david.peter.stickland@cern.ch', 'andres.delannoy@gmail.com', 'Arkady.Lokhovitskiy@cern.ch', 'cms-BRIL-PM@cern.ch'] 
 
 # Paths to various things.
 lumiValidatePath = "./lumiValidate.py"         # script for making fill validation plot
