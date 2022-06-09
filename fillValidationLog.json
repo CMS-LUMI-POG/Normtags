@@ -66,5 +66,22 @@
 {"fill": 7686, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
 {"fill": 7687, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
 {"fill": 7688, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
-{"fill": 7689, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"}
+{"fill": 7689, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 7690, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
+{"fill": 7691, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
+{"fill": 7692, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "352903:1", "endAt": "352912:186", "luminometer": "hfoc", "reason": "hfoc is 80% lower than others"}], "missing_lumisections": [], "validated_by": "bgreenbe"},
+{"fill": 7693, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
+{"fill": 7694, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
+{"fill": 7696, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "353013:11", "endAt": "353013:11", "luminometer": "hfoc", "reason": "HFOC steps down for 1 LS"}], "missing_lumisections": [{"beginAt": "353015:109", "endAt": "353015:109", "luminometer": "pltzero"}, {"beginAt": "353015:112", "endAt": "353015:112", "luminometer": "pltzero"}, {"beginAt": "353015:120", "endAt": "353015:120", "luminometer": "pltzero"}], "validated_by": "bgreenbe"},
+{"fill": 7697, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "353018:16", "endAt": "353018:17", "luminometer": "pltzero"}], "validated_by": "bgreenbe"},
+{"fill": 7698, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
+{"fill": 7699, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
+{"fill": 7700, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
+{"fill": 7701, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
+{"fill": 7702, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "353060:700", "endAt": "-1", "luminometer": "hfoc", "reason": "HFOC per bunch gpoing below threshold"}], "missing_lumisections": [{"beginAt": "353060:44", "endAt": "353060:44", "luminometer": "pltzero"}], "validated_by": "bgreenbe"},
+{"fill": 7703, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
+{"fill": 7704, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
+{"fill": 7705, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
+{"fill": 7706, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
+{"fill": 7707, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"}
 ]
