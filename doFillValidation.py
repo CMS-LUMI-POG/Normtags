@@ -46,21 +46,21 @@ except:
 
 # List of luminometers. The first in this list is the one that will be
 # used as the baseline reference and so should generally be BCM1F, since
-# that is less prone to being out.
-luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet', 'dt']
+# that is less prone to being 
+luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet']
 
 # Default priority order for luminometers.
-defaultLumiPriority = ['hfet', 'pltzero', 'bcm1f', 'hfoc', 'dt']
+defaultLumiPriority = ['bcm1f', 'pltzero' , 'hfoc', 'hfet'] # for early 2022 commisioning
 
 # "Primary" luminometers. The validation plot will only show ratios involving
 # these luminometers, so that we don't end up with too many ratios.
-primaryLuminometers = ['pltzero', 'hfet']
+primaryLuminometers = ['pltzero', 'bcm1f']
 
 # Detectortag to be used for each luminometer.
-detectorTags = {'pltzero': 'pltzero22v0',
-                'hfet': 'hfet22v0',
-                'bcm1f': 'bcm1f22v0',
-                'hfoc': 'hfoc22v0',
+detectorTags = {'pltzero': 'pltzero22v1',
+                'hfet': 'hfet22v1',
+                'bcm1f': 'bcm1f22v1',
+                'hfoc': 'hfoc22v1',
                 'dt': 'dt22v0'}
 
 # Test mode: if set to True, automatic emails will be sent to the screen instead and automatic git commits
