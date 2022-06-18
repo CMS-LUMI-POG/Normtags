@@ -57,7 +57,7 @@
 {"fill": 7676, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
 {"fill": 7677, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
 {"fill": 7678, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
-{"fill": 7679, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 7679, "general_comments": "13.6 TeV fill with emittance scans but no STABLE BEAMS, validated manually for bcm1f and pltzero by David, Paul added this log line to track changes", "invalidated_lumisections": [{"beginAt": "-1", "endAt": "352672:49", "luminometer": "hfet", "reason": "drops to 0 at low luminosity"}, {"beginAt": "352672:128", "endAt": "352672:166", "luminometer": "hfet", "reason": "drops to 0 at low luminosity in emittance scan"}, {"beginAt": "352672:207", "endAt": "352672:247", "luminometer": "hfet", "reason": "drops to 0 at low luminosity"}], "missing_lumisections": [], "validated_by": "David"},
 {"fill": 7680, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
 {"fill": 7681, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
 {"fill": 7682, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
