@@ -181,8 +181,9 @@
 {"fill": 7813, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
 {"fill": 7814, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
 {"fill": 7815, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Alfredo Castaneda"},
-{"fill": 7816, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Alfredo Castaneda"},
+{"fill": 7816, "general_comments": "13.6 TeV fill with 3emittance scans but no STABLE BEAMS, validated manually by David", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David Stickland"},
 {"fill": 7817, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Alfredo Castaneda"},
 {"fill": 7818, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Alfredo Castaneda"},
+{"fill": 7819, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Alfredo Castaneda"}
 {"fill": 7819, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Alfredo Castaneda"}
 ]
