@@ -246,5 +246,7 @@
 {"fill": 7882, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Jose Benitez"},
 {"fill": 7883, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Jose Benitez"},
 {"fill": 7884, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Jose Benitez"},
-{"fill": 7885, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Jose Benitez"}
+{"fill": 7885, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Jose Benitez"},
+{"fill": 7889, "general_comments": "David Validated by hand 13.6TeV ", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David Stickland"},
+
 ]
