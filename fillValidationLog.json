@@ -267,5 +267,10 @@
 {"fill": 7907, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Beatriz"},
 {"fill": 7908, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Beatriz"},
 {"fill": 7909, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Beatriz"},
-{"fill": 7910, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Beatriz"}
+{"fill": 7910, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Beatriz"},
+{"fill": 7911, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Beatriz"},
+{"fill": 7912, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Beatriz"},
+{"fill": 7914, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Beatriz"},
+{"fill": 7915, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Beatriz"},
+{"fill": 7916, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "-1", "endAt": "-1", "luminometer": "hfet", "reason": "lumi is always 0"}], "missing_lumisections": [{"beginAt": "355058:8", "endAt": "355058:8", "luminometer": "pltzero"}], "validated_by": "Beatriz"}
 ]
