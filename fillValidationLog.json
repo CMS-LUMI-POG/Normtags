@@ -314,5 +314,8 @@
 {"fill": 7959, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "benitezj"},
 {"fill": 7960, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "355379:161", "endAt": "355379:165", "luminometer": "hfoc", "reason": "HF cylced duringg LUT change"}, {"beginAt": "355379:161", "endAt": "355379:170", "luminometer": "hfet", "reason": "Change of LUT invalidates HFET till next run"}, {"beginAt": "355380:293", "endAt": "355380:294", "luminometer": "hfoc", "reason": "end of run dip"}, {"beginAt": "355380:293", "endAt": "355380:294", "luminometer": "hfet", "reason": "End of run dip"}, {"beginAt": "355381:361", "endAt": "355381:361", "luminometer": "hfoc", "reason": "end of run dip"}, {"beginAt": "355381:361", "endAt": "355381:361", "luminometer": "hfet", "reason": "end of run dip"}], "missing_lumisections": [], "validated_by": "benitezj"},
 {"fill": 7961, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "benitezj"},
-{"fill": 7962, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "benitezj"}
+{"fill": 7962, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "benitezj"},
+{"fill": 7963, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Alfredo Castaneda"},
+{"fill": 7964, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Alfredo Castaneda"},
+{"fill": 7965, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Alfredo Castaneda"}
 ]
