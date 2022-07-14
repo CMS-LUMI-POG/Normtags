@@ -321,5 +321,9 @@
 {"fill": 7966, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Alfredo Castaneda"},
 {"fill": 7967, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
 {"fill": 7968, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
-{"fill": 7969, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "355559:162", "endAt": "-1", "luminometer": "pltzero", "reason": "plt dropped out for baseline recalibration"}], "missing_lumisections": [{"beginAt": "355558:253", "endAt": "355558:259", "luminometer": "pltzero"}], "validated_by": "bgreenbe"}
+{"fill": 7969, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "355559:162", "endAt": "-1", "luminometer": "pltzero", "reason": "plt dropped out for baseline recalibration"}], "missing_lumisections": [{"beginAt": "355558:253", "endAt": "355558:259", "luminometer": "pltzero"}], "validated_by": "bgreenbe"},
+{"fill": 7970, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
+{"fill": 7971, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
+{"fill": 7972, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
+{"fill": 7973, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"}
 ]
