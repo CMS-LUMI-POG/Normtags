@@ -352,5 +352,15 @@
 {"fill": 8003, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Edgar Carrera"},
 {"fill": 8004, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Edgar Carrera"},
 {"fill": 8005, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Edgar Carrera"},
-{"fill": 8006, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Edgar Carrera"}
+{"fill": 8006, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Edgar Carrera"},
+{"fill": 8007, "general_comments": "Everything looks fine\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "355768:108", "endAt": "355768:112", "luminometer": "pltzero"}], "validated_by": "Tatiana Selezneva"},
+{"fill": 8008, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"},
+{"fill": 8009, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"},
+{"fill": 8010, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"},
+{"fill": 8011, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"},
+{"fill": 8012, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"},
+{"fill": 8013, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"},
+{"fill": 8014, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"},
+{"fill": 8015, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"},
+{"fill": 8016, "general_comments": "Steps up and down, big spike in PLT\n", "invalidated_lumisections": [{"beginAt": "355865: 54", "endAt": "-1", "luminometer": "pltzero", "reason": "Step down in PLT"}], "missing_lumisections": [{"beginAt": "355862:124", "endAt": "355862:124", "luminometer": "pltzero"}, {"beginAt": "355862:136", "endAt": "355862:139", "luminometer": "pltzero"}, {"beginAt": "355865:131", "endAt": "355865:131", "luminometer": "pltzero"}], "validated_by": "Tatiana Selezneva"}
 ]
