@@ -390,5 +390,8 @@
 {"fill": 8047, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"},
 {"fill": 8048, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"},
 {"fill": 8052, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Marina"},
-{"fill": 8053, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Marina"}
+{"fill": 8053, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Marina"},
+{"fill": 8056, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Marina Rapellini"},
+{"fill": 8057, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "356309:69", "endAt": "356309:71", "luminometer": "bcm1f", "reason": "small drop"}, {"beginAt": "356309:139", "endAt": "356309:168", "luminometer": "bcm1f", "reason": "bad fill"}], "missing_lumisections": [], "validated_by": "Marina Rapellini"},
+{"fill": 8058, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "356316:45", "endAt": "356316:48", "luminometer": "bcm1f", "reason": "small drop"}, {"beginAt": "356316:135", "endAt": "356316:154", "luminometer": "bcm1f", "reason": "drops"}, {"beginAt": "356316:201", "endAt": "356316:224", "luminometer": "bcm1f", "reason": "bad fill"}], "missing_lumisections": [{"beginAt": "356316:66", "endAt": "356316:66", "luminometer": "pltzero"}], "validated_by": "Marina Rapellini"}
 ]
