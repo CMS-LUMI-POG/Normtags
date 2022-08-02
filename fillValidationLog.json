@@ -406,5 +406,12 @@
 {"fill": 8068, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Nimmitha Karunarathna"},
 {"fill": 8069, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Nimmitha Karunarathna"},
 {"fill": 8070, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Nimmitha Karunarathna"},
-{"fill": 8071, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Nimmitha Karunarathna"}
+{"fill": 8071, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Nimmitha Karunarathna"},
+{"fill": 8072, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "356481:9", "endAt": "356481:78", "luminometer": "pltzero", "reason": "bad data"}], "missing_lumisections": [{"beginAt": "356481:60", "endAt": "356481:76", "luminometer": "pltzero"}], "validated_by": "Marina Rapellini"},
+{"fill": 8073, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "356488:64", "endAt": "356488:124", "luminometer": "pltzero", "reason": "bad data"}], "missing_lumisections": [{"beginAt": "356488:124", "endAt": "356488:124", "luminometer": "pltzero"}], "validated_by": "Marina Rapellini"},
+{"fill": 8074, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Marina Rapellini"},
+{"fill": 8076, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "356523:939", "endAt": "356523:939", "luminometer": "pltzero"}], "validated_by": "Marina Rapellini"},
+{"fill": 8078, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Marina Rapellini"},
+{"fill": 8079, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Marina Rapellini"},
+{"fill": 8080, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Marina Rapellini"}
 ]
