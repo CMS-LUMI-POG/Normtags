@@ -413,5 +413,8 @@
 {"fill": 8076, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "356523:939", "endAt": "356523:939", "luminometer": "pltzero"}], "validated_by": "Marina Rapellini"},
 {"fill": 8078, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Marina Rapellini"},
 {"fill": 8079, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Marina Rapellini"},
-{"fill": 8080, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Marina Rapellini"}
+{"fill": 8080, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Marina Rapellini"},
+{"fill": 8081, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Marina Rapellini"},
+{"fill": 8082, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Marina Rapellini"},
+{"fill": 8083, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Marina Rapellini"}
 ]
