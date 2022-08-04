@@ -416,5 +416,7 @@
 {"fill": 8080, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Marina Rapellini"},
 {"fill": 8081, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Marina Rapellini"},
 {"fill": 8082, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Marina Rapellini"},
-{"fill": 8083, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Marina Rapellini"}
+{"fill": 8083, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Marina Rapellini"},
+{"fill": 8086, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Nimmitha Karunarathna"},
+{"fill": 8087, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Nimmitha Karunarathna"}
 ]
