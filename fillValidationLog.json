@@ -418,5 +418,16 @@
 {"fill": 8082, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Marina Rapellini"},
 {"fill": 8083, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Marina Rapellini"},
 {"fill": 8086, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Nimmitha Karunarathna"},
-{"fill": 8087, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Nimmitha Karunarathna"}
+{"fill": 8087, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Nimmitha Karunarathna"},
+{"fill": 8088, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "356720:3", "endAt": "356720:4", "luminometer": "hfoc", "reason": "huge upward spike"}, {"beginAt": "356720:3", "endAt": "356720:4", "luminometer": "hfet", "reason": "huge upward spike in hf"}], "missing_lumisections": [], "validated_by": "bgreenbe"},
+{"fill": 8090, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
+{"fill": 8091, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
+{"fill": 8092, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
+{"fill": 8093, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
+{"fill": 8094, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "356810:83", "endAt": "356813:60", "luminometer": "pltzero", "reason": "instructions from Andres in MM"}], "missing_lumisections": [{"beginAt": "356813:57", "endAt": "356813:57", "luminometer": "pltzero"}], "validated_by": "bgreenbe"},
+{"fill": 8097, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
+{"fill": 8098, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "-1", "endAt": "356902:57", "luminometer": "pltzero", "reason": "pltzero luminosity much too low"}, {"beginAt": "356906:6", "endAt": "356906:7", "luminometer": "hfoc", "reason": "small drop in hf at end of run"}, {"beginAt": "356906:6", "endAt": "356906:7", "luminometer": "hfet", "reason": "small drop in hf at end of run"}], "missing_lumisections": [{"beginAt": "356902:57", "endAt": "356902:57", "luminometer": "pltzero"}], "validated_by": "bgreenbe"},
+{"fill": 8099, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "-1", "endAt": "-1", "luminometer": "pltzero", "reason": "plt much lower than other luminometers, doesn't seem to track with them"}], "missing_lumisections": [], "validated_by": "bgreenbe"},
+{"fill": 8100, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "356937:19", "endAt": "356937:19", "luminometer": "pltzero"}], "validated_by": "bgreenbe"},
+{"fill": 8101, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"}
 ]
