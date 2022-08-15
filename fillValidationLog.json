@@ -446,5 +446,8 @@
 {"fill": 8118, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "357328:113", "endAt": "357328:114", "luminometer": "hfet", "reason": "huge upward spike only in hfet at end of run"}, {"beginAt": "357331:30", "endAt": "357331:31", "luminometer": "hfoc", "reason": "small downward spike in hf at end of run"}, {"beginAt": "357331:30", "endAt": "357331:31", "luminometer": "hfet", "reason": "small downward spike in hf at end of run"}], "missing_lumisections": [], "validated_by": "bgreenbe"},
 {"fill": 8120, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
 {"fill": 8121, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
-{"fill": 8124, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "357438:258", "endAt": "357438:259", "luminometer": "hfoc", "reason": "small downward spike in hf at end of run"}, {"beginAt": "357438:258", "endAt": "357438:259", "luminometer": "hfet", "reason": "small downward spike in hf at end of run"}], "missing_lumisections": [], "validated_by": "bgreenbe"}
+{"fill": 8124, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "357438:258", "endAt": "357438:259", "luminometer": "hfoc", "reason": "small downward spike in hf at end of run"}, {"beginAt": "357438:258", "endAt": "357438:259", "luminometer": "hfet", "reason": "small downward spike in hf at end of run"}], "missing_lumisections": [], "validated_by": "bgreenbe"},
+{"fill": 8125, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David S"},
+{"fill": 8127, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"},
+{"fill": 8128, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"}
 ]
