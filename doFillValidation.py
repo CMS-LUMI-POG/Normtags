@@ -47,10 +47,10 @@ except:
 # List of luminometers. The first in this list is the one that will be
 # used as the baseline reference and so should generally be BCM1F, since
 # that is less prone to being 
-luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet','ramses']
+luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet', 'ramses']
 
 # Default priority order for luminometers.
-defaultLumiPriority = ['bcm1f',  'hfet', 'pltzero' ,'hfoc','ramses'] # for early 2022 commisioning
+defaultLumiPriority = ['bcm1f',  'hfet', 'pltzero', 'hfoc', 'ramses'] # for early 2022 commisioning
 
 # "Primary" luminometers. The validation plot will only show ratios involving
 # these luminometers, so that we don't end up with too many ratios.
@@ -100,9 +100,13 @@ eofRunNumber = 9999999 # dummy run number greater than any real run
 # Parse command-line arguments
 parser = argparse.ArgumentParser()
 parser.add_argument("-t", "--test-mode", help="Test mode (no automatic emails or git commit)", action="store_true")
+parser.add_argument("-r", "--revalidate", help="Redo validation for one or more fills", nargs="+", type=int)
 args = parser.parse_args()
 
 testMode = testMode or args.test_mode
+revalidateMode = False
+if args.revalidate:
+    revalidateMode = True
 
 # Before we even get started, check the JSON files to make sure that they are valid. Otherwise, we're going to
 # crash when we try to update them.
@@ -469,8 +473,8 @@ def makeEmails():
     readableFillList = ", ".join(str(f) for f in completedFills)
     suffix = "" if len(completedFills) == 1 else "s"
 
-    emailSubject = "Fill validation results for fill"+suffix+" "+readableFillList
-    defaultEmailBody = "Hello,\n\nThis is an automated email to let you know that the fill validation was performed for the following fill"+suffix+" by "+userName+":\n"
+    emailSubject = "Fill "+("re" if revalidateMode else "")+"validation results for fill"+suffix+" "+readableFillList
+    defaultEmailBody = "Hello,\n\nThis is an automated email to let you know that the fill validation was "+("rerun" if revalidateMode else "performed")+" for the following fill"+suffix+" by "+userName+":\n"
     defaultEmailBody += readableFillList
     summaryEmailBody = defaultEmailBody
 
@@ -575,7 +579,15 @@ def produceOutput():
     # 1) Update log JSON with information for this fill.
     logObject = {'fill': fillNumber, 'validated_by': userName, 'general_comments': commentsEntry.get(1.0, END),
                  'missing_lumisections': missingLumiSections, 'invalidated_lumisections': invalidatedLumiSections}
-    parsedLogData.append(logObject)
+    # If we're in revalidate mode, then replace the old log entry with the new one. Otherwise, just append the
+    # log entry to the end.
+    if revalidateMode:
+        for i in range(len(parsedLogData)):
+            if parsedLogData[i]['fill'] == fillNumber:
+                parsedLogData[i] = logObject
+    else:
+        parsedLogData.append(logObject)
+
     with open(logFileName, 'w') as jsonOutput:
         writeFormattedJSON(parsedLogData, jsonOutput, True)
 
@@ -593,6 +605,10 @@ def produceOutput():
     # 2) Next, do bestlumi. This is the most complicated...
     with open(bestLumiFileName, 'r') as bestLumiFile:
         parsedBestLumiData = json.load(bestLumiFile)
+
+    # If we're in revalidate mode, then delete the runs in this fill from the JSON file.
+    if revalidateMode:
+        parsedBestLumiData = [x for x in parsedBestLumiData if x[1].keys()[0] not in runsSeenThisFill]
 
     lastLumin = ""
     lastRun = -1
@@ -630,6 +646,12 @@ def produceOutput():
         jsonRecord = [detectorTags[lastLumin], {str(lastRun): [[startLS, lastLS]]}]
         parsedBestLumiData.append(jsonRecord)
 
+    # Re-sort the list if we've appended things that should actually go in the middle.
+    if revalidateMode:
+        # sort first by run number, then by first LS number. this looks ugly because of the format of the JSON file, but that's what it is.
+        # we could in theory go deeper, but these two keys should be sufficient.
+        parsedBestLumiData = sorted(parsedBestLumiData, key=lambda x: (int(x[1].keys()[0]), x[1].values()[0][0][0]))
+
     with open(bestLumiFileName, 'w') as bestLumiFile:
         writeFormattedJSON(parsedBestLumiData, bestLumiFile, False)
 
@@ -639,6 +661,10 @@ def produceOutput():
         lumiJSONFileName = lumiJSONFileNamePattern % l
         with open(lumiJSONFileName, 'r') as lumiJSONFile:
             parsedLumiJSONData = json.load(lumiJSONFile)
+
+        # If we're in revalidate mode, then delete the runs in this fill from the JSON file.
+        if revalidateMode:
+            parsedLumiJSONData = [x for x in parsedLumiJSONData if x[1].keys()[0] not in runsSeenThisFill]
 
         lastRun = -1
         startLS = -1
@@ -663,6 +689,10 @@ def produceOutput():
         if (lastRun != -1):
             jsonRecord = [detectorTags[l], {str(lastRun): [[startLS, lastLS]]}]
             parsedLumiJSONData.append(jsonRecord)
+
+        # As above, re-sort the list if necessary.
+        if revalidateMode:
+            parsedLumiJSONData = sorted(parsedLumiJSONData, key=lambda x: (int(x[1].keys()[0]), x[1].values()[0][0][0]))
 
         with open(lumiJSONFileName, 'w') as lumiJSONFile:
             writeFormattedJSON(parsedLumiJSONData, lumiJSONFile, False)
@@ -726,6 +756,10 @@ readSavedSession = False
 # Flag to keep track if we've already popped up the DT message so we don't spam the user with them.
 dtShiftMessage = False
 
+# This tracks the runs seen in the current fill, so that if we're in revalidation mode we can delete the old data from the normtag files.
+# It's a global so we can use it in produceOutput().
+runsSeenThisFill = set()
+
 # Next, check to see if a saved session file exists. If so, then read in the data from it and get started.
 if os.path.exists(sessionStateFileName):
     tkMessageBox.showinfo("Saved session detected", "It looks like your last session was interrupted while you were working. The saved session will be resumed.")
@@ -749,7 +783,10 @@ for f in parsedLogData:
         lastFill = int(f['fill'])
 
 # Next, get the list of new fills.
-fillList = eval(os.popen("python "+getRecentFillPath+" -p "+dbAuthFileName+" -f "+str(lastFill)).read())
+if revalidateMode:
+    fillList = args.revalidate
+else:
+    fillList = eval(os.popen("python "+getRecentFillPath+" -p "+dbAuthFileName+" -f "+str(lastFill)).read())
 nfills = len(fillList)
 
 if len(fillList) == 0:
@@ -757,8 +794,12 @@ if len(fillList) == 0:
     os.unlink(lockFileName)
     sys.exit(0)
 
-tkMessageBox.showinfo("Fills to validate", "It looks like there "+("is " if nfills == 1 else "are ")+str(nfills)+" new fill"+
-                      ("" if nfills == 1 else "s")+" to validate:\n"+"\n".join(str(f) for f in fillList))
+if revalidateMode:
+    tkMessageBox.showinfo("Fills to validate", "The following fill"+("" if nfills == 1 else "s")+
+                          " will be revalidated:\n"+"\n".join(str(f) for f in fillList))
+else:
+    tkMessageBox.showinfo("Fills to validate", "It looks like there "+("is " if nfills == 1 else "are ")+str(nfills)+" new fill"+
+                          ("" if nfills == 1 else "s")+" to validate:\n"+"\n".join(str(f) for f in fillList))
 
 # Get the user's name.
 if (readSavedSession):
@@ -824,7 +865,15 @@ for fillNumber in fillList:
         # Do log it though!
         logObject = {'fill': fillNumber, 'validated_by': userName, 'general_comments': 'No data in lumiDB for this fill',
                      'missing_lumisections': [], 'invalidated_lumisections': []}
-        parsedLogData.append(logObject)
+        # If we're in revalidate mode, then replace the old log entry with the new one. No idea why you would want to
+        # revalidate an empty fill, but we should cover this case just in case!
+        if revalidateMode:
+            for i in range(len(parsedLogData)):
+                if parsedLogData[i]['fill'] == fillNumber:
+                    parsedLogData[i] = logObject
+        else:
+            # Otherwise, just append this to the end like normal.
+            parsedLogData.append(logObject)
         with open(logFileName, 'w') as jsonOutput:
             writeFormattedJSON(parsedLogData, jsonOutput, True)
 
@@ -835,6 +884,7 @@ for fillNumber in fillList:
         readSavedSession = False
         continue
 
+    runsSeenThisFill = set()
     # Get beam currents so we can clean stray lumisections at the end.
     print "Please wait, getting beam currents"
     os.system('brilcalc beam -f '+str(fillNumber)+' -b "STABLE BEAMS" -o temp_beam.csv')
@@ -853,6 +903,7 @@ for fillNumber in fillList:
             beamCurrents[run][ls] = (beam1+beam2)
             if (startBeamCurrent == -1):
                 startBeamCurrent = (beam1+beam2) # save this as a reference
+            runsSeenThisFill.add(str(run)) # use a string here because the JSON files use strings
     os.unlink('temp_beam.csv')
 
     # Clean extra lumisections after the beam dump.
