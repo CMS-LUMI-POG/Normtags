@@ -100,7 +100,7 @@ eofRunNumber = 9999999 # dummy run number greater than any real run
 # Parse command-line arguments
 parser = argparse.ArgumentParser()
 parser.add_argument("-t", "--test-mode", help="Test mode (no automatic emails or git commit)", action="store_true")
-parser.add_argument("-r", "--revalidate", help="Redo validation for one or more fills", nargs="+", type=int)
+parser.add_argument("-r", "--revalidate", help="Redo validation for one or more fills", nargs="+", metavar="FILL", type=int)
 args = parser.parse_args()
 
 testMode = testMode or args.test_mode
