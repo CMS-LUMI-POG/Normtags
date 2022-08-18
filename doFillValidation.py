@@ -433,7 +433,7 @@ def writeSessionState():
 # Commit changes to git when we finish validation.
 
 def gitCommit():
-    msg = "Validation for fill"+("" if len(completedFills) == 1 else "s")+" "+", ".join(str(f) for f in completedFills)+" completed by "+userName
+    msg = ("Revalidation" if revalidateMode else "Validation")+" for fill"+("" if len(completedFills) == 1 else "s")+" "+", ".join(str(f) for f in completedFills)+" completed by "+userName
     commitFiles = [logFileName, bestLumiFileName]
     for l in luminometers:
         commitFiles.append(lumiJSONFileNamePattern % l)
@@ -606,7 +606,9 @@ def produceOutput():
     with open(bestLumiFileName, 'r') as bestLumiFile:
         parsedBestLumiData = json.load(bestLumiFile)
 
-    # If we're in revalidate mode, then delete the runs in this fill from the JSON file.
+    # If we're in revalidate mode, then delete the runs in this fill from the JSON file. Warning: if a run
+    # spans more than one fill, this could cause too much to be deleted, but I think that this case is
+    # unlikely enough that we can get away with it.
     if revalidateMode:
         parsedBestLumiData = [x for x in parsedBestLumiData if x[1].keys()[0] not in runsSeenThisFill]
 
@@ -756,10 +758,6 @@ readSavedSession = False
 # Flag to keep track if we've already popped up the DT message so we don't spam the user with them.
 dtShiftMessage = False
 
-# This tracks the runs seen in the current fill, so that if we're in revalidation mode we can delete the old data from the normtag files.
-# It's a global so we can use it in produceOutput().
-runsSeenThisFill = set()
-
 # Next, check to see if a saved session file exists. If so, then read in the data from it and get started.
 if os.path.exists(sessionStateFileName):
     tkMessageBox.showinfo("Saved session detected", "It looks like your last session was interrupted while you were working. The saved session will be resumed.")
@@ -831,6 +829,9 @@ for fillNumber in fillList:
     emailInformationThisFill = {}
     for l in emailRecipients:
         emailInformationThisFill[l] = []
+    # This tracks the runs seen in the current fill, so that if we're in revalidation mode we can delete the
+    # old data from the normtag files.
+    runsSeenThisFill = set()
 
     # If we read in the saved session state, go ahead and populate various variables from that. Otherwise, just populate it afresh
     # for the new fill.
@@ -884,7 +885,6 @@ for fillNumber in fillList:
         readSavedSession = False
         continue
 
-    runsSeenThisFill = set()
     # Get beam currents so we can clean stray lumisections at the end.
     print "Please wait, getting beam currents"
     os.system('brilcalc beam -f '+str(fillNumber)+' -b "STABLE BEAMS" -o temp_beam.csv')
