@@ -108,8 +108,44 @@ revalidateMode = False
 if args.revalidate:
     revalidateMode = True
 
-# Before we even get started, check the JSON files to make sure that they are valid. Otherwise, we're going to
-# crash when we try to update them.
+# Before we even get started, check the variables set above to make sure that they are consistent. Otherwise,
+# we'll definitely have problems later on.
+
+# luminometers and defaultLumiPriority need to have the same set of luminometers in them
+if set(luminometers) != set(defaultLumiPriority):
+    print "Consistency error: all luminometers in the 'luminometers' variable must also be in 'defaultLumiPriority' (and vice-versa)."
+    print "Please fix the variables at the top of the script and try again."
+    sys.exit(1)
+
+# all luminometers in primaryLuminometers must be in luminometers (not necessarily the other way around though)
+for l in primaryLuminometers:
+    if l not in luminometers:
+        print "Consistency error:", l, "is in 'primaryLuminometers' but not defined in 'luminometers'."
+        print "Please fix the variables at the top of the script and try again."
+        sys.exit(1)
+
+# all luminometers in luminometers must have a detector tag and email target (it's ok if there are things
+# in detectorTags or emailTargets not in luminometers, though, in case we need to disable one temporarily
+# or similar)
+for l in luminometers:
+    if l not in detectorTags:
+        print "Consistency error:", l, "is in 'luminometers' but a tag is not defined in 'detectorTags' for it."
+        print "Please fix the variables at the top of the script and try again."
+        sys.exit(1)
+    if l not in emailTargets:
+        print "Consistency error:", l, "is in 'luminometers' but an email target is not defined in 'emailTargets' for it."
+        print "Please fix the variables at the top of the script and try again."
+        sys.exit(1)
+
+# and finally, make sure a recipient is defined for each email target
+for t in emailTargets.values():
+    if t not in emailRecipients:
+        print "Consistency error:", t, "is in 'emailTargets' but the email recipients are not defined in 'emailRecipients' for it."
+        print "Please fix the variables at the top of the script and try again."
+        sys.exit(1)
+
+# Similarly, check the JSON files to make sure that they are valid. Otherwise, we're going to crash when we
+# try to update them.
 allJSONFiles = [logFileName, bestLumiFileName]
 for l in luminometers:
     allJSONFiles.append(lumiJSONFileNamePattern % l)
