@@ -50,19 +50,19 @@ except:
 luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet', 'ramses']
 
 # Default priority order for luminometers.
-defaultLumiPriority = ['bcm1f',  'hfet', 'pltzero', 'hfoc', 'ramses'] # for early 2022 commisioning
+defaultLumiPriority = ['hfet', 'bcm1f', 'pltzero', 'hfoc', 'ramses'] # for early 2022 commisioning
 
 # "Primary" luminometers. The validation plot will only show ratios involving
 # these luminometers, so that we don't end up with too many ratios.
-primaryLuminometers = ['pltzero', 'bcm1f']
+primaryLuminometers = [ 'bcm1f', 'ramses']
 
 # Detectortag to be used for each luminometer.
-detectorTags = {'pltzero': 'pltzero22v3',
-                'hfet': 'hfet22v3',
-                'bcm1f': 'bcm1f22v3',
-                'hfoc': 'hfoc22v3',
+detectorTags = {'pltzero': 'pltzero22v4',
+                'hfet': 'hfet22v4',
+                'bcm1f': 'bcm1f22v4',
+                'hfoc': 'hfoc22v4',
                 'dt': 'dt22v3',
-                'ramses': 'ramses22v3'}
+                'ramses': 'ramses22v4'}
 
 # Test mode: if set to True, automatic emails will be sent to the screen instead and automatic git commits
 # will not be performed. Note that you can also activate test mode by using the -t switch on the command line,
