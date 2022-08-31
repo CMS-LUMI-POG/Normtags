@@ -57,9 +57,9 @@ defaultLumiPriority = ['hfet', 'bcm1f', 'pltzero', 'hfoc', 'ramses'] # for early
 primaryLuminometers = [ 'bcm1f', 'ramses']
 
 # Detectortag to be used for each luminometer.
-detectorTags = {'pltzero': 'pltzero22v4',
+detectorTags = {'pltzero': 'pltzero22v5',
                 'hfet': 'hfet22v4',
-                'bcm1f': 'bcm1f22v4',
+                'bcm1f': 'bcm1f22v5',
                 'hfoc': 'hfoc22v4',
                 'dt': 'dt22v3',
                 'ramses': 'ramses22v4'}
