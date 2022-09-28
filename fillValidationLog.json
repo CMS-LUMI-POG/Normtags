@@ -490,5 +490,14 @@
 {"fill": 8182, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"},
 {"fill": 8183, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"},
 {"fill": 8184, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "-1", "endAt": "-1", "luminometer": "ramses", "reason": "Noise is higher than signal"}], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"},
-{"fill": 8185, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"}
+{"fill": 8185, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"},
+{"fill": 8186, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"},
+{"fill": 8187, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"},
+{"fill": 8188, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"},
+{"fill": 8189, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"},
+{"fill": 8190, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"},
+{"fill": 8192, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"},
+{"fill": 8193, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"},
+{"fill": 8194, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"},
+{"fill": 8195, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"}
 ]
