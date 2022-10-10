@@ -537,5 +537,10 @@
 {"fill": 8235, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
 {"fill": 8236, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
 {"fill": 8237, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
-{"fill": 8238, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "360018:19", "endAt": "360018:20", "luminometer": "hfet", "reason": "small downward spike in hf at end of run"}, {"beginAt": "360018:19", "endAt": "360018:20", "luminometer": "hfoc", "reason": "small downward spike in hf at end of run"}], "missing_lumisections": [], "validated_by": "bgreenbe"}
+{"fill": 8238, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "360018:19", "endAt": "360018:20", "luminometer": "hfet", "reason": "small downward spike in hf at end of run"}, {"beginAt": "360018:19", "endAt": "360018:20", "luminometer": "hfoc", "reason": "small downward spike in hf at end of run"}], "missing_lumisections": [], "validated_by": "bgreenbe"},
+{"fill": 8239, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Joscha Knolle"},
+{"fill": 8241, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Joscha Knolle"},
+{"fill": 8242, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Joscha Knolle"},
+{"fill": 8243, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Joscha Knolle"},
+{"fill": 8244, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Joscha Knolle"}
 ]
