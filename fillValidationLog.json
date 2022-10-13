@@ -392,7 +392,7 @@
 {"fill": 8052, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Marina"},
 {"fill": 8053, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Marina"},
 {"fill": 8056, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Marina Rapellini"},
-{"fill": 8057, "general_comments": "revalidation to fix incorrectly invalidated emittance scans\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Paul Lujan"},
+{"fill": 8057, "general_comments": "No issues\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Moises Leon"},
 {"fill": 8058, "general_comments": "revalidate to fix incorrectly invalidated emittance scans\n", "invalidated_lumisections": [{"beginAt": "356316:43", "endAt": "356316:43", "luminometer": "pltzero", "reason": "bad behavior at beginning of fill due to ch9 issues"}], "missing_lumisections": [{"beginAt": "356316:66", "endAt": "356316:66", "luminometer": "pltzero"}], "validated_by": "Paul Lujan"},
 {"fill": 8059, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "356321:48", "endAt": "356321:63", "luminometer": "pltzero", "reason": "has a drop and a rise"}, {"beginAt": "356321:132", "endAt": "356321:134", "luminometer": "hfoc", "reason": "a drop in lumi"}, {"beginAt": "356321:132", "endAt": "356321:134", "luminometer": "hfet", "reason": "a drop in rates"}], "missing_lumisections": [{"beginAt": "356321:62", "endAt": "356321:62", "luminometer": "pltzero"}, {"beginAt": "356323:656", "endAt": "356323:656", "luminometer": "hfoc"}, {"beginAt": "356323:656", "endAt": "356323:656", "luminometer": "hfet"}], "validated_by": "Nimmitha Karunarathna"},
 {"fill": 8060, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Nimmitha Karunarathna"},
@@ -550,5 +550,10 @@
 {"fill": 8250, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "nkarunar"},
 {"fill": 8251, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "nkarunar"},
 {"fill": 8252, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "nkarunar"},
-{"fill": 8253, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "nkarunar"}
+{"fill": 8253, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "nkarunar"},
+{"fill": 8255, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
+{"fill": 8256, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
+{"fill": 8257, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
+{"fill": 8258, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
+{"fill": 8259, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"}
 ]
