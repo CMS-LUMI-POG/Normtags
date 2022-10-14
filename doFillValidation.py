@@ -47,10 +47,11 @@ except:
 # List of luminometers. The first in this list is the one that will be
 # used as the baseline reference and so should generally be BCM1F, since
 # that is less prone to being 
-luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet', 'ramses']
+#luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet', 'ramses']
+luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet', 'ramses','dt','bcm1futca']
 
 # Default priority order for luminometers.
-defaultLumiPriority = ['hfet', 'bcm1f', 'pltzero', 'hfoc', 'ramses'] # for early 2022 commisioning
+defaultLumiPriority = ['hfet', 'bcm1f', 'pltzero', 'hfoc', 'ramses','dt','bcm1futca'] # for early 2022 commisioning
 
 # "Primary" luminometers. The validation plot will only show ratios involving
 # these luminometers, so that we don't end up with too many ratios.
@@ -62,7 +63,8 @@ detectorTags = {'pltzero': 'pltzero22v5',
                 'bcm1f': 'bcm1f22v5',
                 'hfoc': 'hfoc22v4',
                 'dt': 'dt22v3',
-                'ramses': 'ramses22v4'}
+                'ramses': 'ramses22v4',
+                'bcm1futca': 'bcm1futca22v1'}
 
 # Test mode: if set to True, automatic emails will be sent to the screen instead and automatic git commits
 # will not be performed. Note that you can also activate test mode by using the -t switch on the command line,
@@ -72,11 +74,12 @@ testMode = False
 
 # Information for automatically sending emails. First, we want to group hfet and hfoc into a single target
 # email, so this first dictionary defines that.
-emailTargets = {'pltzero': 'pltzero', 'bcm1f': 'bcm1f', 'hfet': 'hf', 'hfoc': 'hf', 'dt': 'dt', 'ramses': 'ramses'}
+emailTargets = {'pltzero': 'pltzero', 'bcm1f': 'bcm1f', 'bcm1futca': 'bcm1futca', 'hfet': 'hf', 'hfoc': 'hf', 'dt': 'dt', 'ramses': 'ramses'}
 # Second, the list of recipients for each target. 'scans' is a target for the emittance scan results
 # (this will be targeted if any emittance scans are invalidated while invalidating).
 emailRecipients = {'pltzero': ['paul.lujan@cern.ch', 'andres.delannoy@gmail.com', 'francesco.romeo@cern.ch'],
                    'bcm1f': ['jonas.rubenach@cern.ch', 'joanna.wanczyk@cern.ch'],
+                   'bcm1futca': ['joanna.wanczyk@cern.ch'],
                    'hf': ['Alexis.Kalogeropoulos@cern.ch'],
                    'dt': ['cristina.oropeza.barrera@gmail.com'],
                    'ramses': ['tatiana.selezneva@cern.ch'],
