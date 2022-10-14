@@ -555,5 +555,8 @@
 {"fill": 8256, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
 {"fill": 8257, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
 {"fill": 8258, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
-{"fill": 8259, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"}
+{"fill": 8259, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
+{"fill": 8260, "general_comments": "All seems normal in this fill\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "360295:35", "endAt": "360295:35", "luminometer": "dt"}, {"beginAt": "360295:1475", "endAt": "360296:1", "luminometer": "dt"}, {"beginAt": "360296:521", "endAt": "360296:521", "luminometer": "dt"}], "validated_by": "Moises Leon Coello"},
+{"fill": 8262, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Moises Leon Coello"},
+{"fill": 8263, "general_comments": "All seems normal for this fill\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "360327:31", "endAt": "360327:31", "luminometer": "dt"}, {"beginAt": "360327:386", "endAt": "360327:386", "luminometer": "dt"}], "validated_by": "Moises Leon Coello"}
 ]
