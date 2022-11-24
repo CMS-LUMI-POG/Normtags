@@ -743,5 +743,10 @@
 {"fill": 8463, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"},
 {"fill": 8464, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"},
 {"fill": 8465, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"},
-{"fill": 8466, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"}
+{"fill": 8466, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"},
+{"fill": 8469, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"},
+{"fill": 8470, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"},
+{"fill": 8471, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "362596:80", "endAt": "362597:1", "luminometer": "hfoc", "reason": "Spike in the last LS of a run"}, {"beginAt": "362597:1", "endAt": "362597:1", "luminometer": "dt", "reason": "Spike in the first LS of a run"}, {"beginAt": "362597:97", "endAt": "362597:98", "luminometer": "bcm1f", "reason": "Spike due to the HV trip"}], "missing_lumisections": [{"beginAt": "362596:72", "endAt": "362597:1", "luminometer": "dt"}, {"beginAt": "362597:141", "endAt": "362597:141", "luminometer": "dt"}], "validated_by": "Tatiana Selezneva"},
+{"fill": 8472, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"},
+{"fill": 8473, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Tatiana Selezneva"}
 ]
