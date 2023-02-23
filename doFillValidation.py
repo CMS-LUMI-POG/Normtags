@@ -424,7 +424,8 @@ def doInvalidateDialog():
 
 def displayPlot():
     print "One second, creating fill summary plot..."
-    # We used to be able 
+    # Separate luminometers into those that we use the online value for (with --type) and those that we need a
+    # normtag for (i.e., those in requiresNormtag) that go with --normtag.
     type_luminometers = [l for l in luminometers if l not in requiresNormtag]
     normtag_luminometers = [detectorTags[l] for l in luminometers if l in requiresNormtag]
     cmd = 'python '+lumiValidatePath+' -f '+str(fillNumber)+' -b "STABLE BEAMS"'
