@@ -52,7 +52,7 @@ luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet', 'ramses', 'dt', 'bcm1futca']
 
 # For PCC, the online luminosity doesn't exist, so we have to use the tag in order to get a result from brilcalc.
 # If this is true for other luminometers, you can include them in the list here as well.
-requires_normtag = ['pcc']
+requiresNormtag = ['pcc']
 
 # Default priority order for luminometers.
 defaultLumiPriority = ['hfet', 'bcm1futca', 'pltzero', 'hfoc', 'bcm1f','ramses','dt'] # for early 2022 commisioning
@@ -425,8 +425,8 @@ def doInvalidateDialog():
 def displayPlot():
     print "One second, creating fill summary plot..."
     # We used to be able 
-    type_luminometers = [l for l in luminometers if l not in requires_normtag]
-    normtag_luminometers = [detectorTags[l] for l in luminometers if l in requires_normtag]
+    type_luminometers = [l for l in luminometers if l not in requiresNormtag]
+    normtag_luminometers = [detectorTags[l] for l in luminometers if l in requiresNormtag]
     cmd = 'python '+lumiValidatePath+' -f '+str(fillNumber)+' -b "STABLE BEAMS"'
     if type_luminometers:
         cmd += ' --type '+' '.join(type_luminometers)
@@ -514,8 +514,9 @@ def gitCommit():
     for l in luminometers:
         commitFiles.append(lumiJSONFileNamePattern % l)
     if addMode:
-        # if we're adding a new luminometer, only commit that one, since that's the only one that should be changed
-        commitFiles = [lumiJSONFileNamePattern % args.add]
+        # if we're adding a new luminometer, only commit that one and the log file, since those are the only
+        # ones that should be changed
+        commitFiles = [logFileName, lumiJSONFileNamePattern % args.add]
     if testMode:
         print 'git add '+" ".join(commitFiles)
         print 'git commit -m "'+msg+'"'
@@ -591,7 +592,7 @@ def makeEmails():
 def getValidSections(fillNumber, l):
     print "Please wait, getting valid lumisections for "+l
     tempFileName="temp_"+l+".csv"
-    if l in requires_normtag:
+    if l in requiresNormtag:
         l_argument = ' --normtag '+detectorTags[l]
     else:
         l_argument = ' --type '+l
@@ -611,7 +612,7 @@ def getValidSections(fillNumber, l):
             # Sanity checks! If these ever actually appear I will be -very- surprised
             if (fill != fillNumber):
                 print "WARNING: Output from brilcalc didn't match expected fill"
-            if (thisdet.lower() != l and l not in requires_normtag):
+            if (thisdet.lower() != l and l not in requiresNormtag):
                 print "WARNING: Output from brilcalc didn't contain expected detector"
             # Stuff it in the dictionary!
             if not run in recordedLumiSections:
@@ -1003,7 +1004,7 @@ for fillNumber in fillList:
                     hasData = True
         if not hasData:
             tkMessageBox.showwarning("No data for fill", "Note: no data for "+args.add+" was found for fill "+str(fillNumber)+" in the luminosity DB. Presumably this luminometer was not present for this fill. Otherwise, please contact an expert.")
-            # Find the fill in the log file and add the coment in for it.
+            # Find the fill in the log file and add the comment in for it.
             for i in range(len(parsedLogData)):
                 if parsedLogData[i]['fill'] == fillNumber:
                     parsedLogData[i][comments_name] = 'No '+args.add+' data in lumiDB for this fill'
