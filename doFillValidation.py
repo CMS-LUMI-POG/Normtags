@@ -48,11 +48,11 @@ except:
 # used as the baseline reference and so should generally be BCM1F, since
 # that is less prone to being 
 #luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet', 'ramses']
-luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet', 'ramses','dt','bcm1futca']
+luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet', 'ramses', 'dt', 'bcm1futca']
 
-# In general, the argument that we give to brilcalc is the same as the name of the luminometer in the list
-# above. However, if it's not (currently only the case for pcc), set it here so that we get correct results.
-brilcalc_names = {'pcc': 'pxl'}
+# For PCC, the online luminosity doesn't exist, so we have to use the tag in order to get a result from brilcalc.
+# If this is true for other luminometers, you can include them in the list here as well.
+requires_normtag = ['pcc']
 
 # Default priority order for luminometers.
 defaultLumiPriority = ['hfet', 'bcm1futca', 'pltzero', 'hfoc', 'bcm1f','ramses','dt'] # for early 2022 commisioning
@@ -424,7 +424,14 @@ def doInvalidateDialog():
 
 def displayPlot():
     print "One second, creating fill summary plot..."
-    cmd = "python "+lumiValidatePath+" -f "+str(fillNumber)+" -b \"STABLE BEAMS\" --type "+" ".join([brilcalc_names.get(x, x) for x in luminometers])
+    # We used to be able 
+    type_luminometers = [l for l in luminometers if l not in requires_normtag]
+    normtag_luminometers = [detectorTags[l] for l in luminometers if l in requires_normtag]
+    cmd = 'python '+lumiValidatePath+' -f '+str(fillNumber)+' -b "STABLE BEAMS"'
+    if type_luminometers:
+        cmd += ' --type '+' '.join(type_luminometers)
+    if normtag_luminometers:
+        cmd += ' --normtag '+' '.join(normtag_luminometers)
     cmd += " --primary "+" ".join(primaryLuminometers)+" &"
     os.system(cmd)
     return
@@ -547,7 +554,8 @@ def makeEmails():
     defaultEmailBody += readableFillList
     summaryEmailBody = defaultEmailBody
 
-    for l in emailRecipients:
+    recipientList = [emailTargets[args.add]] if addMode else emailRecipients
+    for l in recipientList:
         emailBody = defaultEmailBody
         if len(emailInformation[l])==0:
             thisText = "\n\nNo issues were reported with "+l+" for "+("this fill" if len(completedFills) == 1 else "these fills")+"."
@@ -573,8 +581,12 @@ def makeEmails():
 def getValidSections(fillNumber, l):
     print "Please wait, getting valid lumisections for "+l
     tempFileName="temp_"+l+".csv"
-    brilcalc_name = brilcalc_names.get(l, l)
-    os.system('brilcalc lumi -f '+str(fillNumber)+' --type '+brilcalc_name+' -b "STABLE BEAMS" --byls -o '+tempFileName)
+    if l in requires_normtag:
+        l_argument = ' --normtag '+detectorTags[l]
+    else:
+        l_argument = ' --type '+l
+    os.system('brilcalc lumi -f '+str(fillNumber)+l_argument+' -b "STABLE BEAMS" --byls -o '+tempFileName)
+
     with open(tempFileName) as csv_input:
         reader = csv.reader(csv_input, delimiter=',')
         for row in reader:
@@ -589,7 +601,7 @@ def getValidSections(fillNumber, l):
             # Sanity checks! If these ever actually appear I will be -very- surprised
             if (fill != fillNumber):
                 print "WARNING: Output from brilcalc didn't match expected fill"
-            if (thisdet.lower() != l):
+            if (thisdet.lower() != l and l not in requires_normtag):
                 print "WARNING: Output from brilcalc didn't contain expected detector"
             # Stuff it in the dictionary!
             if not run in recordedLumiSections:
@@ -649,12 +661,21 @@ def produceOutput():
     # 1) Update log JSON with information for this fill.
     logObject = {'fill': fillNumber, validation_name: userName, comments_name: commentsEntry.get(1.0, END),
                  'missing_lumisections': missingLumiSections, 'invalidated_lumisections': invalidatedLumiSections}
-    # If we're in revalidate mode, then replace the old log entry with the new one. Otherwise, just append the
-    # log entry to the end.
+    # If we're in normal mode, just append the log entry to the end. If we're in revalidate mode, then replace
+    # the old log entry with the new one. If we're in add mode, then add the new log entry to the old one. Phew.
     if revalidateMode:
         for i in range(len(parsedLogData)):
             if parsedLogData[i]['fill'] == fillNumber:
                 parsedLogData[i] = logObject
+    elif addMode:
+        for i in range(len(parsedLogData)):
+            if parsedLogData[i]['fill'] == fillNumber:
+                parsedLogData[i][validation_name] = userName
+                parsedLogData[i][comments_name] = logObject[comments_name]
+                for x in missingLumiSections:
+                    parsedLogData[i]['missing_lumisections'].append(x)
+                for x in invalidatedLumiSections:
+                    parsedLogData[i]['invalidated_lumisections'].append(x)
     else:
         parsedLogData.append(logObject)
 
@@ -673,63 +694,66 @@ def produceOutput():
                 break
 
     # 2) Next, do bestlumi. This is the most complicated...
-    with open(bestLumiFileName, 'r') as bestLumiFile:
-        parsedBestLumiData = json.load(bestLumiFile)
+    if not addMode:
+        with open(bestLumiFileName, 'r') as bestLumiFile:
+            parsedBestLumiData = json.load(bestLumiFile)
 
-    # If we're in revalidate mode, then delete the runs in this fill from the JSON file. Warning: if a run
-    # spans more than one fill, this could cause too much to be deleted, but I think that this case is
-    # unlikely enough that we can get away with it.
-    if revalidateMode:
-        parsedBestLumiData = [x for x in parsedBestLumiData if x[1].keys()[0] not in runsSeenThisFill]
+        # If we're in revalidate mode, then delete the runs in this fill from the JSON file. Warning: if a run
+        # spans more than one fill, this could cause too much to be deleted, but I think that this case is
+        # unlikely enough that we can get away with it.
+        if revalidateMode:
+            parsedBestLumiData = [x for x in parsedBestLumiData if x[1].keys()[0] not in runsSeenThisFill]
 
-    lastLumin = ""
-    lastRun = -1
-    startLS = -1
-    lastLS = -1
-    for r in sorted(recordedLumiSections.keys()):
-        for ls in sorted(recordedLumiSections[r].keys()):
-            # Find the highest-priority luminometer actually present for this LS.
-            selLumin = "none"
-            for l in lumiPriority:
-                if l in recordedLumiSections[r][ls]:
-                    selLumin = l
-                    break
-            # Check if there were no valid luminometers for this LS. Maybe this should
-            # also be addded to the log file but for now just warn about it.
-            if selLumin == "none":
-                print "WARNING: No valid luminometers found for run:LS "+str(r)+":"+str(ls)
-            # If we've changed the luminometer or run, start a new record and save the preceding one.
-            # The last case shouldn't happen unless we have a discontinuity in ALL luminometers,
-            # but we should still do the right thing in this case.
-            if ((selLumin != lastLumin and lastLumin != "") or
-                (r != lastRun and lastRun != -1) or
-                (ls != lastLS + 1 and lastLS != -1)):
-                if (lastLumin != "none"):
-                    jsonRecord = [detectorTags[lastLumin], {str(lastRun): [[startLS, lastLS]]}]
-                    parsedBestLumiData.append(jsonRecord)
-                startLS = ls
-            lastLumin = selLumin
-            lastRun = r
-            lastLS = ls
-            if startLS == -1:
-                startLS = ls
-    # Don't forget the end!
-    if (lastLumin != "none"):
-        jsonRecord = [detectorTags[lastLumin], {str(lastRun): [[startLS, lastLS]]}]
-        parsedBestLumiData.append(jsonRecord)
+        lastLumin = ""
+        lastRun = -1
+        startLS = -1
+        lastLS = -1
+        for r in sorted(recordedLumiSections.keys()):
+            for ls in sorted(recordedLumiSections[r].keys()):
+                # Find the highest-priority luminometer actually present for this LS.
+                selLumin = "none"
+                for l in lumiPriority:
+                    if l in recordedLumiSections[r][ls]:
+                        selLumin = l
+                        break
+                # Check if there were no valid luminometers for this LS. Maybe this should
+                # also be addded to the log file but for now just warn about it.
+                if selLumin == "none":
+                    print "WARNING: No valid luminometers found for run:LS "+str(r)+":"+str(ls)
+                # If we've changed the luminometer or run, start a new record and save the preceding one.
+                # The last case shouldn't happen unless we have a discontinuity in ALL luminometers,
+                # but we should still do the right thing in this case.
+                if ((selLumin != lastLumin and lastLumin != "") or
+                    (r != lastRun and lastRun != -1) or
+                    (ls != lastLS + 1 and lastLS != -1)):
+                    if (lastLumin != "none"):
+                        jsonRecord = [detectorTags[lastLumin], {str(lastRun): [[startLS, lastLS]]}]
+                        parsedBestLumiData.append(jsonRecord)
+                    startLS = ls
+                lastLumin = selLumin
+                lastRun = r
+                lastLS = ls
+                if startLS == -1:
+                    startLS = ls
+        # Don't forget the end!
+        if (lastLumin != "none"):
+            jsonRecord = [detectorTags[lastLumin], {str(lastRun): [[startLS, lastLS]]}]
+            parsedBestLumiData.append(jsonRecord)
 
-    # Re-sort the list if we've appended things that should actually go in the middle.
-    if revalidateMode:
-        # sort first by run number, then by first LS number. this looks ugly because of the format of the JSON file, but that's what it is.
-        # we could in theory go deeper, but these two keys should be sufficient.
-        parsedBestLumiData = sorted(parsedBestLumiData, key=lambda x: (int(x[1].keys()[0]), x[1].values()[0][0][0]))
+        # Re-sort the list if we've appended things that should actually go in the middle.
+        if revalidateMode:
+            # sort first by run number, then by first LS number. this looks ugly because of the format of the JSON file, but that's what it is.
+            # we could in theory go deeper, but these two keys should be sufficient.
+            parsedBestLumiData = sorted(parsedBestLumiData, key=lambda x: (int(x[1].keys()[0]), x[1].values()[0][0][0]))
 
-    with open(bestLumiFileName, 'w') as bestLumiFile:
-        writeFormattedJSON(parsedBestLumiData, bestLumiFile, False)
+        with open(bestLumiFileName, 'w') as bestLumiFile:
+            writeFormattedJSON(parsedBestLumiData, bestLumiFile, False)
 
     # Now the individual luminometers. This is similar to the above but of course without
-    # the fallback if a luminometer is missing.
-    for l in luminometers:
+    # the fallback if a luminometer is missing. Note if we're in add mode, then we only need
+    # to do the added luminometer.
+    lumiList = [args.add] if addMode else luminometers
+    for l in lumiList:
         lumiJSONFileName = lumiJSONFileNamePattern % l
         with open(lumiJSONFileName, 'r') as lumiJSONFile:
             parsedLumiJSONData = json.load(lumiJSONFile)
@@ -855,7 +879,7 @@ if revalidateMode:
     fillList = args.revalidate
 else:
     fillList = eval(os.popen("python "+getRecentFillPath+" -p "+dbAuthFileName+" -f "+str(lastFill)).read())
-fillList = [7515]
+fillList = [8496]
 nfills = len(fillList)
 
 if len(fillList) == 0:
@@ -959,8 +983,8 @@ for fillNumber in fillList:
     else:
         hasData = False
         for r in recordedLumiSections:
-            for l in recordedLumiSections[r]:
-                if args.add in recordedLumiSections[r][l]:
+            for ls in recordedLumiSections[r]:
+                if args.add in recordedLumiSections[r][ls]:
                     hasData = True
         if not hasData:
             tkMessageBox.showwarning("No data for fill", "Note: no data for "+args.add+" was found for fill "+str(fillNumber)+" in the luminosity DB. Presumably this luminometer was not present for this fill. Otherwise, please contact an expert.")
@@ -1063,12 +1087,9 @@ for fillNumber in fillList:
     invalList.grid(row=11, column=1, columnspan=3)
 
     # 4) Look for missing lumisections and populate the missing lumisections field appropriately.
-    llist = luminometers
-    if addMode:
-        # only do this check for the additional luminometer if we're adding
-        llist = [args.add]
-
-    for l in llist:
+    # If we're in add mode, only do this check for the added luminometer.
+    lumiList = [args.add] if addMode else luminometers
+    for l in lumiList:
         luminometerPresent=1
         startSection=""
         lastSection=""
