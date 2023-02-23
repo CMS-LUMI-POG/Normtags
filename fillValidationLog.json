@@ -1,5 +1,5 @@
 [
-{"fill": 7514, "general_comments": "dummy fill to set beginning of 2021 data taking"},
+{"fill": 7514, "general_comments": "dummy fill to set beginning of 2021 data taking", "pcc_comments": "dummy fill for PCC validation too"},
 {"fill": 7515, "general_comments": "both detectors live throughout fill, no steps or gaps. bcm1f falling more steeply than plt\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David Stickland"},
 {"fill": 7516, "general_comments": "Run 346301 looks wrong for PLT, all rest ok for both\n", "invalidated_lumisections": [{"beginAt": "346301:1", "endAt": "346301:14", "luminometer": "pltzero", "reason": "wild fluctuations"}], "missing_lumisections": [{"beginAt": "346301:12", "endAt": "346301:12", "luminometer": "pltzero"}, {"beginAt": "346301:14", "endAt": "346301:14", "luminometer": "pltzero"}], "validated_by": "David Stickland"},
 {"fill": 7517, "general_comments": "entire fill looks good, including 3 emittance scans\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David Stickland"},

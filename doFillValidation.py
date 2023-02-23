@@ -75,7 +75,7 @@ detectorTags = {'pltzero': 'pltzero22v7',
 # will not be performed. Note that you can also activate test mode by using the -t switch on the command line,
 # but you can also just set it here if you're doing a lot of development and don't want to have to remember to
 # do it each time.
-testMode = True
+testMode = False
 
 # Information for automatically sending emails. First, we want to group hfet and hfoc into a single target
 # email, so this first dictionary defines that.
@@ -506,7 +506,10 @@ def writeSessionState():
 # Commit changes to git when we finish validation.
 
 def gitCommit():
-    msg = ("Revalidation" if revalidateMode else "Validation")+" for fill"+("" if len(completedFills) == 1 else "s")+" "+", ".join(str(f) for f in completedFills)+" completed by "+userName
+    msg = ("Revalidation" if revalidateMode else "Validation")
+    if addMode:
+        msg += " added for "+args.add
+    msg += " for fill"+("" if len(completedFills) == 1 else "s")+" "+", ".join(str(f) for f in completedFills)+" completed by "+userName
     commitFiles = [logFileName, bestLumiFileName]
     for l in luminometers:
         commitFiles.append(lumiJSONFileNamePattern % l)
@@ -550,7 +553,14 @@ def makeEmails():
     suffix = "" if len(completedFills) == 1 else "s"
 
     emailSubject = "Fill "+("re" if revalidateMode else "")+"validation results for fill"+suffix+" "+readableFillList
-    defaultEmailBody = "Hello,\n\nThis is an automated email to let you know that the fill validation was "+("rerun" if revalidateMode else "performed")+" for the following fill"+suffix+" by "+userName+":\n"
+    defaultEmailBody = "Hello,\n\nThis is an automated email to let you know that the fill validation was "
+    if addMode:
+        defaultEmailBody += "added for "+args.add
+    elif revalidateMode:
+        defaultEmailBody += "rerun"
+    else:
+        defaultEmailBody += "performed"
+    defaultEmailBody += " for the following fill"+suffix+" by "+userName+":\n"
     defaultEmailBody += readableFillList
     summaryEmailBody = defaultEmailBody
 
@@ -877,9 +887,14 @@ for f in parsedLogData:
 # Next, get the list of new fills.
 if revalidateMode:
     fillList = args.revalidate
+elif addMode:
+    # In this case, we want all fills in the log file that don't have the validation for this new luminometer already.
+    fillList = []
+    for f in parsedLogData:
+        if comments_name not in f:
+            fillList.append(int(f['fill']))
 else:
     fillList = eval(os.popen("python "+getRecentFillPath+" -p "+dbAuthFileName+" -f "+str(lastFill)).read())
-fillList = [8496]
 nfills = len(fillList)
 
 if len(fillList) == 0:
