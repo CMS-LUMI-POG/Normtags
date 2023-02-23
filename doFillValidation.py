@@ -50,6 +50,10 @@ except:
 #luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet', 'ramses']
 luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet', 'ramses','dt','bcm1futca']
 
+# In general, the argument that we give to brilcalc is the same as the name of the luminometer in the list
+# above. However, if it's not (currently only the case for pcc), set it here so that we get correct results.
+brilcalc_names = {'pcc': 'pxl'}
+
 # Default priority order for luminometers.
 defaultLumiPriority = ['hfet', 'bcm1futca', 'pltzero', 'hfoc', 'bcm1f','ramses','dt'] # for early 2022 commisioning
 
@@ -64,17 +68,19 @@ detectorTags = {'pltzero': 'pltzero22v7',
                 'hfoc': 'hfoc22v4',
                 'dt': 'dt22v3',
                 'ramses': 'ramses22v4',
-                'bcm1futca': 'bcm1futca22v4'}
+                'bcm1futca': 'bcm1futca22v4',
+                'pcc': 'pcc22v1'}
 
 # Test mode: if set to True, automatic emails will be sent to the screen instead and automatic git commits
 # will not be performed. Note that you can also activate test mode by using the -t switch on the command line,
 # but you can also just set it here if you're doing a lot of development and don't want to have to remember to
 # do it each time.
-testMode = False
+testMode = True
 
 # Information for automatically sending emails. First, we want to group hfet and hfoc into a single target
 # email, so this first dictionary defines that.
-emailTargets = {'pltzero': 'pltzero', 'bcm1f': 'bcm1f', 'bcm1futca': 'bcm1futca', 'hfet': 'hf', 'hfoc': 'hf', 'dt': 'dt', 'ramses': 'ramses'}
+emailTargets = {'pltzero': 'pltzero', 'bcm1f': 'bcm1f', 'bcm1futca': 'bcm1futca', 'hfet': 'hf', 'hfoc': 'hf',
+                'dt': 'dt', 'ramses': 'ramses', 'pcc': 'pcc'}
 # Second, the list of recipients for each target. 'scans' is a target for the emittance scan results
 # (this will be targeted if any emittance scans are invalidated while invalidating).
 emailRecipients = {'pltzero': ['paul.lujan@cern.ch', 'andres.delannoy@gmail.com', 'francesco.romeo@cern.ch'],
@@ -83,6 +89,7 @@ emailRecipients = {'pltzero': ['paul.lujan@cern.ch', 'andres.delannoy@gmail.com'
                    'hf': ['Alexis.Kalogeropoulos@cern.ch'],
                    'dt': ['cristina.oropeza.barrera@gmail.com'],
                    'ramses': ['tatiana.selezneva@cern.ch'],
+                   'pcc': ['samuel.lloyd.higginbotham@cern.ch'],
                    'scans': ['santeri.saariokari@tuni.fi', 'cms-dpg-conveners-bril@cern.ch']}
 # email recipients for overall summary email
 summaryEmailRecipients = ['david.peter.stickland@cern.ch', 'andres.delannoy@gmail.com', 'Arkady.Lokhovitskiy@cern.ch', 'cms-BRIL-PM@cern.ch', 'cms-pog-conveners-lum@cern.ch'] 
@@ -103,13 +110,26 @@ eofRunNumber = 9999999 # dummy run number greater than any real run
 # Parse command-line arguments
 parser = argparse.ArgumentParser()
 parser.add_argument("-t", "--test-mode", help="Test mode (no automatic emails or git commit)", action="store_true")
-parser.add_argument("-r", "--revalidate", help="Redo validation for one or more fills", nargs="+", metavar="FILL", type=int)
+group = parser.add_mutually_exclusive_group()
+group.add_argument("-r", "--revalidate", help="Redo validation for one or more fills", nargs="+", metavar="FILL", type=int)
+group.add_argument("-a", "--add", help="Add another luminometer to the validation", metavar="LUMINOMETER")
 args = parser.parse_args()
 
+# The field name in which the comments are stored in the JSON. For a normal validation, this goes in
+# general_comments, but if we're adding a new luminometer, then it should be a different name so that the
+# comments don't overwrite the original one. Similarly, the user name for the new validation should be
+# stored differently.
+comments_name = 'general_comments'
+validation_name = 'validated_by'
 testMode = testMode or args.test_mode
 revalidateMode = False
 if args.revalidate:
     revalidateMode = True
+addMode = False
+if args.add:
+    addMode = True
+    comments_name = args.add+'_comments'
+    validation_name = args.add+'_validated_by'
 
 # Before we even get started, check the variables set above to make sure that they are consistent. Otherwise,
 # we'll definitely have problems later on.
@@ -126,6 +146,9 @@ for l in primaryLuminometers:
         print "Consistency error:", l, "is in 'primaryLuminometers' but not defined in 'luminometers'."
         print "Please fix the variables at the top of the script and try again."
         sys.exit(1)
+
+if addMode:
+    luminometers.append(args.add)
 
 # all luminometers in luminometers must have a detector tag and email target (it's ok if there are things
 # in detectorTags or emailTargets not in luminometers, though, in case we need to disable one temporarily
@@ -183,8 +206,12 @@ class InvalidateDialog:
         self.luminLabel = Label(self.dwin, text='Luminometer:')
         self.luminLabel.grid(row=1, column=0)
         self.selectedLumin = StringVar(self.dwin)
-        self.selectedLumin.set(lumiPriority[0])
-        self.luminMenu = apply(OptionMenu, (self.dwin, self.selectedLumin)+tuple(lumiPriority))
+        if not addMode:
+            self.selectedLumin.set(lumiPriority[0])
+            self.luminMenu = apply(OptionMenu, (self.dwin, self.selectedLumin)+tuple(lumiPriority))
+        else:
+            self.selectedLumin.set(args.add)
+            self.luminMenu = apply(OptionMenu, (self.dwin, self.selectedLumin, args.add))
         self.luminMenu.grid(row=1, column=1)
         self.startLabel = Label(self.dwin, text='Starting run:LS:')
         self.startLabel.grid(row=2, column=0)
@@ -397,7 +424,7 @@ def doInvalidateDialog():
 
 def displayPlot():
     print "One second, creating fill summary plot..."
-    cmd = "python "+lumiValidatePath+" -f "+str(fillNumber)+" -b \"STABLE BEAMS\" --type "+" ".join(luminometers)
+    cmd = "python "+lumiValidatePath+" -f "+str(fillNumber)+" -b \"STABLE BEAMS\" --type "+" ".join([brilcalc_names.get(x, x) for x in luminometers])
     cmd += " --primary "+" ".join(primaryLuminometers)+" &"
     os.system(cmd)
     return
@@ -458,7 +485,7 @@ def exitWithoutSave():
 # If the general comments have been modified, save them in the session state
 def commentsModified(self):
     savedSessionState['changes_this_fill'] = True
-    savedSessionState['general_comments'] = commentsEntry.get(1.0, END)
+    savedSessionState[comments_name] = commentsEntry.get(1.0, END)
     writeSessionState()
 
 # Write out the saved session state to a file. Note: only do this if there's actually
@@ -476,7 +503,10 @@ def gitCommit():
     commitFiles = [logFileName, bestLumiFileName]
     for l in luminometers:
         commitFiles.append(lumiJSONFileNamePattern % l)
-    if (testMode):
+    if addMode:
+        # if we're adding a new luminometer, only commit that one, since that's the only one that should be changed
+        commitFiles = [lumiJSONFileNamePattern % args.add]
+    if testMode:
         print 'git add '+" ".join(commitFiles)
         print 'git commit -m "'+msg+'"'
         print 'git push'
@@ -543,7 +573,8 @@ def makeEmails():
 def getValidSections(fillNumber, l):
     print "Please wait, getting valid lumisections for "+l
     tempFileName="temp_"+l+".csv"
-    os.system('brilcalc lumi -f '+str(fillNumber)+' --type '+l+' -b "STABLE BEAMS" --byls -o '+tempFileName)
+    brilcalc_name = brilcalc_names.get(l, l)
+    os.system('brilcalc lumi -f '+str(fillNumber)+' --type '+brilcalc_name+' -b "STABLE BEAMS" --byls -o '+tempFileName)
     with open(tempFileName) as csv_input:
         reader = csv.reader(csv_input, delimiter=',')
         for row in reader:
@@ -616,7 +647,7 @@ def writeFormattedJSON(obj, fp, sortKeys):
 
 def produceOutput():
     # 1) Update log JSON with information for this fill.
-    logObject = {'fill': fillNumber, 'validated_by': userName, 'general_comments': commentsEntry.get(1.0, END),
+    logObject = {'fill': fillNumber, validation_name: userName, comments_name: commentsEntry.get(1.0, END),
                  'missing_lumisections': missingLumiSections, 'invalidated_lumisections': invalidatedLumiSections}
     # If we're in revalidate mode, then replace the old log entry with the new one. Otherwise, just append the
     # log entry to the end.
@@ -824,6 +855,7 @@ if revalidateMode:
     fillList = args.revalidate
 else:
     fillList = eval(os.popen("python "+getRecentFillPath+" -p "+dbAuthFileName+" -f "+str(lastFill)).read())
+fillList = [7515]
 nfills = len(fillList)
 
 if len(fillList) == 0:
@@ -879,7 +911,7 @@ for fillNumber in fillList:
         # Copy the default lumi priority into the lumi priority for this fill.
         lumiPriority = list(defaultLumiPriority)
 
-        savedSessionState = {'current_fill': fillNumber, 'user_name': userName, 'completed_fills': completedFills, 'general_comments': '', 'lumi_priority': lumiPriority,
+        savedSessionState = {'current_fill': fillNumber, 'user_name': userName, 'completed_fills': completedFills, comments_name: '', 'lumi_priority': lumiPriority,
                              'invalidated_lumi_sections': invalidatedLumiSections, 'changes_this_fill': False, 'email_information': emailInformation}
         writeSessionState()
     else:
@@ -899,30 +931,54 @@ for fillNumber in fillList:
     for l in luminometers:
         getValidSections(fillNumber, l)
     
-    # See if we actually got any data for this fill.
-    if len(recordedLumiSections) == 0:
-        tkMessageBox.showwarning("No data for fill", "Note: no data with STABLE BEAMS was found for fill "+str(fillNumber)+" in the luminosity DB. Perhaps this fill never reached STABLE BEAMS. Otherwise, please contact an expert.")
-        # Do log it though!
-        logObject = {'fill': fillNumber, 'validated_by': userName, 'general_comments': 'No data in lumiDB for this fill',
-                     'missing_lumisections': [], 'invalidated_lumisections': []}
-        # If we're in revalidate mode, then replace the old log entry with the new one. No idea why you would want to
-        # revalidate an empty fill, but we should cover this case just in case!
-        if revalidateMode:
+    # See if we actually got any data for this fill. This proceeds rather differently if we're in add mode or not, so...
+    if not addMode:
+        if len(recordedLumiSections) == 0:
+            tkMessageBox.showwarning("No data for fill", "Note: no data with STABLE BEAMS was found for fill "+str(fillNumber)+" in the luminosity DB. Perhaps this fill never reached STABLE BEAMS. Otherwise, please contact an expert.")
+            # Do log it though!
+            logObject = {'fill': fillNumber, validation_name: userName, comments_name: 'No data in lumiDB for this fill',
+                         'missing_lumisections': [], 'invalidated_lumisections': []}
+            # If we're in revalidate mode, then replace the old log entry with the new one. No idea why you would want to
+            # revalidate an empty fill, but we should cover this case just in case!
+            if revalidateMode:
+                for i in range(len(parsedLogData)):
+                    if parsedLogData[i]['fill'] == fillNumber:
+                        parsedLogData[i] = logObject
+            else:
+                # Otherwise, just append this to the end like normal.
+                parsedLogData.append(logObject)
+            with open(logFileName, 'w') as jsonOutput:
+                writeFormattedJSON(parsedLogData, jsonOutput, True)
+
+            # Mark as finished and move onto next fill.
+            completedFills.append(fillNumber)
+
+            # Also if we're reading from a saved state, there's nothing more to do for this fill, so prepare to move on.
+            readSavedSession = False
+            continue
+    else:
+        hasData = False
+        for r in recordedLumiSections:
+            for l in recordedLumiSections[r]:
+                if args.add in recordedLumiSections[r][l]:
+                    hasData = True
+        if not hasData:
+            tkMessageBox.showwarning("No data for fill", "Note: no data for "+args.add+" was found for fill "+str(fillNumber)+" in the luminosity DB. Presumably this luminometer was not present for this fill. Otherwise, please contact an expert.")
+            # Find the fill in the log file and add the coment in for it.
             for i in range(len(parsedLogData)):
                 if parsedLogData[i]['fill'] == fillNumber:
-                    parsedLogData[i] = logObject
-        else:
-            # Otherwise, just append this to the end like normal.
-            parsedLogData.append(logObject)
-        with open(logFileName, 'w') as jsonOutput:
-            writeFormattedJSON(parsedLogData, jsonOutput, True)
+                    parsedLogData[i][comments_name] = 'No '+args.add+' data in lumiDB for this fill'
+                    parsedLogData[i][validation_name] = userName
 
-        # Mark as finished and move onto next fill.
-        completedFills.append(fillNumber)
+            with open(logFileName, 'w') as jsonOutput:
+                writeFormattedJSON(parsedLogData, jsonOutput, True)
 
-        # Also if we're reading from a saved state, there's nothing more to do for this fill, so prepare to move on.
-        readSavedSession = False
-        continue
+            # Mark as finished and move onto next fill.
+            completedFills.append(fillNumber)
+
+            # Also if we're reading from a saved state, there's nothing more to do for this fill, so prepare to move on.
+            readSavedSession = False
+            continue
 
     # Get beam currents so we can clean stray lumisections at the end.
     print "Please wait, getting beam currents"
@@ -986,9 +1042,15 @@ for fillNumber in fillList:
     detectorTagList = Listbox(root)
     detectorTagList.grid(row=1, column=3, rowspan=7)
     
-    for l in lumiPriority:
-        priorityList.insert(END, l)
-        detectorTagList.insert(END, detectorTags[l])
+    if not addMode:
+        for l in lumiPriority:
+            priorityList.insert(END, l)
+            detectorTagList.insert(END, detectorTags[l])
+    else:
+        priorityList.insert(END, "n/a")
+        priUpButton.config(state=DISABLED)
+        priDownButton.config(state=DISABLED)
+        detectorTagList.insert(END, detectorTags[args.add])
         
     missingLabel = Label(root, text='Missing lumisections')
     missingLabel.grid(row=10, column=0)
@@ -1001,8 +1063,12 @@ for fillNumber in fillList:
     invalList.grid(row=11, column=1, columnspan=3)
 
     # 4) Look for missing lumisections and populate the missing lumisections field appropriately.
-    
-    for l in luminometers:
+    llist = luminometers
+    if addMode:
+        # only do this check for the additional luminometer if we're adding
+        llist = [args.add]
+
+    for l in llist:
         luminometerPresent=1
         startSection=""
         lastSection=""
@@ -1039,7 +1105,7 @@ for fillNumber in fillList:
     # Now that we've created the GUI, if we're reading in a saved session, populate the things
     # that need to get populated.
     if readSavedSession:
-        commentsEntry.insert(END, savedSessionState['general_comments'])
+        commentsEntry.insert(END, savedSessionState[comments_name])
 
         for inval in savedSessionState['invalidated_lumi_sections']:
             startText = inval['beginAt']
