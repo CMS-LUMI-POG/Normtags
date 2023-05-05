@@ -910,5 +910,22 @@
 {"fill": 8696, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "366892:1", "endAt": "366892:1", "luminometer": "dt", "reason": "spike at 1st LS"}, {"beginAt": "366893:1", "endAt": "366893:1", "luminometer": "dt", "reason": "spike at 1st LS"}, {"beginAt": "366892:11", "endAt": "366892:12", "luminometer": "hfoc", "reason": "dip"}, {"beginAt": "366891:286", "endAt": "366891:287", "luminometer": "hfoc", "reason": "dip"}, {"beginAt": "366893:25", "endAt": "366893:26", "luminometer": "hfoc", "reason": "spike"}, {"beginAt": "366895:268", "endAt": "366895:269", "luminometer": "pltzero", "reason": "spike"}, {"beginAt": "366895:1379", "endAt": "366895:1380", "luminometer": "pltzero", "reason": "spike"}, {"beginAt": "366895:1052", "endAt": "366895:1053", "luminometer": "pltzero", "reason": "spike"}, {"beginAt": "366895:1319", "endAt": "366895:1320", "luminometer": "pltzero", "reason": "spike"}, {"beginAt": "366895:883", "endAt": "366895:884", "luminometer": "pltzero", "reason": "spike"}], "missing_lumisections": [{"beginAt": "366891:51", "endAt": "366891:51", "luminometer": "dt"}, {"beginAt": "366891:283", "endAt": "366892:1", "luminometer": "dt"}, {"beginAt": "366892:9", "endAt": "366893:1", "luminometer": "dt"}, {"beginAt": "366893:12", "endAt": "366893:26", "luminometer": "dt"}], "validated_by": "Yihui"},
 {"fill": 8697, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Yihui"},
 {"fill": 8698, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Yihui"},
-{"fill": 8700, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Yihui"}
+{"fill": 8700, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Yihui"},
+{"fill": 8701, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "366933:1083", "endAt": "366933:1085", "luminometer": "bcm1f", "reason": "Spike downward"}], "missing_lumisections": [{"beginAt": "366933:169", "endAt": "366933:169", "luminometer": "dt"}], "validated_by": "AB"},
+{"fill": 8702, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "AB"},
+{"fill": 8703, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "AB"},
+{"fill": 8704, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "AB"},
+{"fill": 8705, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "AB"},
+{"fill": 8706, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "AB"},
+{"fill": 8707, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "AB"},
+{"fill": 8709, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "AB"},
+{"fill": 8710, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "AB"},
+{"fill": 8711, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "AB"},
+{"fill": 8713, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "AB"},
+{"fill": 8714, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "AB"},
+{"fill": 8715, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "AB"},
+{"fill": 8716, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "AB"},
+{"fill": 8717, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "AB"},
+{"fill": 8719, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "AB"},
+{"fill": 8720, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "AB"}
 ]
