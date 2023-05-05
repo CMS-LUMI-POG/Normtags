@@ -911,7 +911,7 @@
 {"fill": 8697, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Yihui"},
 {"fill": 8698, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Yihui"},
 {"fill": 8700, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Yihui"},
-{"fill": 8701, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "366933:1083", "endAt": "366933:1085", "luminometer": "bcm1f", "reason": "Spike downward"}], "missing_lumisections": [{"beginAt": "366933:169", "endAt": "366933:169", "luminometer": "dt"}], "validated_by": "AB"},
+{"fill": 8701, "general_comments": "BCM1F has noisy channels from the start till the spike (channels turned off here). Invalidated (incl. spike).\n", "invalidated_lumisections": [{"beginAt": "-1", "endAt": "366933:1085", "luminometer": "bcm1f", "reason": "Noisy channels"}], "missing_lumisections": [{"beginAt": "366933:169", "endAt": "366933:169", "luminometer": "dt"}], "validated_by": "AB"},
 {"fill": 8702, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "AB"},
 {"fill": 8703, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "AB"},
 {"fill": 8704, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "AB"},
