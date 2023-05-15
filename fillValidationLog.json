@@ -970,5 +970,7 @@
 {"fill": 8767, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "AB"},
 {"fill": 8768, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "AB"},
 {"fill": 8769, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "AB"},
-{"fill": 8770, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "AB"}
+{"fill": 8770, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "AB"},
+{"fill": 8771, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "367475:268", "endAt": "367475:269", "luminometer": "bcm1f", "reason": "Processor restart"}, {"beginAt": "367475:278", "endAt": "367475:279", "luminometer": "bcm1f", "reason": "Processor restart"}, {"beginAt": "367476:9", "endAt": "367476:10", "luminometer": "hfoc", "reason": "Missing ls (runs border)"}], "missing_lumisections": [{"beginAt": "367475:56", "endAt": "367475:56", "luminometer": "dt"}, {"beginAt": "367475:152", "endAt": "367475:152", "luminometer": "dt"}, {"beginAt": "367475:634", "endAt": "367476:1", "luminometer": "dt"}, {"beginAt": "367476:6", "endAt": "367477:1", "luminometer": "dt"}], "validated_by": "AB"},
+{"fill": 8772, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "AB"}
 ]
