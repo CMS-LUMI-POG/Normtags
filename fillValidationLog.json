@@ -1044,5 +1044,6 @@
 {"fill": 8851, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "tselezne"},
 {"fill": 8852, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "tselezne"},
 {"fill": 8853, "general_comments": "Specific bestlumi order: BCM1FuTCA, HFOC, BCM1F, HFET\n", "invalidated_lumisections": [{"beginAt": "368229:292", "endAt": "368229:293", "luminometer": "bcm1f", "reason": "Spike"}, {"beginAt": "368229:307", "endAt": "368229:309", "luminometer": "bcm1f", "reason": "Rough signal"}], "missing_lumisections": [{"beginAt": "368229:51", "endAt": "368229:52", "luminometer": "dt"}], "validated_by": "tselezne"},
-{"fill": 8854, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "tselezne"}
+{"fill": 8854, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "tselezne"},
+{"fill": 8857, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "popova"}
 ]
