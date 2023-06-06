@@ -55,20 +55,20 @@ luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet', 'ramses', 'dt', 'bcm1futca']
 requiresNormtag = ['pcc']
 
 # Default priority order for luminometers.
-defaultLumiPriority = ['hfet', 'bcm1futca', 'pltzero', 'hfoc', 'bcm1f','ramses','dt'] # for early 2022 commisioning
+defaultLumiPriority = ['pltzero','hfet', 'bcm1futca','hfoc', 'bcm1f','ramses','dt'] # for mid 2023 running
 
 # "Primary" luminometers. The validation plot will only show ratios involving
 # these luminometers, so that we don't end up with too many ratios.
-primaryLuminometers = [ 'bcm1f', 'ramses']
+primaryLuminometers = [ 'pltzero','hfet', 'bcm1futca', 'ramses']
 
 # Detectortag to be used for each luminometer.
-detectorTags = {'pltzero': 'pltzero22v7',
-                'hfet': 'hfet22v4',
-                'bcm1f': 'bcm1f22v5',
-                'hfoc': 'hfoc22v4',
+detectorTags = {'pltzero': 'pltzero23v00',
+                'hfet': 'hfet23v00',
+                'bcm1f': 'bcm1f23v00',
+                'hfoc': 'hfoc23v00',
                 'dt': 'dt22v3',
-                'ramses': 'ramses22v4',
-                'bcm1futca': 'bcm1futca22v4',
+                'ramses': 'ramses23v00',
+                'bcm1futca': 'bcm1futca23v00',
                 'pcc': 'pcc22v1'}
 
 # Test mode: if set to True, automatic emails will be sent to the screen instead and automatic git commits
@@ -86,7 +86,7 @@ emailTargets = {'pltzero': 'pltzero', 'bcm1f': 'bcm1f', 'bcm1futca': 'bcm1futca'
 emailRecipients = {'pltzero': ['paul.lujan@cern.ch', 'andres.delannoy@gmail.com', 'francesco.romeo@cern.ch'],
                    'bcm1f': ['jonas.rubenach@cern.ch', 'joanna.wanczyk@cern.ch'],
                    'bcm1futca': ['joanna.wanczyk@cern.ch'],
-                   'hf': ['Alexis.Kalogeropoulos@cern.ch'],
+                   'hf': ['alexey.shevelev@cern.ch'],
                    'dt': ['cristina.oropeza.barrera@gmail.com'],
                    'ramses': ['tatiana.selezneva@cern.ch'],
                    'pcc': ['samuel.lloyd.higginbotham@cern.ch'],
