@@ -55,11 +55,11 @@ luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet', 'ramses', 'dt', 'bcm1futca']
 requiresNormtag = ['pcc']
 
 # Default priority order for luminometers.
-defaultLumiPriority = ['pltzero','hfet', 'bcm1futca','hfoc', 'bcm1f','ramses','dt'] # for mid 2023 running
+defaultLumiPriority = ['hfet','pltzero', 'bcm1futca','hfoc', 'bcm1f','ramses','dt'] # for mid 2023 running
 
 # "Primary" luminometers. The validation plot will only show ratios involving
 # these luminometers, so that we don't end up with too many ratios.
-primaryLuminometers = [ 'pltzero','hfet', 'bcm1futca', 'ramses']
+primaryLuminometers = [ 'pltzero','hfet']#, 'bcm1futca']
 
 # Detectortag to be used for each luminometer.
 detectorTags = {'pltzero': 'pltzero23v00',
