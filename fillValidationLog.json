@@ -1250,5 +1250,6 @@
 {"fill": 9135, "general_comments": "Looks fine even though the low lumi.\n", "invalidated_lumisections": [{"beginAt": "373137:21", "endAt": "373137:24", "luminometer": "hfoc", "reason": "Jumping down."}], "missing_lumisections": [{"beginAt": "373137:25", "endAt": "373140:9", "luminometer": "hfoc"}, {"beginAt": "373137:25", "endAt": "373140:9", "luminometer": "hfet"}, {"beginAt": "373135:465", "endAt": "373141:284", "luminometer": "dt"}], "validated_by": "Anna Feherkuti"},
 {"fill": 9136, "general_comments": "Completely OK.\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "373142:396", "endAt": "373142:1081", "luminometer": "dt"}], "validated_by": "Anna Feherkuti"},
 {"fill": 9137, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Anna Feherkuti"},
-{"fill": 9138, "general_comments": "Completely fine.\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "373209:458", "endAt": "373209:910", "luminometer": "dt"}], "validated_by": "Anna Feherkuti"}
+{"fill": 9138, "general_comments": "Completely fine.\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "373209:458", "endAt": "373209:910", "luminometer": "dt"}], "validated_by": "Anna Feherkuti"},
+{"fill": 9141, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Anna Feherkuti"}
 ]
