@@ -1251,5 +1251,9 @@
 {"fill": 9136, "general_comments": "Completely OK.\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "373142:396", "endAt": "373142:1081", "luminometer": "dt"}], "validated_by": "Anna Feherkuti"},
 {"fill": 9137, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Anna Feherkuti"},
 {"fill": 9138, "general_comments": "Completely fine.\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "373209:458", "endAt": "373209:910", "luminometer": "dt"}], "validated_by": "Anna Feherkuti"},
-{"fill": 9141, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Anna Feherkuti"}
+{"fill": 9141, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Anna Feherkuti"},
+{"fill": 9142, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Anna Feherkuti"},
+{"fill": 9144, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Anna Feherkuti"},
+{"fill": 9146, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Anna Feherkuti"},
+{"fill": 9147, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Anna Feherkuti"}
 ]
