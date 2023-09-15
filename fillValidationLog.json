@@ -1259,5 +1259,6 @@
 {"fill": 9148, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Anna Feherkuti"},
 {"fill": 9150, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Anna Feherkuti"},
 {"fill": 9151, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Anna Feherkuti"},
-{"fill": 9152, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Anna Feherkuti"}
+{"fill": 9152, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Anna Feherkuti"},
+{"fill": 9153, "general_comments": "Huge peak due to high beta* run ( but luminometers behaved accordingly). Overall everything is fine.\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "373480:497", "endAt": "373480:1417", "luminometer": "dt"}], "validated_by": "Anna Feherkuti"}
 ]
