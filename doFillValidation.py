@@ -55,20 +55,20 @@ luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet', 'ramses', 'dt', 'bcm1futca']
 requiresNormtag = ['pcc']
 
 # Default priority order for luminometers.
-defaultLumiPriority = ['hfet','pltzero', 'bcm1futca','hfoc', 'bcm1f','ramses','dt'] # for mid 2023 running
+defaultLumiPriority = ['bcm1f','pltzero', 'bcm1futca','hfoc', 'hfet','ramses','dt'] # for PbPb 2023 running
 
 # "Primary" luminometers. The validation plot will only show ratios involving
 # these luminometers, so that we don't end up with too many ratios.
 primaryLuminometers = [ 'pltzero','hfet']#, 'bcm1futca']
 
 # Detectortag to be used for each luminometer.
-detectorTags = {'pltzero': 'pltzero23v00',
-                'hfet': 'hfet23v00',
-                'bcm1f': 'bcm1f23v00',
-                'hfoc': 'hfoc23v00',
+detectorTags = {'pltzero': 'pltzero23Pbv00',
+                'hfet': 'hfet23Pbv00',
+                'bcm1f': 'bcm1f23Pbv00',
+                'hfoc': 'hfoc23Pbv00',
                 'dt': 'dt22v3',
                 'ramses': 'ramses23v00',
-                'bcm1futca': 'bcm1futca23v00',
+                'bcm1futca': 'bcm1futca23Pbv00',
                 'pcc': 'pcc22v1'}
 
 # Test mode: if set to True, automatic emails will be sent to the screen instead and automatic git commits
