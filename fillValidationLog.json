@@ -1360,5 +1360,9 @@
 {"fill": 9269, "general_comments": "No major issue found.\n", "invalidated_lumisections": [{"beginAt": "-1", "endAt": "-1", "luminometer": "ramses", "reason": "No reasonable data"}, {"beginAt": "375256:133", "endAt": "-1", "luminometer": "hfoc", "reason": "Negative lumi"}, {"beginAt": "375256:133", "endAt": "-1", "luminometer": "hfet", "reason": "Negative lumi"}], "missing_lumisections": [{"beginAt": "375256:136", "endAt": "375256:136", "luminometer": "dt"}], "validated_by": "Attila Radl"},
 {"fill": 9270, "general_comments": "Ramses and dt are reading much higher than the other luminometers, but seem to be consistent beyond the scalling issue.\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "375259:52", "endAt": "375259:52", "luminometer": "dt"}, {"beginAt": "375259:66", "endAt": "375259:66", "luminometer": "dt"}], "validated_by": "Braden Kronheim"},
 {"fill": 9271, "general_comments": "Ramses and dt are reading high compared to the others, but beyond the scaling issue seem to be consistent with the others.\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "375300:749", "endAt": "375300:749", "luminometer": "dt"}], "validated_by": "Braden Kronheim"},
-{"fill": 9272, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Braden Kronheim"}
+{"fill": 9272, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Braden Kronheim"},
+{"fill": 9273, "general_comments": "all looks good\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Yihui"},
+{"fill": 9274, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Yihui"},
+{"fill": 9275, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Yihui"},
+{"fill": 9276, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Yihui"}
 ]
