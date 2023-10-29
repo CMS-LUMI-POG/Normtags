@@ -1400,5 +1400,6 @@
 {"fill": 9313, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Santeri Saariokari"},
 {"fill": 9314, "general_comments": "OK. 1 scan (end of fill)\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "375754:936", "endAt": "375754:936", "luminometer": "dt"}], "validated_by": "Santeri Saariokari"},
 {"fill": 9315, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Santeri Saariokari"},
-{"fill": 9316, "general_comments": "OK but underwhelming: a quench happened 17 min into SB\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Santeri Saariokari"}
+{"fill": 9316, "general_comments": "OK but underwhelming: a quench happened 17 min into SB\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Santeri Saariokari"},
+{"fill": 9317, "general_comments": "OK. 1 scan (end of fill)\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "375790:30", "endAt": "375790:30", "luminometer": "dt"}, {"beginAt": "375790:1284", "endAt": "375790:1284", "luminometer": "dt"}], "validated_by": "Santeri Saariokari"}
 ]
