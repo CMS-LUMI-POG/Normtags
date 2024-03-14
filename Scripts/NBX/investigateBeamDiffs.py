@@ -111,3 +111,5 @@ for fill in fillList:
                 print "Bunches in beam but not in lumi:",sorted(extraBunchesBeam)
             if len(extraBunchesLumi) > 0:
                 print "Bunches in lumi but not in beam:",sorted(extraBunchesLumi)
+            # print "All bunches in beam:", sorted(filledBunchesBeam)
+            # print "All bunches in lumi:", sorted(filledBunchesLumi)

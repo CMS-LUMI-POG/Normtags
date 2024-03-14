@@ -13,18 +13,26 @@ luminometerList = ["hfet", "pltzero"]  # for 2017-18; use hfoc instead of hfet f
 findShift = False
 
 # If there's a known shift for one or more luminometers, you can apply it here so that it's already accounted
-# for. Note that the value here is the correction to be applied (e.g. for the early 2017 HFET fills, the HFET
-# data was shifted by -1 BX relative to correct, so you needed to apply a shift of +1 to recover the correct
-# values). All of the 2017 data has now been corrected so you don't need these here any more!
+# for. Note that the value here is the correction to be applied to the data (i.e., a shift of -1 means that
+# the data in BX 2 should be in BX 1, etc.). These are the known shifts for the 2018 data; a ticket has been
+# filed to fix these in the lumi DB.
 
-knownShifts = {"hfet": {}, "pltzero": {}}
+knownShifts = {"hfet": {"7211": -1, "7212": -1, "7213": -1},
+               "hfoc": {"7211": -1, "7212": -1, "7213": -1, "7259": -1, "7264": -1, "7265": -1, "7266": -1, "7270": -1},
+               "pltzero": {"7475": 253}}
 
+# Shifts in 2017 data. These have now all been corrected in the lumi DB so we don't need these any more.
 #               "hfet": {"5698": 1, "5699": 1, "5704": 1, "5710": 1, "5717": 1,
 #                        "5718": 1, "5719": 1, "5722": 1, "5730": 1, "5737": 1,
 #                        "5746": 1, "5749": 1, "5750": 1, "5822": 1, "5824": 1,
 #                        "5825": 1, "5830": 1, "5833": 1, "5834": 1},
 #               "pltzero": {"5883": 2071, "6364": 188}
 
+def print_truncated_list(l):
+    if len(l) <= 10:
+        return str(l)
+    else:
+        return str(l[0:10])+"..."
 
 if len(sys.argv) < 2:
     print "Usage: "+sys.argv[0]+" [fills]"
@@ -83,6 +91,8 @@ for fill in fillList:
                     thisBX += applyShift
                     if thisBX > 3564:
                         thisBX -= 3564
+                    if thisBX < 1:
+                        thisBX += 3564
                     thisFilledBunches.add(thisBX)
 
                 # Store this if this is the first (non-empty) pattern we've seen.
@@ -100,9 +110,9 @@ for fill in fillList:
                         else:
                             print "Bunches are shifted in "+luminometer+" run:fill "+row[0]+" ls "+row[1]
                         if len(missingBunches) > 0:
-                            print "Bunches missing:",sorted(missingBunches)
+                            print "Bunches missing:", print_truncated_list(sorted(missingBunches))
                         if len(extraBunches) > 0:
-                            print "Extra bunches:",sorted(extraBunches)
+                            print "Extra bunches:", print_truncated_list(sorted(extraBunches))
                         if findShift:
                             for tryShift in range(1,3564):
                                 newBunchSet = set()

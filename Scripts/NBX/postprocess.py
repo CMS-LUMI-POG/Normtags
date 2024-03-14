@@ -58,7 +58,15 @@ with open(infile) as inputFile:
         if not putInCategory:
             otherBad.append(",".join(row))
 
-        outputData[row[0]] = row[4]
+        # Take the luminometer data, unless it's completely empty...
+        if row[4] != "-1":
+            outputData[row[0]] = row[4]
+        elif row[3] != "-1":
+            # Then, take the beam data, unless THAT's completely empty...
+            outputData[row[0]] = row[3]
+        else:
+            # Then, take the WBM colliding data and hope that's good
+            outputData[row[0]] = row[2]
 
 # Now write out the sorted data.
 with open(outfile, "w") as outputFile:

@@ -26,11 +26,42 @@ import os, sys, csv, re
 #
 # Note: use hfoc for 2015-16 and hfet for 2017-2018 below.
 
-# For heavy ion runs, use hfoc instead of hfet -- this is done below
+# As the name suggests, this is the default; it can get changed for heavy-ion runs or with explicit exceptions
+# below
 defaultLuminometerList = ["hfet", "pltzero"]
+
 # This threshold may also get changed -- also below
 defaultBunchThreshold = 0.1
+
+# Whether or not to delete the brilcalc output ater processing.
 deleteAfterProcessing = False
+
+# Heavy ion fills. These are treated differently below. Note that for now we only have the 2018 HI fills here.
+heavyIonFills = [[7427, 7492]]
+luminometerListHI = ["pltzero", "hfoc"]
+# Use this threshold for HI fills for HFOC. Can be further overriden below.
+thresholdHIHFOC = 0.2 # works best for 2018, 0.3 may be better for earlier years
+
+# Some fills require special handling for the threshold, so those can be specified here.
+differentThreshold = {"hfet": {6638: 0.15, 6654: 0.15, 6714: 0.3, 6882: 0.15, 6925: 0.2, 7043: 0.03},
+                      "hfoc": {7464: 0.15, 7486: 0.15},
+                      "pltzero": {7043: 0.03}
+                      }
+
+# For some fills we may need to use an alternate luminometer for whatever reason. This dictionary below lets
+# you specify that (in the form of luminometer to be replaced: luminometer to replace it with).
+alternateLuminometer = {
+    # PLT is missing bunch 16 for some reason in these two fills
+    6890: {"pltzero": "bcm1f"},
+    6892: {"pltzero": "bcm1f"},
+    # very low luminosity fills for which HFET is not reliable
+    7300: {"hfet": "hfoc"},
+    7407: {"hfet": "hfoc"},
+    # HI fills in which PLT data is spread over many bunches for unknown reasons
+    7441: {"pltzero": "bcm1f"},
+    7453: {"pltzero": "bcm1f"},
+    7492: {"pltzero": "bcm1f"}
+}
 
 # Some fills we can't reliably use the luminometer data to get the number of bunches, so don't try.
 badFills = {"hfoc":
@@ -39,7 +70,11 @@ badFills = {"hfoc":
                 # In this fill the luminosity varies so much you can't get good results from hfoc
                  4689,
                  ],
-            "hfet": [],
+            "hfet":
+            # In these fills there's spurious luminosity in BX 3490 from the HF laser (HFOC is affected too so
+            # we can't just use that), and the overall luminosity is low enough that we can't just change the
+            # threshold to eliminate it.
+            [6864, 6877, 6879, 6881, 6884, 6885, 6890, 6892, 7043, 7299, 7406],
             "pltzero": 
             # These two the -z and +z sides of the PLT were out of time, so each bunch is split into two.
             # Note: for 3848, 3960, 3962, and 3965, HFOC is also unavailable so I used BCM1F instead to verify.
@@ -58,7 +93,7 @@ badFills = {"hfoc":
 # Some fills have such low luminosity that we don't actually see all of the filled bunches in a single lumisection,
 # no matter how low we set the threshold. In this case we have to aggregate the filled bunches over several LSes
 # in order to actually get the list of filled bunches.
-veryLowFills = [3846, 3847]
+veryLowFills = [3846, 3847, 7299]
 
 # Read the WBM CSV file. This will also define the list of fills that we check against the other sources.
 
@@ -116,11 +151,23 @@ if (len(sys.argv) > 2):
     fillList = [int(a) for a in sys.argv[2:]]
 
 for fill in fillList:
-    # Set the luminometers to use (this may be changed by fill).
-    luminometerList = defaultLuminometerList
-    if (fill >= 7427 and fill <= 7492):
-        luminometerList = ["pltzero", "hfoc"]
 
+    # Set the luminometers to use (at least to start with).
+    luminometerList = list(defaultLuminometerList)
+    
+    # See if we're in a heavy ion fill. If so, change the luminometer list and also set a flag so we can change thresholds below.
+    isHeavyIons = False
+    for x in heavyIonFills:
+        if fill >= x[0] and fill <= x[1]:
+            isHeavyIons = True
+            luminometerList = list(luminometerListHI)
+
+    # Check to see if this is a fill for which we need to use an alternate luminometer.
+    if fill in alternateLuminometer:
+        for i in range(len(luminometerList)):
+            if luminometerList[i] in alternateLuminometer[fill]:
+                luminometerList[i] = alternateLuminometer[fill][luminometerList[i]]
+            
     # Get the number of colliding bunches from the beam information.
     beamFileName = "temp_beam_"+str(fill)+".csv"
     if not os.path.exists(beamFileName):
@@ -155,14 +202,17 @@ for fill in fillList:
 
     for luminometer in luminometerList:
         # Check to see if this luminometer is actually usable for this fill.
-        if fill in badFills[luminometer]:
+        if luminometer in badFills and fill in badFills[luminometer]:
             continue
             
         # Set the threshold.
         bunchThreshold = defaultBunchThreshold
-        # higher threshold for HI runs
-        if luminometer == "hfoc" and fill >= 7427 and fill <= 7492:
-            bunchThreshold = 0.3
+        # higher threshold for HFOC for HI runs
+        if luminometer == "hfoc" and isHeavyIons:
+            bunchThreshold = thresholdHIHFOC
+        # override if specified above
+        if luminometer in differentThreshold and fill in differentThreshold[luminometer]:
+            bunchThreshold = differentThreshold[luminometer][fill]
 
         filledBunches = set()
         dataFileName = "bxdata_"+str(fill)+"_"+luminometer+".csv"
@@ -181,8 +231,8 @@ for fill in fillList:
                 # any differences in the rest of the file are due to either (a) specific luminometer issues
                 # (which we don't really care about for this purpose) or (b) a bunch decaying faster than its
                 # companions (which can happen but we can't really account for that in our simple total so
-                # let's not worry about it).
-                if nlines > 25:
+                # let's not worry about it). For the aggregated method we may need more lines, however.
+                if (nlines > 25 and fill not in veryLowFills) or nlines > 500:
                     break
 
                 # Next, split up the individual BX data. Use the slice
@@ -243,9 +293,10 @@ for fill in fillList:
         if (fill in veryLowFills):
             thisNBunch = len(filledBunches)
             if (nBunchLumi == -1):
+                refFilledBunches = set(filledBunches)
                 nBunchLumi = thisNBunch
             elif (thisNBunch != nBunchLumi):
-                print "Mismatch in aggregated numBX "+luminometer+": expected",nBunchLumi,"got",thisNBunch
+                print "Mismatch in aggregated numBX "+luminometer+": expected",nBunchLumi,"got",thisNBunch,"missing",refFilledBunches-filledBunches
 
         # Clean up the raw data file.
         if deleteAfterProcessing:
