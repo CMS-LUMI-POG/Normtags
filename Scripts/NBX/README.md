@@ -140,13 +140,17 @@ Here's fills for which some manual adjustments are necessary for the bunch measu
 
 * Fill 7475 has several issues that had to be fixed in order to get a good measurement of the number of bunches. First, although stable beams were declared in run 372308 LS 5, the fill doesn't reach peak luminosity until much later, in run 327310 LS 4, and before then the luminosity is too low to get a reliable measurement of the number of bunches. This was fixed by manually removing the lines for the first part of the fill from the brilcalc output. Second, the HFOC threshold had to be lowered slightly to pick up all the bunches. Finally, the PLT data appears to be shifted with respect to the nominal; a shift of 253 BX needs to be applied to recover the correct pattern. Once all of these are done, then everything looks correct.
 
+### Fixes applied
+
+Like 2017, there were some fills that had an inaccurate number of colliding bunches in the beam measurement. These have now been fixed (JIRA ticket [CMSBRIL-233](https://its.cern.ch/jira/browse/CMSBRIL-233) and hae been verified to be correct now.
+
+* The following fills were off by one in the beam measurement, presumably also due to the TCDS issue: 7334, 7333, 7331, 7328, 7324, 7321, 7320, 7317, 7315, 7314, 7310, 7309, 7308, 7274, 7271, 7270, 7266, 7265, 7264, 7259, 7256, 7253, 7252, 7245, 7242, 7240, 7239, 7236, 7234, 7221, 7218, 7217, 7212, 7145, 7144, 7142, 7139, 7137, 7135, 7133, 7132, 7131, 7128, 7127, 7125, 7124, 7123, 7122, 7120, 7118, 7117, 7114, 7112, 7110, 7109, 7108, 7105, 7101, 7099, 7098, 7097, 7095, 7092, 7091, 7090, 7088, 7087, 7083, 7080, 7078, 7069, 7065, 7063, 7061, 7058, 7056, 7055, 7054, 7053, 7052, 7048, 7047, 7045, 7042, 7040, 7039, 7037, 7035, 7033, 7031, 7026, 7024, 7020, 7018, 7017, 7013, 7008, 7006, 6961, 6960, 6957, 6956, 6953, 6946, 6944, 6942, 6940, 6931, 6927, 6925, 6924, 6923, 6921, 6919, 6912, 6911, 6909, 6904, 6892, 6891, 6890, 6877, 6874, 6860, 6850, 6778, 6776, 6774, 6773, 6772, 6770, 6768, 6763, 6762, 6761, 6759, 6757, 6755, 6752, 6751, 6749, 6744, 6741, 6740, 6738, 6737, 6733, 6731, 6729, 6724, 6719, 6714, 6712, 6711, 6710, 6709, 6702, 6700, 6696, 6694, 6693, 6692, 6683, 6681, 6677, 6675, 6674, 6672, 6666, 6663, 6662, 6659, 6654, 6650, 6648, 6646, 6645, 6643, 6642, 6641, 6640, 6639, 6638, 6636, 6633, 6629, 6628, 6616, 6614, 6613, 6612
+
+* Fill 7043 was off by three, presumably one because of the TCDS issue and two because of the beam issues mentioned above.
+
 ### Issues to be fixed
 
-Like 2017, there are a few issues that can be fixed in the lumi DB. Tickets have been filed in JIRA for these.
-
-* The following fills are off by one in the beam measurement, presumably also due to the TCDS issue: 7334, 7333, 7331, 7328, 7324, 7321, 7320, 7317, 7315, 7314, 7310, 7309, 7308, 7274, 7271, 7270, 7266, 7265, 7264, 7259, 7256, 7253, 7252, 7245, 7242, 7240, 7239, 7236, 7234, 7221, 7218, 7217, 7212, 7145, 7144, 7142, 7139, 7137, 7135, 7133, 7132, 7131, 7128, 7127, 7125, 7124, 7123, 7122, 7120, 7118, 7117, 7114, 7112, 7110, 7109, 7108, 7105, 7101, 7099, 7098, 7097, 7095, 7092, 7091, 7090, 7088, 7087, 7083, 7080, 7078, 7069, 7065, 7063, 7061, 7058, 7056, 7055, 7054, 7053, 7052, 7048, 7047, 7045, 7042, 7040, 7039, 7037, 7035, 7033, 7031, 7026, 7024, 7020, 7018, 7017, 7013, 7008, 7006, 6961, 6960, 6957, 6956, 6953, 6946, 6944, 6942, 6940, 6931, 6927, 6925, 6924, 6923, 6921, 6919, 6912, 6911, 6909, 6904, 6892, 6891, 6890, 6877, 6874, 6860, 6850, 6778, 6776, 6774, 6773, 6772, 6770, 6768, 6763, 6762, 6761, 6759, 6757, 6755, 6752, 6751, 6749, 6744, 6741, 6740, 6738, 6737, 6733, 6731, 6729, 6724, 6719, 6714, 6712, 6711, 6710, 6709, 6702, 6700, 6696, 6694, 6693, 6692, 6683, 6681, 6677, 6675, 6674, 6672, 6666, 6663, 6662, 6659, 6654, 6650, 6648, 6646, 6645, 6643, 6642, 6641, 6640, 6639, 6638, 6636, 6633, 6629, 6628, 6616, 6614, 6613, 6612
-
-Fill 7043 is off by three, presumably one because of the TCDS issue and two because of the beam issues mentioned above.
+A ticket has been filed for these shifts.
 
 * The following fills have shifts in a luminometer:
   * In fills 7211, 7212, and 7213, HFOC and HFET both need to be shifted by -1 BX.

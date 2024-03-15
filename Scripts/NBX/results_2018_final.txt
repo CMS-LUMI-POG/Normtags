@@ -210,21 +210,14 @@ Mismatch in numBX hfoc run:fill 327327:7477 ls 65:65: expected 733 got 734
 Mismatch in numBX hfoc run:fill 327327:7477 ls 66:66: expected 733 got 734
 Fill 7477 has 733 colliding bunches
 7477,733,733,733,733
-Mismatch in numBX hfoc run:fill 327308:7475 ls 5:5: expected 733 got 4
-Mismatch in numBX hfoc run:fill 327308:7475 ls 6:6: expected 733 got 4
-Mismatch in numBX hfoc run:fill 327308:7475 ls 7:7: expected 733 got 4
-Mismatch in numBX hfoc run:fill 327308:7475 ls 8:8: expected 733 got 4
-Mismatch in numBX hfoc run:fill 327308:7475 ls 9:9: expected 733 got 4
-Mismatch in numBX hfoc run:fill 327308:7475 ls 10:10: expected 733 got 4
-Mismatch in numBX hfoc run:fill 327308:7475 ls 11:11: expected 733 got 4
-Mismatch in numBX hfoc run:fill 327308:7475 ls 12:12: expected 733 got 4
-Mismatch in numBX hfoc run:fill 327308:7475 ls 24:0: expected 733 got 108
-Mismatch in numBX hfoc run:fill 327310:7475 ls 1:1: expected 733 got 4
-Mismatch in numBX hfoc run:fill 327310:7475 ls 2:2: expected 733 got 4
-Mismatch in numBX hfoc run:fill 327310:7475 ls 3:3: expected 733 got 730
 Mismatch in numBX hfoc run:fill 327310:7475 ls 4:4: expected 733 got 737
 Mismatch in numBX hfoc run:fill 327310:7475 ls 5:5: expected 733 got 736
 Mismatch in numBX hfoc run:fill 327310:7475 ls 6:6: expected 733 got 736
+Mismatch in numBX hfoc run:fill 327310:7475 ls 7:7: expected 733 got 736
+Mismatch in numBX hfoc run:fill 327310:7475 ls 8:8: expected 733 got 736
+Mismatch in numBX hfoc run:fill 327310:7475 ls 9:9: expected 733 got 736
+Mismatch in numBX hfoc run:fill 327310:7475 ls 10:10: expected 733 got 736
+Mismatch in numBX hfoc run:fill 327310:7475 ls 11:11: expected 733 got 734
 Fill 7475 has 733 colliding bunches
 7475,733,733,733,733
 Mismatch in numBX hfoc run:fill 327264:7474 ls 39:39: expected 733 got 737
@@ -748,8 +741,8 @@ Mismatch in numBX hfet run:fill 325159:7334 ls 57:57: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 325159:7334 ls 59:59: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 325159:7334 ls 60:60: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 325159:7334 ls 61:61: expected 2544 got 2545
-Error: for fill 7334 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7334,2544,2544,2543,2544
+Fill 7334 has 2544 colliding bunches
+7334,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 325097:7333 ls 44:44: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 325097:7333 ls 48:48: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 325097:7333 ls 49:49: expected 2544 got 2545
@@ -757,8 +750,8 @@ Mismatch in numBX hfet run:fill 325097:7333 ls 51:51: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 325097:7333 ls 52:52: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 325097:7333 ls 55:55: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 325097:7333 ls 56:56: expected 2544 got 2545
-Error: for fill 7333 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7333,2544,2544,2543,2544
+Fill 7333 has 2544 colliding bunches
+7333,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 325057:7331 ls 42:42: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 325057:7331 ls 43:43: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 325057:7331 ls 47:47: expected 2544 got 2545
@@ -767,8 +760,8 @@ Mismatch in numBX hfet run:fill 325057:7331 ls 50:50: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 325057:7331 ls 51:51: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 325057:7331 ls 54:54: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 325057:7331 ls 55:55: expected 2544 got 2545
-Error: for fill 7331 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7331,2544,2544,2543,2544
+Fill 7331 has 2544 colliding bunches
+7331,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 325022:7328 ls 48:48: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 325022:7328 ls 49:49: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 325022:7328 ls 53:53: expected 2544 got 2545
@@ -777,8 +770,8 @@ Mismatch in numBX hfet run:fill 325022:7328 ls 55:55: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 325022:7328 ls 56:56: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 325022:7328 ls 60:60: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 325022:7328 ls 61:61: expected 2544 got 2545
-Error: for fill 7328 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7328,2544,2544,2543,2544
+Fill 7328 has 2544 colliding bunches
+7328,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 324997:7324 ls 24:24: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324997:7324 ls 25:25: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324997:7324 ls 29:29: expected 2544 got 2545
@@ -787,8 +780,8 @@ Mismatch in numBX hfet run:fill 324997:7324 ls 31:31: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324997:7324 ls 32:32: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324997:7324 ls 36:36: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324997:7324 ls 37:37: expected 2544 got 2545
-Error: for fill 7324 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7324,2544,2544,2543,2544
+Fill 7324 has 2544 colliding bunches
+7324,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 324980:7321 ls 40:40: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324980:7321 ls 41:41: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324980:7321 ls 45:45: expected 2544 got 2545
@@ -796,35 +789,35 @@ Mismatch in numBX hfet run:fill 324980:7321 ls 47:47: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324980:7321 ls 48:48: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324980:7321 ls 51:51: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324980:7321 ls 52:52: expected 2544 got 2545
-Error: for fill 7321 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7321,2544,2544,2543,2544
+Fill 7321 has 2544 colliding bunches
+7321,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 324968:7320 ls 40:40: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324968:7320 ls 41:41: expected 2544 got 2545
-Error: for fill 7320 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7320,2544,2544,2543,2544
+Fill 7320 has 2544 colliding bunches
+7320,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 324897:7317 ls 32:32: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324897:7317 ls 36:36: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324897:7317 ls 37:37: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324897:7317 ls 39:39: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324897:7317 ls 43:43: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324897:7317 ls 44:44: expected 2544 got 2545
-Error: for fill 7317 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7317,2544,2544,2543,2544
+Fill 7317 has 2544 colliding bunches
+7317,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 324878:7315 ls 61:61: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324878:7315 ls 62:62: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324878:7315 ls 66:66: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324878:7315 ls 69:69: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324878:7315 ls 73:73: expected 2544 got 2545
-Error: for fill 7315 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7315,2544,2544,2543,2544
+Fill 7315 has 2544 colliding bunches
+7315,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 324835:7314 ls 42:42: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324835:7314 ls 47:47: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324835:7314 ls 49:49: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324835:7314 ls 50:50: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324835:7314 ls 53:53: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324835:7314 ls 54:54: expected 2544 got 2545
-Error: for fill 7314 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7314,2544,2544,2543,2544
+Fill 7314 has 2544 colliding bunches
+7314,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 324785:7310 ls 81:81: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324785:7310 ls 82:82: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324785:7310 ls 86:86: expected 2544 got 2545
@@ -833,18 +826,18 @@ Mismatch in numBX hfet run:fill 324785:7310 ls 88:88: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324785:7310 ls 89:89: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324785:7310 ls 93:93: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324785:7310 ls 94:94: expected 2544 got 2545
-Error: for fill 7310 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7310,2544,2544,2543,2544
+Fill 7310 has 2544 colliding bunches
+7310,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 324747:7309 ls 68:68: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324747:7309 ls 72:72: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324747:7309 ls 73:73: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324747:7309 ls 75:75: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324747:7309 ls 76:76: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324747:7309 ls 80:80: expected 2544 got 2545
-Error: for fill 7309 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7309,2544,2544,2543,2544
-Error: for fill 7308 WBM reports 590 beam reports 589 and luminometers report 590 colliding bunches
-7308,590,590,589,590
+Fill 7309 has 2544 colliding bunches
+7309,2544,2544,2544,2544
+Fill 7308 has 590 colliding bunches
+7308,590,590,590,590
 Fill 7304 has 62 colliding bunches
 7304,62,62,62,62
 Mismatch in numBX hfoc run:fill 324570:7300 ls 157:0: expected 150 got 153
@@ -872,12 +865,12 @@ Mismatch in numBX hfet run:fill 324418:7274 ls 18:18: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324418:7274 ls 22:22: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324418:7274 ls 23:23: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324418:7274 ls 25:25: expected 2544 got 2545
-Error: for fill 7274 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7274,2544,2544,2543,2544
-Error: for fill 7271 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7271,2544,2544,2543,2544
-Error: for fill 7270 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7270,2544,2544,2543,2544
+Fill 7274 has 2544 colliding bunches
+7274,2544,2544,2544,2544
+Fill 7271 has 2544 colliding bunches
+7271,2544,2544,2544,2544
+Fill 7270 has 2544 colliding bunches
+7270,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 324245:7266 ls 26:26: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324245:7266 ls 27:27: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324245:7266 ls 31:31: expected 2544 got 2545
@@ -886,24 +879,24 @@ Mismatch in numBX hfet run:fill 324245:7266 ls 33:33: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324245:7266 ls 34:34: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324245:7266 ls 38:38: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324245:7266 ls 39:39: expected 2544 got 2545
-Error: for fill 7266 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7266,2544,2544,2543,2544
+Fill 7266 has 2544 colliding bunches
+7266,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 324237:7265 ls 42:42: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324237:7265 ls 46:46: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324237:7265 ls 47:47: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324237:7265 ls 49:49: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324237:7265 ls 53:53: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324237:7265 ls 54:54: expected 2544 got 2545
-Error: for fill 7265 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7265,2544,2544,2543,2544
+Fill 7265 has 2544 colliding bunches
+7265,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 324201:7264 ls 31:31: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324201:7264 ls 36:36: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324201:7264 ls 38:38: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324201:7264 ls 39:39: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324201:7264 ls 42:42: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324201:7264 ls 43:43: expected 2544 got 2545
-Error: for fill 7264 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7264,2544,2544,2543,2544
+Fill 7264 has 2544 colliding bunches
+7264,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 324077:7259 ls 55:55: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324077:7259 ls 56:56: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324077:7259 ls 60:60: expected 2544 got 2545
@@ -912,54 +905,54 @@ Mismatch in numBX hfet run:fill 324077:7259 ls 62:62: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324077:7259 ls 63:63: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324077:7259 ls 67:67: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324077:7259 ls 68:68: expected 2544 got 2545
-Error: for fill 7259 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7259,2544,2544,2543,2544
+Fill 7259 has 2544 colliding bunches
+7259,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 324021:7256 ls 46:46: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324021:7256 ls 51:51: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324021:7256 ls 53:53: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324021:7256 ls 54:54: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 324021:7256 ls 58:58: expected 2544 got 2545
-Error: for fill 7256 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7256,2544,2544,2543,2544
+Fill 7256 has 2544 colliding bunches
+7256,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 323976:7253 ls 36:36: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323976:7253 ls 41:41: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323976:7253 ls 43:43: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323976:7253 ls 44:44: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323976:7253 ls 47:47: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323976:7253 ls 48:48: expected 2544 got 2545
-Error: for fill 7253 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7253,2544,2544,2543,2544
+Fill 7253 has 2544 colliding bunches
+7253,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 323940:7252 ls 50:50: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323940:7252 ls 55:55: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323940:7252 ls 57:57: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323940:7252 ls 61:61: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323940:7252 ls 62:62: expected 2544 got 2545
-Error: for fill 7252 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7252,2544,2544,2543,2544
+Fill 7252 has 2544 colliding bunches
+7252,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 323841:7245 ls 52:52: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323841:7245 ls 57:57: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323841:7245 ls 59:59: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323841:7245 ls 60:60: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323841:7245 ls 63:63: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323841:7245 ls 64:64: expected 2544 got 2545
-Error: for fill 7245 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7245,2544,2544,2543,2544
+Fill 7245 has 2544 colliding bunches
+7245,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 323790:7242 ls 47:47: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323790:7242 ls 52:52: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323790:7242 ls 54:54: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323790:7242 ls 55:55: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323790:7242 ls 58:58: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323790:7242 ls 59:59: expected 2544 got 2545
-Error: for fill 7242 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7242,2544,2544,2543,2544
+Fill 7242 has 2544 colliding bunches
+7242,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 323775:7240 ls 38:38: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323775:7240 ls 43:43: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323775:7240 ls 45:45: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323775:7240 ls 46:46: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323775:7240 ls 49:49: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323775:7240 ls 50:50: expected 2544 got 2545
-Error: for fill 7240 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7240,2544,2544,2543,2544
+Fill 7240 has 2544 colliding bunches
+7240,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 323755:7239 ls 30:30: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323755:7239 ls 31:31: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323755:7239 ls 35:35: expected 2544 got 2545
@@ -968,16 +961,16 @@ Mismatch in numBX hfet run:fill 323755:7239 ls 37:37: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323755:7239 ls 38:38: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323755:7239 ls 42:42: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323755:7239 ls 43:43: expected 2544 got 2545
-Error: for fill 7239 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7239,2544,2544,2543,2544
+Fill 7239 has 2544 colliding bunches
+7239,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 323725:7236 ls 23:23: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323725:7236 ls 28:28: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323725:7236 ls 30:30: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323725:7236 ls 31:31: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323725:7236 ls 34:34: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323725:7236 ls 35:35: expected 2544 got 2545
-Error: for fill 7236 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7236,2544,2544,2543,2544
+Fill 7236 has 2544 colliding bunches
+7236,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 323693:7234 ls 44:44: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323693:7234 ls 45:45: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323693:7234 ls 49:49: expected 2544 got 2545
@@ -986,15 +979,15 @@ Mismatch in numBX hfet run:fill 323693:7234 ls 51:51: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323693:7234 ls 52:52: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323693:7234 ls 56:56: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323693:7234 ls 57:57: expected 2544 got 2545
-Error: for fill 7234 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7234,2544,2544,2543,2544
+Fill 7234 has 2544 colliding bunches
+7234,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 323523:7221 ls 43:43: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323523:7221 ls 44:44: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323523:7221 ls 48:48: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323524:7221 ls 2:2: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323524:7221 ls 3:3: expected 2544 got 2545
-Error: for fill 7221 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7221,2544,2544,2543,2544
+Fill 7221 has 2544 colliding bunches
+7221,2544,2544,2544,2544
 Fill 7220 has 9 colliding bunches
 7220,9,9,9,9
 Mismatch in numBX hfet run:fill 323487:7218 ls 43:43: expected 2544 got 2545
@@ -1004,16 +997,16 @@ Mismatch in numBX hfet run:fill 323487:7218 ls 49:49: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323487:7218 ls 50:50: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323487:7218 ls 51:51: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323487:7218 ls 55:55: expected 2544 got 2545
-Error: for fill 7218 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7218,2544,2544,2543,2544
+Fill 7218 has 2544 colliding bunches
+7218,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 323470:7217 ls 49:49: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323470:7217 ls 54:54: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323470:7217 ls 56:56: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323470:7217 ls 57:57: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323470:7217 ls 60:60: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 323470:7217 ls 61:61: expected 2544 got 2545
-Error: for fill 7217 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7217,2544,2544,2543,2544
+Fill 7217 has 2544 colliding bunches
+7217,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 323414:7213 ls 7:7: expected 1214 got 1215
 Mismatch in numBX hfet run:fill 323414:7213 ls 12:12: expected 1214 got 1215
 Mismatch in numBX hfet run:fill 323414:7213 ls 15:15: expected 1214 got 1215
@@ -1028,8 +1021,8 @@ Mismatch in numBX pltzero run:fill 323388:7212 ls 39:39: expected 590 got 887
 Mismatch in numBX pltzero run:fill 323388:7212 ls 44:44: expected 590 got 592
 Mismatch in numBX pltzero run:fill 323388:7212 ls 46:46: expected 590 got 1442
 Mismatch in numBX pltzero run:fill 323388:7212 ls 49:49: expected 590 got 598
-Error: for fill 7212 WBM reports 590 beam reports 589 and luminometers report 590 colliding bunches
-7212,590,590,589,590
+Fill 7212 has 590 colliding bunches
+7212,590,590,590,590
 Fill 7211 has 62 colliding bunches
 7211,62,62,62,62
 Error: failed to find number of bunches in beam data for fill 7188
@@ -1041,23 +1034,23 @@ Mismatch in numBX hfet run:fill 322625:7145 ls 51:51: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322625:7145 ls 53:53: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322625:7145 ls 54:54: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322625:7145 ls 58:58: expected 2544 got 2545
-Error: for fill 7145 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7145,2544,2544,2543,2544
+Fill 7145 has 2544 colliding bunches
+7145,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 322599:7144 ls 47:47: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322599:7144 ls 48:48: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322599:7144 ls 52:52: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322599:7144 ls 54:54: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322599:7144 ls 55:55: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322599:7144 ls 59:59: expected 2544 got 2545
-Error: for fill 7144 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7144,2544,2544,2543,2544
+Fill 7144 has 2544 colliding bunches
+7144,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 322510:7142 ls 39:39: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322510:7142 ls 40:40: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322510:7142 ls 44:44: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322510:7142 ls 45:45: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322510:7142 ls 46:46: expected 2544 got 2545
-Error: for fill 7142 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7142,2544,2544,2543,2544
+Fill 7142 has 2544 colliding bunches
+7142,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 322480:7139 ls 61:61: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322480:7139 ls 65:65: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322480:7139 ls 66:66: expected 2544 got 2545
@@ -1065,8 +1058,8 @@ Mismatch in numBX hfet run:fill 322480:7139 ls 68:68: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322480:7139 ls 69:69: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322480:7139 ls 72:72: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322480:7139 ls 73:73: expected 2544 got 2545
-Error: for fill 7139 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7139,2544,2544,2543,2544
+Fill 7139 has 2544 colliding bunches
+7139,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 322430:7137 ls 46:46: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322430:7137 ls 50:50: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322430:7137 ls 51:51: expected 2544 got 2545
@@ -1074,8 +1067,8 @@ Mismatch in numBX hfet run:fill 322430:7137 ls 52:52: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322430:7137 ls 53:53: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322430:7137 ls 57:57: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322430:7137 ls 58:58: expected 2544 got 2545
-Error: for fill 7137 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7137,2544,2544,2543,2544
+Fill 7137 has 2544 colliding bunches
+7137,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 322407:7135 ls 47:47: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322407:7135 ls 51:51: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322407:7135 ls 52:52: expected 2544 got 2545
@@ -1083,8 +1076,8 @@ Mismatch in numBX hfet run:fill 322407:7135 ls 53:53: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322407:7135 ls 54:54: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322407:7135 ls 58:58: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322407:7135 ls 59:59: expected 2544 got 2545
-Error: for fill 7135 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7135,2544,2544,2543,2544
+Fill 7135 has 2544 colliding bunches
+7135,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 322381:7133 ls 45:45: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322381:7133 ls 49:49: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322381:7133 ls 50:50: expected 2544 got 2545
@@ -1092,24 +1085,24 @@ Mismatch in numBX hfet run:fill 322381:7133 ls 51:51: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322381:7133 ls 52:52: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322381:7133 ls 56:56: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322381:7133 ls 57:57: expected 2544 got 2545
-Error: for fill 7133 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7133,2544,2544,2543,2544
+Fill 7133 has 2544 colliding bunches
+7133,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 322355:7132 ls 45:45: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322355:7132 ls 49:49: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322355:7132 ls 50:50: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322355:7132 ls 52:52: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322355:7132 ls 56:56: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322355:7132 ls 57:57: expected 2544 got 2545
-Error: for fill 7132 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7132,2544,2544,2543,2544
+Fill 7132 has 2544 colliding bunches
+7132,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 322348:7131 ls 42:42: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322348:7131 ls 43:43: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322348:7131 ls 47:47: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322348:7131 ls 49:49: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322348:7131 ls 50:50: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322348:7131 ls 54:54: expected 2544 got 2545
-Error: for fill 7131 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7131,2544,2544,2543,2544
+Fill 7131 has 2544 colliding bunches
+7131,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 322332:7128 ls 38:38: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322332:7128 ls 39:39: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322332:7128 ls 43:43: expected 2544 got 2545
@@ -1118,8 +1111,8 @@ Mismatch in numBX hfet run:fill 322332:7128 ls 45:45: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322332:7128 ls 46:46: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322332:7128 ls 50:50: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322332:7128 ls 51:51: expected 2544 got 2545
-Error: for fill 7128 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7128,2544,2544,2543,2544
+Fill 7128 has 2544 colliding bunches
+7128,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 322317:7127 ls 54:54: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322317:7127 ls 55:55: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322317:7127 ls 59:59: expected 2544 got 2545
@@ -1127,116 +1120,116 @@ Mismatch in numBX hfet run:fill 322317:7127 ls 60:60: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322317:7127 ls 61:61: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322317:7127 ls 62:62: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322317:7127 ls 66:66: expected 2544 got 2545
-Error: for fill 7127 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7127,2544,2544,2543,2544
+Fill 7127 has 2544 colliding bunches
+7127,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 322252:7125 ls 48:48: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322252:7125 ls 53:53: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322252:7125 ls 55:55: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322252:7125 ls 56:56: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322252:7125 ls 59:59: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322252:7125 ls 60:60: expected 2544 got 2545
-Error: for fill 7125 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7125,2544,2544,2543,2544
+Fill 7125 has 2544 colliding bunches
+7125,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 322201:7124 ls 51:51: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322201:7124 ls 56:56: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322201:7124 ls 58:58: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322201:7124 ls 62:62: expected 2544 got 2545
-Error: for fill 7124 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7124,2544,2544,2543,2544
+Fill 7124 has 2544 colliding bunches
+7124,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 322179:7123 ls 47:47: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322179:7123 ls 52:52: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322179:7123 ls 54:54: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322179:7123 ls 58:58: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322179:7123 ls 59:59: expected 2544 got 2545
-Error: for fill 7123 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7123,2544,2544,2543,2544
+Fill 7123 has 2544 colliding bunches
+7123,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 322113:7122 ls 54:54: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322113:7122 ls 55:55: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322113:7122 ls 59:59: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322113:7122 ls 61:61: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322113:7122 ls 62:62: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322113:7122 ls 66:66: expected 2544 got 2545
-Error: for fill 7122 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7122,2544,2544,2543,2544
-Error: for fill 7120 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7120,2544,2544,2543,2544
+Fill 7122 has 2544 colliding bunches
+7122,2544,2544,2544,2544
+Fill 7120 has 2544 colliding bunches
+7120,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 322079:7118 ls 44:44: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322079:7118 ls 49:49: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322079:7118 ls 51:51: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322079:7118 ls 52:52: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322079:7118 ls 56:56: expected 2544 got 2545
-Error: for fill 7118 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7118,2544,2544,2543,2544
+Fill 7118 has 2544 colliding bunches
+7118,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 322068:7117 ls 56:56: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322068:7117 ls 61:61: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322068:7117 ls 63:63: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322068:7117 ls 64:64: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322068:7117 ls 68:68: expected 2544 got 2545
-Error: for fill 7117 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7117,2544,2544,2543,2544
+Fill 7117 has 2544 colliding bunches
+7117,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 322057:7114 ls 56:56: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322057:7114 ls 57:57: expected 2544 got 2545
-Error: for fill 7114 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7114,2544,2544,2543,2544
+Fill 7114 has 2544 colliding bunches
+7114,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 322040:7112 ls 33:33: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322040:7112 ls 38:38: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322040:7112 ls 40:40: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322040:7112 ls 44:44: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322040:7112 ls 45:45: expected 2544 got 2545
-Error: for fill 7112 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7112,2544,2544,2543,2544
+Fill 7112 has 2544 colliding bunches
+7112,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 322022:7110 ls 42:42: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322022:7110 ls 47:47: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322022:7110 ls 49:49: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322022:7110 ls 50:50: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322022:7110 ls 54:54: expected 2544 got 2545
-Error: for fill 7110 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7110,2544,2544,2543,2544
+Fill 7110 has 2544 colliding bunches
+7110,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 322013:7109 ls 15:15: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 322013:7109 ls 16:16: expected 2544 got 2545
-Error: for fill 7109 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7109,2544,2544,2543,2544
+Fill 7109 has 2544 colliding bunches
+7109,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 321988:7108 ls 48:48: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321988:7108 ls 53:53: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321988:7108 ls 55:55: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321988:7108 ls 60:60: expected 2544 got 2545
-Error: for fill 7108 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7108,2544,2544,2543,2544
+Fill 7108 has 2544 colliding bunches
+7108,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 321973:7105 ls 38:38: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321973:7105 ls 43:43: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321973:7105 ls 45:45: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321973:7105 ls 46:46: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321973:7105 ls 50:50: expected 2544 got 2545
-Error: for fill 7105 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7105,2544,2544,2543,2544
+Fill 7105 has 2544 colliding bunches
+7105,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 321960:7101 ls 18:18: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321960:7101 ls 23:23: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321960:7101 ls 25:25: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321960:7101 ls 29:29: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321960:7101 ls 30:30: expected 2544 got 2545
-Error: for fill 7101 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7101,2544,2544,2543,2544
+Fill 7101 has 2544 colliding bunches
+7101,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 321933:7099 ls 53:53: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321933:7099 ls 58:58: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321933:7099 ls 60:60: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321933:7099 ls 64:64: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321933:7099 ls 65:65: expected 2544 got 2545
-Error: for fill 7099 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7099,2544,2544,2543,2544
+Fill 7099 has 2544 colliding bunches
+7099,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 321917:7098 ls 5:5: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321917:7098 ls 10:10: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321917:7098 ls 12:12: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321917:7098 ls 13:13: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321917:7098 ls 17:17: expected 2544 got 2545
-Error: for fill 7098 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7098,2544,2544,2543,2544
+Fill 7098 has 2544 colliding bunches
+7098,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 321908:7097 ls 43:43: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321908:7097 ls 48:48: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321908:7097 ls 50:50: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321908:7097 ls 54:54: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321908:7097 ls 55:55: expected 2544 got 2545
-Error: for fill 7097 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7097,2544,2544,2543,2544
+Fill 7097 has 2544 colliding bunches
+7097,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 321887:7095 ls 56:56: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321887:7095 ls 57:57: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321887:7095 ls 61:61: expected 2544 got 2545
@@ -1244,28 +1237,28 @@ Mismatch in numBX hfet run:fill 321887:7095 ls 62:62: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321887:7095 ls 63:63: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321887:7095 ls 64:64: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321887:7095 ls 68:68: expected 2544 got 2545
-Error: for fill 7095 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7095,2544,2544,2543,2544
+Fill 7095 has 2544 colliding bunches
+7095,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 321879:7092 ls 39:39: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321879:7092 ls 44:44: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321879:7092 ls 47:47: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321879:7092 ls 51:51: expected 2544 got 2545
-Error: for fill 7092 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7092,2544,2544,2543,2544
+Fill 7092 has 2544 colliding bunches
+7092,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 321831:7091 ls 31:31: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321831:7091 ls 36:36: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321831:7091 ls 38:38: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321831:7091 ls 42:42: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321831:7091 ls 43:43: expected 2544 got 2545
-Error: for fill 7091 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7091,2544,2544,2543,2544
+Fill 7091 has 2544 colliding bunches
+7091,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 321813:7090 ls 21:21: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321813:7090 ls 26:26: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321813:7090 ls 28:28: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321813:7090 ls 32:32: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321813:7090 ls 33:33: expected 2544 got 2545
-Error: for fill 7090 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7090,2544,2544,2543,2544
+Fill 7090 has 2544 colliding bunches
+7090,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 321794:7088 ls 40:40: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321794:7088 ls 44:44: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321794:7088 ls 45:45: expected 2544 got 2545
@@ -1273,110 +1266,110 @@ Mismatch in numBX hfet run:fill 321794:7088 ls 46:46: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321794:7088 ls 47:47: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321794:7088 ls 51:51: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321794:7088 ls 52:52: expected 2544 got 2545
-Error: for fill 7088 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7088,2544,2544,2543,2544
+Fill 7088 has 2544 colliding bunches
+7088,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 321773:7087 ls 13:13: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321773:7087 ls 18:18: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321773:7087 ls 20:20: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321773:7087 ls 21:21: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321773:7087 ls 25:25: expected 2544 got 2545
-Error: for fill 7087 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7087,2544,2544,2543,2544
+Fill 7087 has 2544 colliding bunches
+7087,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 321755:7083 ls 34:34: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321755:7083 ls 39:39: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321755:7083 ls 41:41: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321755:7083 ls 42:42: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321755:7083 ls 45:45: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321755:7083 ls 46:46: expected 2544 got 2545
-Error: for fill 7083 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7083,2544,2544,2543,2544
+Fill 7083 has 2544 colliding bunches
+7083,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 321730:7080 ls 8:8: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321730:7080 ls 13:13: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321730:7080 ls 15:15: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321730:7080 ls 16:16: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321730:7080 ls 20:20: expected 2544 got 2545
-Error: for fill 7080 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7080,2544,2544,2543,2544
+Fill 7080 has 2544 colliding bunches
+7080,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 321710:7078 ls 4:4: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321710:7078 ls 5:5: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321710:7078 ls 7:7: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321710:7078 ls 11:11: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321710:7078 ls 12:12: expected 2544 got 2545
-Error: for fill 7078 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7078,2544,2544,2543,2544
+Fill 7078 has 2544 colliding bunches
+7078,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 321475:7069 ls 50:50: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321475:7069 ls 55:55: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321475:7069 ls 57:57: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321475:7069 ls 58:58: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321475:7069 ls 62:62: expected 2544 got 2545
-Error: for fill 7069 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7069,2544,2544,2543,2544
+Fill 7069 has 2544 colliding bunches
+7069,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 321457:7065 ls 66:66: expected 2544 got 2545
-Error: for fill 7065 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7065,2544,2544,2543,2544
+Fill 7065 has 2544 colliding bunches
+7065,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 321431:7063 ls 35:35: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321431:7063 ls 40:40: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321431:7063 ls 42:42: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321431:7063 ls 43:43: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321431:7063 ls 48:48: expected 2544 got 2545
-Error: for fill 7063 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7063,2544,2544,2543,2544
+Fill 7063 has 2544 colliding bunches
+7063,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 321414:7061 ls 39:39: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321414:7061 ls 45:45: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321414:7061 ls 47:47: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321414:7061 ls 52:52: expected 2544 got 2545
-Error: for fill 7061 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7061,2544,2544,2543,2544
-Error: for fill 7058 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7058,2544,2544,2543,2544
+Fill 7061 has 2544 colliding bunches
+7061,2544,2544,2544,2544
+Fill 7058 has 2544 colliding bunches
+7058,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 321305:7056 ls 25:25: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321305:7056 ls 31:31: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321305:7056 ls 33:33: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321305:7056 ls 38:38: expected 2544 got 2545
-Error: for fill 7056 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7056,2544,2544,2543,2544
+Fill 7056 has 2544 colliding bunches
+7056,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 321283:7055 ls 56:56: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321283:7055 ls 62:62: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321283:7055 ls 64:64: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321283:7055 ls 69:69: expected 2544 got 2545
-Error: for fill 7055 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7055,2544,2544,2543,2544
+Fill 7055 has 2544 colliding bunches
+7055,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 321261:7054 ls 49:49: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321261:7054 ls 55:55: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321261:7054 ls 57:57: expected 2544 got 2545
-Error: for fill 7054 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7054,2544,2544,2543,2544
+Fill 7054 has 2544 colliding bunches
+7054,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 321230:7053 ls 53:53: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321230:7053 ls 58:58: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321230:7053 ls 60:60: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321230:7053 ls 61:61: expected 2544 got 2545
-Error: for fill 7053 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7053,2544,2544,2543,2544
+Fill 7053 has 2544 colliding bunches
+7053,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 321218:7052 ls 50:50: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321218:7052 ls 56:56: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321218:7052 ls 58:58: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321218:7052 ls 63:63: expected 2544 got 2545
-Error: for fill 7052 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7052,2544,2544,2543,2544
+Fill 7052 has 2544 colliding bunches
+7052,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 321177:7048 ls 38:38: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321177:7048 ls 43:43: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321177:7048 ls 45:45: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321177:7048 ls 50:50: expected 2544 got 2545
-Error: for fill 7048 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7048,2544,2544,2543,2544
+Fill 7048 has 2544 colliding bunches
+7048,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 321162:7047 ls 22:22: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321162:7047 ls 28:28: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321162:7047 ls 30:30: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321162:7047 ls 35:35: expected 2544 got 2545
-Error: for fill 7047 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7047,2544,2544,2543,2544
+Fill 7047 has 2544 colliding bunches
+7047,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 321149:7045 ls 51:51: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321149:7045 ls 52:52: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321149:7045 ls 57:57: expected 2544 got 2545
-Error: for fill 7045 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7045,2544,2544,2543,2544
-Error: for fill 7043 WBM reports 2544 beam reports 2541 and luminometers report 2544 colliding bunches
-7043,2544,2544,2541,2544
+Fill 7045 has 2544 colliding bunches
+7045,2544,2544,2544,2544
+Fill 7043 has 2544 colliding bunches
+7043,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 321119:7042 ls 45:45: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321119:7042 ls 50:50: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321119:7042 ls 51:51: expected 2544 got 2545
@@ -1384,22 +1377,22 @@ Mismatch in numBX hfet run:fill 321119:7042 ls 52:52: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321119:7042 ls 53:53: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321119:7042 ls 57:57: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321119:7042 ls 58:58: expected 2544 got 2545
-Error: for fill 7042 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7042,2544,2544,2543,2544
+Fill 7042 has 2544 colliding bunches
+7042,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 321067:7040 ls 46:46: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321067:7040 ls 54:54: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321067:7040 ls 59:59: expected 2544 got 2545
-Error: for fill 7040 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7040,2544,2544,2543,2544
-Error: for fill 7039 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7039,2544,2544,2543,2544
+Fill 7040 has 2544 colliding bunches
+7040,2544,2544,2544,2544
+Fill 7039 has 2544 colliding bunches
+7039,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 321004:7037 ls 42:42: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321004:7037 ls 47:47: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321004:7037 ls 49:49: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321004:7037 ls 50:50: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 321004:7037 ls 54:54: expected 2544 got 2545
-Error: for fill 7037 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7037,2544,2544,2543,2544
+Fill 7037 has 2544 colliding bunches
+7037,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 320995:7036 ls 34:34: expected 974 got 975
 Mismatch in numBX hfet run:fill 320995:7036 ls 39:39: expected 974 got 975
 Mismatch in numBX hfet run:fill 320995:7036 ls 41:41: expected 974 got 975
@@ -1409,72 +1402,72 @@ Fill 7036 has 974 colliding bunches
 Mismatch in numBX hfet run:fill 320980:7035 ls 48:48: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320980:7035 ls 56:56: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320980:7035 ls 61:61: expected 2544 got 2545
-Error: for fill 7035 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7035,2544,2544,2543,2544
+Fill 7035 has 2544 colliding bunches
+7035,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 320933:7033 ls 60:60: expected 2544 got 2545
-Error: for fill 7033 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7033,2544,2544,2543,2544
+Fill 7033 has 2544 colliding bunches
+7033,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 320916:7031 ls 2:2: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320916:7031 ls 7:7: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320916:7031 ls 9:9: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320916:7031 ls 10:10: expected 2544 got 2545
-Error: for fill 7031 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7031,2544,2544,2543,2544
+Fill 7031 has 2544 colliding bunches
+7031,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 320887:7026 ls 56:56: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320887:7026 ls 61:61: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320887:7026 ls 64:64: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320887:7026 ls 68:68: expected 2544 got 2545
-Error: for fill 7026 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7026,2544,2544,2543,2544
+Fill 7026 has 2544 colliding bunches
+7026,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 320853:7024 ls 47:47: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320853:7024 ls 53:53: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320853:7024 ls 55:55: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320853:7024 ls 60:60: expected 2544 got 2545
-Error: for fill 7024 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7024,2544,2544,2543,2544
+Fill 7024 has 2544 colliding bunches
+7024,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 320838:7020 ls 92:92: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320838:7020 ls 97:97: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320838:7020 ls 98:98: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320838:7020 ls 100:100: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320838:7020 ls 105:105: expected 2544 got 2545
-Error: for fill 7020 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7020,2544,2544,2543,2544
+Fill 7020 has 2544 colliding bunches
+7020,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 320821:7018 ls 41:41: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320821:7018 ls 46:46: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320821:7018 ls 48:48: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320821:7018 ls 49:49: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320821:7018 ls 53:53: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320821:7018 ls 54:54: expected 2544 got 2545
-Error: for fill 7018 WBM reports 2541 beam reports 2543 and luminometers report 2544 colliding bunches
-7018,2544,2541,2543,2544
+Error: for fill 7018 WBM reports 2541 beam reports 2544 and luminometers report 2544 colliding bunches
+7018,2544,2541,2544,2544
 Mismatch in numBX hfet run:fill 320804:7017 ls 53:53: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320804:7017 ls 58:58: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320804:7017 ls 61:61: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320804:7017 ls 65:65: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320804:7017 ls 66:66: expected 2544 got 2545
-Error: for fill 7017 WBM reports 2546 beam reports 2543 and luminometers report 2544 colliding bunches
-7017,2544,2546,2543,2544
+Error: for fill 7017 WBM reports 2546 beam reports 2544 and luminometers report 2544 colliding bunches
+7017,2544,2546,2544,2544
 Mismatch in numBX hfet run:fill 320757:7013 ls 51:51: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320757:7013 ls 57:57: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320757:7013 ls 59:59: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320757:7013 ls 60:60: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320757:7013 ls 67:67: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320757:7013 ls 68:68: expected 2544 got 2545
-Error: for fill 7013 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7013,2544,2544,2543,2544
+Fill 7013 has 2544 colliding bunches
+7013,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 320712:7008 ls 41:41: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320712:7008 ls 46:46: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320712:7008 ls 49:49: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320712:7008 ls 53:53: expected 2544 got 2545
-Error: for fill 7008 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-7008,2544,2544,2543,2544
+Fill 7008 has 2544 colliding bunches
+7008,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 320688:7006 ls 52:52: expected 2400 got 2401
 Mismatch in numBX hfet run:fill 320688:7006 ls 57:57: expected 2400 got 2401
 Mismatch in numBX hfet run:fill 320688:7006 ls 59:59: expected 2400 got 2401
 Mismatch in numBX hfet run:fill 320688:7006 ls 60:60: expected 2400 got 2401
 Mismatch in numBX hfet run:fill 320688:7006 ls 64:64: expected 2400 got 2401
-Error: for fill 7006 WBM reports 2400 beam reports 2399 and luminometers report 2400 colliding bunches
-7006,2544,2400,2399,2400
+Fill 7006 has 2400 colliding bunches
+7006,2544,2400,2400,2400
 Mismatch in numBX hfet run:fill 320673:7005 ls 43:43: expected 612 got 613
 Mismatch in numBX hfet run:fill 320673:7005 ls 48:48: expected 612 got 613
 Mismatch in numBX hfet run:fill 320673:7005 ls 50:50: expected 612 got 613
@@ -1508,54 +1501,54 @@ Mismatch in numBX hfet run:fill 320058:6961 ls 49:49: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320058:6961 ls 50:50: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320058:6961 ls 51:51: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320058:6961 ls 55:55: expected 2544 got 2545
-Error: for fill 6961 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6961,2544,2544,2543,2544
+Fill 6961 has 2544 colliding bunches
+6961,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 320038:6960 ls 46:46: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320038:6960 ls 51:51: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320038:6960 ls 53:53: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320038:6960 ls 54:54: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320038:6960 ls 58:58: expected 2544 got 2545
-Error: for fill 6960 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6960,2544,2544,2543,2544
+Fill 6960 has 2544 colliding bunches
+6960,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 320023:6957 ls 17:17: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320023:6957 ls 22:22: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320023:6957 ls 24:24: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320023:6957 ls 25:25: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 320023:6957 ls 29:29: expected 2544 got 2545
-Error: for fill 6957 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6957,2544,2544,2543,2544
-Error: for fill 6956 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6956,2544,2544,2543,2544
+Fill 6957 has 2544 colliding bunches
+6957,2544,2544,2544,2544
+Fill 6956 has 2544 colliding bunches
+6956,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 319991:6953 ls 51:51: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319991:6953 ls 56:56: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319991:6953 ls 58:58: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319991:6953 ls 63:63: expected 2544 got 2545
-Error: for fill 6953 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6953,2544,2544,2543,2544
+Fill 6953 has 2544 colliding bunches
+6953,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 319950:6946 ls 40:40: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319950:6946 ls 45:45: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319950:6946 ls 47:47: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319950:6946 ls 48:48: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319950:6946 ls 52:52: expected 2544 got 2545
-Error: for fill 6946 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6946,2544,2544,2543,2544
+Fill 6946 has 2544 colliding bunches
+6946,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 319941:6944 ls 48:48: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319941:6944 ls 50:50: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319941:6944 ls 54:54: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319941:6944 ls 55:55: expected 2544 got 2545
-Error: for fill 6944 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6944,2544,2544,2543,2544
+Fill 6944 has 2544 colliding bunches
+6944,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 319908:6942 ls 3:3: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319908:6942 ls 5:5: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319908:6942 ls 10:10: expected 2544 got 2545
-Error: for fill 6942 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6942,2544,2544,2543,2544
+Fill 6942 has 2544 colliding bunches
+6942,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 319848:6940 ls 4:4: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319848:6940 ls 9:9: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319848:6940 ls 11:11: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319848:6940 ls 16:16: expected 2544 got 2545
-Error: for fill 6940 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6940,2544,2544,2543,2544
+Fill 6940 has 2544 colliding bunches
+6940,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 319840:6939 ls 61:61: expected 974 got 975
 Mismatch in numBX hfet run:fill 319840:6939 ls 62:62: expected 974 got 975
 Fill 6939 has 974 colliding bunches
@@ -1563,8 +1556,8 @@ Fill 6939 has 974 colliding bunches
 Mismatch in numBX hfet run:fill 319756:6931 ls 48:48: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319756:6931 ls 50:50: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319756:6931 ls 55:55: expected 2544 got 2545
-Error: for fill 6931 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6931,2544,2544,2543,2544
+Fill 6931 has 2544 colliding bunches
+6931,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 319697:6929 ls 57:57: expected 974 got 975
 Mismatch in numBX hfet run:fill 319697:6929 ls 62:62: expected 974 got 975
 Mismatch in numBX hfet run:fill 319697:6929 ls 64:64: expected 974 got 975
@@ -1574,61 +1567,61 @@ Mismatch in numBX hfet run:fill 319687:6927 ls 50:50: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319687:6927 ls 55:55: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319687:6927 ls 57:57: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319687:6927 ls 62:62: expected 2544 got 2545
-Error: for fill 6927 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6927,2544,2544,2543,2544
+Fill 6927 has 2544 colliding bunches
+6927,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 319678:6925 ls 41:41: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319678:6925 ls 46:46: expected 2544 got 2545
-Error: for fill 6925 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6925,2544,2544,2543,2544
+Fill 6925 has 2544 colliding bunches
+6925,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 319656:6924 ls 55:55: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319656:6924 ls 60:60: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319656:6924 ls 62:62: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319656:6924 ls 67:67: expected 2544 got 2545
-Error: for fill 6924 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6924,2544,2544,2543,2544
+Fill 6924 has 2544 colliding bunches
+6924,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 319639:6923 ls 35:35: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319639:6923 ls 37:37: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319639:6923 ls 38:38: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319639:6923 ls 42:42: expected 2544 got 2545
-Error: for fill 6923 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6923,2544,2544,2543,2544
+Fill 6923 has 2544 colliding bunches
+6923,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 319625:6921 ls 20:20: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319625:6921 ls 22:22: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319625:6921 ls 23:23: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319625:6921 ls 27:27: expected 2544 got 2545
-Error: for fill 6921 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6921,2544,2544,2543,2544
+Fill 6921 has 2544 colliding bunches
+6921,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 319579:6919 ls 47:47: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319579:6919 ls 52:52: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319579:6919 ls 54:54: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319579:6919 ls 59:59: expected 2544 got 2545
-Error: for fill 6919 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6919,2544,2544,2543,2544
+Fill 6919 has 2544 colliding bunches
+6919,2544,2544,2544,2544
 Fill 6913 has 9 colliding bunches
 6913,9,9,9,9
-Error: for fill 6912 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6912,2544,2544,2543,2544
+Fill 6912 has 2544 colliding bunches
+6912,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 319486:6911 ls 42:42: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319486:6911 ls 44:44: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319486:6911 ls 49:49: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319486:6911 ls 50:50: expected 2544 got 2545
-Error: for fill 6911 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6911,2544,2544,2543,2544
+Fill 6911 has 2544 colliding bunches
+6911,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 319449:6909 ls 48:48: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319449:6909 ls 53:53: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319449:6909 ls 55:55: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 319449:6909 ls 56:56: expected 2544 got 2545
-Error: for fill 6909 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6909,2544,2544,2543,2544
-Error: for fill 6904 WBM reports 2448 beam reports 2447 and luminometers report 2448 colliding bunches
-6904,2448,2448,2447,2448
+Fill 6909 has 2544 colliding bunches
+6909,2544,2544,2544,2544
+Fill 6904 has 2448 colliding bunches
+6904,2448,2448,2448,2448
 Fill 6901 has 974 colliding bunches
 6901,974,974,974,974
 Mismatch in numBX bcm1f run:fill 319310:6892 ls 129:0: expected 1450 got 2822
 Mismatch in numBX bcm1f run:fill 319311:6892 ls 5:5: expected 1450 got 2822
 Mismatch in numBX bcm1f run:fill 319311:6892 ls 6:6: expected 1450 got 2818
-Error: for fill 6892 WBM reports 1450 beam reports 1449 and luminometers report 1450 colliding bunches
-6892,1450,1450,1449,1450
+Fill 6892 has 1450 colliding bunches
+6892,1450,1450,1450,1450
 Mismatch in numBX hfet run:fill 319297:6891 ls 49:0: expected 1450 got 1452
 Mismatch in numBX hfet run:fill 319297:6891 ls 53:0: expected 1450 got 1452
 Mismatch in numBX hfet run:fill 319297:6891 ls 56:0: expected 1450 got 1452
@@ -1663,8 +1656,8 @@ Mismatch in numBX pltzero run:fill 319300:6891 ls 6:6: expected 1450 got 1449
 Mismatch in numBX pltzero run:fill 319300:6891 ls 7:7: expected 1450 got 1449
 Mismatch in numBX pltzero run:fill 319300:6891 ls 8:8: expected 1450 got 1449
 Mismatch in numBX pltzero run:fill 319300:6891 ls 9:9: expected 1450 got 1449
-Error: for fill 6891 WBM reports 1450 beam reports 1449 and luminometers report 1450 colliding bunches
-6891,1450,1450,1449,1450
+Fill 6891 has 1450 colliding bunches
+6891,1450,1450,1450,1450
 Mismatch in numBX bcm1f run:fill 319254:6890 ls 117:117: expected 1450 got 2276
 Mismatch in numBX bcm1f run:fill 319254:6890 ls 118:118: expected 1450 got 2414
 Mismatch in numBX bcm1f run:fill 319254:6890 ls 119:119: expected 1450 got 2425
@@ -1674,8 +1667,8 @@ Mismatch in numBX bcm1f run:fill 319254:6890 ls 124:124: expected 1450 got 2042
 Mismatch in numBX bcm1f run:fill 319254:6890 ls 125:125: expected 1450 got 2197
 Mismatch in numBX bcm1f run:fill 319254:6890 ls 126:126: expected 1450 got 2345
 Mismatch in numBX bcm1f run:fill 319254:6890 ls 127:127: expected 1450 got 2356
-Error: for fill 6890 WBM reports 1450 beam reports 1449 and luminometers report 1450 colliding bunches
-6890,1450,1450,1449,1450
+Fill 6890 has 1450 colliding bunches
+6890,1450,1450,1450,1450
 Fill 6885 has 732 colliding bunches
 6885,732,732,732,732
 Mismatch in numBX pltzero run:fill 319189:6884 ls 65:65: expected 300 got 291
@@ -1695,10 +1688,10 @@ Fill 6881 has 732 colliding bunches
 6881,732,732,732,732
 Fill 6879 has 300 colliding bunches
 6879,300,300,300,300
-Error: for fill 6877 WBM reports 84 beam reports 83 and luminometers report 84 colliding bunches
-6877,84,84,83,84
-Error: for fill 6874 WBM reports 2448 beam reports 2447 and luminometers report 2448 colliding bunches
-6874,2448,2448,2447,2448
+Fill 6877 has 84 colliding bunches
+6877,84,84,84,84
+Fill 6874 has 2448 colliding bunches
+6874,2448,2448,2448,2448
 Mismatch in numBX hfet run:fill 318979:6868 ls 19:0: expected 124 got 126
 Mismatch in numBX hfet run:fill 318980:6868 ls 1:1: expected 124 got 126
 Mismatch in numBX hfet run:fill 318980:6868 ls 2:2: expected 124 got 125
@@ -1709,8 +1702,8 @@ Fill 6868 has 124 colliding bunches
 6868,124,124,124,124
 Fill 6864 has 58 colliding bunches
 6864,58,58,58,58
-Error: for fill 6860 WBM reports 2448 beam reports 2447 and luminometers report 2448 colliding bunches
-6860,2448,2448,2447,2448
+Fill 6860 has 2448 colliding bunches
+6860,2448,2448,2448,2448
 Mismatch in numBX hfet run:fill 318828:6858 ls 64:64: expected 1214 got 1215
 Mismatch in numBX hfet run:fill 318828:6858 ls 68:68: expected 1214 got 1215
 Mismatch in numBX hfet run:fill 318828:6858 ls 69:69: expected 1214 got 1215
@@ -1728,8 +1721,8 @@ Mismatch in numBX hfet run:fill 318712:6850 ls 61:61: expected 590 got 591
 Mismatch in numBX hfet run:fill 318712:6850 ls 65:65: expected 590 got 591
 Mismatch in numBX hfet run:fill 318712:6850 ls 66:66: expected 590 got 591
 Mismatch in numBX hfet run:fill 318712:6850 ls 73:73: expected 590 got 591
-Error: for fill 6850 WBM reports 590 beam reports 589 and luminometers report 590 colliding bunches
-6850,590,590,589,590
+Fill 6850 has 590 colliding bunches
+6850,590,590,590,590
 Mismatch in numBX pltzero run:fill 318653:6847 ls 29:29: expected 140 got 139
 Mismatch in numBX pltzero run:fill 318653:6847 ls 30:30: expected 140 got 139
 Mismatch in numBX pltzero run:fill 318653:6847 ls 31:31: expected 140 got 139
@@ -1760,37 +1753,37 @@ Fill 6847 has 140 colliding bunches
 6847,140,140,140,140
 Fill 6843 has 2 colliding bunches
 6843,2,2,2,2
-Error: for fill 6778 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6778,2544,2544,2543,2544
-Error: for fill 6776 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6776,2544,2544,2543,2544
-Error: for fill 6774 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6774,2544,2544,2543,2544
-Error: for fill 6773 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6773,2544,2544,2543,2544
-Error: for fill 6772 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6772,2544,2544,2543,2544
-Error: for fill 6770 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6770,2544,2544,2543,2544
-Error: for fill 6768 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6768,2544,2544,2543,2544
-Error: for fill 6763 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6763,2544,2544,2543,2544
-Error: for fill 6762 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6762,2544,2544,2543,2544
-Error: for fill 6761 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6761,2544,2544,2543,2544
-Error: for fill 6759 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6759,2544,2544,2543,2544
+Fill 6778 has 2544 colliding bunches
+6778,2544,2544,2544,2544
+Fill 6776 has 2544 colliding bunches
+6776,2544,2544,2544,2544
+Fill 6774 has 2544 colliding bunches
+6774,2544,2544,2544,2544
+Fill 6773 has 2544 colliding bunches
+6773,2544,2544,2544,2544
+Fill 6772 has 2544 colliding bunches
+6772,2544,2544,2544,2544
+Fill 6770 has 2544 colliding bunches
+6770,2544,2544,2544,2544
+Fill 6768 has 2544 colliding bunches
+6768,2544,2544,2544,2544
+Fill 6763 has 2544 colliding bunches
+6763,2544,2544,2544,2544
+Fill 6762 has 2544 colliding bunches
+6762,2544,2544,2544,2544
+Fill 6761 has 2544 colliding bunches
+6761,2544,2544,2544,2544
+Fill 6759 has 2544 colliding bunches
+6759,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 317392:6757 ls 4:4: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 317392:6757 ls 5:5: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 317392:6757 ls 6:6: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 317392:6757 ls 7:7: expected 2544 got 2545
-Error: for fill 6757 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6757,2544,2544,2543,2544
+Fill 6757 has 2544 colliding bunches
+6757,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 317382:6755 ls 80:80: expected 2544 got 2545
-Error: for fill 6755 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6755,2544,2544,2543,2544
+Fill 6755 has 2544 colliding bunches
+6755,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 317338:6752 ls 66:66: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 317338:6752 ls 67:67: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 317338:6752 ls 71:71: expected 2544 got 2545
@@ -1798,23 +1791,23 @@ Mismatch in numBX hfet run:fill 317338:6752 ls 72:72: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 317338:6752 ls 73:73: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 317338:6752 ls 74:74: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 317338:6752 ls 78:78: expected 2544 got 2545
-Error: for fill 6752 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6752,2544,2544,2543,2544
+Fill 6752 has 2544 colliding bunches
+6752,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 317319:6751 ls 56:56: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 317319:6751 ls 61:61: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 317319:6751 ls 63:63: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 317319:6751 ls 64:64: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 317319:6751 ls 67:67: expected 2544 got 2545
-Error: for fill 6751 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6751,2544,2544,2543,2544
+Fill 6751 has 2544 colliding bunches
+6751,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 317291:6749 ls 45:45: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 317291:6749 ls 46:46: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 317291:6749 ls 50:50: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 317291:6749 ls 53:53: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 317291:6749 ls 56:56: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 317291:6749 ls 57:57: expected 2544 got 2545
-Error: for fill 6749 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6749,2544,2544,2543,2544
+Fill 6749 has 2544 colliding bunches
+6749,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 317279:6747 ls 49:49: expected 974 got 975
 Mismatch in numBX hfet run:fill 317279:6747 ls 50:50: expected 974 got 975
 Mismatch in numBX hfet run:fill 317279:6747 ls 54:54: expected 974 got 975
@@ -1826,13 +1819,13 @@ Fill 6747 has 974 colliding bunches
 6747,974,974,974,974
 Mismatch in numBX hfet run:fill 317212:6744 ls 57:57: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 317212:6744 ls 58:58: expected 2544 got 2545
-Error: for fill 6744 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6744,2544,2544,2543,2544
-Error: for fill 6741 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6741,2544,2544,2543,2544
+Fill 6744 has 2544 colliding bunches
+6744,2544,2544,2544,2544
+Fill 6741 has 2544 colliding bunches
+6741,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 317170:6740 ls 48:48: expected 2544 got 2545
-Error: for fill 6740 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6740,2544,2544,2543,2544
+Fill 6740 has 2544 colliding bunches
+6740,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 317087:6738 ls 44:44: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 317087:6738 ls 45:45: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 317087:6738 ls 48:48: expected 2544 got 2545
@@ -1842,15 +1835,15 @@ Mismatch in numBX hfet run:fill 317087:6738 ls 51:51: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 317087:6738 ls 52:52: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 317087:6738 ls 55:55: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 317087:6738 ls 56:56: expected 2544 got 2545
-Error: for fill 6738 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6738,2544,2544,2543,2544
+Fill 6738 has 2544 colliding bunches
+6738,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 317080:6737 ls 54:54: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 317080:6737 ls 55:55: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 317080:6737 ls 59:59: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 317080:6737 ls 60:60: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 317080:6737 ls 62:62: expected 2544 got 2545
-Error: for fill 6737 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6737,2544,2544,2543,2544
+Fill 6737 has 2544 colliding bunches
+6737,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 316993:6733 ls 53:53: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316993:6733 ls 54:54: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316993:6733 ls 58:58: expected 2544 got 2545
@@ -1860,10 +1853,10 @@ Mismatch in numBX hfet run:fill 316993:6733 ls 61:61: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316993:6733 ls 62:62: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316993:6733 ls 65:65: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316993:6733 ls 66:66: expected 2544 got 2545
-Error: for fill 6733 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6733,2544,2544,2543,2544
-Error: for fill 6731 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6731,2544,2544,2543,2544
+Fill 6733 has 2544 colliding bunches
+6733,2544,2544,2544,2544
+Fill 6731 has 2544 colliding bunches
+6731,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 316944:6729 ls 46:46: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316944:6729 ls 47:47: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316944:6729 ls 51:51: expected 2544 got 2545
@@ -1872,20 +1865,20 @@ Mismatch in numBX hfet run:fill 316944:6729 ls 53:53: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316944:6729 ls 54:54: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316944:6729 ls 57:57: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316944:6729 ls 58:58: expected 2544 got 2545
-Error: for fill 6729 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6729,2544,2544,2543,2544
-Error: for fill 6724 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6724,2544,2544,2543,2544
-Error: for fill 6719 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6719,2544,2544,2543,2544
-Error: for fill 6714 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6714,2544,2544,2543,2544
+Fill 6729 has 2544 colliding bunches
+6729,2544,2544,2544,2544
+Fill 6724 has 2544 colliding bunches
+6724,2544,2544,2544,2544
+Fill 6719 has 2544 colliding bunches
+6719,2544,2544,2544,2544
+Fill 6714 has 2544 colliding bunches
+6714,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 316758:6712 ls 28:28: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316758:6712 ls 32:32: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316758:6712 ls 33:33: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316758:6712 ls 34:34: expected 2544 got 2545
-Error: for fill 6712 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6712,2544,2544,2543,2544
+Fill 6712 has 2544 colliding bunches
+6712,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 316715:6711 ls 36:36: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316715:6711 ls 37:37: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316715:6711 ls 38:38: expected 2544 got 2545
@@ -1894,8 +1887,8 @@ Mismatch in numBX hfet run:fill 316715:6711 ls 42:42: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316715:6711 ls 43:43: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316715:6711 ls 44:44: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316715:6711 ls 45:45: expected 2544 got 2545
-Error: for fill 6711 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6711,2544,2544,2543,2544
+Fill 6711 has 2544 colliding bunches
+6711,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 316700:6710 ls 46:46: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316700:6710 ls 47:47: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316700:6710 ls 50:50: expected 2544 got 2545
@@ -1904,10 +1897,10 @@ Mismatch in numBX hfet run:fill 316700:6710 ls 52:52: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316700:6710 ls 54:54: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316700:6710 ls 57:57: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316700:6710 ls 58:58: expected 2544 got 2545
-Error: for fill 6710 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6710,2544,2544,2543,2544
-Error: for fill 6709 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6709,2544,2544,2543,2544
+Fill 6710 has 2544 colliding bunches
+6710,2544,2544,2544,2544
+Fill 6709 has 2544 colliding bunches
+6709,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 316613:6706 ls 51:51: expected 974 got 975
 Mismatch in numBX hfet run:fill 316613:6706 ls 52:52: expected 974 got 975
 Mismatch in numBX hfet run:fill 316613:6706 ls 55:55: expected 974 got 975
@@ -1926,8 +1919,8 @@ Mismatch in numBX hfet run:fill 316590:6702 ls 33:33: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316590:6702 ls 34:34: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316590:6702 ls 35:35: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316590:6702 ls 39:39: expected 2544 got 2545
-Error: for fill 6702 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6702,2544,2544,2543,2544
+Fill 6702 has 2544 colliding bunches
+6702,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 316569:6700 ls 20:20: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316569:6700 ls 24:24: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316569:6700 ls 25:25: expected 2544 got 2545
@@ -1935,8 +1928,8 @@ Mismatch in numBX hfet run:fill 316569:6700 ls 26:26: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316569:6700 ls 27:27: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316569:6700 ls 30:30: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316569:6700 ls 31:31: expected 2544 got 2545
-Error: for fill 6700 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6700,2544,2544,2543,2544
+Fill 6700 has 2544 colliding bunches
+6700,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 316559:6699 ls 79:79: expected 9 got 10
 Mismatch in numBX hfet run:fill 316559:6699 ls 83:83: expected 9 got 10
 Mismatch in numBX hfet run:fill 316559:6699 ls 84:84: expected 9 got 10
@@ -1953,8 +1946,8 @@ Mismatch in numBX hfet run:fill 316505:6696 ls 53:53: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316505:6696 ls 54:54: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316505:6696 ls 55:55: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316505:6696 ls 59:59: expected 2544 got 2545
-Error: for fill 6696 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6696,2544,2544,2543,2544
+Fill 6696 has 2544 colliding bunches
+6696,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 316469:6694 ls 27:27: expected 2162 got 2163
 Mismatch in numBX hfet run:fill 316469:6694 ls 28:28: expected 2162 got 2163
 Mismatch in numBX hfet run:fill 316469:6694 ls 32:32: expected 2162 got 2163
@@ -1962,8 +1955,8 @@ Mismatch in numBX hfet run:fill 316469:6694 ls 34:34: expected 2162 got 2163
 Mismatch in numBX hfet run:fill 316469:6694 ls 35:35: expected 2162 got 2163
 Mismatch in numBX hfet run:fill 316469:6694 ls 38:38: expected 2162 got 2163
 Mismatch in numBX hfet run:fill 316469:6694 ls 39:39: expected 2162 got 2163
-Error: for fill 6694 WBM reports 2162 beam reports 2161 and luminometers report 2162 colliding bunches
-6694,2162,2162,2161,2162
+Fill 6694 has 2162 colliding bunches
+6694,2162,2162,2162,2162
 Mismatch in numBX hfet run:fill 316455:6693 ls 39:39: expected 1874 got 1875
 Mismatch in numBX hfet run:fill 316455:6693 ls 40:40: expected 1874 got 1875
 Mismatch in numBX hfet run:fill 316455:6693 ls 43:43: expected 1874 got 1875
@@ -1973,10 +1966,10 @@ Mismatch in numBX hfet run:fill 316455:6693 ls 46:46: expected 1874 got 1875
 Mismatch in numBX hfet run:fill 316455:6693 ls 47:47: expected 1874 got 1875
 Mismatch in numBX hfet run:fill 316455:6693 ls 50:50: expected 1874 got 1875
 Mismatch in numBX hfet run:fill 316455:6693 ls 51:51: expected 1874 got 1875
-Error: for fill 6693 WBM reports 1874 beam reports 1873 and luminometers report 1874 colliding bunches
-6693,1874,1874,1873,1874
-Error: for fill 6692 WBM reports 1538 beam reports 1537 and luminometers report 1538 colliding bunches
-6692,1538,1538,1537,1538
+Fill 6693 has 1874 colliding bunches
+6693,1874,1874,1874,1874
+Fill 6692 has 1538 colliding bunches
+6692,1538,1538,1538,1538
 Mismatch in numBX hfet run:fill 316377:6690 ls 21:21: expected 1214 got 1215
 Mismatch in numBX hfet run:fill 316377:6690 ls 25:25: expected 1214 got 1215
 Mismatch in numBX hfet run:fill 316377:6690 ls 26:26: expected 1214 got 1215
@@ -2003,8 +1996,8 @@ Mismatch in numBX hfet run:fill 316271:6683 ls 45:45: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316271:6683 ls 46:46: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316271:6683 ls 49:49: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316271:6683 ls 50:50: expected 2544 got 2545
-Error: for fill 6683 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6683,2544,2544,2543,2544
+Fill 6683 has 2544 colliding bunches
+6683,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 316239:6681 ls 47:47: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316239:6681 ls 48:48: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316239:6681 ls 52:52: expected 2544 got 2545
@@ -2013,16 +2006,16 @@ Mismatch in numBX hfet run:fill 316239:6681 ls 54:54: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316239:6681 ls 55:55: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316239:6681 ls 58:58: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316239:6681 ls 59:59: expected 2544 got 2545
-Error: for fill 6681 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6681,2544,2544,2543,2544
+Fill 6681 has 2544 colliding bunches
+6681,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 316216:6677 ls 38:38: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316216:6677 ls 39:39: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316216:6677 ls 43:43: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316216:6677 ls 44:44: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316216:6677 ls 45:45: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316216:6677 ls 46:46: expected 2544 got 2545
-Error: for fill 6677 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6677,2544,2544,2543,2544
+Fill 6677 has 2544 colliding bunches
+6677,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 316199:6675 ls 44:44: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316199:6675 ls 48:48: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316199:6675 ls 49:49: expected 2544 got 2545
@@ -2030,8 +2023,8 @@ Mismatch in numBX hfet run:fill 316199:6675 ls 50:50: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316199:6675 ls 51:51: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316199:6675 ls 55:55: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316199:6675 ls 56:56: expected 2544 got 2545
-Error: for fill 6675 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6675,2544,2544,2543,2544
+Fill 6675 has 2544 colliding bunches
+6675,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 316186:6674 ls 37:37: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316186:6674 ls 38:38: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316186:6674 ls 42:42: expected 2544 got 2545
@@ -2040,14 +2033,14 @@ Mismatch in numBX hfet run:fill 316186:6674 ls 44:44: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316186:6674 ls 45:45: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316186:6674 ls 48:48: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316186:6674 ls 49:49: expected 2544 got 2545
-Error: for fill 6674 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6674,2544,2544,2543,2544
+Fill 6674 has 2544 colliding bunches
+6674,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 316153:6672 ls 1:1: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316153:6672 ls 2:2: expected 2544 got 2545
-Error: for fill 6672 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6672,2544,2544,2543,2544
-Error: for fill 6666 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6666,2544,2544,2543,2544
+Fill 6672 has 2544 colliding bunches
+6672,2544,2544,2544,2544
+Fill 6666 has 2544 colliding bunches
+6666,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 316082:6663 ls 39:39: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316082:6663 ls 40:40: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316082:6663 ls 44:44: expected 2544 got 2545
@@ -2056,8 +2049,8 @@ Mismatch in numBX hfet run:fill 316082:6663 ls 46:46: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316082:6663 ls 47:47: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316082:6663 ls 50:50: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316082:6663 ls 51:51: expected 2544 got 2545
-Error: for fill 6663 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6663,2544,2544,2543,2544
+Fill 6663 has 2544 colliding bunches
+6663,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 316058:6662 ls 43:43: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316058:6662 ls 44:44: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316058:6662 ls 48:48: expected 2544 got 2545
@@ -2066,8 +2059,8 @@ Mismatch in numBX hfet run:fill 316058:6662 ls 50:50: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316058:6662 ls 51:51: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316058:6662 ls 55:55: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 316058:6662 ls 56:56: expected 2544 got 2545
-Error: for fill 6662 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6662,2544,2544,2543,2544
+Fill 6662 has 2544 colliding bunches
+6662,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 315973:6659 ls 44:44: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 315973:6659 ls 45:45: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 315973:6659 ls 49:49: expected 2544 got 2545
@@ -2076,12 +2069,12 @@ Mismatch in numBX hfet run:fill 315973:6659 ls 51:51: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 315973:6659 ls 52:52: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 315973:6659 ls 55:55: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 315973:6659 ls 56:56: expected 2544 got 2545
-Error: for fill 6659 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6659,2544,2544,2543,2544
+Fill 6659 has 2544 colliding bunches
+6659,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 315840:6654 ls 54:54: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 315840:6654 ls 55:55: expected 2544 got 2545
-Error: for fill 6654 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6654,2544,2544,2543,2544
+Fill 6654 has 2544 colliding bunches
+6654,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 315800:6650 ls 50:50: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 315800:6650 ls 51:51: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 315800:6650 ls 55:55: expected 2544 got 2545
@@ -2089,8 +2082,8 @@ Mismatch in numBX hfet run:fill 315800:6650 ls 57:57: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 315800:6650 ls 58:58: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 315800:6650 ls 61:61: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 315800:6650 ls 62:62: expected 2544 got 2545
-Error: for fill 6650 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6650,2544,2544,2543,2544
+Fill 6650 has 2544 colliding bunches
+6650,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 315784:6648 ls 30:30: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 315784:6648 ls 31:31: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 315784:6648 ls 34:34: expected 2544 got 2549
@@ -2098,8 +2091,8 @@ Mismatch in numBX hfet run:fill 315784:6648 ls 35:35: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 315784:6648 ls 37:37: expected 2544 got 2565
 Mismatch in numBX hfet run:fill 315784:6648 ls 41:41: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 315784:6648 ls 42:42: expected 2544 got 2545
-Error: for fill 6648 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6648,2544,2544,2543,2544
+Fill 6648 has 2544 colliding bunches
+6648,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 315770:6646 ls 45:45: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 315770:6646 ls 49:49: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 315770:6646 ls 50:50: expected 2544 got 2545
@@ -2107,20 +2100,20 @@ Mismatch in numBX hfet run:fill 315770:6646 ls 51:51: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 315770:6646 ls 52:52: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 315770:6646 ls 56:56: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 315770:6646 ls 57:57: expected 2544 got 2545
-Error: for fill 6646 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6646,2544,2544,2543,2544
+Fill 6646 has 2544 colliding bunches
+6646,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 315764:6645 ls 59:59: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 315764:6645 ls 60:60: expected 2544 got 2545
-Error: for fill 6645 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6645,2544,2544,2543,2544
+Fill 6645 has 2544 colliding bunches
+6645,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 315741:6643 ls 38:38: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 315741:6643 ls 39:39: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 315741:6643 ls 43:43: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 315741:6643 ls 44:44: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 315741:6643 ls 45:45: expected 2544 got 2545
 Mismatch in numBX hfet run:fill 315741:6643 ls 50:50: expected 2544 got 2545
-Error: for fill 6643 WBM reports 2544 beam reports 2543 and luminometers report 2544 colliding bunches
-6643,2544,2544,2543,2544
+Fill 6643 has 2544 colliding bunches
+6643,2544,2544,2544,2544
 Mismatch in numBX hfet run:fill 315721:6642 ls 32:32: expected 2448 got 2449
 Mismatch in numBX hfet run:fill 315721:6642 ls 37:37: expected 2448 got 2449
 Mismatch in numBX hfet run:fill 315721:6642 ls 39:39: expected 2448 got 2449
@@ -2129,12 +2122,12 @@ Mismatch in numBX hfet run:fill 315721:6642 ls 43:43: expected 2448 got 2449
 Mismatch in numBX hfet run:fill 315721:6642 ls 44:44: expected 2448 got 2449
 Mismatch in numBX hfet run:fill 315721:6642 ls 53:53: expected 2448 got 2453
 Mismatch in numBX hfet run:fill 315721:6642 ls 54:54: expected 2448 got 2453
-Error: for fill 6642 WBM reports 2448 beam reports 2447 and luminometers report 2448 colliding bunches
-6642,2448,2448,2447,2448
+Fill 6642 has 2448 colliding bunches
+6642,2448,2448,2448,2448
 Mismatch in numBX hfet run:fill 315713:6641 ls 54:54: expected 2448 got 2449
 Mismatch in numBX hfet run:fill 315713:6641 ls 55:55: expected 2448 got 2449
-Error: for fill 6641 WBM reports 2448 beam reports 2447 and luminometers report 2448 colliding bunches
-6641,2448,2448,2447,2448
+Fill 6641 has 2448 colliding bunches
+6641,2448,2448,2448,2448
 Mismatch in numBX hfet run:fill 315702:6640 ls 38:38: expected 2448 got 2449
 Mismatch in numBX hfet run:fill 315702:6640 ls 39:39: expected 2448 got 2449
 Mismatch in numBX hfet run:fill 315702:6640 ls 42:42: expected 2448 got 2449
@@ -2143,30 +2136,30 @@ Mismatch in numBX hfet run:fill 315702:6640 ls 45:45: expected 2448 got 2449
 Mismatch in numBX hfet run:fill 315702:6640 ls 46:46: expected 2448 got 2449
 Mismatch in numBX hfet run:fill 315702:6640 ls 49:49: expected 2448 got 2449
 Mismatch in numBX hfet run:fill 315702:6640 ls 50:50: expected 2448 got 2449
-Error: for fill 6640 WBM reports 2448 beam reports 2447 and luminometers report 2448 colliding bunches
-6640,2448,2448,2447,2448
+Fill 6640 has 2448 colliding bunches
+6640,2448,2448,2448,2448
 Mismatch in numBX hfet run:fill 315689:6639 ls 39:39: expected 2306 got 2307
 Mismatch in numBX hfet run:fill 315689:6639 ls 40:40: expected 2306 got 2307
 Mismatch in numBX hfet run:fill 315689:6639 ls 44:44: expected 2306 got 2307
 Mismatch in numBX hfet run:fill 315689:6639 ls 45:45: expected 2306 got 2307
 Mismatch in numBX hfet run:fill 315689:6639 ls 46:46: expected 2306 got 2307
 Mismatch in numBX hfet run:fill 315689:6639 ls 47:47: expected 2306 got 2307
-Error: for fill 6639 WBM reports 2306 beam reports 2305 and luminometers report 2306 colliding bunches
-6639,2306,2306,2305,2306
+Fill 6639 has 2306 colliding bunches
+6639,2306,2306,2306,2306
 Mismatch in numBX hfet run:fill 315640:6638 ls 48:48: expected 2162 got 2163
 Mismatch in numBX hfet run:fill 315640:6638 ls 50:50: expected 2162 got 2163
 Mismatch in numBX hfet run:fill 315640:6638 ls 51:51: expected 2162 got 2163
 Mismatch in numBX hfet run:fill 315640:6638 ls 55:55: expected 2162 got 2163
-Error: for fill 6638 WBM reports 2162 beam reports 2161 and luminometers report 2162 colliding bunches
-6638,2162,2162,2161,2162
+Fill 6638 has 2162 colliding bunches
+6638,2162,2162,2162,2162
 Mismatch in numBX hfet run:fill 315555:6636 ls 36:36: expected 1874 got 1875
 Mismatch in numBX hfet run:fill 315555:6636 ls 37:37: expected 1874 got 1875
 Mismatch in numBX hfet run:fill 315555:6636 ls 41:41: expected 1874 got 1875
 Mismatch in numBX hfet run:fill 315555:6636 ls 42:42: expected 1874 got 1875
 Mismatch in numBX hfet run:fill 315555:6636 ls 43:43: expected 1874 got 1875
 Mismatch in numBX hfet run:fill 315555:6636 ls 44:44: expected 1874 got 1875
-Error: for fill 6636 WBM reports 1874 beam reports 1873 and luminometers report 1874 colliding bunches
-6636,1874,1874,1873,1874
+Fill 6636 has 1874 colliding bunches
+6636,1874,1874,1874,1874
 Mismatch in numBX hfet run:fill 315543:6633 ls 57:57: expected 1874 got 1875
 Mismatch in numBX hfet run:fill 315543:6633 ls 58:58: expected 1874 got 1875
 Mismatch in numBX hfet run:fill 315543:6633 ls 62:62: expected 1874 got 1875
@@ -2174,23 +2167,23 @@ Mismatch in numBX hfet run:fill 315543:6633 ls 63:63: expected 1874 got 1875
 Mismatch in numBX hfet run:fill 315543:6633 ls 64:64: expected 1874 got 1875
 Mismatch in numBX hfet run:fill 315543:6633 ls 65:65: expected 1874 got 1875
 Mismatch in numBX hfet run:fill 315543:6633 ls 69:69: expected 1874 got 1875
-Error: for fill 6633 WBM reports 1874 beam reports 1873 and luminometers report 1874 colliding bunches
-6633,1874,1874,1873,1874
+Fill 6633 has 1874 colliding bunches
+6633,1874,1874,1874,1874
 Mismatch in numBX hfet run:fill 315506:6629 ls 17:17: expected 1874 got 1875
 Mismatch in numBX hfet run:fill 315506:6629 ls 21:21: expected 1874 got 1875
 Mismatch in numBX hfet run:fill 315506:6629 ls 22:22: expected 1874 got 1875
 Mismatch in numBX hfet run:fill 315506:6629 ls 24:24: expected 1874 got 1875
 Mismatch in numBX hfet run:fill 315506:6629 ls 28:28: expected 1874 got 1875
 Mismatch in numBX hfet run:fill 315506:6629 ls 29:29: expected 1874 got 1875
-Error: for fill 6629 WBM reports 1874 beam reports 1873 and luminometers report 1874 colliding bunches
-6629,1874,1874,1873,1874
+Fill 6629 has 1874 colliding bunches
+6629,1874,1874,1874,1874
 Mismatch in numBX hfet run:fill 315488:6628 ls 54:54: expected 1538 got 1539
 Mismatch in numBX hfet run:fill 315488:6628 ls 55:55: expected 1538 got 1539
 Mismatch in numBX hfet run:fill 315488:6628 ls 59:59: expected 1538 got 1539
 Mismatch in numBX hfet run:fill 315488:6628 ls 61:61: expected 1538 got 1539
 Mismatch in numBX hfet run:fill 315488:6628 ls 62:62: expected 1538 got 1539
-Error: for fill 6628 WBM reports 1538 beam reports 1537 and luminometers report 1538 colliding bunches
-6628,1538,1538,1537,1538
+Fill 6628 has 1538 colliding bunches
+6628,1538,1538,1538,1538
 Mismatch in numBX hfet run:fill 315420:6624 ls 35:35: expected 1214 got 1215
 Mismatch in numBX hfet run:fill 315420:6624 ls 39:39: expected 1214 got 1215
 Mismatch in numBX hfet run:fill 315420:6624 ls 40:40: expected 1214 got 1215
@@ -2233,14 +2226,14 @@ Mismatch in numBX hfet run:fill 315322:6617 ls 30:30: expected 974 got 975
 Mismatch in numBX hfet run:fill 315322:6617 ls 34:34: expected 974 got 975
 Fill 6617 has 974 colliding bunches
 6617,974,974,974,974
-Error: for fill 6616 WBM reports 974 beam reports 973 and luminometers report 974 colliding bunches
-6616,974,974,973,974
+Fill 6616 has 974 colliding bunches
+6616,974,974,974,974
 Fill 6615 has 590 colliding bunches
 6615,590,590,590,590
-Error: for fill 6614 WBM reports 590 beam reports 589 and luminometers report 590 colliding bunches
-6614,590,590,589,590
-Error: for fill 6613 WBM reports 590 beam reports 589 and luminometers report 590 colliding bunches
-6613,590,590,589,590
+Fill 6614 has 590 colliding bunches
+6614,590,590,590,590
+Fill 6613 has 590 colliding bunches
+6613,590,590,590,590
 Mismatch in numBX hfet run:fill 315150:6612 ls 58:58: expected 590 got 591
 Mismatch in numBX hfet run:fill 315150:6612 ls 59:59: expected 590 got 591
 Mismatch in numBX hfet run:fill 315150:6612 ls 63:63: expected 590 got 591
@@ -2249,8 +2242,8 @@ Mismatch in numBX hfet run:fill 315150:6612 ls 65:65: expected 590 got 591
 Mismatch in numBX hfet run:fill 315150:6612 ls 66:66: expected 590 got 591
 Mismatch in numBX hfet run:fill 315150:6612 ls 70:70: expected 590 got 591
 Mismatch in numBX hfet run:fill 315150:6612 ls 71:71: expected 590 got 591
-Error: for fill 6612 WBM reports 590 beam reports 589 and luminometers report 590 colliding bunches
-6612,590,590,589,590
+Fill 6612 has 590 colliding bunches
+6612,590,590,590,590
 Fill 6611 has 302 colliding bunches
 6611,302,302,302,302
 Fill 6595 has 326 colliding bunches
