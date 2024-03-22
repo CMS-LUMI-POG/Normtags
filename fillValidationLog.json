@@ -1401,5 +1401,15 @@
 {"fill": 9314, "general_comments": "OK. 1 scan (end of fill)\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "375754:936", "endAt": "375754:936", "luminometer": "dt"}], "validated_by": "Santeri Saariokari"},
 {"fill": 9315, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Santeri Saariokari"},
 {"fill": 9316, "general_comments": "OK but underwhelming: a quench happened 17 min into SB\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Santeri Saariokari"},
-{"fill": 9317, "general_comments": "OK. 1 scan (end of fill)\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "375790:30", "endAt": "375790:30", "luminometer": "dt"}, {"beginAt": "375790:1284", "endAt": "375790:1284", "luminometer": "dt"}], "validated_by": "Santeri Saariokari"}
+{"fill": 9317, "general_comments": "OK. 1 scan (end of fill)\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "375790:30", "endAt": "375790:30", "luminometer": "dt"}, {"beginAt": "375790:1284", "endAt": "375790:1284", "luminometer": "dt"}], "validated_by": "Santeri Saariokari"},
+{"fill": 9318, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 9319, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "375816:117", "endAt": "375816:123", "luminometer": "dt"}, {"beginAt": "375820:29", "endAt": "375823:1", "luminometer": "dt"}, {"beginAt": "375823:556", "endAt": "375823:556", "luminometer": "dt"}, {"beginAt": "375823:562", "endAt": "375823:562", "luminometer": "dt"}], "validated_by": "David"},
+{"fill": 9320, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 9321, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 9387, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 9388, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 9389, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 9391, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 9393, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 9395, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"}
 ]
