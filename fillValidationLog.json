@@ -1542,5 +1542,8 @@
 {"fill": 9556, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "klin"},
 {"fill": 9557, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "klin"},
 {"fill": 9558, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "klin"},
-{"fill": 9559, "general_comments": "Everything is OK. Some fluctuation in ratios from LS 31-47 and 1324-1339 due to emittance scan.\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "379866:26", "endAt": "379866:26", "luminometer": "dt"}], "validated_by": "klin"}
+{"fill": 9559, "general_comments": "Everything is OK. Some fluctuation in ratios from LS 31-47 and 1324-1339 due to emittance scan.\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "379866:26", "endAt": "379866:26", "luminometer": "dt"}], "validated_by": "klin"},
+{"fill": 9562, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "379984:950", "endAt": "379984:950", "luminometer": "dt"}, {"beginAt": "379984:959", "endAt": "379984:959", "luminometer": "dt"}], "validated_by": "bgreenbe"},
+{"fill": 9563, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
+{"fill": 9564, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"}
 ]
