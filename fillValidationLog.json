@@ -1545,5 +1545,6 @@
 {"fill": 9559, "general_comments": "Everything is OK. Some fluctuation in ratios from LS 31-47 and 1324-1339 due to emittance scan.\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "379866:26", "endAt": "379866:26", "luminometer": "dt"}], "validated_by": "klin"},
 {"fill": 9562, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "379984:950", "endAt": "379984:950", "luminometer": "dt"}, {"beginAt": "379984:959", "endAt": "379984:959", "luminometer": "dt"}], "validated_by": "bgreenbe"},
 {"fill": 9563, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
-{"fill": 9564, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"}
+{"fill": 9564, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "bgreenbe"},
+{"fill": 9565, "general_comments": "Only some very small spikes/dips of ~1% for 1-2LS with immediate recovery, seen in PLT (run 380005) and DT (run 380007). nothing to invalidate.\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "380005:32", "endAt": "380005:32", "luminometer": "dt"}, {"beginAt": "380005:1102", "endAt": "380005:1113", "luminometer": "dt"}, {"beginAt": "380006:3", "endAt": "380006:6", "luminometer": "dt"}, {"beginAt": "380007:132", "endAt": "380007:132", "luminometer": "dt"}], "validated_by": "Evan Altair Ranken"}
 ]
