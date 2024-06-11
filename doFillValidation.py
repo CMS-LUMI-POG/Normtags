@@ -49,27 +49,32 @@ except:
 # that is less prone to being 
 #luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet', 'ramses']
 luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet', 'ramses', 'dt', 'bcm1futca']
+luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet','bcm1futca','dt']
 
 # For PCC, the online luminosity doesn't exist, so we have to use the tag in order to get a result from brilcalc.
 # If this is true for other luminometers, you can include them in the list here as well.
 requiresNormtag = ['pcc']
 
 # Default priority order for luminometers.
-defaultLumiPriority = ['hfet','pltzero', 'bcm1futca','hfoc', 'bcm1f','ramses','dt'] # for first 2024 running
+#defaultLumiPriority = ['pltzero', 'bcm1futca','hfet','hfoc', 'bcm1f','ramses','dt'] # for first 2024 running
+#defaultLumiPriority = ['hfoc', 'bcm1f','pltzero','hfet', 'bcm1futca','ramses','dt'] # for first 2024 running
+#defaultLumiPriority = ['hfoc', 'bcm1f','pltzero','hfet'] # for first 2024 running
+defaultLumiPriority = [ 'hfet','pltzero','bcm1f','hfoc', 'bcm1futca','dt']
+
 
 # "Primary" luminometers. The validation plot will only show ratios involving
 # these luminometers, so that we don't end up with too many ratios.
 primaryLuminometers = [ 'pltzero','hfet']#, 'bcm1futca']
 
 # Detectortag to be used for each luminometer.
-detectorTags = {'pltzero': 'pltzero24v00',
-                'hfet': 'hfet24v00',
-                'bcm1f': 'bcm1f24v00',
-                'hfoc': 'hfoc24v00',
+detectorTags = {'pltzero': 'pltzero24v02',
+                'hfet': 'hfet24v02',
+                'bcm1f': 'bcm1f24v02',
+                'hfoc': 'hfoc24v02',
                 'dt': 'dt24v00',
                 'ramses': 'ramses24v00',
-                'bcm1futca': 'bcm1futca24v00',
-                'pcc': 'pcc24v00'}
+                'bcm1futca': 'bcm1futca24v02',
+                'pcc': 'pxl24v00'}
 
 # Test mode: if set to True, automatic emails will be sent to the screen instead and automatic git commits
 # will not be performed. Note that you can also activate test mode by using the -t switch on the command line,
@@ -84,15 +89,15 @@ emailTargets = {'pltzero': 'pltzero', 'bcm1f': 'bcm1f', 'bcm1futca': 'bcm1futca'
 # Second, the list of recipients for each target. 'scans' is a target for the emittance scan results
 # (this will be targeted if any emittance scans are invalidated while invalidating).
 emailRecipients = {'pltzero': ['andres.delannoy@gmail.com', 'francesco.romeo@cern.ch'],
-                   'bcm1f': ['jonas.rubenach@cern.ch', 'joanna.wanczyk@cern.ch'],
-                   'bcm1futca': ['joanna.wanczyk@cern.ch'],
+                   'bcm1f': ['andreas.meyer@cern.ch', 'michele.mormile@cern.ch'],
+                   'bcm1futca': ['andreas.meyer@cern.ch', 'michele.mormile@cern.ch'],
                    'hf': ['alexey.shevelev@cern.ch'],
-                   'dt': ['cristina.oropeza.barrera@gmail.com'],
+                   'dt': ['cristina.oropeza.barrera@cern.ch'],
                    'ramses': ['tatiana.selezneva@cern.ch'],
                    'pcc': ['samuel.lloyd.higginbotham@cern.ch'],
-                   'scans': ['santeri.saariokari@tuni.fi', 'cms-dpg-conveners-bril@cern.ch']}
+                   'scans': ['santeri.saariokari@cern.ch', 'fabio.carneiro@cern.ch','nimmitha.karunarathna@cern.ch','cms-dpg-conveners-bril@cern.ch']}
 # email recipients for overall summary email
-summaryEmailRecipients = ['david.peter.stickland@cern.ch', 'andres.delannoy@gmail.com', 'Arkady.Lokhovitskiy@cern.ch', 'cms-BRIL-PM@cern.ch', 'cms-pog-conveners-lum@cern.ch'] 
+summaryEmailRecipients = ['alexey.shevelev@cern.ch', 'andres.delannoy@cern.ch', 'Arkady.Lokhovitskiy@cern.ch', 'cms-BRIL-PM@cern.ch', 'cms-pog-conveners-lum@cern.ch'] 
 
 # Paths to various things.
 lumiValidatePath = "./lumiValidate.py"         # script for making fill validation plot
@@ -885,7 +890,6 @@ lastFill = -1
 for f in parsedLogData:
     if int(f['fill']) > lastFill:
         lastFill = int(f['fill'])
-
 # Next, get the list of new fills.
 if revalidateMode:
     fillList = args.revalidate
@@ -896,7 +900,8 @@ elif addMode:
         if comments_name not in f:
             fillList.append(int(f['fill']))
 else:
-    fillList = eval(os.popen("python "+getRecentFillPath+" -p "+dbAuthFileName+" -f "+str(lastFill)).read())
+    #fillList = eval(os.popen("python "+getRecentFillPath+" -p "+dbAuthFileName+" -f "+str(lastFill)).read())
+    fillList = eval(os.popen("python "+getRecentFillPath+" -f "+str(lastFill)).read())
 nfills = len(fillList)
 
 if len(fillList) == 0:

@@ -29,7 +29,7 @@ for normtagfilename in normtagslist:
         iovtag = line[0]
         for runstr, lsranges in line[1].items():
             run = int(runstr)
-            if run<args.minrun or run>args.maxrun:
+            if run < args.minrun or run > args.maxrun:
                 continue
             if run not in firstiovtags:
                 firstiovtags[run] = {}
