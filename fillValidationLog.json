@@ -1752,5 +1752,6 @@
 {"fill": 9796, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
 {"fill": 9798, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
 {"fill": 9799, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
-{"fill": 9800, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"}
+{"fill": 9800, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 9801, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "-1", "endAt": "-1", "luminometer": "pltzero", "reason": "20% low"}], "missing_lumisections": [{"beginAt": "382209:78", "endAt": "382209:78", "luminometer": "pltzero"}, {"beginAt": "382209:106", "endAt": "382209:106", "luminometer": "pltzero"}, {"beginAt": "382209:135", "endAt": "382209:135", "luminometer": "dt"}], "validated_by": "David"}
 ]
