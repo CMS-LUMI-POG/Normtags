@@ -1790,5 +1790,6 @@
 {"fill": 9844, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
 {"fill": 9846, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "382626:41", "endAt": "382626:41", "luminometer": "dt"}, {"beginAt": "382626:409", "endAt": "382626:409", "luminometer": "dt"}], "validated_by": "David"},
 {"fill": 9847, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
-{"fill": 9848, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "382649:514", "endAt": "382649:522", "luminometer": "dt"}], "validated_by": "David"}
+{"fill": 9848, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "382649:514", "endAt": "382649:522", "luminometer": "dt"}], "validated_by": "David"},
+{"fill": 9849, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "382654:32", "endAt": "382654:32", "luminometer": "dt"}, {"beginAt": "382654:1674", "endAt": "382654:1683", "luminometer": "dt"}, {"beginAt": "382655:395", "endAt": "382655:403", "luminometer": "dt"}, {"beginAt": "382656:297", "endAt": "382656:297", "luminometer": "dt"}], "validated_by": "David"}
 ]
