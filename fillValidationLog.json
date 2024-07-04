@@ -1799,5 +1799,6 @@
 {"fill": 9855, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Jessica Tang"},
 {"fill": 9856, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Jessica Tang"},
 {"fill": 9857, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Jessica Tang"},
-{"fill": 9858, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Jessica Tang"}
+{"fill": 9858, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Jessica Tang"},
+{"fill": 9859, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "382729:30", "endAt": "382729:30", "luminometer": "dt"}, {"beginAt": "382729:101", "endAt": "382729:108", "luminometer": "dt"}, {"beginAt": "382730:55", "endAt": "382730:55", "luminometer": "dt"}], "validated_by": "Jessica Tang"}
 ]
