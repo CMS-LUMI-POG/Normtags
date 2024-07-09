@@ -1813,5 +1813,6 @@
 {"fill": 9871, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "382856:35", "endAt": "382856:35", "luminometer": "dt"}], "validated_by": "David"},
 {"fill": 9872, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
 {"fill": 9873, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "382878:34", "endAt": "382878:34", "luminometer": "dt"}, {"beginAt": "382878:896", "endAt": "382878:896", "luminometer": "dt"}], "validated_by": "David"},
-{"fill": 9875, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Jessica"}
+{"fill": 9875, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Jessica"},
+{"fill": 9877, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "382913:1534", "endAt": "382913:1536", "luminometer": "pltzero", "reason": "Sudden spike, in pltzero"}], "missing_lumisections": [{"beginAt": "382913:40", "endAt": "382913:41", "luminometer": "dt"}, {"beginAt": "382913:2330", "endAt": "382913:2330", "luminometer": "dt"}, {"beginAt": "382913:2334", "endAt": "382913:2334", "luminometer": "dt"}], "validated_by": "Peter Winney"}
 ]
