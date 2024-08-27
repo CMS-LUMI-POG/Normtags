@@ -1959,5 +1959,9 @@
 {"fill": 10052, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "384963:1401", "endAt": "384963:1401", "luminometer": "dt"}, {"beginAt": "384963:1686", "endAt": "384963:1686", "luminometer": "dt"}, {"beginAt": "384963:2129", "endAt": "384963:2129", "luminometer": "dt"}], "validated_by": "David On Holiday !"},
 {"fill": 10053, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David On Holiday !"},
 {"fill": 10055, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "tselezne"},
-{"fill": 10056, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "384981:1735", "endAt": "384981:1735", "luminometer": "dt"}], "validated_by": "tselezne"}
+{"fill": 10056, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "384981:1735", "endAt": "384981:1735", "luminometer": "dt"}], "validated_by": "tselezne"},
+{"fill": 10058, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "tselezne"},
+{"fill": 10059, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "385012:173", "endAt": "385012:174", "luminometer": "bcm1f", "reason": "Spike up"}], "missing_lumisections": [{"beginAt": "385012:323", "endAt": "385012:323", "luminometer": "dt"}], "validated_by": "tselezne"},
+{"fill": 10060, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "tselezne"},
+{"fill": 10061, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "385016:351", "endAt": "385016:352", "luminometer": "hfet", "reason": "Spike down"}], "missing_lumisections": [{"beginAt": "385016:45", "endAt": "385016:45", "luminometer": "dt"}, {"beginAt": "385016:827", "endAt": "385016:827", "luminometer": "dt"}], "validated_by": "tselezne"}
 ]
