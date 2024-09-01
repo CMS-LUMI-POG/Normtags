@@ -1970,5 +1970,9 @@
 {"fill": 10067, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
 {"fill": 10068, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
 {"fill": 10069, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "385127:1694", "endAt": "385127:1694", "luminometer": "dt"}], "validated_by": "David"},
-{"fill": 10070, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"}
+{"fill": 10070, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 10072, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "385142:655", "endAt": "385142:655", "luminometer": "dt"}, {"beginAt": "385142:1520", "endAt": "385142:1520", "luminometer": "dt"}, {"beginAt": "385142:1985", "endAt": "385142:1985", "luminometer": "dt"}], "validated_by": "David"},
+{"fill": 10073, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "385153:311", "endAt": "-1", "luminometer": "pltzero", "reason": "dropped about 1%"}], "missing_lumisections": [{"beginAt": "385152:1195", "endAt": "385152:1205", "luminometer": "dt"}, {"beginAt": "385153:410", "endAt": "385153:410", "luminometer": "dt"}, {"beginAt": "385153:853", "endAt": "385153:853", "luminometer": "dt"}, {"beginAt": "385153:860", "endAt": "385153:860", "luminometer": "dt"}], "validated_by": "David"},
+{"fill": 10074, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "385168:652", "endAt": "385168:652", "luminometer": "dt"}, {"beginAt": "385168:1651", "endAt": "385168:1651", "luminometer": "dt"}], "validated_by": "David"},
+{"fill": 10075, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "385178:177", "endAt": "385178:179", "luminometer": "hfet", "reason": "drop"}], "missing_lumisections": [], "validated_by": "David"}
 ]
