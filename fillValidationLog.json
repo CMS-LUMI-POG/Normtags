@@ -2031,5 +2031,6 @@
 {"fill": 10138, "general_comments": "Spikes in 386071:1077 to 1078 saw 2 for pltzero/hfet around 1.1 on the Webmonitor but not here so no invalidation was put on pltzero.\n", "invalidated_lumisections": [{"beginAt": "-1", "endAt": "-1", "invalScan": true, "luminometer": "dt", "reason": "dt off the entire fill"}], "missing_lumisections": [{"beginAt": "386071:1102", "endAt": "386071:1130", "luminometer": "dt"}], "validated_by": "Kuan-Yu Lin"},
 {"fill": 10139, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
 {"fill": 10140, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
-{"fill": 10141, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Jose "}
+{"fill": 10141, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Jose "},
+{"fill": 10142, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "386308:178", "endAt": "386308:178", "luminometer": "dt"}], "validated_by": "Jose"}
 ]
