@@ -2114,5 +2114,9 @@
 {"fill": 10224, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
 {"fill": 10225, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "386917:34", "endAt": "386917:34", "luminometer": "dt"}, {"beginAt": "386917:597", "endAt": "386917:597", "luminometer": "dt"}], "validated_by": "David"},
 {"fill": 10226, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "386924:672", "endAt": "386924:672", "luminometer": "dt"}, {"beginAt": "386924:697", "endAt": "386924:697", "luminometer": "dt"}, {"beginAt": "386924:1658", "endAt": "386924:1658", "luminometer": "dt"}, {"beginAt": "386924:1825", "endAt": "386925:1", "luminometer": "dt"}, {"beginAt": "386925:218", "endAt": "386925:218", "luminometer": "dt"}], "validated_by": "David"},
-{"fill": 10227, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"}
+{"fill": 10227, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 10228, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 10229, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 10230, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "-1", "endAt": "-1", "invalScan": true, "luminometer": "pltzero", "reason": "10% down whole fill"}], "missing_lumisections": [{"beginAt": "386945:32", "endAt": "386945:32", "luminometer": "dt"}, {"beginAt": "386945:846", "endAt": "386945:846", "luminometer": "dt"}], "validated_by": "David"},
+{"fill": 10231, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"}
 ]
