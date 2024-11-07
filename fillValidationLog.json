@@ -2177,5 +2177,7 @@
 {"fill": 10324, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Attila Radl"},
 {"fill": 10325, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Attila Radl"},
 {"fill": 10326, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Attila Radl"},
-{"fill": 10327, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Attila Radl"}
+{"fill": 10327, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Attila Radl"},
+{"fill": 10328, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "Attila Radl"},
+{"fill": 10329, "general_comments": "First heavy-ion fill with stable beams\n", "invalidated_lumisections": [{"beginAt": "387855:119", "endAt": "387855:120", "luminometer": "bcm1futca", "reason": "Drop in lumi"}], "missing_lumisections": [{"beginAt": "387853:103", "endAt": "387853:113", "luminometer": "dt"}, {"beginAt": "387854:105", "endAt": "387855:1", "luminometer": "dt"}, {"beginAt": "387855:112", "endAt": "387855:120", "luminometer": "dt"}], "validated_by": "Attila Radl"}
 ]
