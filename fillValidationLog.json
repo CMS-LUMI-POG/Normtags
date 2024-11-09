@@ -2188,5 +2188,7 @@
 {"fill": 10335, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "-1", "endAt": "387907:143", "invalScan": true, "luminometer": "bcm1futca", "reason": "instable"}], "missing_lumisections": [], "validated_by": "David"},
 {"fill": 10336, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
 {"fill": 10338, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
-{"fill": 10341, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "387965:49", "endAt": "387965:49", "luminometer": "pltzero"}, {"beginAt": "387966:29", "endAt": "387966:29", "luminometer": "pltzero"}], "validated_by": "David"}
+{"fill": 10341, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "387965:49", "endAt": "387965:49", "luminometer": "pltzero"}, {"beginAt": "387966:29", "endAt": "387966:29", "luminometer": "pltzero"}], "validated_by": "David"},
+{"fill": 10342, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "387973:278", "endAt": "387973:279", "luminometer": "pltzero"}], "validated_by": "David"},
+{"fill": 10343, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "387985:370", "endAt": "387985:490", "luminometer": "pltzero", "reason": "Timing out of sync"}], "missing_lumisections": [], "validated_by": "David"}
 ]
