@@ -2192,5 +2192,6 @@
 {"fill": 10342, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "387973:278", "endAt": "387973:279", "luminometer": "pltzero"}], "validated_by": "David"},
 {"fill": 10343, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "387985:370", "endAt": "387985:490", "luminometer": "pltzero", "reason": "Timing out of sync"}], "missing_lumisections": [], "validated_by": "David"},
 {"fill": 10344, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
-{"fill": 10345, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"}
+{"fill": 10345, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 10346, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"}
 ]
