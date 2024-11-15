@@ -2216,5 +2216,6 @@
 {"fill": 10371, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
 {"fill": 10372, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
 {"fill": 10373, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
-{"fill": 10374, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "-1", "endAt": "-1", "invalScan": true, "luminometer": "hfet", "reason": "very wrong"}, {"beginAt": "388305:87", "endAt": "388305:93", "luminometer": "bcm1f", "reason": "Bump"}, {"beginAt": "388305:87", "endAt": "388305:93", "luminometer": "bcm1futca", "reason": "Bump"}], "missing_lumisections": [], "validated_by": "David"}
+{"fill": 10374, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "-1", "endAt": "-1", "invalScan": true, "luminometer": "hfet", "reason": "very wrong"}, {"beginAt": "388305:87", "endAt": "388305:93", "luminometer": "bcm1f", "reason": "Bump"}, {"beginAt": "388305:87", "endAt": "388305:93", "luminometer": "bcm1futca", "reason": "Bump"}], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 10375, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "-1", "endAt": "388350:43", "luminometer": "hfet", "reason": "Automasking was on"}], "missing_lumisections": [], "validated_by": "David"}
 ]
