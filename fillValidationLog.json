@@ -2230,5 +2230,6 @@
 {"fill": 10385, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
 {"fill": 10386, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
 {"fill": 10387, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "388557:282", "endAt": "388557:282", "luminometer": "bcm1f"}], "validated_by": "David"},
-{"fill": 10388, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "388574:76", "endAt": "388574:80", "luminometer": "bcm1f", "reason": "Bump"}], "missing_lumisections": [], "validated_by": "David"}
+{"fill": 10388, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "388574:76", "endAt": "388574:80", "luminometer": "bcm1f", "reason": "Bump"}], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 10391, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "388613:118", "endAt": "-1", "luminometer": "bcm1f", "reason": "Bump"}, {"beginAt": "388613:118", "endAt": "-1", "luminometer": "bcm1futca", "reason": "Bump"}], "missing_lumisections": [], "validated_by": "David"}
 ]
