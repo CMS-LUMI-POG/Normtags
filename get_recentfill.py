@@ -1,9 +1,10 @@
 from sqlalchemy import *
-from ConfigParser import SafeConfigParser
+from configparser import ConfigParser
 import argparse
 import sys
 import time
 import os, os.path
+import base64
 
 
 def get_fillsince(con,minfill=None):
@@ -28,7 +29,7 @@ def parseservicemap(authfile):
     output: {servicealias:[protocol,user,passwd,descriptor]}
     '''
     result={}
-    parser = SafeConfigParser()
+    parser = ConfigParser()
     parser.read(authfile)
     for s in parser.sections():
         protocol = parser.get(s,'protocol')
@@ -57,14 +58,16 @@ if __name__=='__main__':
     args = aparser.parse_args()
     servicealias=args.connect
     servicemap = parseservicemap(args.authpath)
+    #disabled at migration to Python3
+    #print('servicemap ', servicemap)
     user = servicemap[servicealias][1]
-    passwd = servicemap[servicealias][2].decode('base64')
+    passwd = base64.b64decode(servicemap[servicealias][2]).decode('UTF-8')
+    #passwd = servicemap[servicealias][2].decode('base64')
     descriptor = servicemap[servicealias][3]
     
     connecturl = 'oracle+cx_oracle://%s:%s@%s'%(user,passwd,descriptor)
-    e = create_engine(connecturl)
+    e = create_engine(connecturl,max_identifier_length=128)
     con = e.connect()
-
     recentfill = get_fillsince(con,args.lastfill)
-    print recentfill
+    print(recentfill)
     

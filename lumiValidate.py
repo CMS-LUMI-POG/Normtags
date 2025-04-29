@@ -26,7 +26,7 @@ RATIOS_TOP_YLIMIT = 1.25
 RATIOS_BOTTOM_YLIMIT = 0.75
 LUMI_TOP_YLIMIT = 21000 #going farther up!
 LUMI_BOTTOM_YLIMIT = 0
-AMODETAG_SCRIPT = "./get_fill_amodetag.py -p db.ini"
+AMODETAG_SCRIPT = "./get_fill_amodetag.py"
 
 # default figure size in inches (NOTE: tuple)
 FIGURE_SIZE = (14, 11)
@@ -70,7 +70,11 @@ def main():
     # since this script is unlikely to be called for that usage it should be sufficient to do per fill.
     global units
     if (args.fill):
-        amodetag = os.popen(AMODETAG_SCRIPT+" -f "+str(args.fill)).read().rstrip()
+        #amodetag = os.popen(AMODETAG_SCRIPT+" -f "+str(args.fill)).read().rstrip()
+
+        # popen is is considered outdated and discouraged in favor of the more powerful and secure subprocess module, April  2025
+        amodetag = subprocess.run(["python", AMODETAG_SCRIPT, "-p db.ini -f "+str(args.fill)], capture_output=True, text=True).stdout.rstrip()
+
         if amodetag == "IONPHYS" or amodetag == "PAPHYS":
             units = "hz/mb"
 
@@ -303,7 +307,7 @@ def plot_by_columns(subplot, data, cols, special=None, legend=True):
     log.debug("plotting by column")
     for col in cols:
         linestyle = "-"
-        color = COLORS.next()
+        color = next(COLORS)
         if (col == special):
             color = SPECIAL_COLOR1
             linestyle = "--"

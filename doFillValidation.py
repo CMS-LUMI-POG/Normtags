@@ -16,11 +16,11 @@
 
 import sys
 try:
-    from Tkinter import *
+    from tkinter import *
 except ImportError:
-    print "The Tkinter environment was not found. If you're running on cmsusr (or other\n.cms online machines), please make sure that the brilconda environment is in\nyour path and try again:\nexport PATH=$HOME/.local/bin:/nfshome0/lumipro/brilconda/bin:$PATH"
+    print("The Tkinter environment was not found. If you're running on cmsusr (or other\n.cms online machines), please make sure that the brilconda environment is in\nyour path and try again:\nexport PATH=$HOME/.local/bin:/nfshome0/lumipro/brilconda/bin:$PATH")
     sys.exit(1)
-import tkMessageBox
+import tkinter.messagebox
 import os
 import csv
 import argparse
@@ -35,13 +35,13 @@ import subprocess
 try:
     subprocess.check_output('which brilcalc',shell=True)
 except:
-    print "brilcalc was not found. Please make sure the brilcalc environment is properly set\nup; for cmsusr or other .cms online machines:\nexport PATH=$HOME/.local/bin:/nfshome0/lumipro/brilconda/bin:$PATH"
+    print("brilcalc was not found. Please make sure the brilcalc environment is properly set\nup; for cmsusr or other .cms online machines:\nexport PATH=$HOME/.local/bin:/nfshome0/lumipro/brilconda/bin:$PATH")
     sys.exit(1)
 # Make sure git is present.
 try:
     subprocess.check_output('which git',shell=True)
 except:
-    print "git was not found. Please run on an online machine with git (e.g. brildev1)."
+    print("git was not found. Please run on an online machine with git (e.g. brildev1).")
     sys.exit(1)
 
 # List of luminometers. The first in this list is the one that will be
@@ -49,7 +49,7 @@ except:
 # that is less prone to being 
 #luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet', 'ramses']
 luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet', 'ramses', 'dt', 'bcm1futca']
-luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet','bcm1futca','dt']
+#luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet','bcm1futca'] #for PbPb
 
 # For PCC, the online luminosity doesn't exist, so we have to use the tag in order to get a result from brilcalc.
 # If this is true for other luminometers, you can include them in the list here as well.
@@ -59,22 +59,23 @@ requiresNormtag = ['pcc']
 #defaultLumiPriority = ['pltzero', 'bcm1futca','hfet','hfoc', 'bcm1f','ramses','dt'] # for first 2024 running
 #defaultLumiPriority = ['hfoc', 'bcm1f','pltzero','hfet', 'bcm1futca','ramses','dt'] # for first 2024 running
 #defaultLumiPriority = ['hfoc', 'bcm1f','pltzero','hfet'] # for first 2024 running
-defaultLumiPriority = [ 'hfet','pltzero','bcm1f','hfoc', 'bcm1futca','dt']
+defaultLumiPriority = [ 'hfet','bcm1f','pltzero','bcm1futca','hfoc','dt','ramses']
+#defaultLumiPriority = [ 'hfoc','pltzero','bcm1f','hfet', 'bcm1futca'] #for PbPb
 
 
 # "Primary" luminometers. The validation plot will only show ratios involving
 # these luminometers, so that we don't end up with too many ratios.
-primaryLuminometers = [ 'pltzero','hfet']#, 'bcm1futca']
+primaryLuminometers = [ 'hfet', 'pltzero','bcm1f','bcm1futca']
 
 # Detectortag to be used for each luminometer.
-detectorTags = {'pltzero': 'pltzero24v02',
-                'hfet': 'hfet24v02',
-                'bcm1f': 'bcm1f24v02',
-                'hfoc': 'hfoc24v02',
-                'dt': 'dt24v00',
-                'ramses': 'ramses24v00',
-                'bcm1futca': 'bcm1futca24v02',
-                'pcc': 'pxl24v00'}
+detectorTags = {'pltzero': 'pltzero25v00',
+                'hfet': 'hfet25v00',
+                'bcm1f': 'bcm1f25v00',
+                'hfoc': 'hfoc25v00',
+                'dt': 'dt25v00',
+                'ramses': 'ramses25v00',
+                'bcm1futca': 'bcm1futca25v00',
+                'pcc': 'pxl25v00'}
 
 # Test mode: if set to True, automatic emails will be sent to the screen instead and automatic git commits
 # will not be performed. Note that you can also activate test mode by using the -t switch on the command line,
@@ -141,15 +142,15 @@ if args.add:
 
 # luminometers and defaultLumiPriority need to have the same set of luminometers in them
 if set(luminometers) != set(defaultLumiPriority):
-    print "Consistency error: all luminometers in the 'luminometers' variable must also be in 'defaultLumiPriority' (and vice-versa)."
-    print "Please fix the variables at the top of the script and try again."
+    print("Consistency error: all luminometers in the 'luminometers' variable must also be in 'defaultLumiPriority' (and vice-versa).")
+    print("Please fix the variables at the top of the script and try again.")
     sys.exit(1)
 
 # all luminometers in primaryLuminometers must be in luminometers (not necessarily the other way around though)
 for l in primaryLuminometers:
     if l not in luminometers:
-        print "Consistency error:", l, "is in 'primaryLuminometers' but not defined in 'luminometers'."
-        print "Please fix the variables at the top of the script and try again."
+        print(("Consistency error:", l, "is in 'primaryLuminometers' but not defined in 'luminometers'."))
+        print("Please fix the variables at the top of the script and try again.")
         sys.exit(1)
 
 if addMode:
@@ -160,19 +161,19 @@ if addMode:
 # or similar)
 for l in luminometers:
     if l not in detectorTags:
-        print "Consistency error:", l, "is in 'luminometers' but a tag is not defined in 'detectorTags' for it."
-        print "Please fix the variables at the top of the script and try again."
+        print(("Consistency error:", l, "is in 'luminometers' but a tag is not defined in 'detectorTags' for it."))
+        print("Please fix the variables at the top of the script and try again.")
         sys.exit(1)
     if l not in emailTargets:
-        print "Consistency error:", l, "is in 'luminometers' but an email target is not defined in 'emailTargets' for it."
-        print "Please fix the variables at the top of the script and try again."
+        print(("Consistency error:", l, "is in 'luminometers' but an email target is not defined in 'emailTargets' for it."))
+        print("Please fix the variables at the top of the script and try again.")
         sys.exit(1)
 
 # and finally, make sure a recipient is defined for each email target
-for t in emailTargets.values():
+for t in list(emailTargets.values()):
     if t not in emailRecipients:
-        print "Consistency error:", t, "is in 'emailTargets' but the email recipients are not defined in 'emailRecipients' for it."
-        print "Please fix the variables at the top of the script and try again."
+        print(("Consistency error:", t, "is in 'emailTargets' but the email recipients are not defined in 'emailRecipients' for it."))
+        print("Please fix the variables at the top of the script and try again.")
         sys.exit(1)
 
 # Similarly, check the JSON files to make sure that they are valid. Otherwise, we're going to crash when we
@@ -185,17 +186,17 @@ for j in allJSONFiles:
         with open(j, 'r') as jsonFile:
             parsedData = json.load(jsonFile)
     except IOError as ex:
-        print "Couldn't open JSON file",j+":",ex.strerror
-        print "Please make sure all input JSON files are present before running this script."
+        print(("Couldn't open JSON file",j+":",ex.strerror))
+        print("Please make sure all input JSON files are present before running this script.")
         sys.exit(1)
     except ValueError as ex:
-        print "Error parsing JSON file",j+":",ex.args[0]
-        print "Please correct all problems in the input JSON files before running this script."
-        print "Use Scripts/checkJSONSyntax.py to get more precise information on the problem in this file."
+        print(("Error parsing JSON file",j+":",ex.args[0]))
+        print("Please correct all problems in the input JSON files before running this script.")
+        print("Use Scripts/checkJSONSyntax.py to get more precise information on the problem in this file.")
         sys.exit(1)
     except:
-        print "Unexpected error in JSON file",j
-        print "Please correct all problems in the input JSON files before running this script."
+        print(("Unexpected error in JSON file",j))
+        print("Please correct all problems in the input JSON files before running this script.")
         raise
 
 #### Subroutines begin here
@@ -213,10 +214,10 @@ class InvalidateDialog:
         self.selectedLumin = StringVar(self.dwin)
         if not addMode:
             self.selectedLumin.set(lumiPriority[0])
-            self.luminMenu = apply(OptionMenu, (self.dwin, self.selectedLumin)+tuple(lumiPriority))
+            self.luminMenu = OptionMenu(*(self.dwin, self.selectedLumin)+tuple(lumiPriority))
         else:
             self.selectedLumin.set(args.add)
-            self.luminMenu = apply(OptionMenu, (self.dwin, self.selectedLumin, args.add))
+            self.luminMenu = OptionMenu(*(self.dwin, self.selectedLumin, args.add))
         self.luminMenu.grid(row=1, column=1)
         self.startLabel = Label(self.dwin, text='Starting run:LS:')
         self.startLabel.grid(row=2, column=0)
@@ -261,7 +262,7 @@ class InvalidateDialog:
         else:
             startRunLS = startText.split(':')
             if (len(startRunLS) != 2):
-                tkMessageBox.showerror("Bad input", "Starting run:LS should be in the form XXXXXX:YYY")
+                tkinter.messagebox.showerror("Bad input", "Starting run:LS should be in the form XXXXXX:YYY")
                 return
             startRun = int(startRunLS[0])
             startLS = int(startRunLS[1])
@@ -273,7 +274,7 @@ class InvalidateDialog:
         else:
             endRunLS = endText.split(':')
             if (len(endRunLS) != 2):
-                tkMessageBox.showerror("Bad input", "Ending run:LS should be in the form XXXXXX:YYY")
+                tkinter.messagebox.showerror("Bad input", "Ending run:LS should be in the form XXXXXX:YYY")
                 return
             endRun = int(endRunLS[0])
             endLS = int(endRunLS[1])
@@ -281,25 +282,25 @@ class InvalidateDialog:
         reason = self.reason.get()
 
         if startRun != -1 and startRun not in recordedLumiSections:
-            tkMessageBox.showerror("Bad input", "Start run "+str(startRun)+" not in this fill!")
+            tkinter.messagebox.showerror("Bad input", "Start run "+str(startRun)+" not in this fill!")
             return
         if endRun != eofRunNumber and endRun not in recordedLumiSections:
-            tkMessageBox.showerror("Bad input", "End run "+str(endRun)+" not in this fill!")
+            tkinter.messagebox.showerror("Bad input", "End run "+str(endRun)+" not in this fill!")
             return
         if startRun != -1 and startLS not in recordedLumiSections[startRun]:
-            tkMessageBox.showerror("Bad input", "Start LS "+str(startLS)+" not in run "+str(startRun)+"!")
+            tkinter.messagebox.showerror("Bad input", "Start LS "+str(startLS)+" not in run "+str(startRun)+"!")
             return
         if endRun != eofRunNumber and endLS not in recordedLumiSections[endRun]:
-            tkMessageBox.showerror("Bad input", "End LS "+str(endLS)+" not in run "+str(endRun)+"!")
+            tkinter.messagebox.showerror("Bad input", "End LS "+str(endLS)+" not in run "+str(endRun)+"!")
             return
         if (startRun > endRun):
-            tkMessageBox.showerror("Bad input", "Start run is after end run!")
+            tkinter.messagebox.showerror("Bad input", "Start run is after end run!")
             return
         if (startRun == endRun and startLS > endLS):
-            tkMessageBox.showerror("Bad input", "Start LS is after end LS!")
+            tkinter.messagebox.showerror("Bad input", "Start LS is after end LS!")
             return
         if (len(reason) == 0):
-            tkMessageBox.showerror("Bad input", "Please enter a reason for invalidating this section!")
+            tkinter.messagebox.showerror("Bad input", "Please enter a reason for invalidating this section!")
             return
 
         # Add the correction to DT. This is because DT is displayed with a shift of -1 LS with respect to
@@ -308,7 +309,7 @@ class InvalidateDialog:
         if l == 'dt':
             if startRun != -1:
                 # Check to see if the next LS is still in the run.
-                if (startLS+1 in recordedLumiSections[startRun].keys()):
+                if (startLS+1 in list(recordedLumiSections[startRun].keys())):
                     startLS += 1
                 # If not, check to see if there is a next run and use LS 1 of that run.
                 else:
@@ -326,7 +327,7 @@ class InvalidateDialog:
             # Repeat the same for the end
             if endRun != eofRunNumber:
                 # Check to see if the next LS is still in the run.
-                if (endLS+1 in recordedLumiSections[endRun].keys()):
+                if (endLS+1 in list(recordedLumiSections[endRun].keys())):
                     endLS += 1
                 # If not, check to see if there is a next run and use LS 1 of that run.
                 else:
@@ -343,7 +344,7 @@ class InvalidateDialog:
             # End of shift for DT data. Display the message indicating that this has happened, but only once.
             global dtShiftMessage
             if (not dtShiftMessage) and (startRun != -1 or endRun != eofRunNumber):
-                tkMessageBox.showinfo("DT data shifted", "For display purposes, the DT data has been shifted by -1 LS. As a result, the true DT range to invalidate needs to be shifted by +1 LS relative to what you entered. This shift has been automatically applied so you don't need to do anything more.")
+                tkinter.messagebox.showinfo("DT data shifted", "For display purposes, the DT data has been shifted by -1 LS. As a result, the true DT range to invalidate needs to be shifted by +1 LS relative to what you entered. This shift has been automatically applied so you don't need to do anything more.")
                 dtShiftMessage = True
 
         # Phew, the input is valid. Now actually invalidate these lumisections!
@@ -415,7 +416,7 @@ class NameDialog:
     def processName(self):
         self.result = self.nameEntry.get()
         if len(self.result) == 0:
-            tkMessageBox.showerror("Bad input", "Please enter a name!")
+            tkinter.messagebox.showerror("Bad input", "Please enter a name!")
             return
         self.dwin.destroy()
         return
@@ -428,7 +429,7 @@ def doInvalidateDialog():
     return
 
 def displayPlot():
-    print "One second, creating fill summary plot..."
+    print("One second, creating fill summary plot...")
     # Separate luminometers into those that we use the online value for (with --type) and those that we need a
     # normtag for (i.e., those in requiresNormtag) that go with --normtag.
     type_luminometers = [l for l in luminometers if l not in requiresNormtag]
@@ -485,7 +486,7 @@ def exitWithoutSave():
     msg = "Do you really want to exit without saving the current fill?"
     if len(completedFills) > 0:
         msg += " (Note: fills that you have already completed have already been saved.)"
-    if tkMessageBox.askyesno("Are you sure?", msg):
+    if tkinter.messagebox.askyesno("Are you sure?", msg):
         if (len(completedFills) > 0):
             makeEmails()
             gitCommit()
@@ -524,12 +525,12 @@ def gitCommit():
         # ones that should be changed
         commitFiles = [logFileName, lumiJSONFileNamePattern % args.add]
     if testMode:
-        print 'git add '+" ".join(commitFiles)
-        print 'git commit -m "'+msg+'"'
-        print 'git push'
+        print(('git add '+" ".join(commitFiles)))
+        print(('git commit -m "'+msg+'"'))
+        print('git push')
     else:
         # Let's just make sure that things don't get committed by accident!
-        if tkMessageBox.askyesno("Commit?", "Do you want to commit the updated files to git?"):
+        if tkinter.messagebox.askyesno("Commit?", "Do you want to commit the updated files to git?"):
             os.system('git add '+" ".join(commitFiles))
             os.system('git commit -m "'+msg+'"')
             os.system('git push')
@@ -540,8 +541,8 @@ def gitCommit():
 def sendEmail(emailSubject, emailBody, emailRecipients):
     emailSender = getpass.getuser()+"@"+socket.gethostname()
     if (testMode):
-        print emailSubject
-        print emailBody
+        print(emailSubject)
+        print(emailBody)
     else:
         # Prep and send the email.
         msg = MIMEText(emailBody)
@@ -596,7 +597,7 @@ def makeEmails():
 # This is an adaption of bestLumi.py which stores the output in the giant dictionary defined below.
 
 def getValidSections(fillNumber, l):
-    print "Please wait, getting valid lumisections for "+l
+    print(("Please wait, getting valid lumisections for "+l))
     tempFileName="temp_"+l+".csv"
     if l in requiresNormtag:
         l_argument = ' --normtag '+detectorTags[l]
@@ -617,9 +618,9 @@ def getValidSections(fillNumber, l):
             thisdet=row[8]
             # Sanity checks! If these ever actually appear I will be -very- surprised
             if (fill != fillNumber):
-                print "WARNING: Output from brilcalc didn't match expected fill"
+                print("WARNING: Output from brilcalc didn't match expected fill")
             if (thisdet.lower() != l and l not in requiresNormtag):
-                print "WARNING: Output from brilcalc didn't contain expected detector"
+                print("WARNING: Output from brilcalc didn't contain expected detector")
             # Stuff it in the dictionary!
             if not run in recordedLumiSections:
                recordedLumiSections[run] = {}
@@ -639,14 +640,14 @@ def getValidSections(fillNumber, l):
 # it's closer to 1e4) and b) BCM1F is not present, and drop those.
 def trimEndFill():
     # reverse sort to start at end of fill
-    for r in sorted(recordedLumiSections.keys(), reverse=True):
+    for r in sorted(list(recordedLumiSections.keys()), reverse=True):
         if r not in beamCurrents:
             # hmm, not sure what happened. in this case let's just err on the side of keeping everything
-            print "Couldn't find beam current data for run "+str(r)+"; will skip end-of-fill check"
+            print(("Couldn't find beam current data for run "+str(r)+"; will skip end-of-fill check"))
             return
-        for ls in sorted(recordedLumiSections[r].keys(), reverse=True):
+        for ls in sorted(list(recordedLumiSections[r].keys()), reverse=True):
             if ls not in beamCurrents[r]:
-                print "Couldn't find beam current data for run:LS "+str(r)+":"+str(ls)+"; will skip end-of-fill-check"
+                print(("Couldn't find beam current data for run:LS "+str(r)+":"+str(ls)+"; will skip end-of-fill-check"))
             if beamCurrents[r][ls]/startBeamCurrent > 0.02:
                 return
             if "bcm1f" in recordedLumiSections[r][ls]:
@@ -719,7 +720,7 @@ def produceOutput():
         # spans more than one fill, this could cause too much to be deleted, but I think that this case is
         # unlikely enough that we can get away with it.
         if revalidateMode:
-            parsedBestLumiData = [x for x in parsedBestLumiData if x[1].keys()[0] not in runsSeenThisFill]
+            parsedBestLumiData = [x for x in parsedBestLumiData if list(x[1].keys())[0] not in runsSeenThisFill]
 
         lastLumin = ""
         lastRun = -1
@@ -736,7 +737,7 @@ def produceOutput():
                 # Check if there were no valid luminometers for this LS. Maybe this should
                 # also be addded to the log file but for now just warn about it.
                 if selLumin == "none":
-                    print "WARNING: No valid luminometers found for run:LS "+str(r)+":"+str(ls)
+                    print(("WARNING: No valid luminometers found for run:LS "+str(r)+":"+str(ls)))
                 # If we've changed the luminometer or run, start a new record and save the preceding one.
                 # The last case shouldn't happen unless we have a discontinuity in ALL luminometers,
                 # but we should still do the right thing in this case.
@@ -761,7 +762,7 @@ def produceOutput():
         if revalidateMode:
             # sort first by run number, then by first LS number. this looks ugly because of the format of the JSON file, but that's what it is.
             # we could in theory go deeper, but these two keys should be sufficient.
-            parsedBestLumiData = sorted(parsedBestLumiData, key=lambda x: (int(x[1].keys()[0]), x[1].values()[0][0][0]))
+            parsedBestLumiData = sorted(parsedBestLumiData, key=lambda x: (int(list(x[1].keys())[0]), list(x[1].values())[0][0][0]))
 
         with open(bestLumiFileName, 'w') as bestLumiFile:
             writeFormattedJSON(parsedBestLumiData, bestLumiFile, False)
@@ -777,7 +778,7 @@ def produceOutput():
 
         # If we're in revalidate mode, then delete the runs in this fill from the JSON file.
         if revalidateMode:
-            parsedLumiJSONData = [x for x in parsedLumiJSONData if x[1].keys()[0] not in runsSeenThisFill]
+            parsedLumiJSONData = [x for x in parsedLumiJSONData if list(x[1].keys())[0] not in runsSeenThisFill]
 
         lastRun = -1
         startLS = -1
@@ -805,12 +806,12 @@ def produceOutput():
 
         # As above, re-sort the list if necessary.
         if revalidateMode:
-            parsedLumiJSONData = sorted(parsedLumiJSONData, key=lambda x: (int(x[1].keys()[0]), x[1].values()[0][0][0]))
+            parsedLumiJSONData = sorted(parsedLumiJSONData, key=lambda x: (int(list(x[1].keys())[0]), list(x[1].values())[0][0][0]))
 
         with open(lumiJSONFileName, 'w') as lumiJSONFile:
             writeFormattedJSON(parsedLumiJSONData, lumiJSONFile, False)
 
-    print "Finished writing output for fill "+str(fillNumber)
+    print(("Finished writing output for fill "+str(fillNumber)))
 
     # 3) Copy the email information for this fill into the overall emailInformation dictionary.
     for l in emailRecipients:
@@ -847,7 +848,7 @@ if os.path.exists(lockFileName):
     if len(user) == 0:
         user = "someone"
 
-    tkMessageBox.showerror("In use", "It looks like "+user+" is already running this application and it has been locked to avoid conflicts. If you want to override this, remove the lock file "+lockFileName+" and try again.")
+    tkinter.messagebox.showerror("In use", "It looks like "+user+" is already running this application and it has been locked to avoid conflicts. If you want to override this, remove the lock file "+lockFileName+" and try again.")
     sys.exit(1)
 else:
     open(lockFileName, 'a').close()
@@ -871,7 +872,7 @@ dtShiftMessage = False
 
 # Next, check to see if a saved session file exists. If so, then read in the data from it and get started.
 if os.path.exists(sessionStateFileName):
-    tkMessageBox.showinfo("Saved session detected", "It looks like your last session was interrupted while you were working. The saved session will be resumed.")
+    tkinter.messagebox.showinfo("Saved session detected", "It looks like your last session was interrupted while you were working. The saved session will be resumed.")
     with open(sessionStateFileName, 'r') as savedSessionFile:
         savedSessionState = json.load(savedSessionFile)
 
@@ -901,19 +902,23 @@ elif addMode:
             fillList.append(int(f['fill']))
 else:
     #fillList = eval(os.popen("python "+getRecentFillPath+" -p "+dbAuthFileName+" -f "+str(lastFill)).read())
-    fillList = eval(os.popen("python "+getRecentFillPath+" -f "+str(lastFill)).read())
+    #fillList = eval(os.popen("python "+getRecentFillPath+" -f "+str(lastFill)).read())
+
+    # popen is is considered outdated and discouraged in favor of the more powerful and secure subprocess module, April  2025
+    fillList = eval(subprocess.run(["python", getRecentFillPath, "-f "+str(lastFill)], capture_output=True, text=True).stdout)
+
 nfills = len(fillList)
 
 if len(fillList) == 0:
-    tkMessageBox.showinfo("Nothing to do!", "It looks like there are no new fills to validate. Thanks for checking!")
+    tkinter.messagebox.showinfo("Nothing to do!", "It looks like there are no new fills to validate. Thanks for checking!")
     os.unlink(lockFileName)
     sys.exit(0)
 
 if revalidateMode:
-    tkMessageBox.showinfo("Fills to validate", "The following fill"+("" if nfills == 1 else "s")+
+    tkinter.messagebox.showinfo("Fills to validate", "The following fill"+("" if nfills == 1 else "s")+
                           " will be revalidated:\n"+"\n".join(str(f) for f in fillList))
 else:
-    tkMessageBox.showinfo("Fills to validate", "It looks like there "+("is " if nfills == 1 else "are ")+str(nfills)+" new fill"+
+    tkinter.messagebox.showinfo("Fills to validate", "It looks like there "+("is " if nfills == 1 else "are ")+str(nfills)+" new fill"+
                           ("" if nfills == 1 else "s")+" to validate:\n"+"\n".join(str(f) for f in fillList))
 
 # Get the user's name.
@@ -962,7 +967,7 @@ for fillNumber in fillList:
         writeSessionState()
     else:
         if (fillNumber != savedSessionState['current_fill']):
-            tkMessageBox.showerror("Bad data", "Fatal error: The fill stored in the saved session data does not match the current fill. Please consult an expert.")
+            tkinter.messagebox.showerror("Bad data", "Fatal error: The fill stored in the saved session data does not match the current fill. Please consult an expert.")
             sys.exit(1)
         lumiPriority = list(savedSessionState['lumi_priority'])
 
@@ -973,14 +978,14 @@ for fillNumber in fillList:
 
     # 1) Get the list of lumi sections recorded for each luminometer and the beam currents.
 
-    print "Getting data for fill "+str(fillNumber)+"..."
+    print(("Getting data for fill "+str(fillNumber)+"..."))
     for l in luminometers:
         getValidSections(fillNumber, l)
     
     # See if we actually got any data for this fill. This proceeds rather differently if we're in add mode or not, so...
     if not addMode:
         if len(recordedLumiSections) == 0:
-            tkMessageBox.showwarning("No data for fill", "Note: no data with STABLE BEAMS was found for fill "+str(fillNumber)+" in the luminosity DB. Perhaps this fill never reached STABLE BEAMS. Otherwise, please contact an expert.")
+            tkinter.messagebox.showwarning("No data for fill", "Note: no data with STABLE BEAMS was found for fill "+str(fillNumber)+" in the luminosity DB. Perhaps this fill never reached STABLE BEAMS. Otherwise, please contact an expert.")
             # Do log it though!
             logObject = {'fill': fillNumber, validation_name: userName, comments_name: 'No data in lumiDB for this fill',
                          'missing_lumisections': [], 'invalidated_lumisections': []}
@@ -1009,7 +1014,7 @@ for fillNumber in fillList:
                 if args.add in recordedLumiSections[r][ls]:
                     hasData = True
         if not hasData:
-            tkMessageBox.showwarning("No data for fill", "Note: no data for "+args.add+" was found for fill "+str(fillNumber)+" in the luminosity DB. Presumably this luminometer was not present for this fill. Otherwise, please contact an expert.")
+            tkinter.messagebox.showwarning("No data for fill", "Note: no data for "+args.add+" was found for fill "+str(fillNumber)+" in the luminosity DB. Presumably this luminometer was not present for this fill. Otherwise, please contact an expert.")
             # Find the fill in the log file and add the comment in for it.
             for i in range(len(parsedLogData)):
                 if parsedLogData[i]['fill'] == fillNumber:
@@ -1027,7 +1032,7 @@ for fillNumber in fillList:
             continue
 
     # Get beam currents so we can clean stray lumisections at the end.
-    print "Please wait, getting beam currents"
+    print("Please wait, getting beam currents")
     os.system('brilcalc beam -f '+str(fillNumber)+' -b "STABLE BEAMS" -o temp_beam.csv')
     startBeamCurrent=-1
     with open('temp_beam.csv') as csv_input:
@@ -1078,9 +1083,9 @@ for fillNumber in fillList:
     priorityList = Listbox(root, selectmode=SINGLE)
     priorityList.grid(row=1, column=1, rowspan=7)
     
-    priUpButton = Button(root, text=unichr(8593), command=priorityUp)
+    priUpButton = Button(root, text=chr(8593), command=priorityUp)
     priUpButton.grid(row=2, column=2, sticky='W')
-    priDownButton = Button(root, text=unichr(8595), command=priorityDown)
+    priDownButton = Button(root, text=chr(8595), command=priorityDown)
     priDownButton.grid(row=3, column=2, sticky='W')
     
     detectorTagLabel = Label(root, text='Detector tags')
@@ -1186,7 +1191,7 @@ for fillNumber in fillList:
     # just happily proceed to the next one, or (b) the user closed the main window, in which case
     # we should just exit semi-gracefully.
     if not currentFillSaved:
-        print "Application closed."
+        print("Application closed.")
         os.unlink(lockFileName)
         sys.exit(1)
 
@@ -1195,7 +1200,7 @@ for fillNumber in fillList:
     currentFillSaved = False
     root = Tk()
 
-print "Validation complete. Thanks!"
+print("Validation complete. Thanks!")
 makeEmails()
 gitCommit()
 os.unlink(lockFileName)

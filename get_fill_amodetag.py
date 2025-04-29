@@ -3,8 +3,9 @@
 # A simple script (based on get_recentfill) to get the accelerator mode for a given fill.
 
 from sqlalchemy import *
-from ConfigParser import SafeConfigParser
+from configparser import ConfigParser
 import argparse
+import base64
 
 known_amodetagids = {1: "PROTPHYS",
                      2: "IONPHYS",
@@ -22,7 +23,7 @@ def parseservicemap(authfile):
     output: {servicealias:[protocol,user,passwd,descriptor]}
     '''
     result={}
-    parser = SafeConfigParser()
+    parser = ConfigParser()
     parser.read(authfile)
     for s in parser.sections():
         protocol = parser.get(s,'protocol')
@@ -44,15 +45,16 @@ if __name__=='__main__':
     servicealias=args.connect
     servicemap = parseservicemap(args.authpath)
     user = servicemap[servicealias][1]
-    passwd = servicemap[servicealias][2].decode('base64')
+    passwd = base64.b64decode(servicemap[servicealias][2]).decode('UTF-8')
+ 
     descriptor = servicemap[servicealias][3]
     
     connecturl = 'oracle+cx_oracle://%s:%s@%s'%(user,passwd,descriptor)
-    e = create_engine(connecturl)
+    e = create_engine(connecturl,max_identifier_length=128)
     con = e.connect()
-
+   
     tagid = get_fill_amodetag(con,args.fill)
     if tagid in known_amodetagids:
-        print known_amodetagids[tagid]
+        print(known_amodetagids[tagid])
     else:
-        print tagid
+        print(tagid)
