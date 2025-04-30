@@ -65,7 +65,7 @@ defaultLumiPriority = [ 'hfet','bcm1f','pltzero','bcm1futca','hfoc','dt','ramses
 
 # "Primary" luminometers. The validation plot will only show ratios involving
 # these luminometers, so that we don't end up with too many ratios.
-primaryLuminometers = [ 'hfet', 'pltzero','bcm1f','bcm1futca']
+primaryLuminometers = [ 'hfet']
 
 # Detectortag to be used for each luminometer.
 detectorTags = {'pltzero': 'pltzero25v00',
