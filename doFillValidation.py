@@ -48,7 +48,7 @@ except:
 # used as the baseline reference and so should generally be BCM1F, since
 # that is less prone to being 
 #luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet', 'ramses']
-luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet', 'ramses', 'dt', 'bcm1futca']
+luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet', 'dt', 'bcm1futca']
 #luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet','bcm1futca'] #for PbPb
 
 # For PCC, the online luminosity doesn't exist, so we have to use the tag in order to get a result from brilcalc.
@@ -59,7 +59,7 @@ requiresNormtag = ['pcc']
 #defaultLumiPriority = ['pltzero', 'bcm1futca','hfet','hfoc', 'bcm1f','ramses','dt'] # for first 2024 running
 #defaultLumiPriority = ['hfoc', 'bcm1f','pltzero','hfet', 'bcm1futca','ramses','dt'] # for first 2024 running
 #defaultLumiPriority = ['hfoc', 'bcm1f','pltzero','hfet'] # for first 2024 running
-defaultLumiPriority = [ 'hfet','bcm1f','pltzero','bcm1futca','hfoc','dt','ramses']
+defaultLumiPriority = [ 'hfet','bcm1f','pltzero','bcm1futca','hfoc','dt']
 #defaultLumiPriority = [ 'hfoc','pltzero','bcm1f','hfet', 'bcm1futca'] #for PbPb
 
 
@@ -90,13 +90,13 @@ emailTargets = {'pltzero': 'pltzero', 'bcm1f': 'bcm1f', 'bcm1futca': 'bcm1futca'
 # Second, the list of recipients for each target. 'scans' is a target for the emittance scan results
 # (this will be targeted if any emittance scans are invalidated while invalidating).
 emailRecipients = {'pltzero': ['andres.delannoy@gmail.com', 'francesco.romeo@cern.ch'],
-                   'bcm1f': ['andreas.meyer@cern.ch', 'michele.mormile@cern.ch'],
-                   'bcm1futca': ['andreas.meyer@cern.ch', 'michele.mormile@cern.ch'],
+                   'bcm1f': ['e.ranken@cern.ch', 'iakov.andreev@cern.ch'],
+                   'bcm1futca': ['peter.major@cern.ch' ],
                    'hf': ['alexey.shevelev@cern.ch'],
                    'dt': ['cristina.oropeza.barrera@cern.ch'],
                    'ramses': ['tatiana.selezneva@cern.ch'],
-                   'pcc': ['samuel.lloyd.higginbotham@cern.ch'],
-                   'scans': ['santeri.saariokari@cern.ch', 'fabio.carneiro@cern.ch','nimmitha.karunarathna@cern.ch','cms-dpg-conveners-bril@cern.ch']}
+                   'pcc': ['Jose.Benitez@cern.ch'],
+                   'scans': ['santeri.saariokari@cern.ch', 'fabio.carneiro@cern.ch','viktoriia.vlasenko@cern.ch','cms-dpg-conveners-bril@cern.ch']}
 # email recipients for overall summary email
 summaryEmailRecipients = ['alexey.shevelev@cern.ch', 'andres.delannoy@cern.ch', 'Arkady.Lokhovitskiy@cern.ch', 'cms-BRIL-PM@cern.ch', 'cms-pog-conveners-lum@cern.ch'] 
 
