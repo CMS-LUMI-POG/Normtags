@@ -48,7 +48,7 @@ except:
 # used as the baseline reference and so should generally be BCM1F, since
 # that is less prone to being 
 #luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet', 'ramses']
-luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet', 'dt', 'bcm1futca']
+luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet', 'dt', 'bcm1futca','ramses']
 #luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet','bcm1futca'] #for PbPb
 
 # For PCC, the online luminosity doesn't exist, so we have to use the tag in order to get a result from brilcalc.
@@ -59,7 +59,7 @@ requiresNormtag = ['pcc']
 #defaultLumiPriority = ['pltzero', 'bcm1futca','hfet','hfoc', 'bcm1f','ramses','dt'] # for first 2024 running
 #defaultLumiPriority = ['hfoc', 'bcm1f','pltzero','hfet', 'bcm1futca','ramses','dt'] # for first 2024 running
 #defaultLumiPriority = ['hfoc', 'bcm1f','pltzero','hfet'] # for first 2024 running
-defaultLumiPriority = [ 'hfet','bcm1f','pltzero','bcm1futca','hfoc','dt']
+defaultLumiPriority = [ 'hfet','pltzero','bcm1futca','bcm1f','hfoc','dt','ramses']
 #defaultLumiPriority = [ 'hfoc','pltzero','bcm1f','hfet', 'bcm1futca'] #for PbPb
 
 
