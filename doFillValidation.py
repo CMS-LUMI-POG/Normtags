@@ -68,14 +68,14 @@ defaultLumiPriority = [ 'hfet','pltzero','bcm1futca','bcm1f','hfoc','dt','ramses
 primaryLuminometers = [ 'hfet']
 
 # Detectortag to be used for each luminometer.  was 25v00
-detectorTags = {'pltzero': 'pltzeroLightIons25v01',
-                'hfet': 'hfetLightIons25v01',
-                'bcm1f': 'bcm1fLightIons25v01',
-                'hfoc': 'hfocLightIons25v01',
-                'dt': 'dtLightIons25v01',
-                'ramses': 'ramsesLightIons25v01',
-                'bcm1futca': 'bcm1futcaLightIons25v01',
-                'pcc': 'pxlLightIons25v01'}
+detectorTags = {'pltzero': 'pltzero25v00',
+                'hfet': 'hfet25v00',
+                'bcm1f': 'bcm1f25v00',
+                'hfoc': 'hfoc25v00',
+                'dt': 'dt25v00',
+                'ramses': 'ramses25v00',
+                'bcm1futca': 'bcm1futcav00',
+                'pcc': 'pxl25v00'}
 
 # Test mode: if set to True, automatic emails will be sent to the screen instead and automatic git commits
 # will not be performed. Note that you can also activate test mode by using the -t switch on the command line,
