@@ -24,7 +24,7 @@ log = logging.getLogger(__name__)
 
 RATIOS_TOP_YLIMIT = 1.25
 RATIOS_BOTTOM_YLIMIT = 0.75
-LUMI_TOP_YLIMIT = 21000 #going farther up!
+LUMI_TOP_YLIMIT = 24000 #going farther up!
 LUMI_BOTTOM_YLIMIT = 0
 AMODETAG_SCRIPT = "./get_fill_amodetag.py"
 

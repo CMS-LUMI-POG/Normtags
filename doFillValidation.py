@@ -59,7 +59,7 @@ requiresNormtag = ['pcc']
 #defaultLumiPriority = ['pltzero', 'bcm1futca','hfet','hfoc', 'bcm1f','ramses','dt'] # for first 2024 running
 #defaultLumiPriority = ['hfoc', 'bcm1f','pltzero','hfet', 'bcm1futca','ramses','dt'] # for first 2024 running
 #defaultLumiPriority = ['hfoc', 'bcm1f','pltzero','hfet'] # for first 2024 running
-defaultLumiPriority = [ 'hfet','pltzero','bcm1futca','bcm1f','hfoc','dt','ramses']
+defaultLumiPriority = [ 'hfet','pltzero','bcm1f','bcm1futca','hfoc','dt','ramses']
 #defaultLumiPriority = [ 'hfoc','pltzero','bcm1f','hfet', 'bcm1futca'] #for PbPb
 
 
