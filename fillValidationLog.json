@@ -2776,5 +2776,9 @@
 {"fill": 11344, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "400064:566", "endAt": "-1", "luminometer": "bcm1f", "reason": "Something dropped"}], "missing_lumisections": [], "validated_by": "David"},
 {"fill": 11347, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
 {"fill": 11348, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "-1", "endAt": "-1", "luminometer": "bcm1f", "reason": "Magnet 2T"}, {"beginAt": "-1", "endAt": "-1", "luminometer": "pltzero", "reason": "Magnet 2T"}], "missing_lumisections": [], "validated_by": "David"},
-{"fill": 11349, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"}
+{"fill": 11349, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 11350, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 11351, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 11352, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 11353, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"}
 ]
