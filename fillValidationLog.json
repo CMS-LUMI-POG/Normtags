@@ -2807,5 +2807,10 @@
 {"fill": 11380, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
 {"fill": 11381, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "400332:41", "endAt": "400332:52", "luminometer": "bcm1f", "reason": "Strange spikes"}], "missing_lumisections": [], "validated_by": "David"},
 {"fill": 11382, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "400339:741", "endAt": "400339:783", "luminometer": "bcm1f", "reason": "Spike and dipp"}, {"beginAt": "400339:1053", "endAt": "-1", "luminometer": "bcm1f", "reason": "spikes and dips"}], "missing_lumisections": [], "validated_by": "David"},
-{"fill": 11383, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "400353:454", "endAt": "400353:534", "luminometer": "bcm1f", "reason": "Big spikes"}], "missing_lumisections": [], "validated_by": "David"}
+{"fill": 11383, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "400353:454", "endAt": "400353:534", "luminometer": "bcm1f", "reason": "Big spikes"}], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 11384, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "400357:587", "endAt": "400357:628", "luminometer": "bcm1f", "reason": "spikes and dips"}, {"beginAt": "400357:319", "endAt": "400357:321", "luminometer": "bcm1f", "reason": "Spike"}], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 11385, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 11386, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 11387, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 11388, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "400391:405", "endAt": "400391:467", "luminometer": "bcm1f", "reason": "spikes and dips"}, {"beginAt": "400392:1", "endAt": "400392:6", "luminometer": "bcm1f", "reason": "spike"}], "missing_lumisections": [], "validated_by": "David"}
 ]
