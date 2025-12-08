@@ -2812,5 +2812,7 @@
 {"fill": 11385, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
 {"fill": 11386, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
 {"fill": 11387, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
-{"fill": 11388, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "400391:405", "endAt": "400391:467", "luminometer": "bcm1f", "reason": "spikes and dips"}, {"beginAt": "400392:1", "endAt": "400392:6", "luminometer": "bcm1f", "reason": "spike"}], "missing_lumisections": [], "validated_by": "David"}
+{"fill": 11388, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "400391:405", "endAt": "400391:467", "luminometer": "bcm1f", "reason": "spikes and dips"}, {"beginAt": "400392:1", "endAt": "400392:6", "luminometer": "bcm1f", "reason": "spike"}], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 11389, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 11390, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"}
 ]
