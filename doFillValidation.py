@@ -48,7 +48,7 @@ except:
 # used as the baseline reference and so should generally be BCM1F, since
 # that is less prone to being 
 #luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet', 'ramses']
-luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet', 'dt', 'bcm1futca','ramses']
+luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet']#, 'dt', 'bcm1futca','ramses']
 #luminometers = ['bcm1f', 'pltzero', 'hfoc', 'hfet','bcm1futca'] #for PbPb
 
 # For PCC, the online luminosity doesn't exist, so we have to use the tag in order to get a result from brilcalc.
@@ -59,7 +59,7 @@ requiresNormtag = ['pcc']
 #defaultLumiPriority = ['pltzero', 'bcm1futca','hfet','hfoc', 'bcm1f','ramses','dt'] # for first 2024 running
 #defaultLumiPriority = ['hfoc', 'bcm1f','pltzero','hfet', 'bcm1futca','ramses','dt'] # for first 2024 running
 #defaultLumiPriority = ['hfoc', 'bcm1f','pltzero','hfet'] # for first 2024 running
-defaultLumiPriority = [ 'hfet','pltzero','bcm1f','bcm1futca','hfoc','dt','ramses']
+defaultLumiPriority = [ 'hfet','bcm1f','pltzero','hfoc']
 #defaultLumiPriority = [ 'hfoc','pltzero','bcm1f','hfet', 'bcm1futca'] #for PbPb
 
 
@@ -68,10 +68,10 @@ defaultLumiPriority = [ 'hfet','pltzero','bcm1f','bcm1futca','hfoc','dt','ramses
 primaryLuminometers = [ 'hfet']
 
 # Detectortag to be used for each luminometer.  was 25v00
-detectorTags = {'pltzero': 'pltzero25v00',
-                'hfet': 'hfet25v00',
-                'bcm1f': 'bcm1f25v00',
-                'hfoc': 'hfoc25v00',
+detectorTags = {'pltzero': 'pltzero25PbPbv02',
+                'hfet': 'hfet25PbPbv00',
+                'bcm1f': 'bcm1f25PbPbv00',
+                'hfoc': 'hfoc25PbPbv00',
                 'dt': 'dt25v00',
                 'ramses': 'ramses25v00',
                 'bcm1futca': 'bcm1futcav00',
