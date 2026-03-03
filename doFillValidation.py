@@ -68,14 +68,14 @@ defaultLumiPriority = [ 'hfet','bcm1f','pltzero','hfoc']
 primaryLuminometers = [ 'hfet']
 
 # Detectortag to be used for each luminometer.  was 25v00
-detectorTags = {'pltzero': 'pltzero25PbPbv02',
-                'hfet': 'hfet25PbPbv00',
-                'bcm1f': 'bcm1f25PbPbv00',
-                'hfoc': 'hfoc25PbPbv00',
-                'dt': 'dt25v00',
-                'ramses': 'ramses25v00',
-                'bcm1futca': 'bcm1futcav00',
-                'pcc': 'pxl25v00'}
+detectorTags = {'pltzero': 'pltzero26v00',
+                'hfet': 'hfet26v00',
+                'bcm1f': 'bcm1f26v00',
+                'hfoc': 'hfoc26v00',
+                'dt': 'dt26v00',
+                'ramses': 'ramses26v00',
+                'bcm1futca': 'bcm1futca26v00',
+                'pcc': 'pxl26v00'}
 
 # Test mode: if set to True, automatic emails will be sent to the screen instead and automatic git commits
 # will not be performed. Note that you can also activate test mode by using the -t switch on the command line,
@@ -91,7 +91,7 @@ emailTargets = {'pltzero': 'pltzero', 'bcm1f': 'bcm1f', 'bcm1futca': 'bcm1futca'
 # (this will be targeted if any emittance scans are invalidated while invalidating).
 emailRecipients = {'pltzero': ['andres.delannoy@gmail.com', 'francesco.romeo@cern.ch'],
                    'bcm1f': ['e.ranken@cern.ch', 'iakov.andreev@cern.ch'],
-                   'bcm1futca': ['peter.major@cern.ch' ],
+                   'bcm1futca': ['peter.major@cern.ch', 'gergely.balint@cern.ch' ],
                    'hf': ['alexey.shevelev@cern.ch'],
                    'dt': ['cristina.oropeza.barrera@cern.ch'],
                    'ramses': ['tatiana.selezneva@cern.ch'],
