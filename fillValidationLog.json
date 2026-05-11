@@ -2984,5 +2984,6 @@
 {"fill": 11719, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
 {"fill": 11720, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [{"beginAt": "403715:224", "endAt": "403715:288", "luminometer": "dt"}, {"beginAt": "403716:1050", "endAt": "403716:1057", "luminometer": "dt"}, {"beginAt": "403717:447", "endAt": "403717:451", "luminometer": "dt"}], "validated_by": "David"},
 {"fill": 11721, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
-{"fill": 11722, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"}
+{"fill": 11722, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 11723, "general_comments": "\n", "invalidated_lumisections": [{"beginAt": "403751:637", "endAt": "403751:659", "luminometer": "pltzero", "reason": "Drop rapidly fixed by Andres!"}], "missing_lumisections": [{"beginAt": "403751:653", "endAt": "403751:656", "luminometer": "pltzero"}, {"beginAt": "403744:148", "endAt": "403744:205", "luminometer": "dt"}, {"beginAt": "403747:160", "endAt": "403747:167", "luminometer": "dt"}, {"beginAt": "403748:6", "endAt": "403748:15", "luminometer": "dt"}, {"beginAt": "403749:12", "endAt": "403749:40", "luminometer": "dt"}], "validated_by": "David"}
 ]
