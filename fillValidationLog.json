@@ -3011,5 +3011,10 @@
 {"fill": 11791, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
 {"fill": 11792, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
 {"fill": 11793, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
-{"fill": 11794, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"}
+{"fill": 11794, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 11795, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 11796, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 11797, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 11798, "general_comments": "\n", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"},
+{"fill": 11799, "general_comments": "No data in lumiDB for this fill", "invalidated_lumisections": [], "missing_lumisections": [], "validated_by": "David"}
 ]
